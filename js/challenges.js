@@ -48,7 +48,7 @@ function exitChallenge() {
 	selectChallenge(-1);
 }
 
-var layerNames = ["", "Infinity ", "Eternity ", "Reality ", "Quantum ", "Omnipotence ", "Oblivion "]
+var layerNames = ["", "Infinity ", "Eternity ", "Quantum ", "Ghostify ", "Omnipotence ", "Oblivion "]
 
 function updateChallengeDescriptions() {
 	challengeDescriptions = [

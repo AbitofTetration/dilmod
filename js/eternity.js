@@ -173,6 +173,13 @@ function eternityMilestone(id) {
 	return game.eternities.gte(eternityMilestones[id].req)
 }
 
-function getReplicantiChance() {
-	
+function resetDilation() {
+  game.dilation = {
+    active: false,
+    tachyonParticles: new Decimal(0),
+    dilatedTime: new Decimal(0),
+    galaxyThreshold: new Decimal(0),
+    freeGalaxies: new Decimal(0),
+    upgrades: []
+  }
 }
