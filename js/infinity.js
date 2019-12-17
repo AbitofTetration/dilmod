@@ -21,7 +21,7 @@ function getInfinityPointMult() {
 
 function getInfinityMult() {
 	r = new Decimal(1);
-	if(tree.hasStudy("p21")) r = r.multiply(tree.getEff("p21"))
+	if(tree.hasStudy("p21")) r = r.multiply(tree.getEff("p21")).add(1)
 	
 	return r;
 }

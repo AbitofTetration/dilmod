@@ -138,7 +138,7 @@ function update() {
 
 	displayIf("eternityPrestige", atEternity() || haveEternitied())
 	displayIf("EP", haveEternitied());
-	displayIf("TP", unlockedDilation());
+	displayIf("TP", tree.hasStudy("d11"));
 	displayIf("dilation", tree.hasStudy("d11"));
 	displayIf("gainedEP", atEternity());
 	ge("gainedEP").innerHTML = getChallengeSet() == 3 ? 
