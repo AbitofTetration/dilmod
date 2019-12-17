@@ -26,7 +26,7 @@ function buyReplUpgrade(i) {
 }
 
 function getReplEffect() {
-	return game.replicanti.amount.floor().log2().pow(4).max(1);
+	return game.replicanti.amount.floor().add(1).log2().pow(4).max(1);
 }
 
 function getReplChance() {
@@ -38,7 +38,7 @@ function getReplChance() {
 function getReplSpeed() {
 	var r = game.replicanti.upgrades[1].divide(10).add(1)
 	if(tree.hasStudy("r22")) r = r.multiply(3)
-	if(game.dilation.upgrades.includes("0")) r = r.multiply(3)
+	if(game.dilation.upgrades.includes(0)) r = r.multiply(getDilationUpgradeEffect(0))
 	
 	return r;
 }

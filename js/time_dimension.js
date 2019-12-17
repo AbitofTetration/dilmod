@@ -27,6 +27,7 @@ function getTimeDimensionProduction(i) {
 	dim.multiplier = Decimal.pow(timeDimensionBuyMults[dim.id], dim.bought)
 	if(tree.hasStudy("t11") && i == 1) dim.multiplier = dim.multiplier.multiply(tree.getEff("t11"))
 	if(tree.hasStudy("t21")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t21"))
+  if(game.dilation.upgrades.includes(1)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(1))
   if(inDilation()) dim.multiplier = dim.multiplier.pow(0.75)
 	
 	return dim.amount.multiply(dim.multiplier);
