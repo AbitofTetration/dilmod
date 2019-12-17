@@ -129,6 +129,7 @@ function updateSave() {
 	if(!game.timestudy) game.timestudy = {theorems: new Decimal(0), bought: [new Decimal(0), new Decimal(0), new Decimal(0)], studies: []};
 	if(!game.eternityUpgrades) resetEternityUpgrades();
 	if(!game.replicanti) resetReplicanti();
+	if(!game.dilation) resetDilation();
 	
 	if(!game.challenges) {
 		game.challenges = []

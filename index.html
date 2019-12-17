@@ -32,7 +32,7 @@
 
 <div id = "eternityPrestige" style = "position: absolute; right: 20; top: 10">
 	<center>
-		<span id = "EP">You have <span class = "eternityPoints"></span> Eternity Points.</span><br><br>
+		<span id = "EP">You have <span class = "eternityPoints"></span> Eternity Points.</span><span id = "TP"> and <span class = "tachyonParticles"></span> Tachyon Particles.</span><br><br>
 		<button id = "gainedEP" class = "eternityTabButton" onmousedown = "eternity()" style = "font-size: 11px; width: 210px; height: 70px"></button>
 	</center>
 </div>
@@ -230,6 +230,7 @@
 			<button class = "subtabButton" onclick = "showEternityTab('eternityUpgrades')">Eternity Upgrades</button>
 			<button class = "subtabButton" onclick = "showEternityTab('eternityMilestones')">Eternity Milestones</button>
 			<button class = "subtabButton" onclick = "showEternityTab('replicanti')">Replicanti</button>
+			<button id = "dilation" class = "subtabButton" onclick = "showEternityTab('dilation')">Time Dilation</button>
 		</div>
 		<div class = "eternityTab" id = "timeStudiesTab">
 			<canvas id = "studyTreeCanvas"></canvas>

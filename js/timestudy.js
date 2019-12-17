@@ -83,7 +83,7 @@ ns({x:     3, y:     0, id:  "r21", cost:   25, desc: "Distant antimatter galaxy
 ns({x:     3, y:     1, id:  "r22", cost:    5, desc: "You gain replicanti three times faster", pre: ["r11"]})
 ns({x:     4, y:     1, id:  "r31", cost:    5, desc: "Sacrifice is 10% stronger", pre: ["r21"]})
 ns({x:     4, y:     2, id:  "r32", cost:   50, desc: "Replicanti galaxies are 50% more effective", pre: ["r22"]})
-ns({x:     0, y:     3, id:  "e11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"]})
+ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"]})
 
 Study.prototype.getPostStudies = function() {
 	var l = []
@@ -119,6 +119,7 @@ Study.prototype.buy = function() {
 	if(!this.canBuy()) return;
 	game.timestudy.theorems = game.timestudy.theorems.subtract(this.cost)
 	game.timestudy.studies.push(this.id);
+  if(this.id == "d11") game.dilation.unlocked = true;
 	return true;
 }
 

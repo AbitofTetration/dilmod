@@ -175,6 +175,7 @@ function eternityMilestone(id) {
 
 function resetDilation() {
   game.dilation = {
+    unlocked: false,
     active: false,
     tachyonParticles: new Decimal(0),
     dilatedTime: new Decimal(0),
@@ -182,4 +183,8 @@ function resetDilation() {
     freeGalaxies: new Decimal(0),
     upgrades: []
   }
+}
+
+function unlockedDilation() {
+  return game.dilation.unlocked
 }

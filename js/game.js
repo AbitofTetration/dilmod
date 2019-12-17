@@ -118,6 +118,7 @@ function update() {
 
 	gc("infinityPoints", function(e) {e.textContent = shortenMoney(game.infinityPoints.floor())})
 	gc("eternityPoints", function(e) {e.textContent = shortenMoney(game.eternityPoints.floor())})
+	gc("tachyonParticles", function(e) {e.textContent = shortenMoney(game.dilation.tachyonParticles)})
 	
 	displayIf("infinityPrestige", haveInfinitied())
 	displayIf("gainedIP", (game.bestInfinityTime < 60000 || game.break) && (atInfinity() || getChallengeSet() < 3));
@@ -131,6 +132,8 @@ function update() {
 
 	displayIf("eternityPrestige", atEternity() || haveEternitied())
 	displayIf("EP", haveEternitied());
+	displayIf("TP", unlockedDilation());
+	displayIf("dilation", unlockedDilation());
 	displayIf("gainedEP", atEternity());
 	ge("gainedEP").innerHTML = getChallengeSet() == 3 ? 
 		(canCompleteChallenge() ? "Other challenges await...<br>I need to become Eternal." : "Reach " + shortenMoney(getChallengeGoal()) + " IP to complete challenge.") : 
