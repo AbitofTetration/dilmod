@@ -181,7 +181,7 @@ function resetDilation() {
     active: false,
     tachyonParticles: new Decimal(0),
     dilatedTime: new Decimal(0),
-    galaxyThreshold: new Decimal(0),
+    galaxyThreshold: new Decimal(10),
     freeGalaxies: new Decimal(0),
     upgrades: []
   }

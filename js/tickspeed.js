@@ -142,7 +142,7 @@ function getEffectiveReplicantiGalaxies() {
 }
 
 function getEffectiveGalaxies() {
-	return getEffectiveNormalGalaxies().add(getEffectiveReplicantiGalaxies()).multiply(getGalaxyPower());
+	return getEffectiveNormalGalaxies().add(getEffectiveReplicantiGalaxies()).add(game.dilation.freeGalaxies).multiply(getGalaxyPower());
 }
 
 function getGalaxyPower() {

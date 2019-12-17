@@ -76,7 +76,11 @@ function update() {
 	if(game.infinityUpgrades.includes(14)) 
 		game.infinities = game.infinities.add(getInfinityMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
   
-  game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.times(3)).multiply(diff);
+  game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.multiply(diff/1000));
+  if(game.dilation.dilatedTime.gt(game.dilation.galaxyThreshold)) {
+    game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
+    game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(1.75)
+  }
 	
 	if(getReplSpeed().gt(10)) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
 	else {
@@ -135,7 +139,7 @@ function update() {
 	displayIf("eternityPrestige", atEternity() || haveEternitied())
 	displayIf("EP", haveEternitied());
 	displayIf("TP", unlockedDilation());
-	displayIf("dilation", unlockedDilation());
+	displayIf("dilation", tree.hasStudy("d11"));
 	displayIf("gainedEP", atEternity());
 	ge("gainedEP").innerHTML = getChallengeSet() == 3 ? 
 		 (canCompleteChallenge() ? "Other challenges await...<br>I need to become Eternal." : "Reach " + shortenMoney(getChallengeGoal()) + " IP to complete challenge.") : 
@@ -282,6 +286,7 @@ function update() {
 	// Eternity
 	
 	if(game.currentTab == "eternity") {
+    
 		
 		// Time Studies
 		
@@ -385,9 +390,9 @@ function update() {
     // Dilation
     
     if(game.currentEternityTab == "dilation") {
-			ge("replicanti").innerHTML = shortenMoney(game.replicanti.amount.floor());
-    	gc("dilatedTime", function(e) {e.textContent = shortenMoney(game.dilation.dilatedTime)})
-    	gc("freeGalaxies", function(e) {e.textContent = shortenMoney(game.dilation.freeGalaxies)})
+			ge("dilatedTime").innerHTML = shortenMoney(game.dilation.dilatedTime);
+			ge("freeGalaxies").innerHTML = shortenMoney(game.dilation.freeGalaxies);
+			ge("galaxyThreshold").innerHTML = shortenMoney(game.dilation.galaxyThreshold);
 			ge("dilationButton").className = "timestudy dilation"
     }
 	}
