@@ -87,7 +87,7 @@ function getDimensionProduction(i) {
 	if(inChallenge(11, 1)) dim.multiplier = dim.multiplier.pow(1 - i / 10);
   
   if(inDilation()) dim.multiplier = dim.multiplier.pow(0.75)
-	if(game.dilation.upgrades.includes(2)) r = r.multiply(getDilationUpgradeEffect(2))
+	if(game.dilation.upgrades.includes(2)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(2))
 
 	return dim.amount.multiply(dim.multiplier);
 }

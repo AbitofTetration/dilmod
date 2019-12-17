@@ -223,7 +223,7 @@ function getDilationUpgradeEffect(n) {
 		case 1:
 			return game.dilation.tachyonParticles.pow(6).max(1);
 		case 2:
-			return game.dilation.dilatedTime.pow(2).max(1)
+			return game.dilation.dilatedTime.pow(4).max(1)
 		case 3:
 			return game.infinityDimensions[9].bought.pow(10).max(1)
 		case 4:
