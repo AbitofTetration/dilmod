@@ -136,11 +136,12 @@ function update() {
 	displayIf("dilation", unlockedDilation());
 	displayIf("gainedEP", atEternity());
 	ge("gainedEP").innerHTML = getChallengeSet() == 3 ? 
-		(canCompleteChallenge() ? "Other challenges await...<br>I need to become Eternal." : "Reach " + shortenMoney(getChallengeGoal()) + " IP to complete challenge.") : 
-		haveEternitied() ? 
+		 (canCompleteChallenge() ? "Other challenges await...<br>I need to become Eternal." : "Reach " + shortenMoney(getChallengeGoal()) + " IP to complete challenge.") : 
+		(!inDilation() ? (haveEternitied() ? 
 			"<b>I need to become eternal.</b><br>Gain " + shortenMoney(gainedEternityPoints()) + " Eternity Points.<br>" + 
 			shorten(eprate) + " EP/min<br>Peak: " + 
-			(game.options.showBestRateAt ? shorten(game.bestEPRateAt) + " EP" : shorten(game.bestEPRate) + " EP/min") : "<b>Other times await...<br>I need to become eternal.</b>"
+			(game.options.showBestRateAt ? shorten(game.bestEPRateAt) + " EP" : shorten(game.bestEPRate) + " EP/min") : "<b>Other times await...<br>I need to become eternal.</b>")  : 
+"<b>I need to become eternal.</b><br>Gain " + shortenMoney(gainedTP()) + " Tachyon Particles, and " + shortenMoney(gainedEternityPoints()) + " Eternity Points.<br>")
 	
 	// Tab Buttons
 

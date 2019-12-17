@@ -85,6 +85,8 @@ function getDimensionProduction(i) {
 	
 	if(inChallenge(4, 1)) dim.multiplier = dim.multiplier.pow(0.4 + (game.lastBoughtDimension == i) * 0.4);
 	if(inChallenge(11, 1)) dim.multiplier = dim.multiplier.pow(1 - i / 10);
+  
+  if(inDilation()) dim.multiplier = dim.multiplier.pow(0.75)
 
 	return dim.amount.multiply(dim.multiplier);
 }

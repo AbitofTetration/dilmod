@@ -30,6 +30,7 @@ function eternity(force) {
 	}
 	
 	if(!force) {
+    if(game.dilation.active) game.tachyonParticles = game.tachyonParticles.add(gainedTP())
 		giveAchievement(67);
 		
 		game.eternityPoints = game.eternityPoints.add(gainedEternityPoints())
@@ -52,6 +53,7 @@ function eternity(force) {
 	if(eternityMilestone("keepBI"));
 	else if(eternityMilestone("keepIU")) game.infinityUpgrades = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 	else resetInfinityUpgrades();
+  game.dilation.active = false;
 	game.repeatInf = [
 		{cost: new Decimal(10), costMult: new Decimal(10), bought: new Decimal(0)}, 
 		{cost: new Decimal(1e10), costMult: new Decimal(10), bought: new Decimal(0)}, 
@@ -187,4 +189,17 @@ function resetDilation() {
 
 function unlockedDilation() {
   return game.dilation.unlocked
+}
+
+function inDilation() {
+  return game.dilation.active
+}
+
+function gainedTP() {
+  return game.dimensions[0].amount.log(10).div(400)
+}
+
+function dilate() {
+  eternity(true)
+  game.dilation.active = true
 }
