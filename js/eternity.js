@@ -30,7 +30,7 @@ function eternity(force) {
 	}
 	
 	if(!force) {
-    if(game.dilation.active) game.tachyonParticles = game.tachyonParticles.add(gainedTP())
+    if(game.dilation.active) game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(gainedTP())
 		giveAchievement(67);
 		
 		game.eternityPoints = game.eternityPoints.add(gainedEternityPoints())

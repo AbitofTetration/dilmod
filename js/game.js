@@ -75,6 +75,8 @@ function update() {
 		game.infinityPoints = game.infinityPoints.add(getInfinityPointMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
 	if(game.infinityUpgrades.includes(14)) 
 		game.infinities = game.infinities.add(getInfinityMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
+  
+  game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.times(3)).multiply(diff);
 	
 	if(getReplSpeed().gt(10)) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
 	else {
@@ -379,6 +381,15 @@ function update() {
 			ge("replGalaxy").className = canBuyReplUpgrade(2) ? "buy" : "lock"
 			ge("replGain").className = canReplGalaxy() ? "buy" : "lock"
 		}
+    
+    // Dilation
+    
+    if(game.currentEternityTab == "dilation") {
+			ge("replicanti").innerHTML = shortenMoney(game.replicanti.amount.floor());
+    	gc("dilatedTime", function(e) {e.textContent = shortenMoney(game.dilation.dilatedTime)})
+    	gc("freeGalaxies", function(e) {e.textContent = shortenMoney(game.dilation.freeGalaxies)})
+			ge("dilationButton").className = "timestudy dilation"
+    }
 	}
 	
 	// Options
