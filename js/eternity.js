@@ -204,17 +204,31 @@ function dilate() {
   game.dilation.active = true
 }
 
-var dilationUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 1e7".split(",");
+var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e11".split(",");
 
 function getDUDescriptions() {
 	return [
-		"Replicanti grow faster based on DT.<br>Currently: " + shortenMoney(getEternityUpgradeEffect(0)) + "x",
-		"Infinity Dimensions get a multiplier based on eternitites<br>Currently: " + shortenMoney(getEternityUpgradeEffect(1)) + "x",
+		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
+		"Tachyon Particles boost Time Dimensions at a reduced rate.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Infinity Dimensions get a multiplier based on IC times<br>Currently: " + shortenMoney(getEternityUpgradeEffect(2)) + "x",
 		"Infinity Dimensions get a multiplier based on ninth IDs<br>Currently: " + shortenMoney(getEternityUpgradeEffect(3)) + "x",
 		"Infinity Dimensions get a multiplier based on time shards<br>Currently: " + shortenMoney(getEternityUpgradeEffect(4)) + "x",
 		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
 	]
+}
+function getDilationUpgradeEffect(n) {
+	switch(n) {
+		case 0:
+			return game.dilation.dilatedTime.pow(1/20).max(1);
+		case 1:
+			return game.dilation.tachyonParticles.pow(0.5).max(1);
+		case 2:
+			return Math.max(1e25 / getChallengeTimes(1) ** 4, 1)
+		case 3:
+			return game.infinityDimensions[9].bought.pow(10).max(1)
+		case 4:
+			return game.timeDimensions[0].amount.pow(0.5).max(1)
+	}
 }
 
 function canBuyDilationUpgrade(i) {

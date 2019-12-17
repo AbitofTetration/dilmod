@@ -393,8 +393,8 @@ function update() {
 			ge("dilatedTime").innerHTML = shortenMoney(game.dilation.dilatedTime);
 			ge("freeGalaxies").innerHTML = shortenMoney(game.dilation.freeGalaxies);
 			ge("galaxyThreshold").innerHTML = shortenMoney(game.dilation.galaxyThreshold);
-			for(var i = 0; i < 9; i++) {
-				ge("dilashunUpgrade" + i).className = game.dilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyEternityUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
+			for(var i = 0; i < 6; i++) {
+				ge("dilashunUpgrade" + i).className = game.dilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyDilationUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("dilashunUpgradeDesc" + i).innerHTML = getDUDescriptions()[i];
 				ge("dilashunUpgradeCost" + i).innerHTML = getFullExpansion(dilationUpgradeCosts[i]) + " DT";
 			}

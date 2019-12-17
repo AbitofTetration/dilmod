@@ -429,7 +429,9 @@ ge("eternityUpgrades").innerHTML = h + `
 	<td></td>
 </tr>
 `
+
 h = ""
+
 for(var i = 0; i < 6; i++) {
 	if(i % 3 == 0) h += "<tr>"
 	h += `
