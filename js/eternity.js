@@ -183,7 +183,8 @@ function resetDilation() {
     dilatedTime: new Decimal(0),
     galaxyThreshold: new Decimal(10),
     freeGalaxies: new Decimal(0),
-    upgrades: []
+    upgrades: [],
+    repeatUpgr: [0,0,0]
   }
 }
 
@@ -202,6 +203,24 @@ function gainedTP() {
 function dilate() {
   eternity(true)
   game.dilation.active = true
+}
+var dilationRepUpgradeCosts = "100, 1000, 10000".split(",");
+
+var dilationRepUpgradeCostMults = "10, 100, 1000".split(",");
+
+function getRepeatDilCost(i) {
+	return new Decimal(dilationRepUpgradeCosts[i]).multiply(new Decimal(dilationRepUpgradeCostMults[i]).pow(game.dilation.repeatUpgr[i]))
+}
+
+function canBuyRepeatDil(i) {
+	return game.dilation.dilatedTime.gte(getRepeatDilCost(i));
+}
+
+function buyRepeatDil(i) {
+	if(!canBuyRepeatEter(i)) return;
+		game.repeatEter[0] = game.dilation.dilatedTime.log10().divide(2).floor();
+		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(100, game.dilation.dilatedTime.log(dilationRepUpgradeCostMults[i]).divide(2).floor()))
+	return true;
 }
 
 var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e11".split(",");

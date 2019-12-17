@@ -445,7 +445,13 @@ for(var i = 0; i < 6; i++) {
 	if(i % 3 == 2) h += "</tr>"
 }
 
-ge("dilationUpgrades").innerHTML = h
+ge("dilationUpgrades").innerHTML = h + `
+<tr>
+	<td></td>
+	<td><button id = "repeatDil0" onclick = "buyRepeatDil(0)"></button></td>
+	<td></td>
+</tr>
+`
 
 var t = `<tr>`
 
