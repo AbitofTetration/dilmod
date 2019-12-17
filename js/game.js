@@ -548,6 +548,7 @@ showInfinityTab(game.options.saveTabs ? game.currentInfinityTab : "infinityUpgra
 showEternityTab(game.options.saveTabs ? game.currentEternityTab : "timeStudies")
 showAutomationTab(game.options.saveTabs ? game.currentAutomationTab : "core")
 scrollChallengesTo(game.options.saveTabs ? game.selectedChallengeType : 0)
+
 update();
 updateAchievements()
 
