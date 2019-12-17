@@ -447,9 +447,9 @@ for(var i = 0; i < 6; i++) {
 
 ge("dilationUpgrades").innerHTML = h + `
 <tr>
-	<td></td>
 	<td><button id = "repeatDil0" onclick = "buyRepeatDil(0)"></button></td>
-	<td></td>
+	<td><button id = "repeatDil1" onclick = "buyRepeatDil(1)"></button></td>
+	<td><button id = "repeatDil2" onclick = "buyRepeatDil(2)"></button></td>
 </tr>
 `
 

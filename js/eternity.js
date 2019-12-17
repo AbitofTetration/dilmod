@@ -208,6 +208,14 @@ var dilationRepUpgradeCosts = "100, 1000, 10000".split(",");
 
 var dilationRepUpgradeCostMults = "10, 100, 1000".split(",");
 
+function getRepeatDilDesc() {
+  return [
+    "You gain twice as much dilated time.",
+    "Free galaxy threshold is reduced, but reset dilated time and free galaxies.",
+    "Tachyon particle formula is better."
+  ]
+}
+
 function getRepeatDilCost(i) {
 	return new Decimal(dilationRepUpgradeCosts[i]).multiply(new Decimal(dilationRepUpgradeCostMults[i]).pow(game.dilation.repeatUpgr[i]))
 }

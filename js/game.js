@@ -399,9 +399,8 @@ function update() {
 				ge("dilashunUpgradeCost" + i).innerHTML = getFullExpansion(dilationUpgradeCosts[i]) + " DT";
 			}
 			for(var i = 0; i < 3; i++) {
-				ge("dilashunUpgrade" + i).className = game.dilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyDilationUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
-				ge("dilashunUpgradeDesc" + i).innerHTML = getDUDescriptions()[i];
-				ge("dilashunUpgradeCost" + i).innerHTML = getFullExpansion(dilationUpgradeCosts[i]) + " DT";
+				ge("repeatDil" + i).className = canBuyRepeatDil(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
+				ge("repeatDil" + i).innerHTML = getRepeatDilDesc()[i] + `<br>` + getFullExpansion(getRepeatDilCost(i)) + " DT"
 			}
     }
 	}
