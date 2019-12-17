@@ -203,3 +203,28 @@ function dilate() {
   eternity(true)
   game.dilation.active = true
 }
+
+var dilationUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 1e7".split(",");
+
+function getDUDescriptions() {
+	return [
+		"Replicanti grow faster based on DT.<br>Currently: " + shortenMoney(getEternityUpgradeEffect(0)) + "x",
+		"Infinity Dimensions get a multiplier based on eternitites<br>Currently: " + shortenMoney(getEternityUpgradeEffect(1)) + "x",
+		"Infinity Dimensions get a multiplier based on IC times<br>Currently: " + shortenMoney(getEternityUpgradeEffect(2)) + "x",
+		"Infinity Dimensions get a multiplier based on ninth IDs<br>Currently: " + shortenMoney(getEternityUpgradeEffect(3)) + "x",
+		"Infinity Dimensions get a multiplier based on time shards<br>Currently: " + shortenMoney(getEternityUpgradeEffect(4)) + "x",
+		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
+	]
+}
+
+function canBuyDilationUpgrade(i) {
+	if(game.dilation.upgrades.includes(i)) return false;
+	if(game.dilation.dilatedTime.lt(dilationUpgradeCosts[i])) return false;
+	return true;
+}
+
+function buyDilationUpgrade(i) {
+	if(!canBuyDilationUpgrade(i)) return;
+	game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(dilationUpgradeCosts[i]);
+	game.dilation.upgrades.push(i);
+}

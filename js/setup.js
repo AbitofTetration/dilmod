@@ -429,6 +429,21 @@ ge("eternityUpgrades").innerHTML = h + `
 	<td></td>
 </tr>
 `
+h = ""
+for(var i = 0; i < 6; i++) {
+	if(i % 3 == 0) h += "<tr>"
+	h += `
+		<td>
+			<button id = "dilashunUpgrade` + i + `" onclick = "buyDilationUpgrade(` + i + `)">
+				<span id = "dilashunUpgradeDesc` + i + `"></span><br>
+				Cost: <span id = "dilashunUpgradeCost` + i + `"></span>
+			</button>
+		</td>
+	`
+	if(i % 3 == 2) h += "</tr>"
+}
+
+ge("dilationUpgrades").innerHTML = h
 
 var t = `<tr>`
 
