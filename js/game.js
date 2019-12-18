@@ -23,7 +23,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 			name == "infinityDimension" ? 
 				game.infinityShifts.gte(i) : 
 			name == "timeDimension" ? 
-				i < 5 : 
+				i < maxTimeD() : 
 				true
 			)
 			
@@ -81,6 +81,7 @@ function update() {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(1.75)
   }
+  if(game.dilation.upgrades.includes(3)) game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3))
 	
 	if(getReplSpeed().gt(10)) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
 	else {

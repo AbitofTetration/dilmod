@@ -206,7 +206,7 @@ function dilate() {
 }
 var dilationRepUpgradeCosts = "100, 1000, 10000".split(",");
 
-var dilationRepUpgradeCostMults = "10, 100, 1000".split(",");
+var dilationRepUpgradeCostMults = "100, 100, 100".split(",");
 
 function getRepeatDilDesc() {
   return [
@@ -226,8 +226,8 @@ function canBuyRepeatDil(i) {
 
 function buyRepeatDil(i) {
 	if(!canBuyRepeatDil(i)) return;
-		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.log(dilationRepUpgradeCosts[i].multiply(dilationRepUpgradeCostMults[i])).divide(2).floor();
-		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(dilationRepUpgradeCosts[i], game.dilation.dilatedTime.log(dilationRepUpgradeCostMults[i]).divide(2).floor()))
+		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.log10().divide(2).floor();
+		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.dilation.dilatedTime.log10().divide(2).floor()))
 	return true;
 }
 
@@ -238,7 +238,7 @@ function getDUDescriptions() {
 		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
-		"Infinity Dimensions get a multiplier based on ninth IDs<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "x",
+		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s",
 		"Infinity Dimensions get a multiplier based on time shards<br>Currently: " + shortenMoney(getDilationUpgradeEffect(4)) + "x",
 		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
 	]
@@ -252,7 +252,7 @@ function getDilationUpgradeEffect(n) {
 		case 2:
 			return game.dilation.dilatedTime.pow(4).max(1)
 		case 3:
-			return game.infinityDimensions[9].bought.pow(10).max(1)
+			return game.dilation.tachyonParticles.divide(200).max(1)
 		case 4:
 			return game.timeDimensions[0].amount.pow(0.5).max(1)
 	}

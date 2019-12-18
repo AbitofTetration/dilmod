@@ -86,6 +86,10 @@ ns({x:     3, y:     1, id:  "r22", cost:    5, desc: "You gain replicanti three
 ns({x:     4, y:     1, id:  "r31", cost:    5, desc: "Sacrifice is 10% stronger", pre: ["r21"]})
 ns({x:     4, y:     2, id:  "r32", cost:   50, desc: "Replicanti galaxies are 50% more effective", pre: ["r22"]})
 ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"],})
+ns({x:     1, y:     3, id:  "d12", cost: 1000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
+ns({x:     1, y:     4, id:  "d21", cost: 5000, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
+ns({x:     0, y:     4, id:  "d22", cost:  1e5, desc: "Unlock time dimension 9", pre: ["d21"],})
+ns({x:     0, y:     5, id:  "d31", cost:  1e6, desc: "Unlock ex-dilation", pre: ["d22"],})
 
 Study.prototype.getPostStudies = function() {
 	var l = []

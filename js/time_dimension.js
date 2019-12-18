@@ -14,7 +14,7 @@ function TimeDimension(i) {
 function resetTimeDimensions() {
 	game.timeDimensions = [];
 
-	for(var i = 0; i <= 10; i++) {
+	for(var i = 0; i < maxTimeD(); i++) {
 		game.timeDimensions[i] = new TimeDimension(i);
 	}
 	
@@ -81,4 +81,14 @@ function getFreeTickspeedThreshold() {
 
 function getInfinityPowerEffect() {
 	return game.infinityDimensions[0].amount.pow(getInfinityPowerPower()).max(1)
+}
+
+function maxTimeD() {
+  var r = 4;
+  
+  if(tree.hasStudy("d12")) r += 2;
+  if(tree.hasStudy("d21")) r += 2;
+  if(tree.hasStudy("d22")) r += 1;
+  
+  return r+1;
 }
