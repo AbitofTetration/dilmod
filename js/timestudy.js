@@ -68,11 +68,13 @@ ns({x:    -1, y:    -2, id:  "p21", cost:    2, desc: "Gain more infinities base
 ns({x:    -2, y:    -1, id:  "p22", cost:    2, desc: "Boosts based on infinities are 10x stronger", pre: ["p11"]})
 ns({x:    -2, y:    -2, id:  "p23", cost:    4, desc: "Dimension Boosts are 4x as powerful", pre: ["p11"]})
 ns({x:    -2, y:    -3, id:  "p31", cost:    8, desc: "Sacrifice affects dimensions 1-8 with reduced effect", eff: function() {return getSacrificeMult().pow(0.2)}, pre: ["p23"]})
+ns({x:    -3, y:    -3, id:  "p32", cost:    8, desc: "Replicanti give a boost to normal dimensions.", eff: function() {return getReplEffect().pow(16)}, pre: ["p23"]})
 ns({x:     1, y:    -1, id:  "i11", cost:    1, desc: "Infinity Dimensions are more powerful based on Infinity Power", eff: function() {return game.infinityDimensions[0].amount.log10().pow(2).max(1)}, pre: ["s00"]})
 ns({x:     1, y:    -2, id:  "i21", cost:    4, desc: "Infinity Dimensions get a multiplier based on fastest eternity time", eff: function() {return Decimal.max(1e10 / game.bestEternityTime, 1).pow(2)}, pre: ["i11"]})
 ns({x:     2, y:    -2, id:  "i22", cost:    5, desc: "Infinity Shifts are more powerful the more you have", eff: function() {return game.infinityShifts.pow(2).add(10).log10().pow(3)}, pre: ["i11"]})
 ns({x:     2, y:    -1, id:  "i23", cost:    2, desc: "Gain 20% more IP per antimatter galaxy", eff: function() {return Decimal.pow(1.2, game.galaxies)}, pre: ["i11"]})
 ns({x:     2, y:    -3, id:  "i31", cost:    7, desc: "Sacrifice affects 9th Infinity Dimension with reduced effect", eff: function() {return getSacrificeMult().pow(0.05)}, pre: ["i22"]})
+ns({x:     1, y:    -3, id:  "i32", cost:   12, desc: "Replicanti boost is powered up.", pre: ["i21"]})
 ns({x:    -2, y:     1, id:  "t11", cost:    1, desc: "Tickspeed affects first Time Dimension with reduced effect", eff: function() {return getTickspeed("dimension").pow(0.0005).max(1)}, pre: ["s00"]})
 ns({x:    -3, y:     1, id:  "t21", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t11"]})
 ns({x:    -3, y:     0, id:  "t22", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t11"]})
@@ -83,7 +85,7 @@ ns({x:     3, y:     0, id:  "r21", cost:   25, desc: "Distant antimatter galaxy
 ns({x:     3, y:     1, id:  "r22", cost:    5, desc: "You gain replicanti three times faster", pre: ["r11"]})
 ns({x:     4, y:     1, id:  "r31", cost:    5, desc: "Sacrifice is 10% stronger", pre: ["r21"]})
 ns({x:     4, y:     2, id:  "r32", cost:   50, desc: "Replicanti galaxies are 50% more effective", pre: ["r22"]})
-ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"]})
+ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"],})
 
 Study.prototype.getPostStudies = function() {
 	var l = []

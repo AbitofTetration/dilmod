@@ -26,7 +26,11 @@ function buyReplUpgrade(i) {
 }
 
 function getReplEffect() {
-	return game.replicanti.amount.floor().add(1).log2().pow(4).max(1);
+  var r = game.replicanti.amount.floor().add(1).log2().pow(4).max(1);
+  
+  if(tree.hasStudy("i32")) r = r.pow(1.32)
+  
+	return r
 }
 
 function getReplChance() {
@@ -56,6 +60,7 @@ function canReplGalaxy() {
 }
 
 function replGalaxy() {
+  var bought = game.replicanti.amount.log(infp()).max(getMaxReplGalaxies()).subtract(game.replicanti.galaxies)
 	game.replicanti.galaxies = game.replicanti.amount.log(infp()).max(getMaxReplGalaxies());
-	game.replicanti.amount = game.replicanti.amount.divide(infp());
+	game.replicanti.amount = game.replicanti.amount.divide(infp(bought)).max(1);
 }
