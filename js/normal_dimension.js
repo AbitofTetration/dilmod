@@ -75,6 +75,7 @@ function getDimensionProduction(i) {
 	if(tree.hasStudy("p11")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p11"));
 	if(tree.hasStudy("p31") && i !== 9) dim.multiplier = dim.multiplier.multiply(tree.getEff("p31"));
 	if(tree.hasStudy("p32")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p32"));
+	if(tree.hasStudy("t32")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t32"))
 
 	if(i == 9 && game.achievements.includes(17)) dim.multiplier = dim.multiplier.multiply(1.09);
 	if(i !== 9 && game.achievements.includes(24)) dim.multiplier = dim.multiplier.multiply(1.08);

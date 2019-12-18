@@ -77,9 +77,9 @@ ns({x:     2, y:    -3, id:  "i31", cost:    7, desc: "Sacrifice affects 9th Inf
 ns({x:     1, y:    -3, id:  "i32", cost:   12, desc: "Replicanti boost is powered up.", pre: ["i21"]})
 ns({x:    -2, y:     1, id:  "t11", cost:    1, desc: "Tickspeed affects first Time Dimension with reduced effect", eff: function() {return getTickspeed("dimension").pow(0.0005).max(1)}, pre: ["s00"]})
 ns({x:    -3, y:     1, id:  "t21", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t11"]})
-ns({x:    -3, y:     0, id:  "t22", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t11"]})
-ns({x:    -4, y:     2, id:  "t31", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t21"]})
-ns({x:    -4, y:     1, id:  "t32", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t22"]})
+ns({x:    -3, y:     0, id:  "t22", cost:    4, desc: "Time Dimensions are affected by replicanti to a severely reduced effect.", eff: function() {return getReplEffect().pow(0.5)}, pre: ["t11"]})
+ns({x:    -4, y:     2, id:  "t31", cost:    6, desc: "Time Dimensions gain a boost equal to time theorems plus one.", eff: function() {return game.timestudy.theorems.add(1)}, pre: ["t21"]})
+ns({x:    -4, y:     1, id:  "t32", cost:   14, desc: "Time shards boost Normal Dimensions.", eff: function() {return game.timeDimensions[0].amount.add(1).log(1.0025).pow(25)}, pre: ["t22"]})
 ns({x:     2, y:     1, id:  "r11", cost:   10, desc: "Decrease galaxy cost scaling by 10%", pre: ["s00"]})
 ns({x:     3, y:     0, id:  "r21", cost:   25, desc: "Distant antimatter galaxy scaling starts 25 later", pre: ["r11"]})
 ns({x:     3, y:     1, id:  "r22", cost:    5, desc: "You gain replicanti three times faster", pre: ["r11"]})
@@ -89,7 +89,7 @@ ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pr
 ns({x:     1, y:     3, id:  "d12", cost: 1000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     1, y:     4, id:  "d21", cost: 5000, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     0, y:     4, id:  "d22", cost:  1e5, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:     5, id:  "d31", cost:  1e6, desc: "Unlock ex-dilation", pre: ["d22"],})
+ns({x:     0, y:     5, id:  "d31", cost:  1e7, desc: "Unlock ex-dilation", pre: ["d22"],})
 
 Study.prototype.getPostStudies = function() {
 	var l = []
