@@ -86,7 +86,7 @@ ns({x:     3, y:     0, id:  "r21", cost:   25, desc: "Distant antimatter galaxy
 ns({x:     3, y:     1, id:  "r22", cost:    5, desc: "You gain replicanti three times faster", pre: ["r11"]})
 ns({x:     4, y:     1, id:  "r31", cost:    5, desc: "Sacrifice is 10% stronger", pre: ["r21"]})
 ns({x:     4, y:     2, id:  "r32", cost:   50, desc: "Replicanti galaxies are 50% more effective", pre: ["r22"]})
-ns({x:     3, y:     2, id:  "r41", cost:   85, desc: "Replicanti galaxies boost replicanti multiplier.", eff: function() {return game.replicanti.galaxies.add(1).multiply(250).max(1)}, pre: ["r32"]})
+ns({x:     3, y:     2, id:  "r41", cost:   85, desc: "Replicanti galaxies boost replicanti multiplier.", eff: function() {return game.replicanti.galaxies.add(1/250).multiply(250).max(1)}, pre: ["r32"]})
 ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"],})
 ns({x:     1, y:     3, id:  "d12", cost: 1000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     1, y:     4, id:  "d21", cost: 5000, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})

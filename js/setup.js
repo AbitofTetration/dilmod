@@ -27,6 +27,7 @@ function transformToDecimal(object) { // It's so much better than hevi's version
 		if(i == "automator") continue; // for fuck's sake
 		if(typeof(object[i]) == "string" && !isNaN(new Decimal("e" + object[i]).mag)) object[i] = new Decimal(object[i]); 
 		if(typeof(object[i]) == "object") transformToDecimal(object[i]) // iterates over all objects inside the object
+    if(typeof(object[i]) == "Decimal" && isNaN(new Decimal("e" + object[i]).mag)) object[i] = new Decimal("0")
 	}
 }
 
