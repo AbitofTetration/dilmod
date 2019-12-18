@@ -225,9 +225,9 @@ function canBuyRepeatDil(i) {
 }
 
 function buyRepeatDil(i) {
-	if(!canBuyRepeatEter(i)) return;
-		game.repeatEter[0] = game.dilation.dilatedTime.log10().divide(2).floor();
-		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(100, game.dilation.dilatedTime.log(dilationRepUpgradeCostMults[i]).divide(2).floor()))
+	if(!canBuyRepeatDil(i)) return;
+		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.log(dilationRepUpgradeCosts[i].multiply(dilationRepUpgradeCostMults[i])).divide(2).floor();
+		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(dilationRepUpgradeCosts[i], game.dilation.dilatedTime.log(dilationRepUpgradeCostMults[i]).divide(2).floor()))
 	return true;
 }
 

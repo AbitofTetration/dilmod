@@ -1,4 +1,4 @@
-const achievements = 72;
+const achievements = 81;
 
 function updateAchievementDescriptions() {
 	achievementDescriptions = [
@@ -86,7 +86,7 @@ function updateAchievementDescriptions() {
 		"Is this safe?", `Reach Infinite replicanti in under 30 minutes.`,
 		"Minute of Infinity", `Reach Infinite replicanti in under a minute.`,
 		"Never tell me the odds", `Eternity without ever having more than one replicanti.`,
-		"", ``,
+		"That wasn't a eternity", `Eternity in 30 seconds. Reward: You start eternities with ${shorten("1e30")} IP.`,
 		"", ``,
 		"", ``,
 		"", ``,
