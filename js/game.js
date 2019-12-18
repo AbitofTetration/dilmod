@@ -532,6 +532,7 @@ function update() {
 	runAu("set epg " + gainedEternityPoints());
 	runAu("set eter " + game.eternities);
 	runAu("set etertime " + getTimeSince("eternity"));
+	runAu("set etertime " + getTimeSince("eternity"));
 }
 
 function getStatisticsDisplay(type) {
