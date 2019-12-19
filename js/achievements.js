@@ -1,4 +1,4 @@
-const achievements = 81;
+const achievements = 90;
 
 function updateAchievementDescriptions() {
 	achievementDescriptions = [
@@ -94,6 +94,12 @@ function updateAchievementDescriptions() {
 
 		"", ``,
 		"", ``,
+		"", ``,
+		"", ``,
+		"", ``,
+		"", ``,
+		"", ``,
+		"I told you already, time is relative.", `Dilate time.`,
 		"", ``,
 	]
 }

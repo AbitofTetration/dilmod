@@ -236,6 +236,7 @@ function update() {
 		
 		if(game.currentDimensionTab == "time") {
       displayIf("infiniteTime", game.achievements.includes(75));
+			ge("infiniteTimeMulti").textContent = shorten(getInfiniteTimeMult())
 			ge("timeShards").textContent = shortenMoney(game.timeDimensions[0].amount)
 			ge("freeTickspeed").textContent = getFullExpansion(getFreeTickspeedUpgrades())
 			ge("freeTickspeedEffect").textContent = shorten(getTickPower().pow(getFreeTickspeedUpgrades()))

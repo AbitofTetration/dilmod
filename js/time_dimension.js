@@ -103,5 +103,7 @@ function maxTimeD() {
 function getInfiniteTimeMult() {
   var r = getFreeTickspeedUpgrades().add(game.tickspeed.bought)
   
+  r = r.add(308).divide(308)
+  
   return r;
 }
