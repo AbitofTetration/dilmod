@@ -87,7 +87,7 @@ function updateAchievementDescriptions() {
 		"Minute of Infinity", `Reach Infinite replicanti in under a minute.`,
 		"Infinite Time", `Get 308 tickspeed upgrades. Reward: Time dimensions get a boost based on tickspeed upgrades.`,
 		"That wasn't a eternity", `Eternity in 30 seconds. Reward: You start eternities with ${shorten("1e30")} IP.`,
-		"ONE HUNDERED THOUSAND INFINITIES", `Reach ${shorten("1e5")} infinities. Reward: Infinities more than one second long give 250x infinities.`,
+		"ONE HUNDRED THOUSAND INFINITIES", `Reach ${shorten("1e5")} infinities. Reward: Infinities more than one second long give 50x infinities.`,
 		"That took a while", `Unlock all the eternity milestones.`,
 		"Quick spender", `Buy 10 time studies.`,
 		"Faster than a potato^54300", `Reach ${shorten(Decimal.pow(1e16,54300))} tick per second. Reward: Tickspeed is 1% stronger.`,

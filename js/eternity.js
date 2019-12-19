@@ -67,6 +67,8 @@ function eternity(force) {
 	game.shifts = getStartingShifts();
 	game.boosts = new Decimal(0);
 	game.galaxies = new Decimal(0);
+  game.replicanti.amount = new Decimal(1);
+  game.replicanti.ticks = new Decimal(0);
 	game.replicanti.galaxies = new Decimal(0);
 	resetDimensions();
   game.dilation.active = false

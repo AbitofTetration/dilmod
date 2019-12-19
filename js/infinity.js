@@ -22,7 +22,7 @@ function getInfinityPointMult() {
 function getInfinityMult() {
 	r = new Decimal(1);
 	if(tree.hasStudy("p21")) r = r.multiply(tree.getEff("p21")).add(1)
-	if(game.achievements.includes(77)) r = r.multiply(2)
+	if(game.achievements.includes(77) && getTimeSince("infinity") > 1000) r = r.multiply(50)
 	
 	return r;
 }
