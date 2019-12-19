@@ -114,6 +114,12 @@ function getEternityUpgradeEffect(n) {
       return game.dimensions[0].amount.add(1).log("1e8000000").max(1)
     case 11:
       return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e70000").max(1)
+    case 12:
+      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e4320").max(1)
+    case 13:
+      return game.infinityDimensions[0].amount.add(1).log("1e100000").max(1)
+    case 14:
+      return game.timeDimensions[0].amount.add(1).log("1e4200").max(1)
 	}
 }
 
@@ -130,7 +136,10 @@ function getEUDescriptions() {
 		"Time Dimensions gain a boost based on replicanti galaxies.<br>Currently: " + shorten(getEternityUpgradeEffect(8)) + "x",
 		"4th Time Dimension gains a boost based on sacrifice.<br>Currently: " + shorten(getEternityUpgradeEffect(9)) + "x",
     "Dilated time gain is boosted based on antimatter.<br>Currently: " + shorten(getEternityUpgradeEffect(10)) + "x",
-    "Dilated time gain is boosted based on infinity points.<br>Currently: " + shorten(getEternityUpgradeEffect(11)) + "x"
+    "Dilated time gain is boosted based on infinity points.<br>Currently: " + shorten(getEternityUpgradeEffect(11)) + "x",
+    "Dilated time gain is boosted based on eternity points.<br>Currently: " + shorten(getEternityUpgradeEffect(12)) + "x",
+    "Tachyon particle gain is boosted based on infinity power.<br>Currently: " + shorten(getEternityUpgradeEffect(13)) + "x",
+    "Tachyon particle gain is boosted based on time shards.<br>Currently: " + shorten(getEternityUpgradeEffect(14)) + "x"
 	]
 }
 
@@ -213,7 +222,15 @@ function inDilation() {
 }
 
 function gainedTP() {
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000))
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(10).divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
+}
+
+function extraTPMult() {
+  let r = new Decimal("1")
+  
+  for (var i = 12; i < 14; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
+
+  return r;
 }
 
 function dilate() {
@@ -226,9 +243,9 @@ var dilationRepUpgradeCostMults = "100, 100, 100".split(",");
 
 function getRepeatDilDesc() {
   return [
-    "You gain twice as much dilated time.",
+    "You gain twice as much dilated time.<br>Currently: " + shorten(Decimal.pow(2, game.dilation.repeatUpgr[0])) + "x",
     "Free galaxy threshold is reduced, but reset dilated time and free galaxies.",
-    "Tachyon particle formula is better."
+    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(10).divide(5)))
   ]
 }
 
@@ -261,7 +278,7 @@ function getDUDescriptions() {
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s",
-		"Infinity Dimensions get a multiplier based on time shards<br>Currently: " + shortenMoney(getDilationUpgradeEffect(4)) + "x",
+		"You gain some of your Infinity Points on infinity automatically.",
 		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
 	]
 }
@@ -293,8 +310,9 @@ function buyDilationUpgrade(i) {
 }
 
 function getDilationToimeMult() {
-  let r = Decimal.pow(2, game.dilation.repeatUpgr[2])
+  let r = Decimal.pow(2, game.dilation.repeatUpgr[0])
   
   for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
+
   return r
 }

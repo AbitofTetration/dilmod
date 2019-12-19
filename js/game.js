@@ -83,6 +83,9 @@ function update() {
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
   }
   if(game.dilation.upgrades.includes(3)) game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3).multiply(diff/1000))
+
+	if(game.dilation.upgrades.includes(4)) 
+		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).pow(0.0125).multiply(getInfinityUpgradeEffect(10)).multiply(diff));
 	
 	if(getReplSpeed().gt(10)) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
 	else {
@@ -359,7 +362,7 @@ function update() {
 				ge("eternityUpgrade" + i).className = game.eternityUpgrades.includes(i) ? "eternityUpgradeBought" : canBuyEternityUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("eternityUpgradeDesc" + i).innerHTML = eud[i];
 				ge("eternityUpgradeCost" + i).innerHTML = getFullExpansion(eternityUpgradeCosts[i]) + " EP";
-        if(i > 10 && i < 15) {
+        if(i > 9 && i < 15) {
           displayIf("eternityUpgrade"+i,tree.hasStudy("d11"))
         }
 			}
