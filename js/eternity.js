@@ -231,10 +231,10 @@ function buyRepeatDil(i) {
 		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.log10().divide(2).floor();
 		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.dilation.dilatedTime.log10().divide(2).floor()))
     if(i == 1) {
-        game.dilation.dilatedTime: new Decimal(0),
-        game.dilation.galaxyThreshold: new Decimal(1000),
-        game.dilation.freeGalaxies: new Decimal(0),
-        game.dilation.thresholdUpSpeed: new Decimal(5).divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
+        game.dilation.dilatedTime = new Decimal(0),
+        game.dilation.galaxyThreshold = new Decimal(1000),
+        game.dilation.freeGalaxies = new Decimal(0),
+        game.dilation.thresholdUpSpeed = new Decimal(5).divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
     }
 	return true;
 }
