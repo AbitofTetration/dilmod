@@ -106,6 +106,10 @@ function getEternityUpgradeEffect(n) {
 			return game.infinityDimensions[9].bought.pow(10).max(1)
 		case 4:
 			return game.timeDimensions[0].amount.pow(0.5).max(1)
+    case 8:
+      return game.replicanti.galaxies.add(1).pow(0.125).max(1)
+    case 9:
+      return getSacrificeMult().log(1.65404).pow(2)
 	}
 }
 
@@ -116,7 +120,11 @@ function getEUDescriptions() {
 		"Infinity Dimensions get a multiplier based on IC times<br>Currently: " + shortenMoney(getEternityUpgradeEffect(2)) + "x",
 		"Infinity Dimensions get a multiplier based on ninth IDs<br>Currently: " + shortenMoney(getEternityUpgradeEffect(3)) + "x",
 		"Infinity Dimensions get a multiplier based on time shards<br>Currently: " + shortenMoney(getEternityUpgradeEffect(4)) + "x",
-		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
+		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shorten(getInfinityUpgradeEffect(23)) + "x",
+		"Your achievement multiplier affects Time Dimensions<br>Currently: " + shortenMoney(getAchievementMultiplier()) + "x",
+		"Time Dimensions gain a boost based on their tier.<br>Currently: " + shortenMoney(20) + "% extra per tier",
+		"Time Dimensions gain a boost based on replicanti galaxies.<br>Currently: " + shorten(getEternityUpgradeEffect(8)) + "x",
+		"4th Time Dimension gains a boost based on sacrifice.<br>Currently: " + shorten(getEternityUpgradeEffect(9)) + "x",
 	]
 }
 
