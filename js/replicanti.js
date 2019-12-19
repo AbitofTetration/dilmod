@@ -63,5 +63,5 @@ function canReplGalaxy() {
 function replGalaxy() {
   var bought = game.replicanti.amount.log(infp()).max(getMaxReplGalaxies()).subtract(game.replicanti.galaxies)
 	game.replicanti.galaxies = game.replicanti.amount.log(infp()).max(getMaxReplGalaxies());
-	game.replicanti.amount = game.replicanti.amount.divide(infp(bought)).max(1);
+	game.replicanti.amount = game.replicanti.amount.divide(infp(bought.max(1)).max(1)).max(1);
 }
