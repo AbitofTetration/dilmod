@@ -80,7 +80,7 @@ function update() {
   game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.multiply(diff/1000));
   if(game.dilation.dilatedTime.gt(game.dilation.galaxyThreshold)) {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
-    game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(1.75)
+    game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
   }
   if(game.dilation.upgrades.includes(3)) game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3).multiply(diff/1000))
 	

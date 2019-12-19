@@ -69,6 +69,7 @@ function eternity(force) {
 	game.galaxies = new Decimal(0);
 	game.replicanti.galaxies = new Decimal(0);
 	resetDimensions();
+  game.dilation.active = false
 	
 	return true;
 }
@@ -181,10 +182,11 @@ function resetDilation() {
     active: false,
     tachyonParticles: new Decimal(0),
     dilatedTime: new Decimal(0),
-    galaxyThreshold: new Decimal(10),
+    galaxyThreshold: new Decimal(1000),
+    thresholdUpSpeed: new Decimal(5),
     freeGalaxies: new Decimal(0),
     upgrades: [],
-    repeatUpgr: [0,0,0]
+    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0)]
   }
 }
 
@@ -197,7 +199,7 @@ function inDilation() {
 }
 
 function gainedTP() {
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].divide(15))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000))
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000))
 }
 
 function dilate() {
@@ -228,6 +230,12 @@ function buyRepeatDil(i) {
 	if(!canBuyRepeatDil(i)) return;
 		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.log10().divide(2).floor();
 		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.dilation.dilatedTime.log10().divide(2).floor()))
+    if(i == 1) {
+        game.dilation.dilatedTime: new Decimal(0),
+        game.dilation.galaxyThreshold: new Decimal(1000),
+        game.dilation.freeGalaxies: new Decimal(0),
+        game.dilation.thresholdUpSpeed: new Decimal(5).divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
+    }
 	return true;
 }
 
