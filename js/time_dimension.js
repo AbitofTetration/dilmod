@@ -14,7 +14,7 @@ function TimeDimension(i) {
 function resetTimeDimensions() {
 	game.timeDimensions = [];
 
-	for(var i = 0; i < maxTimeD(); i++) {
+	for(var i = 0; i <= 10; i++) {
 		game.timeDimensions[i] = new TimeDimension(i);
 	}
 	
@@ -65,7 +65,7 @@ function maxTimeDimension(i) {
 }
 
 function maxAllTimeDimensions() {
-	for(var i = 1; i < 10; i++) maxTimeDimension(i);
+	for(var i = 1; i < maxTimeD(); i++) maxTimeDimension(i);
 }
 
 function getFreeTickspeedMult() {
