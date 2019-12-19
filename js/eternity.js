@@ -197,7 +197,7 @@ function inDilation() {
 }
 
 function gainedTP() {
-  return game.dimensions[0].amount.log(10).div(400).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].divide(15))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(400))
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].divide(15))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000))
 }
 
 function dilate() {
