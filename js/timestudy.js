@@ -90,8 +90,8 @@ ns({x:     3, y:     2, id:  "r41", cost:   85, desc: "Replicanti galaxies boost
 ns({x:     0, y:     3, id:  "d11", cost:  500, desc: "Unlock Time Dilation", pre: ["s00"],})
 ns({x:     1, y:     3, id:  "d12", cost: 1000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     1, y:     4, id:  "d21", cost: 5000, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
-ns({x:     0, y:     4, id:  "d22", cost:  1e5, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:     5, id:  "d31", cost:  1e7, desc: "Unlock ex-dilation", pre: ["d22"],})
+ns({x:     0, y:     4, id:  "d22", cost:  1e8, desc: "Unlock time dimension 9", pre: ["d21"],})
+ns({x:     0, y:     5, id:  "d31", cost: 1e12, desc: "Unlock ex-dilation", pre: ["d22"],})
 
 Study.prototype.getPostStudies = function() {
 	var l = []

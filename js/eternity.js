@@ -291,7 +291,7 @@ function getDilationUpgradeEffect(n) {
 		case 2:
 			return game.dilation.dilatedTime.pow(4).max(1)
 		case 3:
-			return game.dilation.tachyonParticles.divide(200).max(1)
+			return game.dilation.tachyonParticles.divide(200).divide(getTTScaling()).max(1)
 		case 4:
 			return game.timeDimensions[0].amount.pow(0.5).max(1)
 	}
@@ -315,4 +315,10 @@ function getDilationToimeMult() {
   for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
 
   return r
+}
+
+function getTTScaling() {
+  if(game.timestudy.theorems.lt(1e6)) return 1
+  
+  else return game.timestudy.theorems.add(10).log(10).divide(1e6).max(1)
 }
