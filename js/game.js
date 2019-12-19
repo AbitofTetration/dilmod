@@ -77,7 +77,7 @@ function update() {
 	if(game.infinityUpgrades.includes(14)) 
 		game.infinities = game.infinities.add(getInfinityMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
   
-  game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.multiply(diff/1000));
+  game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.multiply(getDilationToimeMult()).multiply(diff/1000));
   if(game.dilation.dilatedTime.gt(game.dilation.galaxyThreshold)) {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
@@ -355,7 +355,7 @@ function update() {
 		
 		if(game.currentEternityTab == "eternityUpgrades") {
 			var eud = getEUDescriptions();
-			for(var i = 0; i < 29; i++) {
+			for(var i = 0; i < 10; i++) {
 				ge("eternityUpgrade" + i).className = game.eternityUpgrades.includes(i) ? "eternityUpgradeBought" : canBuyEternityUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("eternityUpgradeDesc" + i).innerHTML = eud[i];
 				ge("eternityUpgradeCost" + i).innerHTML = getFullExpansion(eternityUpgradeCosts[i]) + " EP";

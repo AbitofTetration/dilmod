@@ -80,7 +80,7 @@ function respecTimeStudies() {
 	eternity();
 }
 
-var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5".split(",");
+var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60".split(",");
 
 function canBuyEternityUpgrade(i) {
 	if(game.eternityUpgrades.includes(i)) return false;
@@ -276,4 +276,8 @@ function buyDilationUpgrade(i) {
 	if(!canBuyDilationUpgrade(i)) return;
 	game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(dilationUpgradeCosts[i]);
 	game.dilation.upgrades.push(i);
+}
+
+function getDilationToimeMult() {
+  return Decimal.pow(2, game.dilation.repeatUpgr[2])
 }
