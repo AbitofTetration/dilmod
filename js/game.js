@@ -235,6 +235,7 @@ function update() {
 		// Time Dimensions
 		
 		if(game.currentDimensionTab == "time") {
+      displayIf("infiniteTime", game.achievements.includes(75));
 			ge("timeShards").textContent = shortenMoney(game.timeDimensions[0].amount)
 			ge("freeTickspeed").textContent = getFullExpansion(getFreeTickspeedUpgrades())
 			ge("freeTickspeedEffect").textContent = shorten(getTickPower().pow(getFreeTickspeedUpgrades()))
@@ -447,6 +448,7 @@ function update() {
 	if(game.totalGalaxies.gte(100)) giveAchievement(27)
 	if(game.infinityPoints.gte(1000)) giveAchievement(28);
 	if(game.infinities.gte(1000)) giveAchievement(30);
+	if(game.infinities.gte(1e5)) giveAchievement(77);
 	if(getChallengeCompletions() > 0) giveAchievement(32);
 	if(game.challenges[0][9].completed) giveAchievement(33);
 	if(getChallengeCompletions() > 11) giveAchievement(35);
@@ -469,6 +471,7 @@ function update() {
 	if(game.infinityPoints.gte("1e333")) giveAchievement(69);
 	if(game.infinityShifts.gt(7)) giveAchievement(70);
 	if(game.infinityShifts.gt(8)) giveAchievement(71);
+	if(getFreeTickspeedUpgrades().gt(308)) giveAchievement(75);
 	
 	// Automation
 
