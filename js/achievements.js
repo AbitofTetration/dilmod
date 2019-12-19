@@ -92,7 +92,7 @@ function updateAchievementDescriptions() {
 		"Quick spender", `Buy 10 time studies.`,
 		"Faster than a potato^54300", `Reach ${shorten(Decimal.pow(1e16,54300))} tick per second. Reward: Tickspeed is 1% stronger.`,
 
-		"", ``,
+		"We didn't need it anyway", `Eternity without any Infinity Dimensions.`,
 		"", ``,
 		"", ``,
 		"", ``,
