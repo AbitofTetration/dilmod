@@ -1,4 +1,4 @@
-var devMode = false;
+var devMode = true;
 
 var lastTab;
 var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]

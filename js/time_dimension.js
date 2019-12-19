@@ -30,6 +30,7 @@ function getTimeDimensionProduction(i) {
 	if(tree.hasStudy("t22")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t22"))
 	if(tree.hasStudy("t31")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t31"))
   if(game.dilation.upgrades.includes(1)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(1))
+  if(game.achievements.includes(75)) dim.multiplier = dim.multiplier.multiply(getInfiniteTimeMult())
   if(inDilation()) dim.multiplier = dim.multiplier.pow(0.75)
 	
 	return dim.amount.multiply(dim.multiplier);
@@ -97,4 +98,10 @@ function maxTimeD() {
   if(tree.hasStudy("d22")) r += 1;
   
   return r+1;
+}
+
+function getInfiniteTimeMult() {
+  var r = getFreeTickspeedUpgrades().add(game.tickspeed.bought)
+  
+  return r;
 }

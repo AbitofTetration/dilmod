@@ -85,12 +85,12 @@ function updateAchievementDescriptions() {
 		"Galaxy Filament", `Buy 1,000,000 antimatter galaxies.`,
 		"Is this safe?", `Reach Infinite replicanti in under 30 minutes.`,
 		"Minute of Infinity", `Reach Infinite replicanti in under a minute.`,
-		"Never tell me the odds", `Eternity without ever having more than one replicanti.`,
+		"Infinite Time", `Get 308 tickspeed upgrades. Reward: Time dimensions get a boost based on tickspeed upgrades.`,
 		"That wasn't a eternity", `Eternity in 30 seconds. Reward: You start eternities with ${shorten("1e30")} IP.`,
-		"", ``,
-		"", ``,
-		"", ``,
-		"", ``,
+		"ONE HUNDERED THOUSAND INFINITIES", `Reach ${shorten("1e5")} infinities. Reward: Infinities more than 5 seconds long give 250x infinities.`,
+		"That took a while", `Unlock all the eternity milestones.`,
+		"Quick spender", `Buy 10 time studies.`,
+		"Faster than a potato^54300", `Reach ${shorten(Decimal.pow(1e16,54300))} tick per second. Reward: Tickspeed is 1% stronger.`,
 	]
 }
 

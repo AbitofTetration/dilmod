@@ -48,6 +48,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 function update() {
 	diff = Date.now() - game.lastUpdate || 0;
 	game.lastUpdate = Date.now()
+  //console.log(shorten(Decimal.pow(1e16, 12500)))
 	
 	hacker = parseFloat(localStorage.hacker) || 1;
 	diff *= hacker;
