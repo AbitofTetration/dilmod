@@ -355,10 +355,13 @@ function update() {
 		
 		if(game.currentEternityTab == "eternityUpgrades") {
 			var eud = getEUDescriptions();
-			for(var i = 0; i < 10; i++) {
+			for(var i = 0; i < 15; i++) {
 				ge("eternityUpgrade" + i).className = game.eternityUpgrades.includes(i) ? "eternityUpgradeBought" : canBuyEternityUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("eternityUpgradeDesc" + i).innerHTML = eud[i];
 				ge("eternityUpgradeCost" + i).innerHTML = getFullExpansion(eternityUpgradeCosts[i]) + " EP";
+        if(i > 10 && i < 15) {
+          displayIf("eternityUpgrade"+i,tree.hasStudy("d11"))
+        }
 			}
 			ge("repeatEter0").innerHTML = "Multiply EP gain by 5<br>Currently: " + shortenMoney(Decimal.pow(5, game.repeatEter[0])) + "x<br>Cost: " + shortenMoney(getRepeatEterCost(0)) + " EP"
 			ge("repeatEter0").className = canBuyRepeatEter(0) ? "eternityUpgrade" : "eternityUpgradeLocked"

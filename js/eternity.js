@@ -80,7 +80,7 @@ function respecTimeStudies() {
 	eternity();
 }
 
-var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60".split(",");
+var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e150, 1e200, 1e270, 1e300, 1e320, 1e340".split(",");
 
 function canBuyEternityUpgrade(i) {
 	if(game.eternityUpgrades.includes(i)) return false;
@@ -109,7 +109,11 @@ function getEternityUpgradeEffect(n) {
     case 8:
       return game.replicanti.galaxies.add(1).pow(0.125).max(1)
     case 9:
-      return getSacrificeMult().log(1.65404).pow(2)
+      return getSacrificeMult().log(1.65404).pow(2).max(1)
+    case 10:
+      return game.dimensions[0].amount.add(1).log("1e8000000").max(1)
+    case 11:
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e70000").max(1)
 	}
 }
 
@@ -125,6 +129,8 @@ function getEUDescriptions() {
 		"Time Dimensions gain a boost based on their tier.<br>Currently: " + shortenMoney(20) + "% extra per tier",
 		"Time Dimensions gain a boost based on replicanti galaxies.<br>Currently: " + shorten(getEternityUpgradeEffect(8)) + "x",
 		"4th Time Dimension gains a boost based on sacrifice.<br>Currently: " + shorten(getEternityUpgradeEffect(9)) + "x",
+    "Dilated time gain is boosted based on antimatter.<br>Currently: " + shorten(getEternityUpgradeEffect(10)) + "x",
+    "Dilated time gain is boosted based on infinity points.<br>Currently: " + shorten(getEternityUpgradeEffect(11)) + "x"
 	]
 }
 
@@ -287,5 +293,8 @@ function buyDilationUpgrade(i) {
 }
 
 function getDilationToimeMult() {
-  return Decimal.pow(2, game.dilation.repeatUpgr[2])
+  let r = Decimal.pow(2, game.dilation.repeatUpgr[2])
+  
+  for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
+  return r
 }
