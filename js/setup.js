@@ -1,4 +1,4 @@
-var devMode = false;
+var devMode = true;
 
 var lastTab;
 var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
@@ -131,6 +131,7 @@ function updateSave() {
 	if(!game.eternityUpgrades) resetEternityUpgrades();
 	if(!game.replicanti) resetReplicanti();
 	if(!game.dilation) resetDilation();
+  if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
 	
 	if(!game.challenges) {
 		game.challenges = []

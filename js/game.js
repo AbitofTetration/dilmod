@@ -82,7 +82,10 @@ function update() {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
   }
-  if(game.dilation.upgrades.includes(3)) game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3).multiply(diff/1000))
+  if(game.dilation.upgrades.includes(3)) {
+    game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3).multiply(diff/1000))
+    game.dilation.generatedTT = game.dilation.generatedTT.add(getDilationUpgradeEffect(3).multiply(diff/1000))
+  }
 
 	if(game.dilation.upgrades.includes(4)) 
 		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).pow(0.0125).multiply(getInfinityUpgradeEffect(10)).multiply(diff));

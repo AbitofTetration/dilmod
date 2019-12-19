@@ -35,7 +35,7 @@ tree = {
 }
 
 function getTotalTT() {
-	return game.timestudy.bought[0].add(game.timestudy.bought[1]).add(game.timestudy.bought[2]);
+	return game.timestudy.bought[0].add(game.timestudy.bought[1]).add(game.timestudy.bought[2]).add(game.dilation.generatedTT);
 }
 
 function Study(p={}) {

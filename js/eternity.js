@@ -208,6 +208,7 @@ function resetDilation() {
     galaxyThreshold: new Decimal(1000),
     thresholdUpSpeed: new Decimal(5),
     freeGalaxies: new Decimal(0),
+    generatedTT: new Decimal(0),
     upgrades: [],
     repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0)]
   }
