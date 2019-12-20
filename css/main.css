@@ -292,6 +292,13 @@ currency {
 	box-shadow: inset 0px 0px 10px 0px #f0f;
 }
 
+.timestudy.galactic {
+	background: #000;
+	color: #f00;
+	border: 1px solid #f00;
+	box-shadow: inset 0px 0px 10px 0px #f00;
+}
+
 .timestudy.replication {
 	background: #000;
 	color: #06f;
@@ -326,6 +333,10 @@ currency {
 
 .timestudybought.time {
 	background: #f0f;
+}
+
+.timestudybought.galactic {
+	background: #f00;
 }
 
 .timestudybought.replication {
