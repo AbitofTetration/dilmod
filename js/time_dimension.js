@@ -37,7 +37,7 @@ function getTimeDimensionProduction(i) {
   if(game.eternityUpgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getAchievementMultiplier())
   if(game.eternityUpgrades.includes(7)) dim.multiplier = dim.multiplier.multiply(Decimal.add(1, (i-1)*0.2))
   if(game.eternityUpgrades.includes(8)) dim.multiplier = dim.multiplier.multiply(getEternityUpgradeEffect(8))
-  if(challengeCompleted(2,1)) dim.multiplier = dim.multiplier.pow(1.03)
+  if(challengeCompleted(1,1)) dim.multiplier = dim.multiplier.pow(1.03)
   if(inDilation()) dim.multiplier = dim.multiplier.pow(0.25)
 	
 	return dim.amount.multiply(dim.multiplier);
@@ -81,7 +81,7 @@ function getFreeTickspeedMult() {
 }
 
 function getFreeTickspeedUpgrades() {
-  if(inChallenge(2,2)) return new Decimal(0)
+  if(inChallenge(1,2)) return new Decimal(0)
 	var a = game.timeDimensions[0].amount;
   a = a.gt(0) ? a.log10().divide(getFreeTickspeedMult().log10()).ceil().max(0) : new Decimal(0)
   

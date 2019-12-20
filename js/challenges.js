@@ -81,12 +81,12 @@ function updateChallengeDescriptions() {
 		`Dimension multipliers are reduced based on tier.ICDATAReward: Break Infinity upgrade 8 is stronger.`,
 		`Infinity Power is 33% weaker.ICDATAReward: Infinity Shifts are ???% stronger.`,
 
-		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`,
 		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.03.`,
+		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`, // Replicanti are stronger.
 		`You are trapped in Infinity Challenges 6 & 7.ECDATAReward: Replicanti grow 2x faster.`,
 		`Replicanti are useless.ECDATAReward: Replicanti grow faster based on time in this eternity.`,
 		`Distant scaling starts instantly and is much more harsh.ECDATAReward: The upgrade multiplier is higher based on your galaxies.`,
-		`You cannot gain normal galaxies.ECDATAReward: Galaxies are 5% stronger.`,
+		`You cannot gain normal galaxies, but replicated galaxies are 75% stronger.ECDATAReward: Galaxies are 5% stronger.`,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
@@ -240,7 +240,7 @@ var icRequirements = ["1e2000", "1e2500", "1e5000", "1e7750", "1e9000", "1e12500
 var icGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 var ecRequirements = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"]
-var ecGoals = ["1e350", "1e500", "1e700", "1e3300", "1e1400", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
+var ecGoals = ["1e500", "1e350", "1e700", "1e3300", "1e1400", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 function getInfinityChallengesUnlocked() {
 	var unl = 0;
@@ -389,8 +389,8 @@ function getChallengeBenefits() {
 			if(getChallengeCompletions(2)) {
 				lines.push("Your completions grant you access to: <br>")
 				var t = [
-					`^1.05 replicanti multiplier.`,
 					`^1.03 on all Time Dimensions.`,
+					`^1.05 replicanti multiplier.`,
 					`Replicanti grow twice as fast.`,
 					`Replicanti grow ${shorten(Decimal.pow(2, getTimeSince("eternity")/1e6).min(infp(0.25)))}x faster.`,
 					`${shorten(getChallengeReward(5,2))}% extra dimension upgrade multiplier.`,

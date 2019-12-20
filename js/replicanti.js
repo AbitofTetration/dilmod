@@ -29,7 +29,7 @@ function getReplEffect() {
   var r = game.replicanti.amount.floor().add(1).log2().pow(4).max(1);
   
   if(inChallenge(4,2)) r = new Decimal(1)
-  if(challengeCompleted(1,2)) r = r.pow(1.05)
+  if(challengeCompleted(2,2)) r = r.pow(1.05)
   if(tree.hasStudy("i32")) r = r.pow(1.32)
   if(tree.hasStudy("r41")) r = r.multiply(tree.getEff("r41"))
   
@@ -58,7 +58,11 @@ function getReplLimit() {
 }
 
 function getMaxReplGalaxies() {
-	return game.replicanti.upgrades[2]; // cap this at some point
+	if(game.replicanti.upgrades[2].lte(100)) {
+     return game.replicanti.upgrades[2]; // cap this at some point
+  } else {
+     return game.replicanti.upgrades[2].log(10).add(98)
+  }
 }
 
 function canReplGalaxy() {
