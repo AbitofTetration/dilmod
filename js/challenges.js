@@ -6,6 +6,8 @@ function inChallenge(i, j=0) {
 	if(!i) return game.challengesRunning.length;
 	
 	if(i < 7 && j == 0 && inChallenge(1, 1)) return true;
+
+	if(i < 4 && j == 1 && inChallenge(1, 2)) return true;
 	
 	return game.challengesRunning.includes(i + j * 12);
 }
@@ -22,7 +24,7 @@ function startChallenge(i, j=0) {
 	game.challengesRunning = i ? [i + j * 12] : []
 	
 	if(j < 2) bigCrunch(true);
-	if(j == 3) eternity(true);
+	if(j == 2) eternity(true);
 	
 	if(!j) game.galaxies = new Decimal(0);
 }
@@ -39,7 +41,7 @@ function exitChallenge() {
 				game.challengesRunning.splice(game.challengesRunning.indexOf(j + i * 12), 1)
 				exited = true;
 				if(i < 2) bigCrunch(true);
-				if(i == 3) eternity(true);
+				if(i == 2) eternity(true);
 			}
 		}
 		if(exited) return;
@@ -79,11 +81,28 @@ function updateChallengeDescriptions() {
 		`Dimension boosts and dimensional sacrifice are disabled.ICDATAReward: Multiplier to Infinity Dimensions based on infinities.`,
 		`Dimension multipliers are reduced based on tier.ICDATAReward: Break Infinity upgrade 8 is stronger.`,
 		`Infinity Power is 33% weaker.ICDATAReward: Infinity Shifts are ???% stronger.`,
+
+		`You are trapped in Infinity Challenges 1-3. ECDATAReward: 2x on all time dimension for each eternity challenge completed.`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
+		`ECDATA`,
 	]
 	
 	for(var i = 13; i < 25; i++) {
 		challengeDescriptions[i] = challengeDescriptions[i].replace(`ICDATA`, `<br><br>Goal: ${shortenCosts(icGoals[i - 13])} antimatter<br><br>`)
 		if(getInfinityChallengesUnlocked() < i - 12) challengeDescriptions[i] = `Requires ${shortenCosts(icRequirements[i - 13])} antimatter`;
+	}
+	for(var i = 25; i < 26; i++) {
+		challengeDescriptions[i] = challengeDescriptions[i].replace(`ECDATA`, `<br><br>Goal: ${shortenCosts(ecGoals[i - 25])} IP<br><br>`)
+		if(getInfinityChallengesUnlocked() < i - 24) challengeDescriptions[i] = `Requires time study ${shortenCosts(ecRequirements[i - 25])}`;
 	}
 	
 	var i = [], t = []
@@ -149,7 +168,7 @@ function scrollChallengesBy(n) {
 }
 
 function getChallengeTypeCap() {
-	return 0+!!getInfinityChallengesUnlocked()
+	return 0+!!getInfinityChallengesUnlocked()+!!getEternityChallengesUnlocked()
 }
 
 function scrollChallengesTo(n) {
@@ -183,6 +202,7 @@ function getChallengeDivider(name = "dimension") {
 function getChallengeGoal() {
 	if(getChallengeSet() == 1) return infp();
 	if(getChallengeSet() == 2) return icGoals[game.challengesRunning[game.challengesRunning.length - 1] - 13]
+	if(getChallengeSet() == 3) return ecGoals[game.challengesRunning[game.challengesRunning.length - 1] - 25]
 }
 
 function canCompleteChallenge() {
@@ -219,6 +239,9 @@ function suffer(n, a) {
 var icRequirements = ["1e2000", "1e2500", "1e5000", "1e7750", "1e9000", "1e12500", "1e17000", "1e25000", "1e35000", "1e35000", "1e35000", "1e50000"]
 var icGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
+var ecRequirements = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"]
+var ecGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
+
 function getInfinityChallengesUnlocked() {
 	var unl = 0;
 	for(var i = 0; i < icRequirements.length; i++) {
@@ -237,7 +260,17 @@ function challengeUnlocked(i, j) {
 			return true;
 		case 1:
 			return getInfinityChallengesUnlocked() >= i;
+    case 2:
+      return tree.hasStudy(ecRequirements[i])
 	}
+}
+
+function getEternityChallengesUnlocked() {
+	var unl = 0;
+	for(var i = 0; i < ecRequirements.length; i++) {
+		if(tree.hasStudy(ecRequirements[i])) unl++;
+	}
+	return unl;
 }
 
 function getChallengeReward(i, j) {
