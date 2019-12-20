@@ -98,9 +98,9 @@ function updateAchievementDescriptions() {
 		"", ``,
 		"Eternity is the new infinity", `Eternity in one second. Reward: You start eternities with ${shorten("1e100")} IP.`,
 		"", ``,
-		"Exponentiation is not fun", `Eternity with only first dimensions.`,
+		"I do not trust this", `Eternity with only first dimensions.`,
 		"I told you already, time is relative.", `Dilate time.`,
-		"Este logro no existe 2", `Reach 9.999e9999 IP. Reward: Gain more infinity points based on antimatter.`,
+		"Este logro no existe 2", `Reach 9.999e99,999 IP. Reward: Gain more infinity points based on antimatter.`,
 	]
 }
 
