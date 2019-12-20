@@ -82,7 +82,7 @@ function updateChallengeDescriptions() {
 
 		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`,
 		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.01.`,
-		`ECDATA`,
+		`You are trapped in Infinity Challenges 4-6.ECDATAReward: `,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,

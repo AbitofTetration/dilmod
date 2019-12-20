@@ -30,6 +30,7 @@ function eternity(force) {
 	}
 	
 	if(!force) {
+    if(game.infinityDimensions[0].amount.eq(1)) giveAchievement(81)
     if(game.dilation.active) game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(gainedTP())
 		giveAchievement(67);
 		
@@ -42,11 +43,12 @@ function eternity(force) {
 			var c = game.challenges[2][(game.challengesRunning[0]-1)%12]
 			c.completed = true;
 			c.bestTime = Math.min(c.bestTime || Infinity, getTimeSince("eternity"));
+      giveAchievement(82)
 			exitChallenge();
 		}
 	}
 	
-	if(!eternityMilestone("keepIT")) game.bestInfinityTime = Infinity;
+  if(!eternityMilestone("keepIT")) game.bestInfinityTime = Infinity;
 	for(var i = (eternityMilestone("keepNC")+eternityMilestone("keepIC"))*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
 	if(eternityMilestone("iShift")) game.infinityShifts = 9;
 	
