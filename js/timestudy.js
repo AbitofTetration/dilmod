@@ -76,6 +76,7 @@ ns({x:     3, y:    -2, id:  "i22", cost:    5, desc: "Infinity Shifts are more 
 ns({x:     3, y:    -1, id:  "i23", cost:    2, desc: "Gain 20% more IP per antimatter galaxy", eff: function() {return Decimal.pow(1.2, game.galaxies)}, pre: ["i11"]})
 ns({x:     3, y:    -3, id:  "i31", cost:    7, desc: "Sacrifice affects 9th Infinity Dimension with reduced effect", eff: function() {return getSacrificeMult().pow(0.05)}, pre: ["i22"]})
 ns({x:     4, y:    -3, id:  "i32", cost:   12, desc: "Replicanti boost is powered up.", pre: ["i22"]})
+ns({x:     4, y:    -2, id:  "s02", cost:    1, desc: "Eternity Challenge 1", pre: ["i32"]})
 ns({x:    -2, y:     2, id:  "t11", cost:    1, desc: "Tickspeed affects first Time Dimension with reduced effect", eff: function() {return getTickspeed("dimension").pow(0.0005).max(1)}, pre: ["s00"]})
 ns({x:    -3, y:     2, id:  "t21", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5)}, pre: ["t11"]})
 ns({x:    -3, y:     1, id:  "t22", cost:    4, desc: "Time Dimensions are affected by replicanti to a severely reduced effect.", eff: function() {return getReplEffect().pow(0.5)}, pre: ["t11"]})
