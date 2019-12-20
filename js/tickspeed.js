@@ -177,7 +177,11 @@ function getDistantGalaxyStart() {
 }
 
 function getRemoteGalaxyStart() {
-	return 1000;
+	let r = new Decimal("200");
+  
+  if(tree.hasStudy("g41")) r = r.multiply(tree.getEff("g41"))
+  
+  return r;
 }
 
 function getDarkGalaxyStart() {

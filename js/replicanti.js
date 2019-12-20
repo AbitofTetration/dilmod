@@ -28,6 +28,7 @@ function buyReplUpgrade(i) {
 function getReplEffect() {
   var r = game.replicanti.amount.floor().add(1).log2().pow(4).max(1);
   
+  if(inChallenge(4,2)) r = new Decimal(1)
   if(challengeCompleted(1,2)) r = r.pow(1.05)
   if(tree.hasStudy("i32")) r = r.pow(1.32)
   if(tree.hasStudy("r41")) r = r.multiply(tree.getEff("r41"))
@@ -46,6 +47,7 @@ function getReplSpeed() {
 	if(tree.hasStudy("r22")) r = r.multiply(3)
   if(tree.hasStudy("g12")) r = r.multiply(tree.getEff("g12"))
   if(tree.hasStudy("g21")) r = r.multiply(tree.getEff("g21"))
+  if(challengeCompleted(4, 2)) r = r.multiply(Decimal.pow(2, getTimeSince("eternity")/1e8).min(infp(0.25)))
 	if(game.dilation.upgrades.includes(0)) r = r.multiply(getDilationUpgradeEffect(0))
 	
 	return r;
