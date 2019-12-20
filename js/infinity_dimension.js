@@ -83,7 +83,7 @@ function getInfinityDimensionProduction(i) {
 }
 
 function canBuyInfinityDimension(i) {
-	return game.infinityDimensions[i].cost.lte(game.infinityPoints) && game.infinityShifts.gte(i);
+	return game.infinityDimensions[i].cost.lte(game.infinityPoints) && game.infinityShifts.gte(i) && !inChallenge(1, 2);
 }
 
 function buyInfinityDimension(i) {

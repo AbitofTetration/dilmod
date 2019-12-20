@@ -6,8 +6,6 @@ function inChallenge(i, j=0) {
 	if(!i) return game.challengesRunning.length;
 	
 	if(i < 7 && j == 0 && inChallenge(1, 1)) return true;
-
-	if(i < 4 && j == 1 && inChallenge(1, 2)) return true;
 	
 	return game.challengesRunning.includes(i + j * 12);
 }
@@ -82,8 +80,8 @@ function updateChallengeDescriptions() {
 		`Dimension multipliers are reduced based on tier.ICDATAReward: Break Infinity upgrade 8 is stronger.`,
 		`Infinity Power is 33% weaker.ICDATAReward: Infinity Shifts are ???% stronger.`,
 
-		`You are trapped in Infinity Challenges 1-3. ECDATAReward: 2x on all time dimension for each eternity challenge completed.`,
-		`ECDATA`,
+		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`,
+		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.01.`,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
@@ -262,7 +260,7 @@ function challengeUnlocked(i, j) {
 		case 1:
 			return getInfinityChallengesUnlocked() >= i;
     case 2:
-      return (getEternityChallengesUnlocked(i-25) == true);
+      return getEternityChallengesUnlocked(i-1) == true
 	}
 }
 
