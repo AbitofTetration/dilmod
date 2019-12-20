@@ -37,7 +37,7 @@ function getTimeDimensionProduction(i) {
   if(game.eternityUpgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getAchievementMultiplier())
   if(game.eternityUpgrades.includes(7)) dim.multiplier = dim.multiplier.multiply(Decimal.add(1, (i-1)*0.2))
   if(game.eternityUpgrades.includes(8)) dim.multiplier = dim.multiplier.multiply(getEternityUpgradeEffect(8))
-  if(challengeCompleted(2,1)) dim.multiplier = dim.multiplier.pow(1.01)
+  if(challengeCompleted(2,1)) dim.multiplier = dim.multiplier.pow(1.03)
   if(inDilation()) dim.multiplier = dim.multiplier.pow(0.75)
 	
 	return dim.amount.multiply(dim.multiplier);

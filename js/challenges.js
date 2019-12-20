@@ -82,7 +82,7 @@ function updateChallengeDescriptions() {
 		`Infinity Power is 33% weaker.ICDATAReward: Infinity Shifts are ???% stronger.`,
 
 		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`,
-		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.01.`,
+		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.03.`,
 		`You are trapped in Infinity Challenges 6 & 7.ECDATAReward: Replicanti grow 2x faster.`,
 		`ECDATA`,
 		`ECDATA`,
@@ -383,7 +383,7 @@ function getChallengeBenefits() {
 				lines.push("Your completions grant you access to: <br>")
 				var t = [
 					`^1.05 replicanti multiplier.`,
-					`^1.01 on all Time Dimensions.`,
+					`^1.03 on all Time Dimensions.`,
 					`+${shorten(getChallengeReward(3, 1).multiply(getEffectiveGalaxies()))} to tickspeed multiplier from galaxies.`,
 					`+50% to dimension upgrade multiplier.`,
 					`+10% to galaxy effectiveness.`,
