@@ -6,6 +6,7 @@ function inChallenge(i, j=0) {
 	if(!i) return game.challengesRunning.length;
 	
 	if(i < 7 && j == 0 && inChallenge(1, 1)) return true;
+	if(i > 5 && i < 8 && j == 1 && inChallenge(3, 2)) return true;
 	
 	return game.challengesRunning.includes(i + j * 12);
 }
@@ -82,7 +83,7 @@ function updateChallengeDescriptions() {
 
 		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`,
 		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.01.`,
-		`You are trapped in Infinity Challenges 4-6.ECDATAReward: `,
+		`You are trapped in Infinity Challenges 6 & 7.ECDATAReward: Replicanti grow 2x faster.`,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,

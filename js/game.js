@@ -485,6 +485,7 @@ function update() {
 	if(game.infinityShifts.gt(7)) giveAchievement(70);
 	if(game.infinityShifts.gt(8)) giveAchievement(71);
 	if(game.replicanti.amount > 1.79e308 && game.replicanti.ticks < 36e5) giveAchievement(73);
+	if(game.replicanti.amount > 1.79e308 && game.replicanti.ticks < 6e5) giveAchievement(74);
 	if(getFreeTickspeedUpgrades().gt(308)) giveAchievement(75);
 	
 	// Automation

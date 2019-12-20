@@ -45,13 +45,14 @@ function getReplSpeed() {
 	var r = game.replicanti.upgrades[1].divide(10).add(1)
 	if(tree.hasStudy("r22")) r = r.multiply(3)
   if(tree.hasStudy("g12")) r = r.multiply(tree.getEff("g12"))
+  if(tree.hasStudy("g31")) r = r.multiply(tree.getEff("g31"))
 	if(game.dilation.upgrades.includes(0)) r = r.multiply(getDilationUpgradeEffect(0))
 	
 	return r;
 }
 
 function getReplLimit() {
-	return infp(game.replicanti.upgrades[2].max(1))
+	return infp(game.replicanti.upgrades[2].max(1)).log(1.1).max(infp())
 }
 
 function getMaxReplGalaxies() {
