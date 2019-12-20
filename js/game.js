@@ -395,7 +395,7 @@ function update() {
 			ge("replSpeed").innerHTML = "Replicate interval: " + timeDisplayShort(getReplSpeed().pow(-1), true, 3) + "<br>+1% Costs: " + shortenCosts(getReplUpgradeCost(1)) + " EP";
 			ge("replGalaxy").innerHTML = "Max galaxies: " + getFullExpansion(game.replicanti.upgrades[2].add(1)) + "<br>+1 Costs: " + shortenCosts(getReplUpgradeCost(2)) + " EP";
 			ge("replMax").innerHTML = shortenMoney(getReplLimit())
-			ge("replGain").innerHTML = "Reach " + shorten(infp(game.replicanti.galaxies.add(1))) + " replicanti to create a replicanti galaxy.<br>Replicated Galaxies: " + getFullExpansion(game.replicanti.galaxies) + " / " + getFullExpansion(getMaxReplGalaxies());
+			ge("replGain").innerHTML = "Reach " + shorten(infp(game.replicanti.galaxies.max(1))) + " replicanti to create a replicanti galaxy.<br>Replicated Galaxies: " + getFullExpansion(game.replicanti.galaxies) + " / " + getFullExpansion(getMaxReplGalaxies());
 			
 			ge("replChance").className = canBuyReplUpgrade(0) ? "buy" : "lock"
 			ge("replSpeed").className = canBuyReplUpgrade(1) ? "buy" : "lock"
