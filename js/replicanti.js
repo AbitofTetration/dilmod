@@ -58,7 +58,7 @@ function getReplLimit() {
 }
 
 function getMaxReplGalaxies() {
-	return game.replicanti.upgrades[2].add(1); // cap this at some point
+	return game.replicanti.upgrades[2]; // cap this at some point
 }
 
 function canReplGalaxy() {

@@ -72,8 +72,6 @@ ns({x:    -4, y:    -3, id:  "p32", cost:    8, desc: "Replicanti give a boost t
 ns({x:    -4, y:    -2, id:  "s01", cost:    0, desc: "Eternity Challenge 1", pre: ["p32"]})
 ns({x:    -5, y:    -2, id:  "p41", cost:  200, desc: "Normal dimensions gain a boost based on eternities.", eff: function() {return game.eternities.multiply(400).pow(4)}, pre: ["s01"]})
 ns({x:    -5, y:    -1, id:  "p42", cost:  280, desc: "Normal dimensions gain a boost based on fastest infinity.", eff: function() {return Decimal.max(1e300 / game.bestInfinityTime, 1).pow(2)}, pre: ["s01"]})
-ns({x:    -6, y:    -2, id:  "p51", cost:  500, desc: "Normal dimensions gain a boost based on eternities.", eff: function() {return game.eternities.multiply(400).pow(4)}, pre: ["p41"]})
-ns({x:    -6, y:    -1, id:  "p52", cost:  720, desc: "Normal dimensions gain a boost based on fastest infinity.", eff: function() {return Decimal.max(1e300 / game.bestInfinityTime, 1).pow(2)}, pre: ["p42"]})
 ns({x:     2, y:    -1, id:  "i11", cost:    1, desc: "Infinity Dimensions are more powerful based on Infinity Power", eff: function() {return game.infinityDimensions[0].amount.log10().pow(2).max(1)}, pre: ["s00"]})
 ns({x:     2, y:    -2, id:  "i21", cost:    4, desc: "Infinity Dimensions get a multiplier based on fastest eternity time", eff: function() {return Decimal.max(1e10 / game.bestEternityTime, 1).pow(2)}, pre: ["i11"]})
 ns({x:     3, y:    -2, id:  "i22", cost:    5, desc: "Infinity Shifts are more powerful the more you have", eff: function() {return game.infinityShifts.pow(2).add(10).log10().pow(3)}, pre: ["i11"]})
@@ -105,9 +103,9 @@ ns({x:     3, y:     3, id:  "r41", cost:   85, desc: "Replicanti galaxies boost
 ns({x:     3, y:     4, id:  "s05", cost:    0, desc: "Eternity Challenge 5", pre: ["r41"]})
 ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 4}})
 ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
-ns({x:     0, y:     4, id:  "d21", cost:  1e7, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
-ns({x:     1, y:     4, id:  "d22", cost: 1e10, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:     5, id:  "d31", cost: 1e13, desc: "Unlock ex-dilation", pre: ["d22"],})
+ns({x:     0, y:     4, id:  "d21", cost:  1e6, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
+ns({x:     1, y:     4, id:  "d22", cost:  1e9, desc: "Unlock time dimension 9", pre: ["d21"],})
+ns({x:     0, y:     5, id:  "d31", cost: 1e12, desc: "Unlock ex-dilation", pre: ["d22"],})
 
 Study.prototype.getPostStudies = function() {
 	var l = []
