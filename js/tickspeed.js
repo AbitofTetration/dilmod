@@ -118,6 +118,7 @@ function getTickPower() {
 	var ic3 = getChallengeReward(3, 1).multiply(getEffectiveGalaxies());
 	if(inChallenge(3, 1)) r = ic3.add(1);
 	if(challengeCompleted(3, 1)) r = r.add(ic3)
+  if(tree.hasStudy("g11")) r = r.multiply(tree.getEff("g11"))
 	return r;
 }
 
