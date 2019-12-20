@@ -85,7 +85,7 @@ function updateChallengeDescriptions() {
 		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.03.`,
 		`You are trapped in Infinity Challenges 6 & 7.ECDATAReward: Replicanti grow 2x faster.`,
 		`Replicanti are useless.ECDATAReward: Replicanti grow faster based on time in this eternity.`,
-		`ECDATA`,
+		`Distant scaling starts instantly and is much more harsh.ECDATAReward: Distant scaling starts 10 galaxies earlier, and remote scaling starts 20 galaxies earlier.`,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,

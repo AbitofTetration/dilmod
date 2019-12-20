@@ -173,11 +173,12 @@ function getReplicantiGalaxyPower() {
 }
 
 function getDistantGalaxyStart() {
+  if(inChallenge(5,2)) return 0;
 	return 75+tree.hasStudy("r22")*25;
 }
 
 function getRemoteGalaxyStart() {
-	let r = new Decimal("200");
+	let r = new Decimal(200);
   
   if(tree.hasStudy("g41")) r = r.multiply(tree.getEff("g41"))
   
@@ -189,6 +190,7 @@ function getDarkGalaxyStart() {
 }
 
 function getDistantGalaxyPower() {
+  if(inChallenge(5,2)) return 0.12;
 	return 0.5;
 }
 

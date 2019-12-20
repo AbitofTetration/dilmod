@@ -115,7 +115,7 @@ function getEternityUpgradeEffect(n) {
     case 8:
       return game.replicanti.galaxies.add(1).pow(0.125).max(1)
     case 9:
-      return getSacrificeMult().log(1.65404).pow(2).max(1)
+      return getSacrificeMult().add(1).log(1.65404).pow(2).max(1)
     case 10:
       return game.dimensions[0].amount.add(1).log("1e8000000").max(1)
     case 11:
