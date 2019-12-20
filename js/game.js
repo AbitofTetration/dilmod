@@ -480,6 +480,7 @@ function update() {
 	if(game.galaxies.gt(50)) giveAchievement(57)
 	if(getSacrificeMult().gt(infp())) giveAchievement(59)
 	if(game.totalGalaxies.gte(10000)) giveAchievement(63)
+	if(game.totalGalaxies.gte(50000)) giveAchievement(72)
 	if(game.totalAntimatter.gt("1e35000")) giveAchievement(65)
 	if(game.infinityPoints.gte("1e333")) giveAchievement(69);
 	if(game.infinityShifts.gt(7)) giveAchievement(70);

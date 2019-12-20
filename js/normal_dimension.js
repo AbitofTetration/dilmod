@@ -14,7 +14,7 @@ function NormalDimension(i) {
 }
 
 function getStartingAntimatter() {
-	r = 90
+	r = 10
 	if(game.achievements.includes(9)) r = 200
 	if(game.bestInfinityTime < 18e6) r = 1000
 	if(game.bestInfinityTime < 36e5) r = 2e5

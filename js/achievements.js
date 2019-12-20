@@ -82,7 +82,7 @@ function updateAchievementDescriptions() {
 		"0 degrees from infinity", `Unlock the eighth infinity dimension.`,
 		"Are you kidding me?", `Unlock the ninth infinity dimension.`,
 		
-		"Galaxy Filament", `Buy 1,000,000 antimatter galaxies.`,
+		"Galaxy Filament", `Buy 50,000 antimatter galaxies.`,
 		"Is this safe?", `Reach Infinite replicanti in under 30 minutes.`,
 		"Minute of Infinity", `Reach Infinite replicanti in under a minute.`,
 		"Infinite Time", `Get 308 tickspeed upgrades. Reward: Time dimensions get a boost based on tickspeed upgrades.`,
@@ -98,7 +98,7 @@ function updateAchievementDescriptions() {
 		"", ``,
 		"Eternity is the new infinity", `Eternity in one second. Reward: You start eternities with ${shorten("1e100")} IP.`,
 		"", ``,
-		"", ``,
+		"Exponentiation is not fun", `Eternity with only first dimensions.`,
 		"I told you already, time is relative.", `Dilate time.`,
 		"Este logro no existe 2", `Reach 9.999e9999 IP. Reward: Gain more infinity points based on antimatter.`,
 	]

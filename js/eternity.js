@@ -21,6 +21,13 @@ function getEternity() {
 	return infp()
 }
 
+function getStartingIP() {
+	r = 0
+	if(game.achievements.includes(76)) r = 1e30
+	if(game.achievements.includes(85)) r = 1e100
+	return new Decimal(r)
+}
+
 function eternity(force) {
 	if(!atEternity() && !force) return;
 	
@@ -69,6 +76,7 @@ function eternity(force) {
 	game.bestIPRate = game.bestEPRate = new Decimal(0);
 	game.infinityPoints = game.infinities = new Decimal(0);
 	resetInfinityDimensions();
+  game.infinityPoints = getStartingIP()
 	game.shifts = getStartingShifts();
 	game.boosts = new Decimal(0);
 	game.galaxies = new Decimal(0);
