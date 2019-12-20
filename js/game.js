@@ -457,6 +457,7 @@ function update() {
 	if(game.sacrificeMult.gte(66666) && !inChallenge(8)) giveAchievement(18)
 	if(game.dimensions[8].amount.gt(1e27)) giveAchievement(19)
 	if(getTickspeed("dimension").gt(1e16)) giveAchievement(20)
+	if(getTickspeed("dimension").gt(Decimal.pow(1e16,3000))) giveAchievement(80)
 	if(game.infinities.gt(10)) giveAchievement(21)
 	if(game.dimensions[0].amount.gte(infp()) && game.sacrificeMult.eq(1)) giveAchievement(26)
 	if(game.totalGalaxies.gte(100)) giveAchievement(27)
@@ -488,7 +489,8 @@ function update() {
 	if(game.infinityShifts.gt(8)) giveAchievement(71);
 	if(game.replicanti.amount > 1.79e308 && game.replicanti.ticks < 36e5) giveAchievement(73);
 	if(game.replicanti.amount > 1.79e308 && game.replicanti.ticks < 6e5) giveAchievement(74);
-	if(getFreeTickspeedUpgrades().gt(308)) giveAchievement(75);
+	if(getFreeTickspeedUpgrades().gte(308)) giveAchievement(75);
+  if(getTotalTT().gte(10)) giveAchievement(79);
 	
 	// Automation
 

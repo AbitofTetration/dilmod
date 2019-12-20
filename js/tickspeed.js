@@ -75,6 +75,7 @@ function getTickspeed(name) {
 	if(game.achievements.includes(23)) r = r.multiply(1.02);
 	if(game.achievements.includes(29)) r = r.multiply(1.05);
 	if(game.achievements.includes(34)) r = r.multiply(1.10);
+	if(game.achievements.includes(80)) r = r.multiply(1.01);
 	
 	if(name == "dimension") return r;
 	if(name == "infinityDimension" && challengeCompleted(6, 1)) return r.pow(0.01);
@@ -90,6 +91,7 @@ function canGalaxy() {
 
 function galaxy() {
 	if(!canGalaxy()) return;
+  if(inChallenge(6,1)) return;
 	
 	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.subtract(getGalaxyScaling()).divide(getGalaxyScaling()).add(1).ceil();
 	

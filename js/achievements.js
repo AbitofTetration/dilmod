@@ -89,7 +89,7 @@ function updateAchievementDescriptions() {
 		"That wasn't a eternity", `Eternity in 30 seconds. Reward: You start eternities with ${shorten("1e30")} IP.`,
 		"ONE HUNDRED THOUSAND INFINITIES", `Reach ${shorten("1e5")} infinities. Reward: Infinities more than one second long give 50x infinities.`,
 		"That took a while", `Unlock all the eternity milestones.`,
-		"Quick spender", `Buy 10 time studies.`,
+		"Quick spender", `Buy 10 time theorems.`,
 		"Faster than a potato^3000", `Reach ${shorten(Decimal.pow(1e16,3000))} tick per second. Reward: Tickspeed is 1% stronger.`,
 
 		"We didn't need them anyway", `Eternity without any Infinity Dimensions (including EC1).`,

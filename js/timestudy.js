@@ -72,6 +72,7 @@ ns({x:    -4, y:    -3, id:  "p32", cost:    8, desc: "Replicanti give a boost t
 ns({x:    -4, y:    -2, id:  "s01", cost:    0, desc: "Eternity Challenge 1", pre: ["p32"]})
 ns({x:    -5, y:    -2, id:  "p41", cost:  200, desc: "Normal dimensions gain a boost based on eternities.", eff: function() {return game.eternities.multiply(400).pow(4)}, pre: ["s01"]})
 ns({x:    -5, y:    -1, id:  "p42", cost:  280, desc: "Normal dimensions gain a boost based on fastest infinity.", eff: function() {return Decimal.max(1e300 / game.bestInfinityTime, 1).pow(2)}, pre: ["s01"]})
+ns({x:    -6, y:    -2, id:  "s06", cost:    0, desc: "Eternity Challenge 6", pre: ["p41", "p42"]})
 ns({x:     2, y:    -1, id:  "i11", cost:    1, desc: "Infinity Dimensions are more powerful based on Infinity Power", eff: function() {return game.infinityDimensions[0].amount.log10().pow(2).max(1)}, pre: ["s00"]})
 ns({x:     2, y:    -2, id:  "i21", cost:    4, desc: "Infinity Dimensions get a multiplier based on fastest eternity time", eff: function() {return Decimal.max(1e10 / game.bestEternityTime, 1).pow(2)}, pre: ["i11"]})
 ns({x:     3, y:    -2, id:  "i22", cost:    5, desc: "Infinity Shifts are more powerful the more you have", eff: function() {return game.infinityShifts.pow(2).add(10).log10().pow(3)}, pre: ["i11"]})
