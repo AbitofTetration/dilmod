@@ -40,6 +40,7 @@ function eternity(force) {
     if(game.eternities.gt(100)) giveAchievement(78)
 		if(time < game.bestEternityTime) game.bestEternityTime = getTimeSince("eternity")
     if(game.bestEternityTime < 3e4) giveAchievement(76)
+    if(game.bestEternityTime < 1e3) giveAchievement(85)
 
 		if(inChallenge() && getChallengeSet() == 3) {
 			var c = game.challenges[2][(game.challengesRunning[0]-1)%12]

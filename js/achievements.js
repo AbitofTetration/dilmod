@@ -96,7 +96,7 @@ function updateAchievementDescriptions() {
 		"Eternal Suffering", `Complete a Eternity Challenge.`,
 		"", ``,
 		"", ``,
-		"Eternity is the new infinity", `Eternity in one tenth of a second. Reward: You start eternities with ${shorten("1e100")} IP.`,
+		"Eternity is the new infinity", `Eternity in one second. Reward: You start eternities with ${shorten("1e100")} IP.`,
 		"", ``,
 		"", ``,
 		"I told you already, time is relative.", `Dilate time.`,
