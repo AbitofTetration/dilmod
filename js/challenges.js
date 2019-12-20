@@ -39,7 +39,7 @@ function exitChallenge() {
 				game.challengesRunning.splice(game.challengesRunning.indexOf(j + i * 12), 1)
 				exited = true;
 				if(i < 2) bigCrunch(true);
-				if(i == 3) eternity(true);
+				if(i == 2) eternity(true);
 			}
 		}
 		if(exited) return;
