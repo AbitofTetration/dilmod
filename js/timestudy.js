@@ -90,6 +90,7 @@ ns({x:     1, y:    -3, id:  "g21", cost:    6, desc: "Second Time Dimension gai
 ns({x:    -1, y:    -3, id:  "g22", cost:    6, desc: "Third Time Dimension gains a boost based on eternity points.", eff: function() {return game.eternityPoints.add(1).pow(0.125)}, pre: ["g12"]})
 ns({x:     1, y:    -4, id:  "g31", cost:   10, desc: "Replicanti grow faster based on free tickspeed upgrades.", eff: function() {return getFreeTickspeedUpgrades().add(1).pow(0.125)}, pre: ["g21"]})
 ns({x:    -1, y:    -4, id:  "g32", cost:   10, desc: "You gain a multiplier to EP based on replicated galaxies.", eff: function() {return game.replicanti.galaxies.add(1).pow(0.125)}, pre: ["g22"]})
+ns({x:     0, y:    -5, id:  "g41", cost:   35, desc: "Remote antimatter galaxy scaling starts later based on replicated galaxies.", eff: function() {return game.replicanti.galaxies.add(200).divide(200).pow(0.25).max(1)}, pre: ["g32", "g31"]})
 ns({x:     2, y:     2, id:  "r11", cost:   10, desc: "Decrease galaxy cost scaling by 10%", pre: ["s00"]})
 ns({x:     3, y:     1, id:  "r21", cost:   25, desc: "Distant antimatter galaxy scaling starts 25 later", pre: ["r11"]})
 ns({x:     3, y:     2, id:  "r22", cost:    5, desc: "You gain replicanti three times faster", pre: ["r11"]})
@@ -97,7 +98,7 @@ ns({x:     4, y:     2, id:  "r31", cost:    5, desc: "Sacrifice is 10% stronger
 ns({x:     4, y:     3, id:  "r32", cost:   50, desc: "Replicanti galaxies are 50% more effective", pre: ["r22"]})
 ns({x:     3, y:     3, id:  "r41", cost:   85, desc: "Replicanti galaxies boost replicanti multiplier.", eff: function() {return game.replicanti.galaxies.add(1/250).multiply(250).max(1)}, pre: ["r32"]})
 ns({x:     3, y:     4, id:  "s04", cost:    0, desc: "Eternity Challenge 4", pre: ["r41"]})
-ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation", pre: ["s00"], req: "getChallengeCompletions(2) == 12"})
+ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 5}})
 ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:     4, id:  "d21", cost:  1e7, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     1, y:     4, id:  "d22", cost: 1e10, desc: "Unlock time dimension 9", pre: ["d21"],})
@@ -123,8 +124,8 @@ Study.prototype.canBuy = function(nocost) {
 		if(game.timestudy.studies.includes(p)) or = true; else and = false;
 	});
   
-  if(this.req) {
-    if(!this.req) return false;
+  if(this.req != "true") {
+    if(this.req != true) return false;
   }
 	
 	if(this.and) {

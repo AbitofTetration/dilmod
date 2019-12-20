@@ -100,7 +100,7 @@ function updateAchievementDescriptions() {
 		"", ``,
 		"", ``,
 		"I told you already, time is relative.", `Dilate time.`,
-		"", ``,
+		"Este logro no existe 2", `Reach 9.999e9999 IP. Reward: Gain more infinity points based on antimatter.`,
 	]
 }
 

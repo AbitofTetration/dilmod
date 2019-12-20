@@ -37,6 +37,7 @@ function eternity(force) {
 		game.eternityPoints = game.eternityPoints.add(gainedEternityPoints())
 		var time = getTimeSince("eternity");
 		game.eternities = game.eternities.add(1);
+    if(game.eternities.gt(100)) giveAchievement(78)
 		if(time < game.bestEternityTime) game.bestEternityTime = getTimeSince("eternity")
     if(game.bestEternityTime < 3e4) giveAchievement(76)
 
