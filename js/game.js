@@ -61,6 +61,7 @@ function update() {
 	if(game.infinityUpgrades.includes(5)) game.dimMult = game.dimMult.multiply(1.1)
 	if(inChallenge(2)) game.dimMult = game.dimMult.multiply(0.8)
 	if(challengeCompleted(4, 1)) game.dimMult = game.dimMult.multiply(1.5)
+  if(challengeCompleted(5,2)) game.dimMult = game.dimMult.multiply(getChallengeReward(5,2).add(1))
 
 	if(inChallenge(2, 1)) sacrifice()
 

@@ -70,6 +70,7 @@ ns({x:    -3, y:    -2, id:  "p23", cost:    4, desc: "Dimension Boosts are 4x a
 ns({x:    -3, y:    -3, id:  "p31", cost:    8, desc: "Sacrifice affects dimensions 1-8 with reduced effect", eff: function() {return getSacrificeMult().pow(0.2)}, pre: ["p23"]})
 ns({x:    -4, y:    -3, id:  "p32", cost:    8, desc: "Replicanti give a boost to normal dimensions.", eff: function() {return getReplEffect().pow(16)}, pre: ["p23"]})
 ns({x:    -4, y:    -2, id:  "s01", cost:    0, desc: "Eternity Challenge 1", pre: ["p32"]})
+ns({x:    -4, y:    -3, id:  "p32", cost:    8, desc: "Replicanti give a boost to normal dimensions.", eff: function() {return getReplEffect().pow(16)}, pre: ["p23"]})
 ns({x:     2, y:    -1, id:  "i11", cost:    1, desc: "Infinity Dimensions are more powerful based on Infinity Power", eff: function() {return game.infinityDimensions[0].amount.log10().pow(2).max(1)}, pre: ["s00"]})
 ns({x:     2, y:    -2, id:  "i21", cost:    4, desc: "Infinity Dimensions get a multiplier based on fastest eternity time", eff: function() {return Decimal.max(1e10 / game.bestEternityTime, 1).pow(2)}, pre: ["i11"]})
 ns({x:     3, y:    -2, id:  "i22", cost:    5, desc: "Infinity Shifts are more powerful the more you have", eff: function() {return game.infinityShifts.pow(2).add(10).log10().pow(3)}, pre: ["i11"]})
@@ -99,7 +100,7 @@ ns({x:     4, y:     2, id:  "r31", cost:    5, desc: "Sacrifice is 10% stronger
 ns({x:     4, y:     3, id:  "r32", cost:   50, desc: "Replicanti galaxies are 50% more effective", pre: ["r22"]})
 ns({x:     3, y:     3, id:  "r41", cost:   85, desc: "Replicanti galaxies boost replicanti multiplier.", eff: function() {return game.replicanti.galaxies.add(1/250).multiply(250).max(1)}, pre: ["r32"]})
 ns({x:     3, y:     4, id:  "s05", cost:    0, desc: "Eternity Challenge 5", pre: ["r41"]})
-ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 5}})
+ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 4}})
 ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:     4, id:  "d21", cost:  1e7, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     1, y:     4, id:  "d22", cost: 1e10, desc: "Unlock time dimension 9", pre: ["d21"],})
@@ -126,7 +127,7 @@ Study.prototype.canBuy = function(nocost) {
 	});
   
   if(this.req != "true") {
-    if(this.req != true) return false;
+    if(this.req == false) return false;
   }
 	
 	if(this.and) {

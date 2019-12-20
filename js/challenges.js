@@ -308,7 +308,14 @@ function getChallengeReward(i, j) {
 			game.dimensions[9].multiplier.pow(0.1),
 			0,
 			game.infinities.pow(1/2),
-		]
+		],
+    [
+      0,
+      0,
+      0,
+      0,
+      getEffectiveGalaxies().add(1).log(125)
+    ]
 	][j][i-1]
 }
 
@@ -386,7 +393,7 @@ function getChallengeBenefits() {
 					`^1.03 on all Time Dimensions.`,
 					`Replicanti grow twice as fast.`,
 					`Replicanti grow ${shorten(Decimal.pow(2, getTimeSince("eternity")/1e6).min(infp(0.25)))}x faster.`,
-					`+${shorten(getChallengeReward(5,1))} extra galaxy.`,
+					`${shorten(getChallengeReward(5,2))}% extra dimension upgrade multiplier.`,
 					`${shorten(getTickspeed("infinityDimension"))}x tickspeed for infinity dimensions.`,
 					`+150% to dimension boost multiplier.`,
 					`${shorten(getChallengeReward(8, 1))}x on dimensions 1-8.`,

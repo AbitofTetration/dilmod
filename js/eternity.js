@@ -307,7 +307,7 @@ function getDilationUpgradeEffect(n) {
 		case 2:
 			return game.dilation.dilatedTime.pow(4).max(1)
 		case 3:
-			return game.dilation.tachyonParticles.divide(200).divide(getTTScaling()).max(1)
+			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
 		case 4:
 			return game.timeDimensions[0].amount.pow(0.5).max(1)
 	}
