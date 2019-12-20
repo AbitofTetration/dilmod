@@ -85,13 +85,13 @@ function getTickspeed(name) {
 // Galaxies
 
 function canGalaxy() {
-	if(inChallenge(11)) return game.dimensions[4].amount.gte(getGalaxyReq())
+	if(inChallenge(11)) return game.dimensions[4].amount.gte(getGalaxyReq());
+  if(inChallenge(6,2)) return false;
 	return game.dimensions[9].amount.gte(getGalaxyReq()) && (!atInfinity() || game.break) && !inChallenge(8) && !inChallenge(7, 1);
 }
 
 function galaxy() {
 	if(!canGalaxy()) return;
-  if(inChallenge(6,1)) return;
 	
 	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.subtract(getGalaxyScaling()).divide(getGalaxyScaling()).add(1).ceil();
 	
