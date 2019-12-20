@@ -137,7 +137,7 @@ function updateSave() {
 		game.challenges = []
 		game.challengesRunning = []
 	}
-	for(var i = game.challenges.length; i < 2; i++) {
+	for(var i = game.challenges.length; i < 3; i++) {
 		game.challenges[i] = []
 		for(var j = 0; j < 12; j++) game.challenges[i][j] = {}
 	}

@@ -94,15 +94,16 @@ function updateChallengeDescriptions() {
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
+		`ECDATA`,
 	]
 	
 	for(var i = 13; i < 25; i++) {
 		challengeDescriptions[i] = challengeDescriptions[i].replace(`ICDATA`, `<br><br>Goal: ${shortenCosts(icGoals[i - 13])} antimatter<br><br>`)
 		if(getInfinityChallengesUnlocked() < i - 12) challengeDescriptions[i] = `Requires ${shortenCosts(icRequirements[i - 13])} antimatter`;
 	}
-	for(var i = 25; i < 26; i++) {
+	for(var i = 25; i < 37; i++) {
 		challengeDescriptions[i] = challengeDescriptions[i].replace(`ECDATA`, `<br><br>Goal: ${shortenCosts(ecGoals[i - 25])} IP<br><br>`)
-		if(getInfinityChallengesUnlocked() < i - 24) challengeDescriptions[i] = `Requires time study ${shortenCosts(ecRequirements[i - 25])}`;
+		if(getEternityChallengesUnlocked()[i-25] == false) challengeDescriptions[i] = `Requires time study ${ecRequirements[i - 25]}`;
 	}
 	
 	var i = [], t = []
@@ -261,14 +262,14 @@ function challengeUnlocked(i, j) {
 		case 1:
 			return getInfinityChallengesUnlocked() >= i;
     case 2:
-      return tree.hasStudy(ecRequirements[i])
+      return getEternityChallengesUnlocked()[i-25]
 	}
 }
 
 function getEternityChallengesUnlocked() {
-	var unl = 0;
+	var unl = [false,false,false,false,false,false,false,false,false,false,false,false,];
 	for(var i = 0; i < ecRequirements.length; i++) {
-		if(tree.hasStudy(ecRequirements[i])) unl++;
+		if(tree.hasStudy(ecRequirements[i])) unl[i] = true;
 	}
 	return unl;
 }
