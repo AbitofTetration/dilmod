@@ -41,7 +41,7 @@ function exitChallenge() {
 				game.challengesRunning.splice(game.challengesRunning.indexOf(j + i * 12), 1)
 				exited = true;
 				if(i < 2) bigCrunch(true);
-				if(i == 2) eternity(true);
+				if(i == 3) eternity(true);
 			}
 		}
 		if(exited) return;
@@ -103,7 +103,7 @@ function updateChallengeDescriptions() {
 	}
 	for(var i = 25; i < 37; i++) {
 		challengeDescriptions[i] = challengeDescriptions[i].replace(`ECDATA`, `<br><br>Goal: ${shortenCosts(ecGoals[i - 25])} IP<br><br>`)
-		if(getEternityChallengesUnlocked()[i-25] == false) challengeDescriptions[i] = `Requires time study ${ecRequirements[i - 25]}`;
+		if(getEternityChallengesUnlocked(i-25) == false) challengeDescriptions[i] = `Requires time study ${ecRequirements[i - 25]}`;
 	}
 	
 	var i = [], t = []
@@ -169,7 +169,7 @@ function scrollChallengesBy(n) {
 }
 
 function getChallengeTypeCap() {
-	return 0+!!getInfinityChallengesUnlocked()+!!getEternityChallengesUnlocked()
+	return 0+!!getInfinityChallengesUnlocked()+!!haveECsUnlocked()
 }
 
 function scrollChallengesTo(n) {
@@ -262,12 +262,20 @@ function challengeUnlocked(i, j) {
 		case 1:
 			return getInfinityChallengesUnlocked() >= i;
     case 2:
-      return getEternityChallengesUnlocked()[i-25]
+      return (getEternityChallengesUnlocked(i-25) == true);
 	}
 }
 
-function getEternityChallengesUnlocked() {
+function getEternityChallengesUnlocked(q) {
 	var unl = [false,false,false,false,false,false,false,false,false,false,false,false,];
+	for(var i = 0; i < ecRequirements.length; i++) {
+		if(tree.hasStudy(ecRequirements[i])) unl[i] = true;
+	}
+	return unl[q];
+}
+
+function haveECsUnlocked() {
+  var unl = [false,false,false,false,false,false,false,false,false,false,false,false,];
 	for(var i = 0; i < ecRequirements.length; i++) {
 		if(tree.hasStudy(ecRequirements[i])) unl[i] = true;
 	}
