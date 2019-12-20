@@ -239,7 +239,7 @@ var icRequirements = ["1e2000", "1e2500", "1e5000", "1e7750", "1e9000", "1e12500
 var icGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 var ecRequirements = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"]
-var ecGoals = ["1e400", "1e500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
+var ecGoals = ["1e350", "1e500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 function getInfinityChallengesUnlocked() {
 	var unl = 0;
@@ -381,8 +381,8 @@ function getChallengeBenefits() {
 			if(getChallengeCompletions(2)) {
 				lines.push("Your completions grant you access to: <br>")
 				var t = [
-					`${getChallengeReward(1, 1).toFixed(2)}x on all infinity dimensions.`,
-					`Improved dimensional sacrifice formula.<br>Dimensional sacrifice autobuyer.`,
+					`^1.05 replicanti multiplier.`,
+					`^1.01 on all Time Dimensions.`,
 					`+${shorten(getChallengeReward(3, 1).multiply(getEffectiveGalaxies()))} to tickspeed multiplier from galaxies.`,
 					`+50% to dimension upgrade multiplier.`,
 					`+10% to galaxy effectiveness.`,
@@ -394,8 +394,7 @@ function getChallengeBenefits() {
 					`Boost to infinity dimensions based on tier.`,
 					`+???% Infinity Shift effectiveness.`,
 				]
-				for(var i = 1; i <= 12; i++) if(challengeCompleted(i, 1)) lines.push(t[i-1])
-				if(inChallenge(9, 1)) lines.push("REWARDS DISABLED");
+				for(var i = 1; i <= 12; i++) if(challengeCompleted(i, 2)) lines.push(t[i-1])
 				lines.push("")
 				lines.push("")
 			}
