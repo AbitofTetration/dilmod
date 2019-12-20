@@ -26,6 +26,8 @@ function getTimeDimensionProduction(i) {
 	
 	dim.multiplier = Decimal.pow(timeDimensionBuyMults[dim.id], dim.bought)
 	if(tree.hasStudy("t11") && i == 1) dim.multiplier = dim.multiplier.multiply(tree.getEff("t11"))
+	if(tree.hasStudy("g21") && i == 2) dim.multiplier = dim.multiplier.multiply(tree.getEff("g21"))
+	if(tree.hasStudy("g22") && i == 3) dim.multiplier = dim.multiplier.multiply(tree.getEff("g22"))
 	if(tree.hasStudy("t21")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t21"))
 	if(tree.hasStudy("t22")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t22"))
 	if(tree.hasStudy("t31")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t31"))
