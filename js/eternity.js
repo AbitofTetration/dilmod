@@ -55,6 +55,7 @@ function eternity(force) {
     if(game.eternities.gt(100)) giveAchievement(78)
 		if(time < game.bestEternityTime) game.bestEternityTime = getTimeSince("eternity")
     if(game.bestEternityTime < 3e4) giveAchievement(76)
+    if(time < 1e4 && game.dilation.active && gainedEternityPoints().gt("1e600")) giveAchievement(90)
     if(game.bestEternityTime < 1e3) giveAchievement(85)
 
 		if(inChallenge() && getChallengeSet() == 3) {
