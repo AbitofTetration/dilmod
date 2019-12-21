@@ -84,6 +84,7 @@ function bigCrunch(force) {
 			if(getChallengeTimes(0) < 180000) giveAchievement(44)
 			if(getChallengeTimes(0) < 5000) giveAchievement(53)
 			if(getChallengeTimes(1) < 6666) giveAchievement(62)
+			if(getChallengeTimes(1) < 1000) giveAchievement(83)
 			if(inChallenge(1, 1)) giveAchievement(51);
 			if(inChallenge(5, 1)) giveAchievement(52);
 			if(inChallenge(5, 1) && c.bestTime < 1e4) giveAchievement(60);

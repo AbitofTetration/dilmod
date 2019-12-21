@@ -367,7 +367,7 @@ function getDilationTimeGain() {
 }
 
 function getFreeGalaxiesMult() {
-  let r = new Decimal(1/5)
+  let r = new Decimal(5)
   
   r = r.divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
   
