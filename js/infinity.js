@@ -7,14 +7,21 @@ function atInfinity() {
 }
 
 function gainedInfinityPoints() {
-	return game.break ? game.dimensions[0].amount.pow(1/308).multiply(getInfinityPointMult()).divide(10).floor() : new Decimal(1);
+	return game.break ? game.dimensions[0].amount.pow(1/getInfinityPointsFormula()).multiply(getInfinityPointMult()).divide(10).floor() : new Decimal(1);
+}
+
+function getInfinityPointsFormula() {
+  let r = 308
+  
+  if(game.achievements.includes(89)) r -= 1.45
+  
+  return r;
 }
 
 function getInfinityPointMult() {
 	r = Decimal.pow(2, game.repeatInf[0])
 	
 	if(game.achievements.includes(37)) r = r.multiply(2)
-	if(game.achievements.includes(89)) r = r.multiply(game.dimensions[0].amount.pow(1/(308*308)))
 	if(tree.hasStudy("i23")) r = r.multiply(tree.getEff("i23"));
 	if(tree.hasStudy("g32")) r = r.multiply(tree.getEff("g32"));
 	
