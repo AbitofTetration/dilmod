@@ -246,7 +246,7 @@ function inDilation() {
 }
 
 function gainedTP() {
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(10).divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(5).divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
 }
 
 function extraTPMult() {
@@ -270,7 +270,7 @@ function getRepeatDilDesc() {
   return [
     "You gain twice as much dilated time.<br>Currently: " + shorten(Decimal.pow(2, game.dilation.repeatUpgr[0])) + "x",
     "Free galaxy threshold is reduced, but reset dilated time and free galaxies.<br>Currently: " + shorten(game.dilation.thresholdUpSpeed),
-    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(10).divide(5)))
+    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(5).divide(5)))
   ]
 }
 
