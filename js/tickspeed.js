@@ -145,7 +145,7 @@ function getEffectiveReplicantiGalaxies() {
 }
 
 function getEffectiveDilashunGalaxies() {
-	var r = game.dilation.freeGalaxies;
+	var r = getFreeDilatedGalaxies();
 	
 	return r.multiply(getDilatedGalaxyPower());
 }

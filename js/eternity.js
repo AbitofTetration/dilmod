@@ -365,3 +365,24 @@ function getDilationTimeGain() {
   
   return r
 }
+
+function getFreeGalaxiesMult() {
+  let r = new Decimal(1/5)
+  
+  r = r.divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
+  
+	return r;
+}
+
+function getFreeGalaxiesThreshold() {
+	return getFreeGalaxiesMult().pow(getFreeDilatedGalaxies())
+}
+
+function getFreeDilatedGalaxies() {
+	var a = game.dilation.dilatedTime;
+  a = a.gt(0) ? a.log10().divide(getFreeGalaxiesMult().log10()).ceil().max(0) : new Decimal(0)
+  
+  if(tree.hasStudy("t41")) a = a.multiply(tree.getEff("t41"))
+  
+	return a;
+}

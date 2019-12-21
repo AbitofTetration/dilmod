@@ -202,7 +202,7 @@ function update() {
 			ge("boost").className = canBoost() ? "buy" : "lock" 
 			
 			ge("galaxies").textContent = getFullExpansion(getEffectiveNormalGalaxies());
-			ge("extraGalaxies").textContent = " + " + getFullExpansion(getEffectiveReplicantiGalaxies()) + (game.dilation.freeGalaxies.gt(0) ? " + " + getEffectiveDilashunGalaxies() : "");
+			ge("extraGalaxies").textContent = " + " + getFullExpansion(getEffectiveReplicantiGalaxies()) + (game.dilation.freeGalaxies.gt(0) ? " + " + getFreeDilatedGalaxies() : "");
 			ge("galaxyReq").textContent = getFullExpansion(getGalaxyReq()) + (inChallenge(11) ? " fourth " : " ninth ");
 			ge("galaxy").className = canGalaxy() ? "buy" : "lock" 
 			
@@ -410,8 +410,8 @@ function update() {
     
     if(game.currentEternityTab == "dilation") {
 			ge("dilatedTime").innerHTML = shortenMoney(game.dilation.dilatedTime);
-			ge("freeGalaxies").innerHTML = shortenMoney(game.dilation.freeGalaxies);
-			ge("galaxyThreshold").innerHTML = shortenMoney(game.dilation.galaxyThreshold);
+			ge("freeGalaxies").innerHTML = shortenMoney(getFreeDilatedGalaxies());
+			ge("galaxyThreshold").innerHTML = shortenMoney(getFreeGalaxiesThreshold());
 			for(var i = 0; i < 9; i++) {
 				ge("dilashunUpgrade" + i).className = game.dilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyDilationUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("dilashunUpgradeDesc" + i).innerHTML = getDUDescriptions()[i];
