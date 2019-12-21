@@ -61,7 +61,7 @@ function getMaxReplGalaxies() {
 	if(game.replicanti.upgrades[2].lte(100)) {
      return game.replicanti.upgrades[2]; // cap this at some point
   } else {
-     return game.replicanti.upgrades[2].log(10).add(98)
+     return game.replicanti.upgrades[2].log(1.5).add(82.3908740944)
   }
 }
 
