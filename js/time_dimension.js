@@ -1,6 +1,7 @@
 var timeDimensionBaseCosts = [0, 1, 10, 100, 1000, 1e90, 1e140, 1e200, 1e280, 1e280]
 var timeDimensionCostMults = [0, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
 var timeDimensionBuyMults = [0, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+var timeDimensionCostScaling = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 function TimeDimension(i) {
 	this.id = game.timeDimensions.length;
