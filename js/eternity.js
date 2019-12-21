@@ -103,7 +103,7 @@ function respecTimeStudies() {
 	eternity();
 }
 
-var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e300, 1e380".split(",");
+var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380".split(",");
 
 function canBuyEternityUpgrade(i) {
 	if(game.eternityUpgrades.includes(i)) return false;
@@ -301,7 +301,7 @@ function getTTScaling() {
   if(game.timestudy.theorems.lt(1e5)) {
     return new Decimal(1)
   }
-  else return game.timestudy.theorems.divide(1e5).max(1)
+  else return game.timestudy.theorems.divide(1e6).max(1)
 }
 
 function getDUDescriptions() {

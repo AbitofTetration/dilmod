@@ -492,7 +492,8 @@ function update() {
 	if(game.dimensions[9].amount.gt(9999)) giveAchievement(87);
 	if(game.replicanti.amount > 1.79e308 && game.replicanti.ticks < 36e5) giveAchievement(73);
 	if(game.replicanti.amount > 1.79e308 && game.replicanti.ticks < 6e5) giveAchievement(74);
-	if(getFreeTickspeedUpgrades().gte(308)) giveAchievement(75);
+	if(game.eternityPoints.gt(1.79e308)) giveAchievement(12)
+	if(getFreeTickspeedUpgrades().gte(308)) giveAchievement(86);
   if(getTotalTT().gte(10)) giveAchievement(79);
 	
 	// Automation
