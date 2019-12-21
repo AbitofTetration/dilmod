@@ -177,14 +177,16 @@ function getReplicantiGalaxyPower() {
 }
 
 function getDistantGalaxyStart() {
-  if(inChallenge(5,2)) return 0;
-	return 75+tree.hasStudy("r22")*25;
+  let s = new Decimal(75+tree.hasStudy("r22")*25);
+  if(inChallenge(5,2)) s = s.multiply(0);
+	return s
 }
 
 function getRemoteGalaxyStart() {
 	let r = new Decimal(200);
   
   if(tree.hasStudy("g41")) r = r.multiply(tree.getEff("g41"))
+  if(game.dilation.upgrades.includes(5)) r = r.add(getDilationUpgradeEffect(5))
   
   return r;
 }

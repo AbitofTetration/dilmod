@@ -311,7 +311,7 @@ function getDUDescriptions() {
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
 		"You gain some of your Infinity Points on infinity automatically.",
-		"Remote antimatter galaxy effect starts later<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
+		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
 	]
 }
 function getDilationUpgradeEffect(n) {
@@ -324,8 +324,8 @@ function getDilationUpgradeEffect(n) {
 			return game.dilation.dilatedTime.pow(4).max(1)
 		case 3:
 			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
-		case 4:
-			return game.timeDimensions[0].amount.pow(0.5).max(1)
+		case 5:
+			return game.dilation.dilatedTime.divide(400).add(1).pow(1/10).max(1)
 	}
 }
 

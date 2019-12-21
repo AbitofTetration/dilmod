@@ -202,12 +202,14 @@ function update() {
 			ge("boost").className = canBoost() ? "buy" : "lock" 
 			
 			ge("galaxies").textContent = getFullExpansion(getEffectiveNormalGalaxies());
+			ge("extraGalaxies").textContent = " + " + getFullExpansion(getEffectiveReplicantiGalaxies()) + (game.dilation.galaxies ? " + " + getEffectiveDilashunGalaxies() : "");
 			ge("galaxyReq").textContent = getFullExpansion(getGalaxyReq()) + (inChallenge(11) ? " fourth " : " ninth ");
 			ge("galaxy").className = canGalaxy() ? "buy" : "lock" 
 			
 			displayIf("shiftDisplay", game.shifts < 5 && !inChallenge(11));
 			displayIf("boostDisplay", game.shifts == 5 || inChallenge(11));
 			displayIf("galaxyDisplay", game.shifts == 5 || game.galaxies.gt(0) || haveInfinitied());
+      displayIf("extraGalaxies", getEffectiveReplicantiGalaxies().gt(0))
 			displayIf("sacrificeDisplay", game.shifts == 5 || haveInfinitied())
 			
 			ge("boostName").textContent = getEffectiveDimensionBoosts().gte(getDimensionHypersonicStart()) ? "Dimension Hypersonic" : game.boosts.gte(getDimensionSupersonicStart()) ? "Dimension Supersonic" : "Dimension Boost"
