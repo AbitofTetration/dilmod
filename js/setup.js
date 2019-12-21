@@ -434,7 +434,7 @@ ge("eternityUpgrades").innerHTML = h + `
 
 h = ""
 
-for(var i = 0; i < 6; i++) {
+for(var i = 0; i < 9; i++) {
 	if(i % 3 == 0) h += "<tr>"
 	h += `
 		<td>

@@ -140,9 +140,9 @@ function getEternityUpgradeEffect(n) {
     case 12:
       return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e200").max(1)
     case 13:
-      return game.infinityDimensions[0].amount.add(1).log("1e100000").max(1)
+      return game.infinityDimensions[0].amount.add(1).log("1e40000").max(1)
     case 14:
-      return game.timeDimensions[0].amount.add(1).log("1e4200").max(1)
+      return game.timeDimensions[0].amount.add(1).log("1e1500").max(1)
 	}
 }
 
@@ -294,7 +294,7 @@ function buyRepeatDil(i) {
 	return true;
 }
 
-var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10".split(",");
+var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10, 1e11, 1e13, 1e15".split(",");
 
 
 function getTTScaling() {
@@ -312,6 +312,7 @@ function getDUDescriptions() {
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
 		"You gain some of your Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
+    "Dilated galaxies are twice as powerful."
 	]
 }
 function getDilationUpgradeEffect(n) {
