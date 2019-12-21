@@ -94,7 +94,7 @@ function updateAchievementDescriptions() {
 
 		"We didn't need them anyway", `Eternity without any Infinity Dimensions (including EC1).`,
 		"Eternal Suffering", `Complete a Eternity Challenge.`,
-		"", ``,
+		"You can't stop me!", `Get the sum of all infinity challenge times under 1 second.`,
 		"", ``,
 		"Eternity is the new infinity", `Eternity in one second. Reward: You start eternities with ${shorten("1e100")} IP.`,
 		"But I wanted a new prestige layer!", `Reach ${shorten(infp())} eternity points.`,
