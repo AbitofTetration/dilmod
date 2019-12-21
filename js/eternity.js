@@ -259,6 +259,7 @@ function extraTPMult() {
 
 function dilate() {
   eternity(true)
+  giveAchievement(88)
   game.dilation.active = true
 }
 var dilationRepUpgradeCosts = "100, 1000, 10000".split(",");
