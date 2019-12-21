@@ -395,7 +395,7 @@ function getChallengeBenefits() {
 					`Replicanti grow ${shorten(Decimal.pow(2, getTimeSince("eternity")/1e6).min(infp(0.25)))}x faster.`,
 					`${shorten(getChallengeReward(5,2))}% extra dimension upgrade multiplier.`,
 					`${shorten(getTickspeed("infinityDimension"))}x tickspeed for infinity dimensions.`,
-					`+5% to galaxy strength.`,
+					`25% extra tickspeed upgrades.`,
 					`${shorten(getChallengeReward(8, 1))}x on dimensions 1-8.`,
 					`${getAchievementMultiplier()}x on all infinity dimensions.`,
 					`${shorten(getChallengeReward(10, 1))}x on all infinity dimensions.`,
