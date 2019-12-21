@@ -103,7 +103,7 @@ function respecTimeStudies() {
 	eternity();
 }
 
-var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e150, 1e200, 1e270, 1e300, 1e320, 1e340".split(",");
+var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e300, 1e380".split(",");
 
 function canBuyEternityUpgrade(i) {
 	if(game.eternityUpgrades.includes(i)) return false;
@@ -134,11 +134,11 @@ function getEternityUpgradeEffect(n) {
     case 9:
       return getSacrificeMult().add(1).log(1.65404).pow(2).max(1)
     case 10:
-      return game.dimensions[0].amount.add(1).log("1e8000000").max(1)
+      return game.dimensions[0].amount.add(1).log("1e900000").max(1)
     case 11:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e70000").max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e16000").max(1)
     case 12:
-      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e4320").max(1)
+      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e200").max(1)
     case 13:
       return game.infinityDimensions[0].amount.add(1).log("1e100000").max(1)
     case 14:
@@ -298,10 +298,10 @@ var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10".split(",");
 
 
 function getTTScaling() {
-  if(game.timestudy.theorems.lt(1e6)) {
+  if(game.timestudy.theorems.lt(1e5)) {
     return new Decimal(1)
   }
-  else return game.timestudy.theorems.divide(1e6).max(1)
+  else return game.timestudy.theorems.divide(1e5).max(1)
 }
 
 function getDUDescriptions() {

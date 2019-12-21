@@ -480,7 +480,7 @@ ge("automationTable2").innerHTML += t + `
 <td class = "autobuyer" id = "infinityShiftAutobuyer">Infinity Shift Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${24}" onclick = "upgradeExtension(24)"></button></td>
 <td class = "autobuyer" id = "eternityAutobuyer">Eternity Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${25}" onclick = "upgradeExtension(25)"></button></td>
 <td class = "autobuyer" id = "replicantiGalAutobuyer">Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${26}" onclick = "upgradeExtension(26)"></button></td></tr>
-<tr><td class = "autobuyer" id = "replicantiChaAutobuyer">Replicanti Chance Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${26}" onclick = "upgradeExtension(26)"></button></td></tr>
+<tr><td class = "autobuyer" id = "replicantiChaAutobuyer">Replicanti Chance Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${27}" onclick = "upgradeExtension(27)"></button></td>
 `
 
 function f() {
