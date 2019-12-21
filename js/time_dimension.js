@@ -86,6 +86,8 @@ function getFreeTickspeedUpgrades() {
   a = a.gt(0) ? a.log10().divide(getFreeTickspeedMult().log10()).ceil().max(0) : new Decimal(0)
   
   if(tree.hasStudy("t41")) a = a.multiply(tree.getEff("t41"))
+  if(inChallenge(7,2)) a = a.multiply(1/3)
+  if(challengeCompleted(7,2)) a = a.multiply(5/4)
   
 	return a;
 }

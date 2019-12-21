@@ -87,7 +87,7 @@ function updateChallengeDescriptions() {
 		`Replicanti are useless.ECDATAReward: Replicanti grow faster based on time in this eternity.`,
 		`Distant scaling starts instantly and is much more harsh.ECDATAReward: The upgrade multiplier is higher based on your galaxies.`,
 		`You cannot gain normal galaxies, but replicated galaxies are 75% stronger.ECDATAReward: Galaxies are 5% stronger.`,
-		`ECDATA`,
+		`You only have 33% of your normal free tickspeed upgrades from Time Dimensions, and infinity power is 50% weaker. ECDATAReward: You gain 25% more free tickspeed upgrades.`, // might be broken
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
@@ -240,7 +240,7 @@ var icRequirements = ["1e2000", "1e2500", "1e5000", "1e7750", "1e9000", "1e12500
 var icGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 var ecRequirements = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"]
-var ecGoals = ["1e1100", "1e650", "1e700", "1e3300", "1e1400", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
+var ecGoals = ["1e1100", "1e650", "1e700", "1e3300", "1e1400", "1e5500", "1e7800", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 function getInfinityChallengesUnlocked() {
 	var unl = 0;

@@ -460,6 +460,7 @@ function update() {
 	if(game.dimensions[8].amount.gt(1e27)) giveAchievement(19)
 	if(getTickspeed("dimension").gt(1e16)) giveAchievement(20)
 	if(getTickspeed("dimension").gt(Decimal.pow(1e16,3000))) giveAchievement(80)
+	if(getTickspeed("dimension").gt(Decimal.pow(1e16,125000))) giveAchievement(91)
 	if(game.infinities.gt(10)) giveAchievement(21)
 	if(game.dimensions[0].amount.gte(infp()) && game.sacrificeMult.eq(1)) giveAchievement(26)
 	if(game.totalGalaxies.gte(100)) giveAchievement(27)

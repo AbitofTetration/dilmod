@@ -101,6 +101,7 @@ ns({x:     0, y:    -5, id:  "g41", cost:   35, desc: "Remote antimatter galaxy 
 ns({x:     0, y:    -6, id:  "s04", cost:    0, desc: "Eternity Challenge 4", pre: ["g41"]})
 ns({x:     0, y:    -7, id:  "g42", cost:  300, desc: "You gain a boost to eternitied stat based on antimatter galaxies.", eff: function() {return getEffectiveGalaxies().add(1000).divide(1000)}, pre: ["s04"]})
 ns({x:     0, y:    -8, id:  "g51", cost:  800, desc: "Replicated galaxies are 20% stronger.", pre: ["g42"]})
+ns({x:     0, y:    -9, id:  "s07", cost:    0, desc: "Eternity Challenge 7", pre: ["g51"]})
 ns({x:     2, y:     2, id:  "r11", cost:   10, desc: "Decrease galaxy cost scaling by 10%", pre: ["s00"]})
 ns({x:     3, y:     1, id:  "r21", cost:   25, desc: "Distant antimatter galaxy scaling starts 25 later", pre: ["r11"]})
 ns({x:     3, y:     2, id:  "r22", cost:    5, desc: "You gain replicanti three times faster", pre: ["r11"]})
@@ -112,7 +113,7 @@ ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>
 ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:     4, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     1, y:     4, id:  "d22", cost:  1e8, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:     5, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete all Eternity Challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
+ns({x:     0, y:     5, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
 
 Study.prototype.getPostStudies = function() {
 	var l = []

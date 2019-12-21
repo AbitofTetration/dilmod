@@ -103,7 +103,7 @@ function updateAchievementDescriptions() {
 		"Este logro no existe 2", `Reach 9.999e99,999 IP. Reward: Gain more infinity points based on antimatter.`,
 
 		"Now you're thinking with dilation!", `Undilate time for ${shortenCosts("1e600")} EP in 10 seconds. Reward: Dilation doesn't affect Time Dimensions.`,
-		"Faster than a Dry Bones", `Reach ${shorten(Decimal.pow(1e16,82000))} ticks per second. Reward: Time Dimensions are 3% stronger.`,
+		"Faster than a Dry Bones", `Reach ${shorten(Decimal.pow(1e16,125000))} ticks per second. Reward: Time Dimensions are 3% stronger.`,
 		"", ``,
 		"", ``,
 		"Time goes by fast", `Eternity in one tenth of a second.`,
