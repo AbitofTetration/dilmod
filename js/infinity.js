@@ -14,6 +14,7 @@ function getInfinityPointMult() {
 	r = Decimal.pow(2, game.repeatInf[0])
 	
 	if(game.achievements.includes(37)) r = r.multiply(2)
+	if(game.achievements.includes(89)) r = r.multiply(game.dimensions[0].amount.pow(1/(308*308)))
 	if(tree.hasStudy("i23")) r = r.multiply(tree.getEff("i23"));
 	if(tree.hasStudy("g32")) r = r.multiply(tree.getEff("g32"));
 	
