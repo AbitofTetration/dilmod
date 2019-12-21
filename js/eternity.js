@@ -246,7 +246,7 @@ function inDilation() {
 }
 
 function gainedTP() {
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(5).divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(4).divide(5))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
 }
 
 function extraTPMult() {
@@ -270,7 +270,7 @@ function getRepeatDilDesc() {
   return [
     "You gain twice as much dilated time.<br>Currently: " + shorten(Decimal.pow(2, game.dilation.repeatUpgr[0])) + "x",
     "Free galaxy threshold is reduced, but reset dilated time and free galaxies.<br>Currently: " + shorten(game.dilation.thresholdUpSpeed),
-    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(5).divide(5)))
+    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(4).divide(5)))
   ]
 }
 
@@ -314,7 +314,8 @@ function getDUDescriptions() {
 		"You gain some of your Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
-    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x"
+    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
+    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x"
 	]
 }
 function getDilationUpgradeEffect(n) {
@@ -331,6 +332,8 @@ function getDilationUpgradeEffect(n) {
 			return game.dilation.dilatedTime.divide(400).add(1).pow(1/10).max(1)
     case 7:
       return game.dilation.dilatedTime.divide(400).add(1).pow(1/3)
+		case 8:
+			return game.dilation.tachyonParticles.add(1).log(8).max(1);
 	}
 }
 
@@ -351,5 +354,14 @@ function getDilationToimeMult() {
   
   for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
 
+  return r
+}
+
+function getDilationTimeGain() {
+  let r = game.dilation.tachyonParticles
+  
+  r = r.multiply(getDilationToimeMult())
+  if(game.dilation.upgrades.includes(8)) r = r.multiply(getDilationUpgradeEffect(8))
+  
   return r
 }

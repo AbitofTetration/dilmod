@@ -78,7 +78,7 @@ function update() {
 	if(game.infinityUpgrades.includes(14)) 
 		game.infinities = game.infinities.add(getInfinityMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
   
-  game.dilation.dilatedTime = game.dilation.dilatedTime.add(game.dilation.tachyonParticles.multiply(getDilationToimeMult()).multiply(diff/1000));
+  game.dilation.dilatedTime = game.dilation.dilatedTime.add(getDilationTimeGain().multiply(diff/1000));
   if(game.dilation.dilatedTime.gt(game.dilation.galaxyThreshold)) {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
@@ -398,7 +398,7 @@ function update() {
 			ge("replSpeed").innerHTML = "Replicate interval: " + timeDisplayShort(getReplSpeed().pow(-1), true, 3) + "<br>+1% Costs: " + shortenCosts(getReplUpgradeCost(1)) + " EP";
 			ge("replGalaxy").innerHTML = "Max galaxies: " + getFullExpansion(getMaxReplGalaxies()) + "<br>+1 Costs: " + shortenCosts(getReplUpgradeCost(2)) + " EP";
 			ge("replMax").innerHTML = shortenMoney(getReplLimit())
-			ge("replGain").innerHTML = "Reach " + shorten(infp(game.replicanti.galaxies.max(1))) + " replicanti to create a replicanti galaxy.<br>Replicated Galaxies: " + getFullExpansion(game.replicanti.galaxies) + " / " + getFullExpansion(getMaxReplGalaxies());
+			ge("replGain").innerHTML = "Reach " + shorten(infp(game.replicanti.galaxies.add(1))) + " replicanti to create a replicanti galaxy.<br>Replicated Galaxies: " + getFullExpansion(game.replicanti.galaxies) + " / " + getFullExpansion(getMaxReplGalaxies());
 			
 			ge("replChance").className = canBuyReplUpgrade(0) ? "buy" : "lock"
 			ge("replSpeed").className = canBuyReplUpgrade(1) ? "buy" : "lock"

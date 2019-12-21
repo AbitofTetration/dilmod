@@ -54,14 +54,14 @@ function getReplSpeed() {
 }
 
 function getReplLimit() {
-	return infp(game.replicanti.upgrades[2].max(1)).max(infp())
+	return infp(getMaxReplGalaxies().add(1)).max(infp())
 }
 
 function getMaxReplGalaxies() {
 	if(game.replicanti.upgrades[2].lte(100)) {
      return game.replicanti.upgrades[2]; // cap this at some point
   } else {
-     return game.replicanti.upgrades[2].log(1.5).add(82.3908740944)
+     return game.replicanti.upgrades[2].log(1.5).add(90.3908740944)
   }
 }
 
