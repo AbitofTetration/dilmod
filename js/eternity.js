@@ -16,6 +16,14 @@ function getEternityPointMult() {
 	return r;
 }
 
+function getEternityMult() {
+	r = new Decimal(1);
+  
+	if(tree.hasStudy("g42")) r = r.multiply(tree.getEff("g42"))
+	
+	return r;
+}
+
 function getEternity() {
 	if(getChallengeSet() == 3) return getChallengeGoal()
 	return infp()
@@ -43,7 +51,7 @@ function eternity(force) {
 		
 		game.eternityPoints = game.eternityPoints.add(gainedEternityPoints())
 		var time = getTimeSince("eternity");
-		game.eternities = game.eternities.add(1);
+		game.eternities = game.eternities.add(getEternityMult());
     if(game.eternities.gt(100)) giveAchievement(78)
 		if(time < game.bestEternityTime) game.bestEternityTime = getTimeSince("eternity")
     if(game.bestEternityTime < 3e4) giveAchievement(76)
@@ -286,16 +294,24 @@ function buyRepeatDil(i) {
 	return true;
 }
 
-var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e11".split(",");
+var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10".split(",");
+
+
+function getTTScaling() {
+  if(game.timestudy.theorems.lt(1e6)) {
+    return new Decimal(1)
+  }
+  else return game.timestudy.theorems.divide(1e6).max(1)
+}
 
 function getDUDescriptions() {
 	return [
 		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
-		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s",
+		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
 		"You gain some of your Infinity Points on infinity automatically.",
-		"The first 2 infinity upgrades affect Time Dimensions<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
+		"Remote antimatter galaxy effect starts later<br>Currently: " + shortenMoney(getInfinityUpgradeEffect(23)) + "x",
 	]
 }
 function getDilationUpgradeEffect(n) {
@@ -331,10 +347,4 @@ function getDilationToimeMult() {
   for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
 
   return r
-}
-
-function getTTScaling() {
-  if(game.timestudy.theorems.lt(1e6)) return 1
-  
-  else return game.timestudy.theorems.divide(1e7).max(1)
 }

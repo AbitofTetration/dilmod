@@ -170,6 +170,7 @@ function getNormalGalaxyPower() {
 function getReplicantiGalaxyPower() {
 	var r = new Decimal(1);
 	if(tree.hasStudy("r32")) r = r.multiply(1.5);
+	if(tree.hasStudy("g51")) r = r.multiply(1.2);
   if(inChallenge(6,1)) r = r.multiply(1.75)
 	
 	return r;
