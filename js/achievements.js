@@ -1,4 +1,4 @@
-const achievements = 90;
+const achievements = 99;
 
 function updateAchievementDescriptions() {
 	achievementDescriptions = [
@@ -95,12 +95,22 @@ function updateAchievementDescriptions() {
 		"We didn't need them anyway", `Eternity without any Infinity Dimensions (including EC1).`,
 		"Eternal Suffering", `Complete a Eternity Challenge.`,
 		"You can't stop me!", `Get the sum of all infinity challenge times under 1 second.`,
-		"", ``,
+		"Nerf replicanti", `Get a multiplier from replicanti equal to ${shorten(1e20)}x.`,
 		"Eternity is the new infinity", `Eternity in one second. Reward: You start eternities with ${shorten("1e100")} IP.`,
 		"But I wanted a new prestige layer!", `Reach ${shorten(infp())} eternity points.`,
 		"I do not trust you", `Reach 9,999 ninth dimensions.`,
 		"I told you already, time is relative.", `Dilate time.`,
 		"Este logro no existe 2", `Reach 9.999e99,999 IP. Reward: Gain more infinity points based on antimatter.`,
+
+		"Now you're thinking with dilation!", `Undilate time for ${shortenCosts("1e600")} EP in 10 seconds.`,
+		"Faster than a Dry Bones", `Reach ${shorten(Decimal.pow(1e16,82000))} ticks per second. Reward: Time Dimensions are 3% stronger.`,
+		"", ``,
+		"", ``,
+		"", ``,
+		"", ``,
+		"", ``,
+		"The next update is in 5 eternities", `Complete all of the eternity challenges.`,
+		"Once More, Beyond", `Ex-dilate.`,
 	]
 }
 
