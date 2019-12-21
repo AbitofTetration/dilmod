@@ -80,7 +80,11 @@ ns({x:     3, y:    -1, id:  "i23", cost:    2, desc: "Gain 20% more IP per anti
 ns({x:     3, y:    -3, id:  "i31", cost:    7, desc: "Sacrifice affects 9th Infinity Dimension with reduced effect", eff: function() {return getSacrificeMult().pow(0.05)}, pre: ["i22"]})
 ns({x:     4, y:    -3, id:  "i32", cost:   12, desc: "Replicanti boost is powered up.", pre: ["i22"]})
 ns({x:     4, y:    -2, id:  "s02", cost:    0, desc: "Eternity Challenge 2", pre: ["i32"]})
-ns({x:    -2, y:     2, id:  "t11", cost:    1, desc: "Tickspeed affects first Time Dimension with reduced effect", eff: function() {return getTickspeed("dimension").pow(0.0005).max(1)}, pre: ["s00"]})
+ns({x:    -2, y:     2, id:  "t11", cost:    1, desc: "Tickspeed affects first Time Dimension with reduced effect", eff: function() {
+  let r = getTickspeed("dimension").pow(0.0005).max(1)
+  if(r.gt(infp(2))) r = r.pow(0.290).max(infp(2))
+  return r
+}, pre: ["s00"]})
 ns({x:    -3, y:     2, id:  "t21", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5).max(1)}, pre: ["t11"]})
 ns({x:    -3, y:     1, id:  "t22", cost:    4, desc: "Time Dimensions are affected by replicanti to a severely reduced effect.", eff: function() {return getReplEffect().pow(0.5)}, pre: ["t11"]})
 ns({x:    -4, y:     3, id:  "t31", cost:    6, desc: "Time Dimensions gain a boost equal to time theorems plus one.", eff: function() {return game.timestudy.theorems.add(1)}, pre: ["t21"]})

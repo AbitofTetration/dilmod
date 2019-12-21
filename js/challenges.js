@@ -83,7 +83,7 @@ function updateChallengeDescriptions() {
 
 		`Time Dimensions are useless.ECDATAReward: Time dimension multiplier is increased to ^1.03.`,
 		`Infinity Dimensions are useless.ECDATAReward: Replicanti are stronger.`, // Replicanti are stronger.
-		`You are trapped in Infinity Challenges 6 & 7.ECDATAReward: Replicanti grow 2x faster.`,
+		`Production drops extremely quickly, and antimatter galaxies are disabled. However, dimension boosts are stronger.ECDATAReward: Replicanti grow 2x faster.`,
 		`Replicanti are useless.ECDATAReward: Replicanti grow faster based on time in this eternity.`,
 		`Distant scaling starts instantly and is much more harsh.ECDATAReward: The upgrade multiplier is higher based on your galaxies.`,
 		`You cannot gain normal galaxies, but replicated galaxies are 75% stronger.ECDATAReward: Galaxies are 5% stronger.`,
