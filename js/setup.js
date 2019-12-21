@@ -225,7 +225,7 @@ function updateSave() {
 	
 	var c = []
 	for(var i = 0; i < 15; i++) au.extensions[i] = Extension(0.5**i, 2**i, "infinityPoints", au.extensions[i]?au.extensions[i].level:0)
-	for(var i = 0; i < 18; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
+	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
 }
 
 if(localStorage.ad2) {
