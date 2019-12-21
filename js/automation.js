@@ -89,7 +89,9 @@ var autobuyerFunctions = [
 	},
 	function() {
 		return eternity();
-	}
+	},
+  function() {replGalaxy()},
+  function() {}
 ]
 
 function getExtByName(name) {
@@ -104,6 +106,8 @@ function extUnlocked(c) {
 	if(c > 14 && c < 24) return eternityMilestone("iAuto" + (c-14));
 	if(c == 24) return eternityMilestone("iShift");
 	if(c == 25) return eternityMilestone("etAuto");
+	if(c == 26) return eternityMilestone("repGal");
+  if(c == 27) return eternityMilestone("repCha")
 }
 
 function ccmd(a, b, c) {
