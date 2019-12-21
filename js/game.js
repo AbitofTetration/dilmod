@@ -209,7 +209,7 @@ function update() {
 			displayIf("shiftDisplay", game.shifts < 5 && !inChallenge(11));
 			displayIf("boostDisplay", game.shifts == 5 || inChallenge(11));
 			displayIf("galaxyDisplay", game.shifts == 5 || game.galaxies.gt(0) || haveInfinitied());
-      displayIf("extraGalaxies", getEffectiveReplicantiGalaxies().gt(0))
+      displayIf("extraGalaxies", getEffectiveReplicantiGalaxies().gt(0) || getFreeDilatedGalaxies().gt(0))
 			displayIf("sacrificeDisplay", game.shifts == 5 || haveInfinitied())
 			
 			ge("boostName").textContent = getEffectiveDimensionBoosts().gte(getDimensionHypersonicStart()) ? "Dimension Hypersonic" : game.boosts.gte(getDimensionSupersonicStart()) ? "Dimension Supersonic" : "Dimension Boost"
@@ -496,6 +496,7 @@ function update() {
 	if(getReplEffect().gt(1e20)) giveAchievement(84);
 	if(game.eternityPoints.gt(1.79e308)) giveAchievement(86)
 	if(getFreeTickspeedUpgrades().gte(308)) giveAchievement(75);
+	if(getEffectiveNormalGalaxies().gte(300) && getEffectiveReplicantiGalaxies().eq(0)) giveAchievement(95);
   if(getTotalTT().gte(10)) giveAchievement(79);
 	if(game.infinityPoints.gte("9.99e99999")) giveAchievement(89);
 	
@@ -523,7 +524,8 @@ function update() {
 		var div = ge(names[e.id])
 		div.style.visibility = extUnlocked(e.id) ? "visible" : "hidden";
 		
-		ge("buyauto" + (e.id)).innerHTML = "Make extension " + e.id + "50% smaller<br>Cost: " + shortenCosts(e.cost) + " " + smallCurrency[e.currency]
+		ge("buyauto").style = "font-size: 10px"
+    ge("buyauto" + (e.id)).innerHTML = "Make extension " + e.id + " interval 50% smaller<br>Cost: " + shortenCosts(e.cost) + " " + smallCurrency[e.currency]
 		
 		if(!div.children.length) return; // extension exists but no element does
 		
