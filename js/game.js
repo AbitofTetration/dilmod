@@ -202,7 +202,7 @@ function update() {
 			ge("boost").className = canBoost() ? "buy" : "lock" 
 			
 			ge("galaxies").textContent = getFullExpansion(getEffectiveNormalGalaxies());
-			ge("extraGalaxies").textContent = " + " + getFullExpansion(getEffectiveReplicantiGalaxies()) + (game.dilation.freeGalaxies.gt(0) ? " + " + getFreeDilatedGalaxies() : "");
+			ge("extraGalaxies").textContent = " + " + getFullExpansion(getEffectiveReplicantiGalaxies()) + (getFreeDilatedGalaxies().gt(0) ? " + " + shortenMoney(getFreeDilatedGalaxies()) : "");
 			ge("galaxyReq").textContent = getFullExpansion(getGalaxyReq()) + (inChallenge(11) ? " fourth " : " ninth ");
 			ge("galaxy").className = canGalaxy() ? "buy" : "lock" 
 			
