@@ -336,5 +336,5 @@ function getDilationToimeMult() {
 function getTTScaling() {
   if(game.timestudy.theorems.lt(1e6)) return 1
   
-  else return game.timestudy.theorems.divide(1e9).max(1)
+  else return game.timestudy.theorems.divide(1e7).max(1)
 }

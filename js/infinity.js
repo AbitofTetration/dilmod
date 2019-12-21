@@ -15,6 +15,7 @@ function getInfinityPointMult() {
 	
 	if(game.achievements.includes(37)) r = r.multiply(2)
 	if(tree.hasStudy("i23")) r = r.multiply(tree.getEff("i23"));
+	if(tree.hasStudy("g32")) r = r.multiply(tree.getEff("g32"));
 	
 	return r;
 }
