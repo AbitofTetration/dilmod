@@ -91,7 +91,7 @@ function eternity(force) {
 	game.boosts = new Decimal(0);
 	game.galaxies = new Decimal(0);
   game.replicanti.amount = new Decimal(1);
-  game.replicanti.ticks = new Decimal(0);
+  game.replicanti.ticks = 0;
 	game.replicanti.galaxies = new Decimal(0);
 	resetDimensions();
   game.dilation.active = false
@@ -235,7 +235,7 @@ function resetDilation() {
     freeGalaxies: new Decimal(0),
     generatedTT: new Decimal(0),
     upgrades: [],
-    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0)]
+    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
   }
 }
 
