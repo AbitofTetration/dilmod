@@ -411,6 +411,7 @@ function update() {
 				ge("repeatDil" + i).className = canBuyRepeatDil(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("repeatDil" + i).innerHTML = getRepeatDilDesc()[i] + `<br>` + getFullExpansion(getRepeatDilCost(i)) + " DT"
 			}
+      displayIf("dilationButtons", tree.hasStudy("d31"))
     }
 	}
 	
@@ -600,6 +601,7 @@ showStatisticsTab(game.options.saveTabs ? game.currentStatisticsTab : "normal")
 showInfinityTab(game.options.saveTabs ? game.currentInfinityTab : "infinityUpgrades")
 showEternityTab(game.options.saveTabs ? game.currentEternityTab : "timeStudies")
 showAutomationTab(game.options.saveTabs ? game.currentAutomationTab : "core")
+showDilationTab(game.options.saveTabs ? game.currentDilationTab : "dilatedTime")
 scrollChallengesTo(game.options.saveTabs ? game.selectedChallengeType : 0)
 
 update();

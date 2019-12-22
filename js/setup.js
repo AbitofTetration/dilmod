@@ -295,6 +295,14 @@ function showEternityTab(name) {
 	game.currentEternityTab = name;
 }
 
+function showDilationTab(name) {
+	gc("dilationTab", function(e) {
+		e.style.display = "none";
+	})
+	ge(name + "dilationTab").style.display = "";
+	game.currentDilationTab = name;
+}
+
 function displayIf(e, c) {
 	ge(e).style.display = c ? "" : "none";
 }

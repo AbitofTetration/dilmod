@@ -105,7 +105,7 @@ function respecTimeStudies() {
 	eternity();
 }
 
-var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380".split(",");
+var eternityUpgradeCosts = "20, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380, 1e500, 1e620, 1e700, 1e880".split(",");
 
 function canBuyEternityUpgrade(i) {
 	if(game.eternityUpgrades.includes(i)) return false;
@@ -319,7 +319,8 @@ function getDUDescriptions() {
     "Dilated galaxies are twice as powerful.",
     "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
     "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
-    "Make the max replicated galaxies softcap weaker."
+    "Make the max replicated galaxies softcap weaker.",
+    "Reduce the free tickspeed interval."
 	]
 }
 function getDilationUpgradeEffect(n) {
@@ -333,13 +334,11 @@ function getDilationUpgradeEffect(n) {
 		case 3:
 			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
 		case 5:
-			return game.dilation.dilatedTime.divide(400).add(1).pow(1/10).max(1)
+			return game.dilation.dilatedTime.divide(400).add(1).log(2).max(1)
     case 7:
       return game.dilation.dilatedTime.divide(150).add(1).pow(50)
 		case 8:
 			return game.dilation.tachyonParticles.add(1).log(8).max(1);
-    case 10:
-      return
 	}
 }
 

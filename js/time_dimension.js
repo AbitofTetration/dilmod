@@ -77,6 +77,7 @@ function maxAllTimeDimensions() {
 }
 
 function getFreeTickspeedMult() {
+  if(game.dilation.upgrades.includes(10)) return new Decimal(4.5/3);
 	return new Decimal(5/3);
 }
 
