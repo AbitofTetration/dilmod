@@ -58,11 +58,19 @@ function getReplLimit() {
 }
 
 function getMaxReplGalaxies() {
-	if(game.replicanti.upgrades[2].lte(100)) {
+	if(game.replicanti.upgrades[2].lte(75)) {
      return game.replicanti.upgrades[2]; // cap this at some point
   } else {
-     return game.replicanti.upgrades[2].log(1.5).add(90.3908740944)
+     return game.replicanti.upgrades[2].log(getMaxReplGalaxiesSoftcap()).add(65.3908740944)
   }
+}
+
+function getMaxReplGalaxiesSoftcap() {
+  let s = 1.5
+  
+  if(game.dilation.upgrades.includes(9)) s *= 0.9
+  
+  return s
 }
 
 function canReplGalaxy() {

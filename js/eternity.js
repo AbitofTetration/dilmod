@@ -136,15 +136,15 @@ function getEternityUpgradeEffect(n) {
     case 9:
       return getSacrificeMult().add(1).log(1.65404).pow(2).max(1)
     case 10:
-      return game.dimensions[0].amount.add(1).log("1e900000").max(1)
+      return game.dimensions[0].amount.add(1).log("1e1200000").max(1)
     case 11:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e16000").max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e20000").max(1)
     case 12:
-      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e200").max(1)
+      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e300").max(1)
     case 13:
-      return game.infinityDimensions[0].amount.add(1).log("1e40000").max(1)
+      return game.infinityDimensions[0].amount.add(1).log("1e50000").max(1)
     case 14:
-      return game.timeDimensions[0].amount.add(1).log("1e1500").max(1)
+      return game.timeDimensions[0].amount.add(1).log("1e2000").max(1)
 	}
 }
 
@@ -318,13 +318,14 @@ function getDUDescriptions() {
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
     "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
-    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x"
+    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
+    "Make the max replicated galaxies softcap weaker."
 	]
 }
 function getDilationUpgradeEffect(n) {
 	switch(n) {
 		case 0:
-			return game.dilation.dilatedTime.pow(1/10).max(1);
+			return game.dilation.dilatedTime.pow(1/13).max(1);
 		case 1:
 			return game.dilation.tachyonParticles.pow(6).max(1);
 		case 2:
@@ -337,6 +338,8 @@ function getDilationUpgradeEffect(n) {
       return game.dilation.dilatedTime.divide(150).add(1).pow(50)
 		case 8:
 			return game.dilation.tachyonParticles.add(1).log(8).max(1);
+    case 10:
+      return
 	}
 }
 
