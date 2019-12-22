@@ -275,10 +275,12 @@ function getEternityChallengesUnlocked(q) {
 
 function haveECsUnlocked() {
   var unl = [false,false,false,false,false,false,false,false,false,false,false,false,];
+  var q = 0
 	for(var i = 0; i < ecRequirements.length; i++) {
 		if(tree.hasStudy(ecRequirements[i])) unl[i] = true;
+    q += 1
 	}
-	return unl;
+	return q;
 }
 
 function getChallengeReward(i, j) {
