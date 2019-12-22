@@ -73,25 +73,34 @@ function update() {
 	updateDimensionSet("timeDimension", "time", " EP", true)
 	game.totalAntimatter = game.totalAntimatter.add(getDimensionProduction(1).multiply(getTickspeed("dimension")).multiply(diff/1000));
 	
+  // IP and infinity generation
 	if(game.infinityUpgrades.includes(10)) 
 		game.infinityPoints = game.infinityPoints.add(getInfinityPointMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
 	if(game.infinityUpgrades.includes(14)) 
 		game.infinities = game.infinities.add(getInfinityMult().multiply(getInfinityUpgradeEffect(10)).multiply(diff));
   
+  
+  // Dilation generation
   game.dilation.dilatedTime = game.dilation.dilatedTime.add(getDilationTimeGain().multiply(diff/1000));
   if(game.dilation.dilatedTime.gt(game.dilation.galaxyThreshold)) {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
   }
+  
+  // TT generation
   if(game.dilation.upgrades.includes(3)) {
     game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3).multiply(diff/1000))
     game.dilation.generatedTT = game.dilation.generatedTT.add(getDilationUpgradeEffect(3).multiply(diff/1000))
   }
 
+  // More IP generation
 	if(game.dilation.upgrades.includes(4)) 
 		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).pow(0.0125).multiply(getInfinityUpgradeEffect(10)).multiply(diff));
 	
-	if(getReplSpeed().lt(10) && (game.replicanti.amount.gt(2) || getReplChance().gt(100))) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
+  
+  // Replicanti
+  
+	if(getReplSpeed().lt(10) && (game.replicanti.amount.gt(2) && getReplChance().gt(100))) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
 	else {
 		game.replicanti.ticks += diff/1000*hacker;
 		if(game.replicanti.ticks > 1 / getReplSpeed()) {
