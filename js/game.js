@@ -91,7 +91,7 @@ function update() {
 	if(game.dilation.upgrades.includes(4)) 
 		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).pow(0.0125).multiply(getInfinityUpgradeEffect(10)).multiply(diff));
 	
-	if(getReplSpeed().gt(10) && (game.replicanti.amount.gt(2) || getReplChance().gt(100))) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
+	if(getReplSpeed().lt(10) && (game.replicanti.amount.gt(2) || getReplChance().gt(100))) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
 	else {
 		game.replicanti.ticks += diff/1000*hacker;
 		if(game.replicanti.ticks > 1 / getReplSpeed()) {
