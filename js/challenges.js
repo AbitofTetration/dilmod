@@ -88,7 +88,7 @@ function updateChallengeDescriptions() {
 		`Distant scaling starts instantly and is much more harsh.ECDATAReward: The upgrade multiplier is higher based on your galaxies.`,
 		`You cannot gain normal galaxies, but replicated galaxies are 75% stronger.ECDATAReward: Galaxies are 5% stronger.`,
 		`You only have 33% of your normal free tickspeed upgrades from Time Dimensions, and infinity power is 50% weaker. ECDATAReward: You gain 25% more free tickspeed upgrades.`, // might be broken
-		`ECDATA`,
+		`All eternity challenge rewards are disabled.ECDATAReward: Dimension boosts are 50% stronger.`,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
@@ -240,7 +240,7 @@ var icRequirements = ["1e2000", "1e2500", "1e5000", "1e7750", "1e9000", "1e12500
 var icGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 var ecRequirements = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"]
-var ecGoals = ["1e1100", "1e650", "1e700", "1e3300", "1e1400", "1e5500", "1e7800", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
+var ecGoals = ["1e1100", "1e650", "1e700", "1e3300", "1e1400", "1e5500", "1e7800", "1e30000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 function getInfinityChallengesUnlocked() {
 	var unl = 0;
@@ -251,7 +251,7 @@ function getInfinityChallengesUnlocked() {
 }
 
 function challengeCompleted(i, j) {
-	return game.challenges[j][i-1].completed && (j == 1 ? !inChallenge(9, 1) : true);
+	return game.challenges[j][i-1].completed && (j == 1 ? !inChallenge(9, 1) : (j == 2 ? !inChallenge(8, 2) : true));
 }
 
 function challengeUnlocked(i, j) {
@@ -314,7 +314,10 @@ function getChallengeReward(i, j) {
       0,
       0,
       0,
-      getEffectiveGalaxies().add(1).log(125)
+      getEffectiveGalaxies().add(1).log(125),
+      0,
+      0,
+      0
     ]
 	][j][i-1]
 }
@@ -396,13 +399,14 @@ function getChallengeBenefits() {
 					`${shorten(getChallengeReward(5,2))}% extra dimension upgrade multiplier.`,
 					`5% stronger galaxies.`,
 					`25% extra tickspeed upgrades.`,
-					`${shorten(getChallengeReward(8, 1))}x on dimensions 1-8.`,
+					`50% stronger dimension boosts.`,
 					`${getAchievementMultiplier()}x on all infinity dimensions.`,
 					`${shorten(getChallengeReward(10, 1))}x on all infinity dimensions.`,
 					`Boost to infinity dimensions based on tier.`,
 					`+???% Infinity Shift effectiveness.`,
 				]
 				for(var i = 1; i <= 12; i++) if(challengeCompleted(i, 2)) lines.push(t[i-1])
+				if(inChallenge(8, 2)) lines.push("REWARDS DISABLED");
 				lines.push("")
 				lines.push("")
 			}

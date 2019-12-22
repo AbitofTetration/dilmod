@@ -52,6 +52,7 @@ function getDimensionBoostPower() {
 	if(challengeCompleted(7, 1)) r = r.multiply(2.5)
 	if(tree.hasStudy("p23")) r = r.multiply(4);
 	if(inChallenge(7, 1)) r = r.pow(2)
+	if(challengeCompleted(8, 2)) r = r.multiply(1.5)
 	return r;
 }
 

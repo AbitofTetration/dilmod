@@ -120,6 +120,7 @@ function getInfinityPowerPower() { // ...bruh
 	var r = 3
 	if(inChallenge(12, 1)) r /= 1.5
 	if(inChallenge(7, 2)) r /= 2
+  if(tree.hasStudy("i42")) r *= 1+(1/3)
 	return r
 }
 

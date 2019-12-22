@@ -81,7 +81,8 @@ ns({x:     3, y:    -3, id:  "i31", cost:    7, desc: "Sacrifice affects 9th Inf
 ns({x:     4, y:    -3, id:  "i32", cost:   12, desc: "Replicanti boost is powered up.", pre: ["i22"]})
 ns({x:     4, y:    -2, id:  "s02", cost:    0, desc: "Eternity Challenge 2", pre: ["i32"]})
 ns({x:     5, y:    -2, id:  "i41", cost:  370, desc: "Infinity Dimensions gain a boost based on eternity challenge completions.", eff: function() {return Decimal.pow(getChallengeCompletions(2), 100)}, pre: ["s02"]})
-ns({x:     5, y:    -1, id:  "i42", cost:  650, desc: "Infinity Dimensions gain a boost based on eternity challenge completions.", eff: function() {return Decimal.pow(getChallengeCompletions(2), 100)}, pre: ["s02"]})
+ns({x:     5, y:    -1, id:  "i42", cost:  650, desc: "Infinity power boost formula is better.", pre: ["s02"]})
+ns({x:     6, y:    -2, id:  "s08", cost:    0, desc: "Eternity Challenge 8", pre: ["i41", "i42"]})
 ns({x:    -2, y:     2, id:  "t11", cost:    1, desc: "Tickspeed affects first Time Dimension with reduced effect", eff: function() {
   let r = getTickspeed("dimension").pow(0.0005).max(1)
   if(r.gt(infp(2))) r = r.pow(0.290).max(infp(2))
