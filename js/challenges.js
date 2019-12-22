@@ -278,7 +278,7 @@ function haveECsUnlocked() {
   var q = 0
 	for(var i = 0; i < ecRequirements.length; i++) {
 		if(tree.hasStudy(ecRequirements[i])) unl[i] = true;
-    q += 1
+    if(tree.hasStudy(ecRequirements[i])) q += 1
 	}
 	return q;
 }
