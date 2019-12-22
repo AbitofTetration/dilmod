@@ -301,10 +301,10 @@ var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10, 1e11, 1e13, 1e15".sp
 
 
 function getTTScaling() {
-  if(game.timestudy.theorems.lt(1e5)) {
+  if(game.timestudy.theorems.lt(2e7)) {
     return new Decimal(1)
   }
-  else return game.timestudy.theorems.divide(1e6).max(1)
+  else return game.timestudy.theorems.divide(2e7).max(1)
 }
 
 function getDUDescriptions() {

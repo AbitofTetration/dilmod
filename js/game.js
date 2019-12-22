@@ -487,7 +487,7 @@ function update() {
 	if(getReplEffect().gt(1e20)) giveAchievement(84);
 	if(game.eternityPoints.gt(1.79e308)) giveAchievement(86)
 	if(getFreeTickspeedUpgrades().gte(308)) giveAchievement(75);
-	if(getEffectiveNormalGalaxies().add(getFreeDilatedGalaxies()).gte(300) && getEffectiveReplicantiGalaxies().eq(0)) giveAchievement(95);
+	if(getEffectiveNormalGalaxies().gte(250) && getEffectiveReplicantiGalaxies().eq(0)) giveAchievement(95);
   if(getTotalTT().gte(10)) giveAchievement(79);
 	if(game.infinityPoints.gte("9.99e99999")) giveAchievement(89);
 	

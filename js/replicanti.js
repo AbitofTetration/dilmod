@@ -96,5 +96,6 @@ function handleReplGrowth() {
 			game.replicanti.ticks -= updates / getReplSpeed();
 		}
 	}
+  if(game.replicanti.amount.lt(2) && getReplSpeed().lt(10)) game.replicanti.amount = game.replicanti.amount.add(1)
 	game.replicanti.amount = game.replicanti.amount.min(getReplLimit());
 }

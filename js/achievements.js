@@ -107,7 +107,7 @@ function updateAchievementDescriptions() {
 		"", ``,
 		"", ``,
 		"Time goes by fast", `Eternity in one tenth of a second.`,
-		"Unique Snowflakes", `Reach ${shortenMoney(300)} galaxies without any replicated galaxies. Reward: Normal galaxies are 1% stronger.`,
+		"Unique Snowflakes", `Reach ${shortenMoney(250)} galaxies without any replicated galaxies. Reward: Normal galaxies are 1% stronger.`,
 		"", ``,
 		"The next update is in 5 eternities", `Complete all of the eternity challenges.`,
 		"Once More, Beyond", `Ex-dilate.`,
