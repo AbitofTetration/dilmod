@@ -90,7 +90,7 @@ function updateChallengeDescriptions() {
 		`You only have 33% of your normal free tickspeed upgrades from Time Dimensions, and infinity power is 50% weaker. ECDATAReward: You gain 25% more free tickspeed upgrades.`, // might be broken
 		`All eternity challenge rewards are disabled.ECDATAReward: Dimension boosts are 50% stronger.`,
 		`ECDATA`,
-		`ECDATA`,
+		`Time and infinity dimensions are useless, but you gain a boost to normal dimensions based on infinities.ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
