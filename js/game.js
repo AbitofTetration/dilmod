@@ -100,26 +100,7 @@ function update() {
   
   // Replicanti
   
-	if(getReplSpeed().lt(10) && (game.replicanti.amount.gt(2) && getReplChance().gt(100))) game.replicanti.amount = Decimal.pow(2, game.replicanti.amount.log2().add(getReplChance().log2().multiply(getReplSpeed()).multiply(Decimal.min(diff / 1000, 60*hacker))))
-	else {
-		game.replicanti.ticks += diff/1000*hacker;
-		if(game.replicanti.ticks > 1 / getReplSpeed()) {
-			updates = Math.floor(game.replicanti.ticks * getReplSpeed())
-			if(updates > 10 || game.replicanti.amount.gt(256)) { // cap manual replication iterations, so as to not brick your computer
-				game.replicanti.amount = game.replicanti.amount.multiply(getReplChance().pow(updates));
-			}
-			else {
-				var a = game.replicanti.amount;
-				for(var i = 0; i < a * updates; i++) {
-					if(Math.random() < getReplChance() - 1) {
-						game.replicanti.amount = game.replicanti.amount.add(1); // run through all replicanti
-					}
-				}
-			}
-			game.replicanti.ticks -= updates / getReplSpeed();
-		}
-	}
-	game.replicanti.amount = game.replicanti.amount.min(getReplLimit());
+	handleReplGrowth()
 	
 	// Prestige Rates
 	

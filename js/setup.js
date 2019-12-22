@@ -93,6 +93,7 @@ function exportGame() {
 function hardReset() {
 	if (confirm("Are you sure about doing a hard reset? THERE IS NO REWARD FOR THIS!")) {
 		if (confirm("This is the LAST confirm!")) {
+      showDimensionTab("normal")
 			newGame();
 		}
 	}
