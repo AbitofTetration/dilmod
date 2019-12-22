@@ -266,7 +266,7 @@ function dilate() {
 }
 var dilationRepUpgradeCosts = "100, 1000, 10000, 100000".split(",");
 
-var dilationRepUpgradeCostMults = "100, 100, 100, 1000".split(",");
+var dilationRepUpgradeCostMults = "100, 100, 100, 100".split(",");
 
 function getRepeatDilDesc() {
   return [
@@ -298,7 +298,7 @@ function buyRepeatDil(i) {
 	return true;
 }
 
-var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10, 1e11, 1e13, 1e15".split(",");
+var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10, 1e11, 1e13, 1e15, 1e16, 1e18, 1e20".split(",");
 
 
 function getTTScaling() {
