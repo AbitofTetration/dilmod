@@ -333,7 +333,7 @@ function getDilationUpgradeEffect(n) {
 		case 5:
 			return game.dilation.dilatedTime.divide(400).add(1).pow(1/10).max(1)
     case 7:
-      return game.dilation.dilatedTime.divide(400).add(1).pow(1/3)
+      return game.dilation.dilatedTime.divide(150).add(1).pow(50)
 		case 8:
 			return game.dilation.tachyonParticles.add(1).log(8).max(1);
 	}

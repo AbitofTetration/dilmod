@@ -115,7 +115,7 @@ ns({x:     3, y:     4, id:  "s05", cost:    0, desc: "Eternity Challenge 5", pr
 ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 5}})
 ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:     4, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
-ns({x:     1, y:     4, id:  "d22", cost:  1e8, desc: "Unlock time dimension 9", pre: ["d21"],})
+ns({x:     1, y:     4, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})
 ns({x:     0, y:     5, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
 
 Study.prototype.getPostStudies = function() {
