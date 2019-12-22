@@ -402,12 +402,12 @@ function update() {
 			ge("dilatedTime").innerHTML = shortenMoney(game.dilation.dilatedTime);
 			ge("freeGalaxies").innerHTML = shortenMoney(getFreeDilatedGalaxies());
 			ge("galaxyThreshold").innerHTML = shortenMoney(getFreeGalaxiesThreshold());
-			for(var i = 0; i < 9; i++) {
+			for(var i = 0; i < 12; i++) {
 				ge("dilashunUpgrade" + i).className = game.dilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyDilationUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("dilashunUpgradeDesc" + i).innerHTML = getDUDescriptions()[i];
 				ge("dilashunUpgradeCost" + i).innerHTML = getFullExpansion(dilationUpgradeCosts[i]) + " DT";
 			}
-			for(var i = 0; i < 3; i++) {
+			for(var i = 0; i < 4; i++) {
 				ge("repeatDil" + i).className = canBuyRepeatDil(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
 				ge("repeatDil" + i).innerHTML = getRepeatDilDesc()[i] + `<br>` + getFullExpansion(getRepeatDilCost(i)) + " DT"
 			}

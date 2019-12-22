@@ -453,6 +453,7 @@ ge("dilationUpgrades").innerHTML = h + `
 	<td><button id = "repeatDil0" onclick = "buyRepeatDil(0)"></button></td>
 	<td><button id = "repeatDil1" onclick = "buyRepeatDil(1)"></button></td>
 	<td><button id = "repeatDil2" onclick = "buyRepeatDil(2)"></button></td>
+	<td><button id = "repeatDil3" onclick = "buyRepeatDil(3)"></button></td>
 </tr>
 `
 
