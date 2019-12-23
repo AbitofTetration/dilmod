@@ -120,7 +120,6 @@ function getTickPower() {
 	var ic3 = getChallengeReward(3, 1).multiply(getEffectiveGalaxies());
 	if(inChallenge(3, 1)) r = ic3.add(1);
 	if(challengeCompleted(3, 1)) r = r.add(ic3)
-  if(tree.hasStudy("g11")) r = r.multiply(tree.getEff("g11"))
 	return r;
 }
 
@@ -158,6 +157,7 @@ function getGalaxyPower() {
 	var r = new Decimal(1);
 	if(game.infinityUpgrades.includes(15) && getChallengeSet() !== 1 && getChallengeSet() !== 2) r = r.multiply(2);
 	if(challengeCompleted(5, 1)) r = r.multiply(1.1);
+  if(tree.hasStudy("g11")) r = r.multiply(tree.getEff("g11"))
 	return r;
 }
 
@@ -185,7 +185,7 @@ function getReplicantiGalaxyPower() {
 }
 
 function getDistantGalaxyStart() {
-  let s = new Decimal(75+tree.hasStudy("r22")*25);
+  let s = new Decimal(75+tree.hasStudy("r21")*25);
   if(inChallenge(5,2)) s = s.multiply(0);
 	return s
 }
