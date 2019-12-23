@@ -227,7 +227,7 @@ function resetInfinityUpgrades() {
 }
 
 function canBreakInfinity() {
-	return getChallengeCompletions() > 10 || haveEternitied();
+	return getChallengeCompletions() >= 10 || haveEternitied();
 }
 
 function breakInfinity() {
