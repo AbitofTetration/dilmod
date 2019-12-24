@@ -407,7 +407,7 @@ function resetExDilation() {
 function exDilate() {
   if(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount).gt(5)) {
     if(confirm("Are you sure you want to ex-dilate? This will reset your tachyon particles, dilated time, and repeatable dilation upgrades. However, in exchange, you get ex-dilation based on your tachyon particles. Are you ready?")) {
-        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount).divide(5))
+        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount).divide(5).multiply(Decimal.pow(2, game.exDilation.repeatUpgr[0])))
         game.dilation.dilatedTime = new Decimal(0)
         game.dilation.galaxyThreshold = new Decimal(1000)
         game.dilation.freeGalaxies = new Decimal(0)

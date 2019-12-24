@@ -254,13 +254,13 @@ currency {
 
 .exDilationBought {
 	color: green;
-	background: radial-gradient(#003000, #005000);
+	background: radial-gradient(#004000, #005000);
 	border: 1px solid green;
 	cursor: pointer;
 }
 
 .exDilationBought:hover {
-	background: radial-gradient(#001000, #003000);
+	background: radial-gradient(#003000, #004000);
 }
 
 .exDilationLocked {
