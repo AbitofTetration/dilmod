@@ -248,7 +248,10 @@ function inDilation() {
 }
 
 function gainedTP() {
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
+  let thing = game.dilation.repeatUpgr[2].add(1)
+  if(game.exDilation.upgrades.includes(0)) thing = thing.add(getExDilationUpgradeEffect(0))
+  let tpFormula = Decimal.add(1.5, thing.log(3.5).divide(3))
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, tpFormula)).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
 }
 
 function extraTPMult() {
@@ -402,26 +405,46 @@ function resetExDilation() {
 
 function exDilate() {
   if(game.dilation.tachyonParticles.log(10).gt(5)) {
-    if(confirm("Are you sure you want to ex-dilate? This will reset your tachyon particles, dilated time, and free dilation upgrades. However, in exchange, you get ex-dilation based on your tachyon particles. Are you ready?")) {
+    if(confirm("Are you sure you want to ex-dilate? This will reset your tachyon particles, dilated time, and repeatable dilation upgrades. However, in exchange, you get ex-dilation based on your tachyon particles. Are you ready?")) {
         game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).divide(5))
         game.dilation.dilatedTime = new Decimal(0)
         game.dilation.galaxyThreshold = new Decimal(1000)
         game.dilation.freeGalaxies = new Decimal(0)
         game.dilation.thresholdUpSpeed = new Decimal(5).divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
         game.dilation.tachyonParticles = new Decimal(0)
+        game.dilation.repeatUpgr = [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
     }
   }
 }
 
 function getEDUDescriptions() {
 	return [
-		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
+		"Tachyon particle formula is better based on ex-dilation.<br> ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))) + " > ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).add(getExDilationUpgradeEffect(0)).log(3.5).divide(3))),
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
 		"You gain some of your Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
 	]
+}
+
+function getExDilationUpgradeEffect(n) {
+	switch(n) {
+		case 0:
+			return game.exDilation.amount.add(1).pow(1/5).max(1);
+		case 1:
+			return game.dilation.tachyonParticles.pow(6).max(1);
+		case 2:
+			return game.dilation.dilatedTime.pow(4).max(1)
+		case 3:
+			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
+		case 5:
+			return game.dilation.dilatedTime.divide(400).add(1).log(2).max(1)
+    case 7:
+      return game.dilation.dilatedTime.divide(150).add(1).pow(50)
+		case 8:
+			return game.dilation.tachyonParticles.add(1).log(8).max(1);
+	}
 }
 
 var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5".split(",");
@@ -455,4 +478,10 @@ function buyRepeatExDil(i) {
 		game.exDilation.repeatUpgr[i] = game.exDilation.amount.log10().divide(2).floor();
 		if(game.exDilation.amount.lt(infp())) game.exDilation.amount = game.exDilation.amount.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.exDilation.amount.log10().divide(2).floor()))
 	return true;
+}
+
+function getRepeatExDilDesc() {
+  return [
+    "You gain twice as much ex-dilation.<br>Currently: " + shorten(Decimal.pow(2, game.exDilation.repeatUpgr[0])) + "x",
+  ]
 }

@@ -202,7 +202,7 @@ currency {
 	cursor: default;
 }
 
-.eternityUpgrade, .eternityUpgradeLocked, .eternityUpgradeBought, .exDilation, .exDilationLocked {
+.eternityUpgrade, .eternityUpgradeLocked, .eternityUpgradeBought, .exDilation, .exDilationLocked, .exDilationBought {
 	width: 200;
 	height: 100;
 	font-weight: bold;
@@ -250,6 +250,17 @@ currency {
 
 .exDilation:hover {
 	background: radial-gradient(#000000, #002000);
+}
+
+.exDilationBought {
+	color: green;
+	background: radial-gradient(#003000, #005000);
+	border: 1px solid green;
+	cursor: pointer;
+}
+
+.exDilationBought:hover {
+	background: radial-gradient(#001000, #003000);
 }
 
 .exDilationLocked {

@@ -414,13 +414,14 @@ function update() {
       displayIf("dilationButtons", tree.hasStudy("d31"))
       ge("exdilationButton")
 			for(var i = 0; i < 6; i++) {
-				ge("exDilashunUpgrade" + i).className = game.exDilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyExDilationUpgrade(i) ? "exDilation" : "exDilationLocked";
+				ge("exDilashunUpgrade" + i).className = game.exDilation.upgrades.includes(i) ? "exDilationBought" : canBuyExDilationUpgrade(i) ? "exDilation" : "exDilationLocked";
 				ge("exDilashunUpgradeDesc" + i).innerHTML = getEDUDescriptions()[i];
 				ge("exDilashunUpgradeCost" + i).innerHTML = getFullExpansion(exDilationUpgradeCosts[i]) + " ex-dilation";
 			}
+      ge("exDilation").innerHTML = shortenMoney(game.exDilation.amount);
 			for(var i = 0; i < 4; i++) {
 				ge("repeatEDil" + i).className = canBuyRepeatDil(i) ? "exDilation" : "exDilationLocked";
-				ge("repeatEDil" + i).innerHTML = getRepeatDilDesc()[i] + `<br>` + getFullExpansion(getRepeatExDilCost(i)) + " ex-dilation"
+				ge("repeatEDil" + i).innerHTML = getRepeatExDilDesc()[i] + `<br>` + getFullExpansion(getRepeatExDilCost(i)) + " ex-dilation"
 			}
     }
 	}

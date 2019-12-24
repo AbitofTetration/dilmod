@@ -265,7 +265,6 @@
 		<div class = "eternityTab" id = "dilationTab">
 			You have <currency class = "tachyonParticles"></currency> Tachyon Particles.<br>
 			<br>
-			You have <currency id = "dilatedTime"></currency> dilated time, translated to <currency id = "freeGalaxies"></currency> free galaxies. Next galaxy at <currency id = "galaxyThreshold"></currency> dilated time.<br>
       
       <br>
       <div id = "dilationButtons" >
@@ -273,10 +272,12 @@
 		  	<button class = "subtabButton" onclick = "showDilationTab('exDilation')">Ex-Dilation</button>
       </div>
       <div class = "dilationTab" id = "dilatedTimedilationTab">
+		  	You have <currency id = "dilatedTime"></currency> dilated time, translated to <currency id = "freeGalaxies"></currency> free galaxies. Next galaxy at <currency id = "galaxyThreshold"></currency> dilated time.<br>
         <button id = "dilationButton" onclick = "dilate()" class = "eternityUpgrade">Dilate time.</button><br>
         <table id = "dilationUpgrades" style = "font-size: 10px"></table>
       </div>
       <div class = "dilationTab" id = "exDilationdilationTab">
+        You have <currency id = "exDilation"></currency> ex-dilation.<br>
         <button id = "exdilationButton" onclick = "exDilate()" class = "exDilation">Ex-dilate.</button><br>
         <table id = "exDilationUpgrades" style = "font-size: 10px"></table>
       </div>
