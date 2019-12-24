@@ -391,7 +391,7 @@ function getFreeDilatedGalaxies() {
 	var a = game.dilation.dilatedTime;
   a = a.gt(0) ? a.log10().divide(getFreeGalaxiesMult().log10()).ceil().max(0) : new Decimal(0)
   
-  if(tree.hasStudy("t41")) a = a.multiply(tree.getEff("t41"))
+  if(game.exDilation.upgrades.includes(3)) a = a.add(getExDilationUpgradeEffect(3))
   
 	return a;
 }
@@ -431,9 +431,9 @@ function getEDUDescriptions() {
 		"Tachyon particle formula is better based on ex-dilation.<br> ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))) + " > ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).add(getExDilationUpgradeEffect(0)).log(3.5).divide(3))),
 		"The penalty for dilation is reduced.<br>^0.25 > ^0.3",
 		"Dilated time gain is boosted based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(2)) + "x",
-		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shortenMoney(getExDilationUpgradeEffect(3)),
+		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shorten(getExDilationUpgradeEffect(3)),
 		"You gain some of your Infinity Points on infinity automatically.",
-		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
+		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
 	]
 }
 
@@ -444,13 +444,9 @@ function getExDilationUpgradeEffect(n) {
 		case 2:
 			return game.exDilation.amount.add(1).pow(1/4).max(1)
 		case 3:
-			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
+			return new Decimal(game.achievementRowsCompleted * 0.7 + (game.achievements.length * 0.2)).max(1)
 		case 5:
-			return game.dilation.dilatedTime.divide(400).add(1).log(2).max(1)
-    case 7:
-      return game.dilation.dilatedTime.divide(150).add(1).pow(50)
-		case 8:
-			return game.dilation.tachyonParticles.add(1).log(8).max(1);
+			return getFreeDilatedGalaxies().add(1).log(5).max(1)
 	}
 }
 
