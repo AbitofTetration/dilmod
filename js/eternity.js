@@ -451,7 +451,7 @@ function getExDilationUpgradeEffect(n) {
 	}
 }
 
-var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5".split(",");
+var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5, 15, 40, 100".split(",");
 
 function canBuyExDilationUpgrade(i) {
 	if(game.exDilation.upgrades.includes(i)) return false;
