@@ -431,7 +431,7 @@ function getEDUDescriptions() {
 		"Tachyon particle formula is better based on ex-dilation.<br> ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))) + " > ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).add(getExDilationUpgradeEffect(0)).log(3.5).divide(3))),
 		"The penalty for dilation is reduced.<br>^0.25 > ^0.3",
 		"Dilated time gain is boosted based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(2)) + "x",
-		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s",
+		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shortenMoney(getExDilationUpgradeEffect(3)),
 		"You gain some of your Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
 	]
@@ -490,6 +490,7 @@ function buyRepeatExDil(i) {
 function getRepeatExDilDesc() {
   return [
     "You gain twice as much ex-dilation.<br>Currently: " + shorten(Decimal.pow(2, game.exDilation.repeatUpgr[0])) + "x",
-    "Free galaxies are more powerful.<br>Currently: " + shorten(Decimal.add(1, game.exDilation.repeatUpgr[1].add(1).pow(0.5).subtract(1))) + "x"
+    "Free galaxies are more powerful.<br>Currently: " + shorten(Decimal.add(1, game.exDilation.repeatUpgr[1].add(1).pow(0.5).subtract(1))) + "x",
+    "You produce 10x as much dilated time.<br>Currently: " + shorten(Decimal.pow(10, game.exDilation.repeatUpgr[2])) + "x"
   ]
 }
