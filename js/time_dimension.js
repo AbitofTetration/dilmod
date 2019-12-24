@@ -32,6 +32,7 @@ function getTimeDimensionProduction(i) {
 	if(tree.hasStudy("t21")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t21"))
 	if(tree.hasStudy("t22")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t22"))
 	if(tree.hasStudy("t31")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t31"))
+	if(tree.hasStudy("t51")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t51"))
   if(game.dilation.upgrades.includes(1)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(1))
   if(game.achievements.includes(75)) dim.multiplier = dim.multiplier.multiply(getInfiniteTimeMult())
   if(game.eternityUpgrades.includes(5)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(23))

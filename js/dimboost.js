@@ -57,6 +57,7 @@ function getDimensionBoostPower() {
 }
 
 function getDimensionSupersonicStart() {
+  if(inChallenge(9, 1)) return 0;
 	return 56e4;
 }
 
