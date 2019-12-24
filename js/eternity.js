@@ -324,7 +324,8 @@ function getDUDescriptions() {
     "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
     "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
     "Make the max replicated galaxies softcap weaker.",
-    "Reduce the free tickspeed interval."
+    "Reduce the free tickspeed interval.",
+    "The cost scaling of normal dimensions are heavily reduced."
 	]
 }
 function getDilationUpgradeEffect(n) {

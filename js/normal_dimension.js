@@ -42,6 +42,9 @@ function resetDimensions() {
 	if(inChallenge(3)) {
 		game.dimensions.forEach(function(d) {d.costMult = d.costMult.multiply(100)});
 	}
+  	if(inChallenge(3)) {
+		game.dimensions.forEach(function(d) {d.costMult = d.costMult.multiply(100)});
+	}
 }
 
 function getDimensionProduction(i) {

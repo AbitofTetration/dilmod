@@ -105,7 +105,7 @@ function updateAchievementDescriptions() {
 		"Now you're thinking with dilation!", `Undilate time for ${shortenCosts("1e600")} EP in 10 seconds. Reward: Dilation doesn't affect Time Dimensions.`,
 		"Faster than a Dry Bones", `Reach ${shorten(Decimal.pow(1e16,125000))} ticks per second. Reward: Time Dimensions are 3% stronger.`,
 		"I gotta keep grinding!", `Buy six dilation upgrades.`,
-		"", ``,
+		"It won't be enough", `Reach ${shorten(new Decimal("1e20000"))} replicanti.`,
 		"Time goes by fast", `Eternity in one tenth of a second.`,
 		"Unique Snowflakes", `Reach ${shortenMoney(250)} galaxies without any replicated galaxies. Reward: Normal galaxies are 1% stronger.`,
 		"GAS GAS GAS", `Reach ${shortenMoney(1e5)} tickspeed upgrades.`,
