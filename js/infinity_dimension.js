@@ -78,7 +78,7 @@ function getInfinityDimensionProduction(i) {
 	if(tree.hasStudy("i31") && i == 9) dim.multiplier = dim.multiplier.multiply(tree.getEff("i31"))
 	if(tree.hasStudy("i41")) dim.multiplier = dim.multiplier.multiply(tree.getEff("i41"))
   
-  if(inDilation()) dim.multiplier = dim.multiplier.pow(0.25)
+  if(inDilation()) dim.multiplier = dim.multiplier.pow(dilationPenalty())
 	
 	return dim.amount.multiply(dim.multiplier);
 }

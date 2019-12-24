@@ -258,7 +258,8 @@ function extraTPMult() {
   let r = new Decimal("1")
   
   for (var i = 12; i < 14; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
-
+  if(game.exDilation.upgrades.includes(2)) r = r.multiply(getExDilationUpgradeEffect(2))
+  
   return r;
 }
 
@@ -404,9 +405,9 @@ function resetExDilation() {
 }
 
 function exDilate() {
-  if(game.dilation.tachyonParticles.log(10).gt(5)) {
+  if(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount.log(10)).gt(5)) {
     if(confirm("Are you sure you want to ex-dilate? This will reset your tachyon particles, dilated time, and repeatable dilation upgrades. However, in exchange, you get ex-dilation based on your tachyon particles. Are you ready?")) {
-        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).divide(5))
+        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount.log(10)).divide(5))
         game.dilation.dilatedTime = new Decimal(0)
         game.dilation.galaxyThreshold = new Decimal(1000)
         game.dilation.freeGalaxies = new Decimal(0)
@@ -417,12 +418,20 @@ function exDilate() {
   }
 }
 
+function dilationPenalty() {
+  let r = 0.25
+  
+  if(game.exDilation.upgrades.includes(1)) r += 0.05
+  
+  return r;
+}
+
 function getEDUDescriptions() {
 	return [
 		"Tachyon particle formula is better based on ex-dilation.<br> ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))) + " > ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).add(getExDilationUpgradeEffect(0)).log(3.5).divide(3))),
-		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
-		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
-		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
+		"The penalty for dilation is reduced.<br>^0.25 > ^0.3",
+		"Dilated time gain is boosted based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(2)) + "x",
+		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s",
 		"You gain some of your Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
 	]
@@ -432,10 +441,8 @@ function getExDilationUpgradeEffect(n) {
 	switch(n) {
 		case 0:
 			return game.exDilation.amount.add(1).pow(1/5).max(1);
-		case 1:
-			return game.dilation.tachyonParticles.pow(6).max(1);
 		case 2:
-			return game.dilation.dilatedTime.pow(4).max(1)
+			return game.exDilation.amount.add(1).pow(1/4).max(1)
 		case 3:
 			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
 		case 5:

@@ -420,7 +420,7 @@ function update() {
 			}
       ge("exDilation").innerHTML = shortenMoney(game.exDilation.amount);
 			for(var i = 0; i < 4; i++) {
-				ge("repeatEDil" + i).className = canBuyRepeatDil(i) ? "exDilation" : "exDilationLocked";
+				ge("repeatEDil" + i).className = canBuyRepeatExDil(i) ? "exDilation" : "exDilationLocked";
 				ge("repeatEDil" + i).innerHTML = getRepeatExDilDesc()[i] + `<br>` + getFullExpansion(getRepeatExDilCost(i)) + " ex-dilation"
 			}
     }
