@@ -25,6 +25,7 @@ function getTimeDimensionProduction(i) {
 	var dim = game.timeDimensions[i];
 	
 	dim.multiplier = Decimal.pow(timeDimensionBuyMults[dim.id], dim.bought)
+  if(game.achievements.includes(91)) dim.multiplier = dim.multiplier.multiply(1.03)
 	if(tree.hasStudy("t11") && i == 1) dim.multiplier = dim.multiplier.multiply(tree.getEff("t11"))
 	if(tree.hasStudy("g21") && i == 2) dim.multiplier = dim.multiplier.multiply(tree.getEff("g21"))
 	if(tree.hasStudy("g22") && i == 3) dim.multiplier = dim.multiplier.multiply(tree.getEff("g22"))
