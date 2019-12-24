@@ -413,7 +413,7 @@ function update() {
 			}
       displayIf("dilationButtons", tree.hasStudy("d31"))
       ge("exdilationButton")
-			for(var i = 0; i < 6; i++) {
+			for(var i = 0; i < 9; i++) {
 				ge("exDilashunUpgrade" + i).className = game.exDilation.upgrades.includes(i) ? "exDilationBought" : canBuyExDilationUpgrade(i) ? "exDilation" : "exDilationLocked";
 				ge("exDilashunUpgradeDesc" + i).innerHTML = getEDUDescriptions()[i];
 				ge("exDilashunUpgradeCost" + i).innerHTML = getFullExpansion(exDilationUpgradeCosts[i]) + " ex-dilation";
