@@ -202,7 +202,7 @@ currency {
 	cursor: default;
 }
 
-.eternityUpgrade, .eternityUpgradeLocked, .eternityUpgradeBought {
+.eternityUpgrade, .eternityUpgradeLocked, .eternityUpgradeBought, .exDilation {
 	width: 200;
 	height: 100;
 	font-weight: bold;
@@ -239,6 +239,19 @@ currency {
 	background: #b341e0;
 	border: 1px solid #404;
 	cursor: default;
+}
+
+.exDilation {
+	color: #b341e0;
+	background: black;
+	border: 1px solid #b341e0;
+	cursor: pointer;
+  text-shadow: #404 0px 0px 5px, #404 0px 0px 5px, #404 0px 0px 4px, #404 0px 0px 4px, #404 0px 0px 3px, #404 0px 0px 3px;
+}
+
+.exDilation:hover {
+	color: #b341e0;
+	background: grey;
 }
 
 .timestudy, .timestudylocked, .timestudybought {
