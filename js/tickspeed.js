@@ -158,6 +158,7 @@ function getGalaxyPower() {
 	if(game.infinityUpgrades.includes(15) && getChallengeSet() !== 1 && getChallengeSet() !== 2) r = r.multiply(2);
 	if(challengeCompleted(5, 1)) r = r.multiply(1.1);
   if(tree.hasStudy("g11")) r = r.multiply(tree.getEff("g11"))
+	if(game.achievements.includes(95)) r = r.multiply(1.01);
 	return r;
 }
 

@@ -90,7 +90,7 @@ function updateAchievementDescriptions() {
 		"ONE HUNDRED THOUSAND INFINITIES", `Reach ${shorten("1e5")} infinities. Reward: Infinities more than one second long give 50x infinities.`,
 		"That took a while", `Reach 100 eternities.`,
 		"Quick spender", `Buy 10 time theorems.`,
-		"Faster than a potato^3000", `Reach ${shorten(Decimal.pow(1e16,3000))} tick per second. Reward: Tickspeed is 1% stronger.`,
+		"Faster than a potato^3000", `Reach ${shorten(Decimal.pow(1e16,3000))} tick per second. Reward: Tickspeed is 1% faster.`,
 
 		"We didn't need them anyway", `Eternity without any Infinity Dimensions (including EC1).`,
 		"Eternal Suffering", `Complete a Eternity Challenge.`,
