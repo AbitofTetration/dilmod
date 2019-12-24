@@ -405,13 +405,13 @@ function resetExDilation() {
 }
 
 function exDilate() {
-  if(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount.log(10)).gt(5)) {
+  if(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount).gt(5)) {
     if(confirm("Are you sure you want to ex-dilate? This will reset your tachyon particles, dilated time, and repeatable dilation upgrades. However, in exchange, you get ex-dilation based on your tachyon particles. Are you ready?")) {
-        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount.log(10)).divide(5))
+        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).subtract(game.exDilation.amount).divide(5))
         game.dilation.dilatedTime = new Decimal(0)
         game.dilation.galaxyThreshold = new Decimal(1000)
         game.dilation.freeGalaxies = new Decimal(0)
-        game.dilation.thresholdUpSpeed = new Decimal(5).divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
+        game.dilation.thresholdUpSpeed = new Decimal(5)
         game.dilation.tachyonParticles = new Decimal(0)
         game.dilation.repeatUpgr = [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
     }
@@ -490,5 +490,6 @@ function buyRepeatExDil(i) {
 function getRepeatExDilDesc() {
   return [
     "You gain twice as much ex-dilation.<br>Currently: " + shorten(Decimal.pow(2, game.exDilation.repeatUpgr[0])) + "x",
+    "Free galaxies are more powerful.<br>Currently: " + shorten(Decimal.add(1, game.exDilation.repeatUpgr[1].add(1).pow(0.5).subtract(1))) + "x"
   ]
 }
