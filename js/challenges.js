@@ -89,7 +89,7 @@ function updateChallengeDescriptions() {
 		`You cannot gain normal galaxies, but replicated galaxies are 75% stronger.ECDATAReward: Galaxies are 5% stronger.`,
 		`You only have 33% of your normal free tickspeed upgrades from Time Dimensions, and infinity power is 50% weaker. ECDATAReward: You gain 25% more free tickspeed upgrades.`, // might be broken
 		`All eternity challenge rewards are disabled.ECDATAReward: Dimension boosts are 50% stronger.`,
-		`ECDATA`,
+		`Dimension boosts have a cost scaling.ECDATAReward: Dimension boosts are 10% cheaper.`,
 		`Time and infinity dimensions are useless, but you gain a boost to normal dimensions based on infinities.ECDATA`,
 		`ECDATA`,
 		`ECDATA`,

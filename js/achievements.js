@@ -108,11 +108,11 @@ function updateAchievementDescriptions() {
 		"It won't be enough", `Reach ${shorten(new Decimal("1e20000"))} replicanti.`,
 		"Time goes by fast", `Eternity in one tenth of a second.`,
 		"Unique Snowflakes", `Reach ${shortenMoney(250)} galaxies without any replicated galaxies. Reward: Normal galaxies are 1% stronger.`,
-		"GAS GAS GAS", `Reach ${shortenMoney(1e5)} tickspeed upgrades.`,
+		"GAS GAS GAS", `Reach ${shortenMoney(1e4)} tickspeed upgrades.`,
 		"The next update is in 5 eternities", `Complete all of the eternity challenges.`,
 		"Once More, Beyond", `Ex-dilate.`,
 
-		"", ``,
+		"In the depths of the far endgame", `Reach 1e4000 eternity points. Reward: Small multiplier to ex-dilation based on eternity points.`,
 		"", ``,
 		"", ``,
 		"undefined", `Reach ${shorten(9.99e9)} ex-dilation. Reward: Gain more tachyon particles based on amount of antimatter you have.`,
