@@ -443,7 +443,7 @@ function getExDilationUpgradeEffect(n) {
 		case 0:
 			return game.exDilation.amount.add(1).pow(1/5).max(1);
 		case 2:
-			return game.exDilation.amount.add(1).pow(1/4).max(1)
+			return game.exDilation.amount.add(1).pow(0.75).max(1)
 		case 3:
 			return new Decimal(game.achievementRowsCompleted * 0.7 + (game.achievements.length * 0.2)).max(1)
 		case 5:
@@ -465,7 +465,7 @@ function buyExDilationUpgrade(i) {
 	game.exDilation.upgrades.push(i);
 }
 
-var exDilationRepUpgradeCosts = "5, 25, 75".split(",");
+var exDilationRepUpgradeCosts = "10, 100, 1000".split(",");
 
 var exDilationRepUpgradeCostMults = "100, 100, 100".split(",");
 
@@ -474,13 +474,13 @@ function getRepeatExDilCost(i) {
 }
 
 function canBuyRepeatExDil(i) {
-	return game.exDilation.amount.gte(getRepeatDilCost(i));
+	return game.exDilation.amount.gte(getRepeatExDilCost(i));
 }
 
 function buyRepeatExDil(i) {
 	if(!canBuyRepeatExDil(i)) return;
 		game.exDilation.repeatUpgr[i] = game.exDilation.amount.log10().divide(2).floor();
-		if(game.exDilation.amount.lt(infp())) game.exDilation.amount = game.exDilation.amount.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.exDilation.amount.log10().divide(2).floor()))
+		if(game.exDilation.amount.lt(infp())) game.exDilation.amount = game.exDilation.amount.subtract(Decimal.pow(exDilationRepUpgradeCostMults[i], game.exDilation.amount.log10().divide(2).floor()))
 	return true;
 }
 

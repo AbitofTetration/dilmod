@@ -483,9 +483,9 @@ for(var i = 0; i < 6; i++) {
 
 ge("exDilationUpgrades").innerHTML = h + `
 <tr>
-	<td><button id = "repeatEDil0" onclick = "buyRepeatEDil(0)"></button></td>
-	<td><button id = "repeatEDil1" onclick = "buyRepeatEDil(1)"></button></td>
-	<td><button id = "repeatEDil2" onclick = "buyRepeatEDil(2)"></button></td>
+	<td><button id = "repeatEDil0" onclick = "buyRepeatExDil(0)"></button></td>
+	<td><button id = "repeatEDil1" onclick = "buyRepeatExDil(1)"></button></td>
+	<td><button id = "repeatEDil2" onclick = "buyRepeatExDil(2)"></button></td>
 </tr>
 `
 
