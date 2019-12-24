@@ -472,7 +472,7 @@ for(var i = 0; i < 6; i++) {
 	if(i % 3 == 0) h += "<tr>"
 	h += `
 		<td>
-			<button id = "exDilashunUpgrade` + i + `" onclick = "buyDilationUpgrade(` + i + `)">
+			<button id = "exDilashunUpgrade` + i + `" onclick = "buyExDilationUpgrade(` + i + `)">
 				<span id = "exDilashunUpgradeDesc` + i + `"></span><br>
 				Cost: <span id = "exDilashunUpgradeCost` + i + `"></span>
 			</button>

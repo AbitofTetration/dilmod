@@ -202,7 +202,7 @@ currency {
 	cursor: default;
 }
 
-.eternityUpgrade, .eternityUpgradeLocked, .eternityUpgradeBought, .exDilation {
+.eternityUpgrade, .eternityUpgradeLocked, .eternityUpgradeBought, .exDilation, .exDilationLocked {
 	width: 200;
 	height: 100;
 	font-weight: bold;

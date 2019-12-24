@@ -400,6 +400,19 @@ function resetExDilation() {
   }
 }
 
+function exDilate() {
+  if(game.dilation.tachyonParticles.log(10).gt(5)) {
+    if(confirm("Are you sure you want to ex-dilate? This will reset your tachyon particles, dilated time, and free dilation upgrades. However, in exchange, you get ex-dilation based on your tachyon particles. Are you ready?")) {
+        game.exDilation.amount = game.exDilation.amount.add(game.dilation.tachyonParticles.log(10).divide(5))
+        game.dilation.dilatedTime = new Decimal(0)
+        game.dilation.galaxyThreshold = new Decimal(1000)
+        game.dilation.freeGalaxies = new Decimal(0)
+        game.dilation.thresholdUpSpeed = new Decimal(5).divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
+        game.dilation.tachyonParticles = new Decimal(0)
+    }
+  }
+}
+
 function getEDUDescriptions() {
 	return [
 		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
@@ -408,10 +421,38 @@ function getEDUDescriptions() {
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
 		"You gain some of your Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
-    "Dilated galaxies are twice as powerful.",
-    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
-    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
-    "Make the max replicated galaxies softcap weaker.",
-    "Reduce the free tickspeed interval."
 	]
+}
+
+var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5".split(",");
+
+function canBuyExDilationUpgrade(i) {
+	if(game.exDilation.upgrades.includes(i)) return false;
+	if(game.exDilation.amount.lt(exDilationUpgradeCosts[i])) return false;
+	return true;
+}
+
+function buyExDilationUpgrade(i) {
+	if(!canBuyExDilationUpgrade(i)) return;
+	game.exDilation.amount = game.exDilation.amount.subtract(exDilationUpgradeCosts[i]);
+	game.exDilation.upgrades.push(i);
+}
+
+var exDilationRepUpgradeCosts = "10, 100, 1000".split(",");
+
+var exDilationRepUpgradeCostMults = "100, 100, 100".split(",");
+
+function getRepeatExDilCost(i) {
+	return new Decimal(exDilationRepUpgradeCosts[i]).multiply(new Decimal(exDilationRepUpgradeCostMults[i]).pow(game.exDilation.repeatUpgr[i]))
+}
+
+function canBuyRepeatExDil(i) {
+	return game.exDilation.amount.gte(getRepeatDilCost(i));
+}
+
+function buyRepeatExDil(i) {
+	if(!canBuyRepeatExDil(i)) return;
+		game.exDilation.repeatUpgr[i] = game.exDilation.amount.log10().divide(2).floor();
+		if(game.exDilation.amount.lt(infp())) game.exDilation.amount = game.exDilation.amount.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.exDilation.amount.log10().divide(2).floor()))
+	return true;
 }
