@@ -242,16 +242,25 @@ currency {
 }
 
 .exDilation {
-	color: #b341e0;
-	background: black;
-	border: 1px solid #b341e0;
+	color: green;
+	background: radial-gradient(#002000, #004000);
+	border: 1px solid green;
 	cursor: pointer;
-  text-shadow: #404 0px 0px 5px, #404 0px 0px 5px, #404 0px 0px 4px, #404 0px 0px 4px, #404 0px 0px 3px, #404 0px 0px 3px;
 }
 
 .exDilation:hover {
-	color: #b341e0;
-	background: grey;
+	background: radial-gradient(#000000, #002000);
+}
+
+.exDilationLocked {
+	color: green;
+	background: radial-gradient(#000000, #002000);
+	border: 1px solid green;
+	cursor: pointer;
+}
+
+.exDilationLocked:hover {
+	background: radial-gradient(#000000, #001000);
 }
 
 .timestudy, .timestudylocked, .timestudybought {

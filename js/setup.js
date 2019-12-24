@@ -132,6 +132,7 @@ function updateSave() {
 	if(!game.eternityUpgrades) resetEternityUpgrades();
 	if(!game.replicanti) resetReplicanti();
 	if(!game.dilation) resetDilation();
+	if(!game.exDilation) resetExDilation();
   if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
 	
 	if(!game.challenges) {
@@ -462,6 +463,29 @@ ge("dilationUpgrades").innerHTML = h + `
 	<td><button id = "repeatDil1" onclick = "buyRepeatDil(1)"></button></td>
 	<td><button id = "repeatDil2" onclick = "buyRepeatDil(2)"></button></td>
 	<td><button id = "repeatDil3" onclick = "buyRepeatDil(3)"></button></td>
+</tr>
+`
+
+h = ""
+
+for(var i = 0; i < 6; i++) {
+	if(i % 3 == 0) h += "<tr>"
+	h += `
+		<td>
+			<button id = "exDilashunUpgrade` + i + `" onclick = "buyDilationUpgrade(` + i + `)">
+				<span id = "exDilashunUpgradeDesc` + i + `"></span><br>
+				Cost: <span id = "exDilashunUpgradeCost` + i + `"></span>
+			</button>
+		</td>
+	`
+	if(i % 3 == 2) h += "</tr>"
+}
+
+ge("exDilationUpgrades").innerHTML = h + `
+<tr>
+	<td><button id = "repeatEDil0" onclick = "buyRepeatEDil(0)"></button></td>
+	<td><button id = "repeatEDil1" onclick = "buyRepeatEDil(1)"></button></td>
+	<td><button id = "repeatEDil2" onclick = "buyRepeatEDil(2)"></button></td>
 </tr>
 `
 

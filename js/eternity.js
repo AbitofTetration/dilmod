@@ -391,3 +391,27 @@ function getFreeDilatedGalaxies() {
   
 	return a;
 }
+
+function resetExDilation() {
+  game.exDilation = {
+    amount: new Decimal(0),
+    upgrades: [],
+    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
+  }
+}
+
+function getEDUDescriptions() {
+	return [
+		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
+		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
+		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
+		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
+		"You gain some of your Infinity Points on infinity automatically.",
+		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
+    "Dilated galaxies are twice as powerful.",
+    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
+    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
+    "Make the max replicated galaxies softcap weaker.",
+    "Reduce the free tickspeed interval."
+	]
+}

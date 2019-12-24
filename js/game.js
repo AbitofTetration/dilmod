@@ -412,6 +412,15 @@ function update() {
 				ge("repeatDil" + i).innerHTML = getRepeatDilDesc()[i] + `<br>` + getFullExpansion(getRepeatDilCost(i)) + " DT"
 			}
       displayIf("dilationButtons", tree.hasStudy("d31"))
+			for(var i = 0; i < 6; i++) {
+				ge("exDilashunUpgrade" + i).className = game.dilation.upgrades.includes(i) ? "eternityUpgradeBought" : canBuyDilationUpgrade(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
+				ge("exDilashunUpgradeDesc" + i).innerHTML = getDUDescriptions()[i];
+				ge("exDilashunUpgradeCost" + i).innerHTML = getFullExpansion(dilationUpgradeCosts[i]) + " DT";
+			}
+			for(var i = 0; i < 4; i++) {
+				ge("repeatEDil" + i).className = canBuyRepeatDil(i) ? "eternityUpgrade" : "eternityUpgradeLocked";
+				ge("repeatEDil" + i).innerHTML = getRepeatDilDesc()[i] + `<br>` + getFullExpansion(getRepeatDilCost(i)) + " DT"
+			}
     }
 	}
 	
