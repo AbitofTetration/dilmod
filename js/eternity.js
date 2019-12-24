@@ -386,7 +386,7 @@ function getFreeGalaxiesMult() {
 }
 
 function getFreeGalaxiesThreshold() {
-	return getFreeGalaxiesMult().pow(getFreeDilatedGalaxies())
+	return getFreeGalaxiesMult().pow(getFreeDilatedGalaxies().subtract(getExDilationUpgradeEffect(3)))
 }
 
 function getFreeDilatedGalaxies() {

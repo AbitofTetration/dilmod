@@ -419,7 +419,7 @@ ge("eternityMilestones").innerHTML = h
 
 h = ""
 
-for(var i = 0; i < 20; i++) {
+for(var i = 0; i < 15; i++) {
 	if(i % 5 == 0) h += "<tr>"
 	h += `
 		<td>

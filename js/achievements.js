@@ -114,8 +114,8 @@ function updateAchievementDescriptions() {
 
 		"In the depths of the far endgame", `Reach 1e4000 eternity points. Reward: Small multiplier to ex-dilation based on eternity points.`,
 		"", ``,
-		"", ``,
-		"undefined", `Reach ${shorten(9.99e9)} ex-dilation. Reward: Gain more tachyon particles based on amount of antimatter you have.`,
+		"Galactic Great Wall", `Buy 200,000 antimatter galaxies.`,
+		"undefined", `Reach 999 ex-dilation. Reward: Gain more tachyon particles based on amount of antimatter you have.`,
 		"Empowered!", `Energize. (You can't get this yet, as Energize hasn't started development.)`,
 		"", ``,
 		"", ``,
