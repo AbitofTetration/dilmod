@@ -95,7 +95,7 @@ ns({x:    -4, y:     2, id:  "t32", cost:   14, desc: "Time shards boost Normal 
 ns({x:    -3, y:     3, id:  "t41", cost:   20, desc: "The free tickspeed given from Time Dimensions is multiplied by 1.1.", eff: function() {return 1.1}, pre: ["t31"]})
 ns({x:    -3, y:     4, id:  "s03", cost:    0, desc: "Eternity Challenge 3", pre: ["t41"]})
 ns({x:    -3, y:     5, id:  "t51", cost:   20, desc: "Time Dimensions gain a boost based on eternity points.", eff: function() {return game.eternityPoints.add(1).log(10).pow(10).max(1)}, pre: ["s03"]})
-ns({x:     0, y:    -3, id:  "g11", cost:    1, desc: "Galaxies are 10% stronger.", eff: function() {return 1.1}, pre: ["s00"]})
+ns({x:     0, y:    -3, id:  "g11", cost:    1, desc: "Galaxies are 25% stronger.", eff: function() {return 1.25}, pre: ["s00"]})
 ns({x:     0, y:    -4, id:  "g12", cost:    2, desc: "Replicanti grow faster based on tickspeed.", eff: function() {return getTickspeed("infinityDimension").pow(0.5).divide(1e90).add(1).log(10000).divide(100).max(1)}, pre: ["g11"]})
 ns({x:     1, y:    -3, id:  "g21", cost:    6, desc: "Second Time Dimension gains a boost based on galaxies.", eff: function() {return getEffectiveGalaxies().add(1).pow(0.0125)}, pre: ["g12"]})
 ns({x:    -1, y:    -3, id:  "g22", cost:    6, desc: "Third Time Dimension gains a boost based on eternity points.", eff: function() {return game.eternityPoints.add(1).pow(0.125)}, pre: ["g12"]})
