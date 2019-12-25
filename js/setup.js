@@ -1,4 +1,4 @@
-var devMode = true;
+var devMode = false;
 
 var lastTab;
 var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
@@ -230,8 +230,8 @@ function updateSave() {
 	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
 }
 
-if(localStorage.ad2) {
-	saveData = JSON.parse(atob(localStorage.ad2));
+if(localStorage.addilmod) {
+	saveData = JSON.parse(atob(localStorage.addilmod));
 	
 	loadGame(saveData.currentGame);
 }
@@ -241,7 +241,7 @@ else newGame();
 function save() {
 	saveData.games[saveData.currentGame] = game;
 	
-	localStorage.ad2 = btoa(JSON.stringify(saveData));
+	localStorage.addilmod = btoa(JSON.stringify(saveData));
 }
 
 function getTimeSince(event) {
@@ -605,4 +605,9 @@ ge("cmdline").onkeydown = function(e) {
 		ge("cmdline").value = ''
 		auLog.children[auLog.children.length-1].scrollIntoView()
 	}
+}
+
+if(!game) {
+  newGame()
+  save()
 }
