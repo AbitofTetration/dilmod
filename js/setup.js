@@ -607,7 +607,7 @@ ge("cmdline").onkeydown = function(e) {
 	}
 }
 
-if(!game) {
+if(!saveData.games[saveData.currentGame]) {
   newGame()
   save()
 }
