@@ -230,8 +230,8 @@ function updateSave() {
 	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
 }
 
-if(localStorage.addilmod) {
-	saveData = JSON.parse(atob(localStorage.addilmod));
+if(localStorage.dilmod) {
+	saveData = JSON.parse(atob(localStorage.dilmod));
 	
 	loadGame(saveData.currentGame);
 }
@@ -241,7 +241,7 @@ else newGame();
 function save() {
 	saveData.games[saveData.currentGame] = game;
 	
-	localStorage.addilmod = btoa(JSON.stringify(saveData));
+	localStorage.dilmod = btoa(JSON.stringify(saveData));
 }
 
 function getTimeSince(event) {
