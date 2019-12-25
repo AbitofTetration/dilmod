@@ -37,6 +37,7 @@ function getReplEffect() {
 }
 
 function getReplChance() {
+  if(inChallenge(3, 1)) return new Decimal(0);
 	var r = game.replicanti.upgrades[0].divide(100).add(1)
 	
 	return r;
