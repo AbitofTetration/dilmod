@@ -42,8 +42,10 @@ function resetDimensions() {
 	if(inChallenge(3)) {
 		game.dimensions.forEach(function(d) {d.costMult = d.costMult.multiply(100)});
 	}
-  if(game.dilation.upgrades.includes(11)) {
-		game.dimensions.forEach(function(d) {d.costMult = d.costMult.pow(1/1.3)});
+  if(game.dilation) {
+		if(game.dilation.upgrades.includes(11)) {
+      game.dimensions.forEach(function(d) {d.costMult = d.costMult.pow(1/1.3)});
+    }
 	}
 }
 
