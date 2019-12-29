@@ -22,7 +22,7 @@ function canBoost() {
 function boost(bulk) {
 	if(!canBoost()) return;
 	
-	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.subtract(4).divide(getDimensionBoostScaling()).add(1).floor();
+	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.divide(getDimensionBoostScaling()).floor();
 	
 	if(game.boosts.gte(bought)) return;
 	
