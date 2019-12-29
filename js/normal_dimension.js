@@ -52,10 +52,10 @@ function resetDimensions() {
 function getDimensionProduction(i) {
 	var dim = game.dimensions[i];
 	
-	dim.multiplier = Decimal.pow(game.dimMult, dim.bought).divide(2**(dim.id-1));
+	dim.multiplier = new Decimal(1)
 	dim.multiplier = dim.multiplier.multiply(getAchievementMultiplier())
 	
-	dim.multiplier = dim.multiplier.multiply(getDimensionBoostEffect())
+	dim.multiplier = dim.multiplier.multiply(getDimensionBoostEffect().divide(2**(dim.id-1))).max(1).multiply(Decimal.pow(game.dimMult, dim.bought.subtract(1)));
 	
 	dim.multiplier = dim.multiplier.multiply(getInfinityPowerEffect())
 	if(i == 9) dim.multiplier = dim.multiplier.multiply(game.sacrificeMult)
