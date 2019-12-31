@@ -79,17 +79,17 @@ function maxAllTimeDimensions() {
 }
 
 function getTickspeedMultScaling() {
-  let r = (game.dilation.upgrades.includes(10) ? new Decimal(4.85) : new Decimal(5))
+  let r = (game.dilation.upgrades.includes(10) ? new Decimal(4.85/3) : new Decimal(5/3))
   
-  if(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).gt(5e4)) {
-    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).divide(5e4).divide(10))
+  if(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(0).gt(5e4)) {
+    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(1).divide(1e5).max(1))
   }
   
   return r
 }
 
 function getFreeTickspeedMult() {
-	return getTickspeedMultScaling().divide(3);
+	return getTickspeedMultScaling();
 }
 
 function getBaseTickspeedUpgrades() {
