@@ -112,7 +112,7 @@ function getFreeTickspeedUpgrades() {
 }
 
 function getFreeTickspeedThreshold() {
-	return getFreeTickspeedMult().pow(getFreeTickspeedUpgrades())
+	return getFreeTickspeedMult().pow(getBaseTickspeedUpgrades())
 }
 
 function getInfinityPowerEffect() {
