@@ -140,22 +140,24 @@ currency {
 	background: #d9e324;
 }
 
-.transcendTabButton:hover {
-	color: black;
-	background: #d9e324;
-}
-
 .transcendTabButton {
-	color: #d9e324;
-	background: #a87c0d;
+	color: #990000;
+	background: radial-gradient(#660000, #000066);
 	font-family: Typewriter;
-	border: 2px solid #d9e324;
+	border: 2px solid #990000;
 	transition-duration: 0.2s;
 	cursor: pointer;
 	border-radius: 4px;
 	font-size: 20px;
 	vertical-align: top;
-  box-shadow: inset 0px 0px 10px 0px #fff;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.transcendTabButton:hover {
+	color: #FF0000;
+	border: 2px solid #FF0000;
+	background: radial-gradient(#BB0000, #0000BB);
+  text-shadow: 0 0 3px #FF2222, 0 0 5px #2222FF;
 }
 
 .eternitymilestone, .eternitymilestonelocked {
