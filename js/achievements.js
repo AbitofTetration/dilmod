@@ -64,7 +64,7 @@ function updateAchievementDescriptions() {
 		
 		"ERROR 909: Dimension Not Found", `Reach infinity with only 1 first dimension. Reward: First dimensions are stronger the more you have.`,
 		"INFINITE POWER", `Reach ${shorten(infp())} Infinity Power.`,
-		"THIS<BR>ACHIEVEMENT<BR>DOESN'T<BR>EXIST", `Reach 9.9999e9999 antimatter. Reward: Dimensions are more powerful the more antimatter you have.`,
+		"THIS<BR>ACHIEVEMENT<BR>DOESN'T<BR>EXIST", `Reach ${shortenMoney("9.99e9999")} antimatter. Reward: Dimensions are more powerful the more antimatter you have.`,
 		"You can get 50 galaxies?", `Get 50 galaxies.`,
 		"Blink of an Eye", `Infinity in under a tenth of a second. Reward: Start with ${getFullExpansion(1e100)} antimatter.`,
 		"Yet another infinity reference", `Get a total sacrifice multiplier of ${shorten(infp())}. Reward: Sacrifice is stronger.`,
@@ -100,7 +100,7 @@ function updateAchievementDescriptions() {
 		"But I wanted a new prestige layer!", `Reach ${shorten(infp())} eternity points.`,
 		"I do not trust you", `Reach 9,999 ninth dimensions.`,
 		"I told you already, time is relative.", `Dilate time.`,
-		"Este logro no existe 2", `Reach 9.999e99,999 IP. Reward: Gain more infinity points based on antimatter.`,
+		"Este logro no existe 2", `Reach ${shortenMoney("9.99e99999")} IP. Reward: Gain more infinity points based on antimatter.`,
 
 		"Now you're thinking with dilation!", `Undilate time for ${shortenCosts("1e600")} EP in 10 seconds. Reward: Dilation doesn't affect Time Dimensions.`,
 		"Faster than a Dry Bones", `Reach ${shorten(Decimal.pow(1e16,125000))} ticks per second. Reward: Time Dimensions are 3% stronger.`,
@@ -112,7 +112,7 @@ function updateAchievementDescriptions() {
 		"The next update is in 5 eternities", `Complete all of the eternity challenges.`,
 		"Once More, Beyond", `Ex-dilate.`,
 
-		"In the depths of the far endgame", `Reach 1e4000 eternity points. Reward: Small multiplier to ex-dilation based on eternity points.`,
+		"In the depths of the far endgame", `Reach ${shortenMoney("1e4000")} eternity points. Reward: Small multiplier to ex-dilation based on eternity points.`,
 		"", ``,
 		"Galactic Great Wall", `Buy 200,000 antimatter galaxies.`,
 		"undefined", `Reach 999 ex-dilation. Reward: Gain more tachyon particles based on amount of antimatter you have.`,
