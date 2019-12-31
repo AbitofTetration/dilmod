@@ -250,7 +250,7 @@ function inDilation() {
 function gainedTP() {
   let thing = game.dilation.repeatUpgr[2].add(1)
   if(game.exDilation.upgrades.includes(0)) thing = thing.add(getExDilationUpgradeEffect(0))
-  let tpFormula = Decimal.add(1.5, thing.log(3.5).divide(3))
+  let tpFormula = Decimal.add(1.5, thing.divide(3))
   return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, tpFormula)).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
 }
 
@@ -276,7 +276,7 @@ function getRepeatDilDesc() {
   return [
     "You gain twice as much dilated time.<br>Currently: " + shorten(Decimal.pow(2, game.dilation.repeatUpgr[0])) + "x",
     "Free galaxy threshold is reduced, but reset dilated time and free galaxies.<br>Currently: " + shorten(game.dilation.thresholdUpSpeed),
-    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))),
+    "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].divide(3))),
     "Quadruple tachyon particle gain.<br>Currently: " + shorten(Decimal.pow(4, game.dilation.repeatUpgr[3])) + "x"
   ]
 }
@@ -445,7 +445,7 @@ function getEDUDescriptions() {
 		"You gain 1% of Infinity Points on crunch each second.",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
     "Infinity Points boost normal dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
-    "Dimension boosts and antimatter galaxies boost eachother.<br>Currently: " + shorten(getExDilationUpgradeEffect(7, "boosts")) + "x stronger galaxies, "
+    "Dimension boosts and antimatter galaxies boost eachother.<br>Currently: " + shorten(getExDilationUpgradeEffect(7, "boosts")) + "x stronger dimboosts, " + shorten(getExDilationUpgradeEffect(7, "galaxies")) + "% stronger galaxies"
 	]
 }
 
@@ -464,7 +464,9 @@ function getExDilationUpgradeEffect(n, g) {
     case 7:
       switch(g) {
         case "boosts":
-          return getEffectiveGalaxies().add(1).log(3).divide(40).max(1)
+          return getEffectiveGalaxies().add(1).divide(100).max(1)
+        case "galaxies":
+          return getEffectiveDimensionBoosts().pow(1/6).max(1)
       }
 	}
 }
