@@ -80,11 +80,6 @@ function maxAllTimeDimensions() {
 
 function getTickspeedMultScaling() {
   let r = (game.dilation.upgrades.includes(10) ? new Decimal(4.85/3) : new Decimal(5/3))
-  
-  if(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(0).gt(5e4)) {
-    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(1).log10().max(1))
-  }
-  
   return r
 }
 
@@ -104,6 +99,7 @@ function getFreeTickspeedUpgrades() {
   if(inChallenge(1,2)) return new Decimal(0)
 	var a = getBaseTickspeedUpgrades()
   
+  if(a.gt(5e4)) a = a.pow(0.96).max(5e4)
   if(tree.hasStudy("t41")) a = a.multiply(tree.getEff("t41"))
   if(inChallenge(7,2)) a = a.multiply(1/3)
   if(challengeCompleted(7,2)) a = a.multiply(5/4)
