@@ -82,7 +82,7 @@ function getTickspeedMultScaling() {
   let r = (game.dilation.upgrades.includes(10) ? new Decimal(4.85) : new Decimal(5))
   
   if(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).gt(5e4)) {
-    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).divide(5e4))
+    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).divide(5e4).divide(10))
   }
   
   return r
@@ -92,10 +92,17 @@ function getFreeTickspeedMult() {
 	return getTickspeedMultScaling().divide(3);
 }
 
-function getFreeTickspeedUpgrades() {
+function getBaseTickspeedUpgrades() {
   if(inChallenge(1,2)) return new Decimal(0)
 	var a = game.timeDimensions[0].amount;
   a = a.gt(0) ? a.log10().divide(getFreeTickspeedMult().log10()).ceil().max(0) : new Decimal(0)
+  
+	return a;
+}
+
+function getFreeTickspeedUpgrades() {
+  if(inChallenge(1,2)) return new Decimal(0)
+	var a = getBaseTickspeedUpgrades()
   
   if(tree.hasStudy("t41")) a = a.multiply(tree.getEff("t41"))
   if(inChallenge(7,2)) a = a.multiply(1/3)
