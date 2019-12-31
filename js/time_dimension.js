@@ -82,7 +82,7 @@ function getTickspeedMultScaling() {
   let r = (game.dilation.upgrades.includes(10) ? new Decimal(4.85/3) : new Decimal(5/3))
   
   if(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(0).gt(5e4)) {
-    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(1).divide(1e5).max(1))
+    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r).log10()).ceil().max(1).log10().max(1))
   }
   
   return r
