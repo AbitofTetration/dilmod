@@ -444,11 +444,12 @@ function getEDUDescriptions() {
 		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shorten(getExDilationUpgradeEffect(3)),
 		"You gain 1% of Infinity Points on crunch each second.",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
-    "Infinity Points boost normal dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x"
+    "Infinity Points boost normal dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
+    "Dimension boosts and antimatter galaxies boost eachother.<br>Currently: " + shorten(getExDilationUpgradeEffect(7, "boosts")) + "x stronger galaxies, "
 	]
 }
 
-function getExDilationUpgradeEffect(n) {
+function getExDilationUpgradeEffect(n, g) {
 	switch(n) {
 		case 0:
 			return game.exDilation.amount.add(1).pow(1/5).max(1);
@@ -460,10 +461,15 @@ function getExDilationUpgradeEffect(n) {
 			return getFreeDilatedGalaxies().add(1).log(4).max(1)
     case 6:
       return game.infinityPoints.add(gainedInfinityPoints()).add(1).pow(0.5).max(1)
+    case 7:
+      switch(g) {
+        case "boosts":
+          return getEffectiveGalaxies().add(1).log(3).divide(40).max(1)
+      }
 	}
 }
 
-var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5, 15, 40, 100".split(",");
+var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5, 15, 20, 40".split(",");
 
 function canBuyExDilationUpgrade(i) {
 	if(game.exDilation.upgrades.includes(i)) return false;
