@@ -339,8 +339,8 @@ function getDilationUpgradeEffect(n) {
 		case 3:
 			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
 		case 5:
-			return game.dilation.dilatedTime.divide(400).add(1).log(2).max(1)
-      if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(2).max(1).add(getExDilationUpgradeEffect(5))
+			return game.dilation.dilatedTime.divide(400).add(1).log(4).max(1)
+      if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(4).max(1).add(getExDilationUpgradeEffect(5))
     case 7:
       return game.dilation.dilatedTime.divide(150).add(1).pow(50)
 		case 8:
@@ -442,7 +442,7 @@ function getEDUDescriptions() {
 		"The penalty for dilation is reduced.<br>^0.25 > ^0.3",
 		"Dilated time gain is boosted based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(2)) + "x",
 		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shorten(getExDilationUpgradeEffect(3)),
-		"You gain some of your Infinity Points on infinity automatically.",
+		"You gain 1% of Infinity Points on crunch each second.",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
     "Infinity Points boost normal dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x"
 	]
@@ -459,7 +459,7 @@ function getExDilationUpgradeEffect(n) {
 		case 5:
 			return getFreeDilatedGalaxies().add(1).log(4).max(1)
     case 6:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).pow(1.25).max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).pow(0.75).max(1)
 	}
 }
 

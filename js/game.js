@@ -96,6 +96,9 @@ function update() {
   // More IP generation
 	if(game.dilation.upgrades.includes(4)) 
 		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).pow(0.0125).multiply(getInfinityUpgradeEffect(10)).multiply(diff));
+
+	if(game.exDilation.upgrades.includes(4)) 
+		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).divide(100).multiply(diff));
 	
   
   // Replicanti
