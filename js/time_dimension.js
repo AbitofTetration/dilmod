@@ -78,9 +78,18 @@ function maxAllTimeDimensions() {
 	for(var i = 1; i < maxTimeD(); i++) maxTimeDimension(i);
 }
 
+function getTickspeedMultScaling() {
+  let r = (game.dilation.upgrades.includes(10) ? new Decimal(4.85) : new Decimal(5))
+  
+  if(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).gt(5e4)) {
+    r = r.multiply(game.timeDimensions[0].amount.log10().divide((r.divide(3)).log10()).ceil().max(0).divide(5e4))
+  }
+  
+  return r
+}
+
 function getFreeTickspeedMult() {
-  if(game.dilation.upgrades.includes(10)) return new Decimal(4.85/3);
-	return new Decimal(5/3);
+	return getTickspeedMultScaling().divide(3);
 }
 
 function getFreeTickspeedUpgrades() {
