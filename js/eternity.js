@@ -459,7 +459,7 @@ function getExDilationUpgradeEffect(n) {
 		case 5:
 			return getFreeDilatedGalaxies().add(1).log(4).max(1)
     case 6:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).pow(0.75).max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).pow(0.5).max(1)
 	}
 }
 
