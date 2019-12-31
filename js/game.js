@@ -470,7 +470,7 @@ function update() {
 	if(game.infinities.gte(1000)) giveAchievement(30);
 	if(game.infinities.gte(1e5)) giveAchievement(77);
 	if(getChallengeCompletions() > 0) giveAchievement(32);
-	if(game.challenges[0][9].completed) giveAchievement(33);
+	if(game.challenges[0][8].completed) giveAchievement(33);
 	if(getChallengeCompletions() > 11) giveAchievement(35);
 	if(getChallengeCompletions(2) > 11) giveAchievement(97);
 	if(game.break) giveAchievement(36);

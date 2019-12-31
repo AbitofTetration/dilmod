@@ -128,7 +128,7 @@ function giveAchievement(id) {
 	if(game.achievements.includes(id)) return;
 	game.achievements.push(id);
 	updateAchievements();
-  notify(achievementDescriptions[i * 2], "success");
+  $.notify(achievementDescriptions[id * 2], "success");
 }
 
 function updateAchievements() {
