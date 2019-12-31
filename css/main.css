@@ -122,6 +122,24 @@ currency {
 	background: #b341e0;
 }
 
+.energizeTabButton {
+	color: #d9e324;
+	background: #a87c0d;
+	font-family: Typewriter;
+	border: 2px solid #d9e324;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 20px;
+	vertical-align: top;
+  box-shadow: inset 0px 0px 10px 0px #fff;
+}
+
+.energizeTabButton:hover {
+	color: black;
+	background: #d9e324;
+}
+
 .eternitymilestone, .eternitymilestonelocked {
 	width: 300px;
 	height: 60px;
