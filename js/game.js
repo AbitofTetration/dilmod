@@ -139,6 +139,7 @@ function update() {
 			(game.options.showBestRateAt ? shorten(game.bestIPRateAt) + " IP" : shorten(game.bestIPRate) + " IP/min") : "<b>Big Crunch</b>"
 
 	displayIf("eternityPrestige", atEternity() || haveEternitied())
+//	displayIf("energizePrestige", !atEternity() && haveEternitied())
 	displayIf("EP", haveEternitied());
 	displayIf("TP", tree.hasStudy("d11"));
 	displayIf("dilation", tree.hasStudy("d11"));
@@ -344,6 +345,7 @@ function update() {
 					ctx.strokeStyle = "#000"
 					ctx.lineWidth = 20;
 					ctx.stroke();
+          ctx.strokeStyle = "position: relative;"
 					ctx.strokeStyle = {"s":"#666","p":"#063","i":"#630","t":"#606","r":"#036","d":"#660","g":"#800"}[study.id[0]] + (tree.hasStudy(study.id) ? "" : "6")
 					ctx.lineWidth = 20;
 					ctx.stroke();
