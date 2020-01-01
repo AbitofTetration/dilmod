@@ -463,7 +463,7 @@ function getExDilationUpgradeEffect(n, g) {
     case 7:
       switch(g) {
         case "boosts":
-          return getEffectiveGalaxies().add(1).divide(100).max(1)
+          return getEffectiveGalaxies().add(100).divide(100).pow(1/3).max(1)
         case "galaxies":
           return getEffectiveDimensionBoosts().pow(1/6).max(1)
       }
