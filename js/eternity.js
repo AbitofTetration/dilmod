@@ -135,15 +135,15 @@ function getEternityUpgradeEffect(n) {
     case 9:
       return getSacrificeMult().add(1).log(1.65404).pow(2).max(1)
     case 10:
-      return game.dimensions[0].amount.add(1).log("1e1200000").max(1)
+      return game.dimensions[0].amount.add(1).log("1e1200000").max(1).pow(1/3).max(1)
     case 11:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e20000").max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e20000").max(1).pow(1/3).max(1)
     case 12:
-      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e300").max(1)
+      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e300").max(1).pow(1/3).max(1)
     case 13:
-      return game.infinityDimensions[0].amount.add(1).log("1e50000").max(1)
+      return game.infinityDimensions[0].amount.add(1).log("1e50000").pow(1/3).max(1).max(1)
     case 14:
-      return game.timeDimensions[0].amount.add(1).log("1e2000").max(1)
+      return game.timeDimensions[0].amount.add(1).log("1e2000").max(1).pow(1/3).max(1)
 	}
 }
 
@@ -338,10 +338,10 @@ function getDilationUpgradeEffect(n) {
 		case 3:
 			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
 		case 5:
-			return game.dilation.dilatedTime.divide(400).add(1).log(4).max(1)
-      if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(4).max(1).add(getExDilationUpgradeEffect(5))
+			return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1)
+      if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1).add(getExDilationUpgradeEffect(5))
     case 7:
-      return game.dilation.dilatedTime.divide(150).add(1).pow(50)
+      return game.dilation.dilatedTime.divide(150).add(1).pow(1/2).pow(10)
 		case 8:
 			return game.dilation.tachyonParticles.add(1).log(8).max(1);
 	}
@@ -443,7 +443,7 @@ function getEDUDescriptions() {
 		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shorten(getExDilationUpgradeEffect(3)),
 		"You gain 1% of Infinity Points on crunch each second.",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
-    "Infinity Points boost normal dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
+    "Infinity Points boost infinity dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
     "Dimension boosts and antimatter galaxies boost eachother.<br>Currently: " + shorten(getExDilationUpgradeEffect(7, "boosts")) + "x stronger dimboosts, " + shorten(getExDilationUpgradeEffect(7, "galaxies")) + "% stronger galaxies"
 	]
 }
@@ -459,18 +459,18 @@ function getExDilationUpgradeEffect(n, g) {
 		case 5:
 			return getFreeDilatedGalaxies().add(1).log(4).max(1)
     case 6:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).pow(0.5).max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log(2).pow(2).pow(10).max(1)
     case 7:
       switch(g) {
         case "boosts":
-          return getEffectiveGalaxies().add(100).divide(100).pow(1/3).max(1)
+          return getEffectiveGalaxies().add(100).divide(100).pow(1/5).max(1)
         case "galaxies":
-          return getEffectiveDimensionBoosts().pow(1/6).max(1)
+          return getEffectiveDimensionBoosts().pow(1/9).max(1)
       }
 	}
 }
 
-var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5, 15, 20, 40".split(",");
+var exDilationUpgradeCosts = "1, 1, 1, 2, 3, 5, 15, 20, 20".split(",");
 
 function canBuyExDilationUpgrade(i) {
 	if(game.exDilation.upgrades.includes(i)) return false;

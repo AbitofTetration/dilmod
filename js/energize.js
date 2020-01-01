@@ -12,6 +12,10 @@ function resetEnergize() {
   }
 }
 
+function haveEnergized() {
+	return game.energize.times.gt(0);
+}
+
 function atEnergize() {
 	return game.eternityPoints.gte(getEnergize());
 }
@@ -22,7 +26,7 @@ function gainedEnergyShards() {
 
 function getEnergize() {
 	if(getChallengeSet() == 4) return getChallengeGoal()
-	return new Decimal("1e12000");
+	return new Decimal("1e30000");
 }
 
 function energize(force) {
