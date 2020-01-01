@@ -75,7 +75,6 @@ function eternity(force) {
 	if(eternityMilestone("keepBI"));
 	else if(eternityMilestone("keepIU")) game.infinityUpgrades = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 	else resetInfinityUpgrades();
-  game.dilation.active = false;
 	game.repeatInf = [
 		{cost: new Decimal(10), costMult: new Decimal(10), bought: new Decimal(0)}, 
 		{cost: new Decimal(1e10), costMult: new Decimal(10), bought: new Decimal(0)}, 

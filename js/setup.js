@@ -152,6 +152,7 @@ function updateSave() {
 	if(!game.galaxyTime) game.galaxyTime = Date.now();
 	if(!game.infinityTime) game.infinityTime = Date.now();
 	if(!game.eternityTime) game.eternityTime = Date.now();
+	if(!game.energizeTime) game.energizeTime = Date.now();
 	
 	if(!game.bestInfinityTime) game.bestInfinityTime = Infinity;
 	if(!game.bestEternityTime) game.bestEternityTime = Infinity;
