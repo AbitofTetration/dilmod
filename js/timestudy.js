@@ -168,9 +168,9 @@ addEventListener("resize", resizeCanvas);
 function resizeCanvas() {
 	canvas.width = innerWidth;
 	ge("timeStudies").style.height = canvas.height = innerHeight - 200;
-	canvas.style.position = "absolute"
+	canvas.style.position = "relative"
 	canvas.style.left = 0;
-	canvas.style.top = 200;
+	canvas.style.top = 0;
 	drawStudyTree();
 }
 
