@@ -4,13 +4,28 @@
 
 <body bgcolor="">
 
-  <div id = "energizePrestige" style = "position: relative; top: -50; right: 50%">
+    
+<div id = "energizePrestige" style = "position: relative; left: 50%; transform: translate(-50%,0);">
 	<center>
 		<span id = "ES">You have <span class = "energyShards"></span> Energy Shards.</span><br>
 		<button id = "gainedES" class = "energizeTabButton" onmousedown = "energize()" style = "font-size: 11px; width: 210px; height: 70px"></button>
 	</center>
 </div>
+  
+<div id = "infinityPrestige" style = "position: absolute; right: 75%; top: 10px">
+	<center>
+		You have <span class = "infinityPoints"></span> Infinity Points.<br><br>
+		<button id = "gainedIP" class = "infinityTabButton" onmousedown = "bigCrunch()" style = "font-size: 11px; width: 210px; height: 70px"></button>
+	</center>
+</div>
 
+<div id = "eternityPrestige" style = "position: absolute; left: 75%; top: 10px">
+	<center>
+		<span id = "EP">You have <span class = "eternityPoints"></span> Eternity Points.</span><span id = "TP"> and <span class = "tachyonParticles"></span> Tachyon Particles.</span><br><br>
+		<button id = "gainedEP" class = "eternityTabButton" onmousedown = "eternity()" style = "font-size: 11px; width: 210px; height: 70px"></button>
+	</center>
+</div>
+  
 <center>
 	<div style = "padding: 20px">
 		You have <currency id = "antimatter" onclick = "game.dimensions[0].amount = game.dimensions[0].amount.add(1)"></currency> antimatter.<br>
@@ -30,20 +45,6 @@
 	<!--	<button class = "energizeTabButton" id = "energizeTabButton" onclick = "showTab('energize')" style = "font-weight: bold">Energize</button> -->
 	</div>
   </center>
-  
-<div id = "infinityPrestige" style = "position: absolute; left: 75%; top: 10">
-	<center>
-		You have <span class = "infinityPoints"></span> Infinity Points.<br><br>
-		<button id = "gainedIP" class = "infinityTabButton" onmousedown = "bigCrunch()" style = "font-size: 11px; width: 210px; height: 70px"></button>
-	</center>
-</div>
-
-<div id = "eternityPrestige" style = "position: absolute; right: 75%; top: 10">
-	<center>
-		<span id = "EP">You have <span class = "eternityPoints"></span> Eternity Points.</span><span id = "TP"> and <span class = "tachyonParticles"></span> Tachyon Particles.</span><br><br>
-		<button id = "gainedEP" class = "eternityTabButton" onmousedown = "eternity()" style = "font-size: 11px; width: 210px; height: 70px"></button>
-	</center>
-</div>
 
 <div class = "tab" id = "bigCrunchTab" style = "font-size: 15px; padding-left: 15px">
 	<center>
