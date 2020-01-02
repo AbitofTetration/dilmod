@@ -159,7 +159,6 @@ function getGalaxyPower() {
 	if(challengeCompleted(5, 1)) r = r.multiply(1.1);
   if(tree.hasStudy("g11")) r = r.multiply(tree.getEff("g11"))
 	if(game.achievements.includes(95)) r = r.multiply(1.01);
-  if(game.exDilation.upgrades.includes(7)) r = r.multiply(getExDilationUpgradeEffect(7, "galaxies").add(1))
 	return r;
 }
 

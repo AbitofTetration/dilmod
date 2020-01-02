@@ -444,7 +444,7 @@ function getEDUDescriptions() {
 		"You gain ^0.75 Infinity Points on crunch each second.",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
     "Infinity Points boost infinity dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
-    "Dimension boosts and antimatter galaxies boost eachother.<br>Currently: " + shorten(getExDilationUpgradeEffect(7, "boosts")) + "x stronger dimboosts, " + shorten(getExDilationUpgradeEffect(7, "galaxies")) + "% stronger galaxies"
+    "Dimension boosts are twice as powerful."
 	]
 }
 
@@ -461,12 +461,7 @@ function getExDilationUpgradeEffect(n, g) {
     case 6:
       return game.infinityPoints.add(gainedInfinityPoints()).add(1).log(2).pow(2).pow(10).max(1)
     case 7:
-      switch(g) {
-        case "boosts":
-          return getEffectiveGalaxies().add(100).divide(100).pow(1/5).max(1)
-        case "galaxies":
-          return getEffectiveDimensionBoosts().pow(1/9).max(1)
-      }
+      return 2
 	}
 }
 
