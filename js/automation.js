@@ -95,7 +95,7 @@ var autobuyerFunctions = [
   function() {buyReplUpgrade(1)},
   function() {buyReplUpgrade(2)},
   function() {
-    return dilateTime();
+    return dilate();
   }
 ]
 
@@ -208,9 +208,9 @@ function runAu(line, log) {
 			if(!out) au.line++;
 			if(log) logAu(arg + " is " + out)
 		}
-		if(ccmd(cmd, "else")) { // write something in the console
-			if((au.line - 2).startsWith('if'))
-		}
+		/*if(ccmd(cmd, "else")) { // write something in the console
+			if((au.line - 2).startsWith('if '))
+		}*/
 		if(ccmd(cmd, "echo")) { // write something in the console
 			if(!args[1]) return;
 			logAu(arg)
@@ -282,6 +282,7 @@ function runAu(line, log) {
 		if(ccmd(cmd, "infinity") || ccmd(cmd, "crunch")) runAu("fire 13", log)
 		if(ccmd(cmd, "sacrifice")) runAu("fire 12", log)
 		if(ccmd(cmd, "eternity")) runAu("fire 25", log)
+		if(ccmd(cmd, "dilate")) runAu("fire 30", log)
 	}
 	catch(e) {
 		console.error(e)
