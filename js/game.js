@@ -139,7 +139,7 @@ function update() {
 			(game.options.showBestRateAt ? shorten(game.bestIPRateAt) + " IP" : shorten(game.bestIPRate) + " IP/min") : "<b>Big Crunch</b>"
 
 	displayIf("eternityPrestige", atEternity() || haveEternitied())
-	displayIf("energizePrestige", !atEternity() && haveEternitied())
+	displayIf("energizePrestige", atEnergize() && haveEnergized())
 	displayIf("EP", haveEternitied());
 	displayIf("TP", tree.hasStudy("d11"));
 	displayIf("dilation", tree.hasStudy("d11"));
