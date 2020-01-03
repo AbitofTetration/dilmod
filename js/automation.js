@@ -115,7 +115,7 @@ function extUnlocked(c) {
   if(c == 27) return eternityMilestone("repCha");
   if(c == 28) return eternityMilestone("repInt");
   if(c == 29) return eternityMilestone("repMax");
-  if(c == 30) return eternityMIlestone("dilAut")
+  if(c == 30) return eternityMilestone("dilAut");
 }
 
 function ccmd(a, b, c) {
@@ -158,10 +158,13 @@ function runAu(line, log) {
 				logAu("echo <t>         Writes t in the Automator panel.")
 				if(haveEternitied())
 				logAu("eternity         Activates extension 14.")
+				if(eternityMilestone("dilAut"))
+				logAu("dilate         Activates extension 30.")
 				logAu("fire <n>         Activates extension n.")
 				logAu("galaxy           Activates extension 11.")
 				logAu("help [t]         Displays help page t.")
 				logAu("if <c>           Runs the next line only if c is true.")
+				logAu("else             Runs the next line if the line after the next is a if and false.")
 				logAu("infinity         Activates extension 13.")
 				logAu("maxall           Activates extensions 0-9 in order.")
 				logAu("maxall [n]       Activates extensions 0-8 plus 15n in order.")
@@ -204,6 +207,9 @@ function runAu(line, log) {
 			else out = eval(t1 + operator + t2);
 			if(!out) au.line++;
 			if(log) logAu(arg + " is " + out)
+		}
+		if(ccmd(cmd, "else")) { // write something in the console
+			if((au.line - 2).startsWith('if'))
 		}
 		if(ccmd(cmd, "echo")) { // write something in the console
 			if(!args[1]) return;

@@ -532,7 +532,7 @@ function update() {
 		for(var i = 0; i < 9; i++) names.push("dimensionAutobuyer" + e.id);
 		names = names.concat(["tickspeedAutobuyer", "boostAutobuyer", "galaxyAutobuyer", "sacrificeAutobuyer", "infinityAutobuyer", "ipmultAutobuyer"])
 		for(var i = 0; i < 9; i++) names.push("infdimensionAutobuyer" + (e.id - 15));
-		names = names.concat(["infinityShiftAutobuyer", "eternityAutobuyer", "replicantiGalAutobuyer", "replicantiChaAutobuyer", "replicantiIntAutobuyer", "replicantiMaxAutobuyer"])
+		names = names.concat(["infinityShiftAutobuyer", "eternityAutobuyer", "replicantiGalAutobuyer", "replicantiChaAutobuyer", "replicantiIntAutobuyer", "replicantiMaxAutobuyer", "autoDilAutobuyer"])
 		
 		var div = ge(names[e.id])
 		div.style.visibility = extUnlocked(e.id) ? "visible" : "hidden";
