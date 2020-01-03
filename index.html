@@ -81,13 +81,20 @@
 			</tr>
 			<tr id = "boostDisplay">
 				<td style = "padding-bottom: 10px"><span id = "boostName"></span> (<span id = "boosts"></span>): requires <span id = "boostReq"></span> dimensions <span id = "boostEffect"></span></td>
-				<td style = "position: absolute; right: 20"><button id = "boost" onclick = "boost()" style = "width: 250px">Reset the game for a <span id = "boostPower"></span>x boost</button></td>
+				<td style = "position: absolute; right: 20"><button id = "boost" onclick = "boost()" style = "width: 250px">Reset dimensions for a <span id = "boostPower"></span>x boost</button></td>
 			</tr>
 			<tr id = "galaxyDisplay">
 				<td><span id = "galaxyName"></span> (<span id = "galaxies"> </span><span id = "extraGalaxies"></span>): requires <span id = "galaxyReq"></span> dimensions</td>
-				<td style = "position: absolute; right: 20"><button id = "galaxy" onclick = "galaxy()" style = "width: 250px; height: 40px">Lose all your previous progress,<br>but get a tickspeed boost</button></td>
+				<td style = "position: absolute; right: 20"><button id = "galaxy" onclick = "galaxy()" style = "width: 250px; height: 40px">Lose dimensions and dimension boosts,<br>but get a tickspeed boost</button></td>
 			</tr>
 		</table>
+       <span id = "galaxyScalings" style = "font-size: 12px">
+         Quadratic / distant scaling at <span id = "distantStart"></span> galaxies<span id = "remoteGalaxies">,
+         Exponential / remote scaling at <span id = "remoteStart"></span> galaxies<span id = "darkMatterGalaxies">,
+         Double-exponential / dark matter scaling at <span id = "dmStart"></span> galaxies
+         </span>
+         </span>
+      </span>
 	</div>
 	<div class = "dimensionTab" id = "infinityDimensionTab">
 		<center id = "infinityPowerArea" style = "font-size: 12px">

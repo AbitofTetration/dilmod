@@ -212,6 +212,12 @@ function update() {
 			ge("boostEffect").textContent = "(" + shorten(getDimensionBoostEffect()) + "x on all dimensions)"
 			ge("galaxyPower").textContent = shortenMoney(getGalaxyPower(), 2, 1)
 			ge("galaxyEffect").innerHTML = inChallenge(7) ? "x" + shorten(getTickPower().pow(7)) + " on 9th dimensions" : getTickPower().gte(2) ? "x" + shorten(getTickPower()) : "+" + shorten(getTickPower().subtract(1).multiply(100)) + "%"
+      
+      
+      displayIf("galaxyScalings", haveEternitied())
+      ge("distantStart").innerHTML= shortenMoney(getDistantGalaxyStart(), 2, 1)
+      displayIf("remoteGalaxies", haveEternitied())
+      ge("remoteStart").innerHTML= shortenMoney(getRemoteGalaxyStart(), 2, 1)
 			
 			displayIf("resetDimsButton", inChallenge())
 			
