@@ -379,6 +379,7 @@ function update() {
 			var c = 0
 			for(var i in eternityMilestones) {
 				c++
+        
 				ge("eternityMilestone" + i).className = game.eternities.gte(eternityMilestones[i].req) ? "eternitymilestone" : "eternitymilestonelocked"
 			}
 		}
