@@ -214,10 +214,10 @@ function update() {
 			ge("galaxyEffect").innerHTML = inChallenge(7) ? "x" + shorten(getTickPower().pow(7)) + " on 9th dimensions" : getTickPower().gte(2) ? "x" + shorten(getTickPower()) : "+" + shorten(getTickPower().subtract(1).multiply(100)) + "%"
       
       
-      displayIf("galaxyScalings", haveEternitied())
+    /*  displayIf("galaxyScalings", haveEternitied())
       ge("distantStart").innerHTML= shortenMoney(getDistantGalaxyStart(), 2, 1)
-      displayIf("remoteGalaxies", haveEternitied())
-      ge("remoteStart").innerHTML= shortenMoney(getRemoteGalaxyStart(), 2, 1)
+      displayIf("remoteGalaxies", getEffectiveNormalGalaxies().gte(getRemoteGalaxyStart()))
+      ge("remoteStart").innerHTML= shortenMoney(getRemoteGalaxyStart(), 2, 1) */
 			
 			displayIf("resetDimsButton", inChallenge())
 			
