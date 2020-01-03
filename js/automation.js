@@ -161,7 +161,7 @@ function runAu(line, log) {
 				logAu("fire <n>         Activates extension n.")
 				logAu("galaxy           Activates extension 11.")
 				logAu("help [t]         Displays help page t.")
-				logAu("if <c>           Runs the selection, or next line if there isn't one, only if c is true.")
+				logAu("if <c>           Runs the next line only if c is true.")
 				logAu("infinity         Activates extension 13.")
 				logAu("maxall           Activates extensions 0-9 in order.")
 				logAu("maxall [n]       Activates extensions 0-8 plus 15n in order.")
@@ -190,10 +190,10 @@ function runAu(line, log) {
 			if(!split) return;
 			split[0] = split[0].replace(/ /g, "")
 			split[1] = split[1].replace(/ /g, "")
-			var t1 = (split[0][0]==split[0][split[0].length-1]&&split[0][0]=="(") ? 
+			var t1 = (split[0][0]==split[0][split[0].length-1]&&split[0][0]=="%") ? 
 					runAu("get " + split[0].substring(1, split[0].length - 1)) : 
 					runAu("parse " + split[0]), 
-				t2 = (split[1][0]==split[1][split[1].length-1]&&split[1][0]==")") ? 
+				t2 = (split[1][0]==split[1][split[1].length-1]&&split[1][0]=="%") ? 
 					runAu("get " + split[1].substring(1, split[1].length - 1)) : 
 					runAu("parse " + split[1])
 			

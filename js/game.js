@@ -380,7 +380,7 @@ function update() {
 			for(var i in eternityMilestones) {
 				c++
         if(c > (3 * 7)) {
-          displayIf("eternityMilestone"+i,tree.hasStudy("d34"))
+          displayIf("eternityMilestone"+i,tree.hasStudy("d11"))
         }
 				ge("eternityMilestone" + i).className = game.eternities.gte(eternityMilestones[i].req) ? "eternitymilestone" : "eternitymilestonelocked"
 			}
