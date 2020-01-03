@@ -566,7 +566,9 @@ function update() {
 	
 	runAu("set am " + game.dimensions[0].amount);
 	runAu("set shifts " + game.shifts);
+	runAu("set boosttime " + getTimeSince("boost"));
 	runAu("set boosts " + game.boosts);
+	runAu("set galaxytime " + getTimeSince("galaxy"));
 	runAu("set galaxies " + game.galaxies);
 	runAu("set sacgain " + getSacrificeGain());
 	runAu("set ip " + game.infinityPoints);
