@@ -385,9 +385,6 @@ function update() {
 			var c = 0
 			for(var i in eternityMilestones) {
 				c++
-        if(c > (3 * 7)) {
-          displayIf("eternityMilestone"+i,tree.hasStudy("d11"))
-        }
 				ge("eternityMilestone" + i).className = game.eternities.gte(eternityMilestones[i].req) ? "eternitymilestone" : "eternitymilestonelocked"
 			}
 		}
@@ -544,6 +541,7 @@ function update() {
 		div.style.visibility = extUnlocked(e.id) ? "visible" : "hidden";
 		
 		ge("buyauto").style = "font-size: 10px"
+    displayIf("buyauto" + (e.id),!e.level.gt((2**au.class*10)))
     ge("buyauto" + (e.id)).innerHTML = "Make extension " + e.id + " interval 50% smaller<br>Cost: " + shortenCosts(e.cost) + " " + smallCurrency[e.currency]
 		
 		if(!div.children.length) return; // extension exists but no element does
