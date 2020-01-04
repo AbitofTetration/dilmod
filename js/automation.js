@@ -9,6 +9,7 @@ function Extension(s = 1, c, u = "infinityPoints", l = 0) {
 		charge: 0,
 		speed: new Decimal(s).multiply(Decimal.pow(2, l)),
 		baseSpeed: new Decimal(s),
+    enabled: false
 	}
 	
 	return extension;
@@ -358,4 +359,13 @@ function closeFileMenu(name, doOnClose = true) {
 	updateFileButton()
 	
 	if(doOnClose) _onFileMenuClosed(name)
+}
+function updateCheckBoxes() {
+    for (var i = 0; i < 9; i++) {
+        if (game.automator.extensions[i].enabled !== false) {
+            if (game.automator.extensions[i].enabled == true) document.getElementById(i + "autoSelect").checked = "true";
+            else document.getElementById(i + "autoSelect").checked = ""
+        }
+    }
+
 }

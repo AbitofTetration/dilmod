@@ -567,8 +567,11 @@ function update() {
 			runAu(au.script[au.line])
 		}
 	}
-  for(var i = 0; i < 8; i++) {
-   console.log(ge(i + "autoSelect").checked)
+  for(var i = 0; i < 9; i++) {
+   if(ge(i + "autoSelect").checked) {
+     fireExtension(i)
+     game.automator.extensions[i].enabled = true
+   }
   }
 	
 	// Give the Automator memory access to important stuff
@@ -627,6 +630,7 @@ function getStatisticsDisplay(type) {
 	return lines.join("<br>")
 }
 
+updateCheckBoxes()
 showTab(game.options.saveTabs ? game.currentTab : "dimensions")
 showDimensionTab(game.options.saveTabs ? game.currentDimensionTab : "normal")
 showStatisticsTab(game.options.saveTabs ? game.currentStatisticsTab : "normal")

@@ -167,6 +167,8 @@ function updateSave() {
 	if(!au.save) au.save = {}
 	if(!au.memory) au.memory = {}
 	
+  
+  
 	au.file = {
 		"New": function(force) {
 			if(!force) if(au.file.isUnsaved() && !confirm("You have unsaved changes. Are you sure you want to create a new file?")) return;
@@ -229,7 +231,9 @@ function updateSave() {
 	
 	var c = []
 	for(var i = 0; i < 15; i++) au.extensions[i] = Extension(0.5**i, 2**i, "infinityPoints", au.extensions[i]?au.extensions[i].level:0)
-	for(var i = 0; i < 18; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
+	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
+  
+  for(var i = 0; i < 30; i++) if (!au.enabled[i]) au.enabled[i] = false;
 }
 
 if(localStorage.dilmod) {
