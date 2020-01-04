@@ -494,7 +494,7 @@ ge("exDilationUpgrades").innerHTML = h + `
 var t = `<tr>`
 
 for(var i = 0; i < 9; i++) t += `
-<td class = "autobuyer" id = "dimensionAutobuyer${i}">${tierNames[i+1]} Dimension Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${i}" onclick = "upgradeExtension(${i})"></button></td>${(i+1)%3?"":"</tr><tr>"}
+<td class = "autobuyer" id = "dimensionAutobuyer${i}">${tierNames[i+1]} Dimension Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${i}" onclick = "upgradeExtension(${i})"></button><input type="checkbox" id="` + i + `autoSelect" tooltip="Toggle autobuyer mode"></td>${(i+1)%3?"":"</tr><tr>"}
 `
 
 ge("automationTable1").innerHTML += t + `

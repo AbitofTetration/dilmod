@@ -567,6 +567,9 @@ function update() {
 			runAu(au.script[au.line])
 		}
 	}
+  for(var i = 0; i < 8; i++) {
+   console.log(ge(i + "autoSelect").checked)
+  }
 	
 	// Give the Automator memory access to important stuff
 	
