@@ -541,7 +541,7 @@ function update() {
 		div.style.visibility = extUnlocked(e.id) ? "visible" : "hidden";
 		
 		ge("buyauto").style = "font-size: 10px"
-    displayIf("buyauto" + (e.id),e.level.gte((2**au.class*10)))
+ //   displayIf("buyauto" + (e.id),e.level.gte((2**au.class*10)))
     ge("buyauto" + (e.id)).innerHTML = "Make extension " + e.id + " interval 50% smaller<br>Cost: " + shortenCosts(e.cost) + " " + smallCurrency[e.currency]
 		
 		if(!div.children.length) return; // extension exists but no element does

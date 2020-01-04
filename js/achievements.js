@@ -115,7 +115,7 @@ function updateAchievementDescriptions() {
 		"In the depths of the far endgame", `Reach ${shortenMoney("1e4000")} eternity points. Reward: Small multiplier to ex-dilation based on eternity points.`,
 		"", ``,
 		"Galactic Great Wall", `Buy 200,000 antimatter galaxies.`,
-		"Infinite free real estate", `Reach ${shorten(new Decimal("5e6"))} banked infinities.`,
+		"Infinite free real estate", `Reach ${shorten(new Decimal("5e6"))} banked infinities. (Banked infinities haven't been added yet.)`,
 		"Empowered!", `Energize. (You can't get this yet, as Energize hasn't started development.)`,
 		"", ``,
 		"", ``,
