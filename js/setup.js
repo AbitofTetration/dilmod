@@ -233,7 +233,9 @@ function updateSave() {
 	for(var i = 0; i < 15; i++) au.extensions[i] = Extension(0.5**i, 2**i, "infinityPoints", au.extensions[i]?au.extensions[i].level:0)
 	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
   
-  for(var i = 0; i < 30; i++) if (!au.enabled[i]) au.enabled[i] = false;
+  if (!au.enabled) au.enabled = []
+  
+  for(var i = 0; i < 30; i++) if ((au.enabled[i] == undefined)) au.enabled[i] = false;
 }
 
 if(localStorage.dilmod) {
@@ -502,18 +504,18 @@ for(var i = 0; i < 9; i++) t += `
 `
 
 ge("automationTable1").innerHTML += t + `
-<td class = "autobuyer" id = "tickspeedAutobuyer">Tickspeed Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${9}" onclick = "upgradeExtension(9)"></button></td>
-<td class = "autobuyer" id = "boostAutobuyer">Dimension Boost Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${10}" onclick = "upgradeExtension(10)"></button></td>
-<td class = "autobuyer" id = "galaxyAutobuyer">Antimatter Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${11}" onclick = "upgradeExtension(11)"></button></td></tr>
-<td class = "autobuyer" id = "sacrificeAutobuyer">Dimensional Sacrifice Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${12}" onclick = "upgradeExtension(12)"></button></td>
-<td class = "autobuyer" id = "infinityAutobuyer">Big Crunch Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${13}" onclick = "upgradeExtension(13)"></button></td>
-<td class = "autobuyer" id = "ipmultAutobuyer">IP Multiplier Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${14}" onclick = "upgradeExtension(14)"></button></td>
+<td class = "autobuyer" id = "tickspeedAutobuyer">Tickspeed Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${9}" onclick = "upgradeExtension(9)"></button><input type="checkbox" id="9autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "boostAutobuyer">Dimension Boost Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${10}" onclick = "upgradeExtension(10)"></button><input type="checkbox" id="10autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "galaxyAutobuyer">Antimatter Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${11}" onclick = "upgradeExtension(11)"></button><input type="checkbox" id="11autoSelect" tooltip="Toggle autobuyer mode"></td></tr>
+<td class = "autobuyer" id = "sacrificeAutobuyer">Dimensional Sacrifice Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${12}" onclick = "upgradeExtension(12)"></button><input type="checkbox" id="12autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "infinityAutobuyer">Big Crunch Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${13}" onclick = "upgradeExtension(13)"></button><input type="checkbox" id="13autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "ipmultAutobuyer">IP Multiplier Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${14}" onclick = "upgradeExtension(14)"></button><input type="checkbox" id="14autoSelect" tooltip="Toggle autobuyer mode"></td>
 `
 
 var t = `<tr>`
 
 for(var i = 0; i < 9; i++) t += `
-<td class = "autobuyer" id = "infdimensionAutobuyer${i}">${tierNames[i+1]} Infinity Dimension Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${i+15}" onclick = "upgradeExtension(${i+15})"></button></td>${(i+1)%3?"":"</tr><tr>"}
+<td class = "autobuyer" id = "infdimensionAutobuyer${i}">${tierNames[i+1]} Infinity Dimension Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${i+15}" onclick = "upgradeExtension(${i+15})"></button><input type="checkbox" id="` + i+15 + `autoSelect" tooltip="Toggle autobuyer mode"></td>${(i+1)%3?"":"</tr><tr>"}
 `
 
 ge("automationTable2").innerHTML += t + `
