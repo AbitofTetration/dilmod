@@ -218,8 +218,6 @@ var eternityMilestones = {
 	repCha: {req: 175, desc: "Unlock Replicanti Chance autobuyer"},
 	repInt: {req: 200, desc: "Unlock Replicanti Interval autobuyer"},
 	repMax: {req: 250, desc: "Unlock Max Replicanti Galaxy autobuyer"},
-	dilAut: {req: 2000, desc: "Unlock automation for dilation"},
-	rDiAut: {req: 12000, desc: "Unlock automation for dilation upgrades"},
 }
 
 function eternityMilestone(id) {

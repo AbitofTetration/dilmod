@@ -567,10 +567,12 @@ function update() {
 			runAu(au.script[au.line])
 		}
 	}
-  for(var i = 0; i < 15; i++) {
+  for(var i = 0; i < 24; i++) {
    if(ge(i + "autoSelect").checked) {
-     fireExtension(i)
+     fireExtension(i, true)
      game.automator.enabled[i] = true
+   } else {
+     game.automator.enabled[i] = false
    }
   }
 	

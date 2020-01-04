@@ -157,8 +157,6 @@ function runAu(line, log) {
 				logAu("echo <t>         Writes t in the Automator panel.")
 				if(haveEternitied())
 				logAu("eternity         Activates extension 14.")
-				if(eternityMilestone("dilAut"))
-				logAu("dilate         Activates extension 30.")
 				logAu("fire <n>         Activates extension n.")
 				logAu("galaxy           Activates extension 11.")
 				logAu("help [t]         Displays help page t.")
@@ -281,7 +279,6 @@ function runAu(line, log) {
 		if(ccmd(cmd, "infinity") || ccmd(cmd, "crunch")) runAu("fire 13", log)
 		if(ccmd(cmd, "sacrifice")) runAu("fire 12", log)
 		if(ccmd(cmd, "eternity")) runAu("fire 25", log)
-		if(ccmd(cmd, "dilate")) runAu("fire 30", log)
 	}
 	catch(e) {
 		console.error(e)
@@ -360,7 +357,7 @@ function closeFileMenu(name, doOnClose = true) {
 	if(doOnClose) _onFileMenuClosed(name)
 }
 function updateCheckBoxes() {
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 24; i++) {
         if (game.automator.enabled[i] !== false) {
             if (game.automator.enabled[i] == true) document.getElementById(i + "autoSelect").checked = "true";
             else document.getElementById(i + "autoSelect").checked = ""
