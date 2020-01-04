@@ -135,6 +135,7 @@ function updateSave() {
 	if(!game.dilation) resetDilation();
 	if(!game.exDilation) resetExDilation();
   if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
+  if(!game.banked) game.banked.infinities = new Decimal(0)
 	
 	if(!game.challenges) {
 		game.challenges = []
