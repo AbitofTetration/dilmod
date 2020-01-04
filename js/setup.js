@@ -515,7 +515,7 @@ ge("automationTable1").innerHTML += t + `
 var t = `<tr>`
 
 for(var i = 0; i < 9; i++) t += `
-<td class = "autobuyer" id = "infdimensionAutobuyer${i}">${tierNames[i+1]} Infinity Dimension Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${i+15}" onclick = "upgradeExtension(${i+15})"></button><input type="checkbox" id="` + i+15 + `autoSelect" tooltip="Toggle autobuyer mode"></td>${(i+1)%3?"":"</tr><tr>"}
+<td class = "autobuyer" id = "infdimensionAutobuyer${i}">${tierNames[i+1]} Infinity Dimension Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${i+15}" onclick = "upgradeExtension(${i+15})"></button><input type="checkbox" id="${i+15}autoSelect" tooltip="Toggle autobuyer mode"></td>${(i+1)%3?"":"</tr><tr>"}
 `
 
 ge("automationTable2").innerHTML += t + `

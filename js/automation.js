@@ -94,9 +94,6 @@ var autobuyerFunctions = [
   function() {buyReplUpgrade(0)},
   function() {buyReplUpgrade(1)},
   function() {buyReplUpgrade(2)},
-  function() {
-    return dilate();
-  }
 ]
 
 function getExtByName(name) {
