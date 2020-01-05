@@ -17,7 +17,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 		}
 			var display =
 			game.currentTab == "dimensions" && 
-			(game[name + "s"][i - 1].amount.gt(0) || (i < 13 - (name != "dimension")*3)) && (
+			(game[name + "s"][i - 1].amount.gt(0) || (i < 12 - (name != "dimension")*3)) && (
 			name == "dimension" ?
 				game.shifts + 4 >= i : 
 			name == "infinityDimension" ? 
