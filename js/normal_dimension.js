@@ -1,7 +1,7 @@
 var lastTime = Date.now();
 
-var dimensionBaseCosts = [0, 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24, 1e30, 1e35, 1e44, 1e59]
-var dimensionBaseCostMults = [0, 1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15, 1e18, 1e20, 1e32, 1e40]
+var dimensionBaseCosts = [0, 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24, 1e30]
+var dimensionBaseCostMults = [0, 1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15, 1e18]
 
 function NormalDimension(i) {
 	this.id = game.dimensions.length;
@@ -28,7 +28,7 @@ function resetDimensions() {
 	var antimatter = game.dimensions ? game.dimensions[0].amount : 10;
 	game.dimensions = [];
 	
-	for(var i = 0; i <= 13; i++) {
+	for(var i = 0; i <= 10; i++) {
 		game.dimensions[i] = new NormalDimension(i);
 	}
 	
@@ -58,45 +58,45 @@ function getDimensionProduction(i) {
 	dim.multiplier = dim.multiplier.multiply(getDimensionBoostEffect().divide(2**(dim.id-1)).multiply(2)).max(1).multiply(Decimal.pow(game.dimMult, dim.bought.subtract(1)));
 	
 	dim.multiplier = dim.multiplier.multiply(getInfinityPowerEffect())
-	if(i == (inChallenge(12, 2) ? 12 : 9)) dim.multiplier = dim.multiplier.multiply(game.sacrificeMult)
+	if(i == 9) dim.multiplier = dim.multiplier.multiply(game.sacrificeMult)
 	
-	if(game.infinityUpgrades.includes(0) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(0))
-	if(game.infinityUpgrades.includes(1) && i < 10 && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(1))
+	if(game.infinityUpgrades.includes(0)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(0))
+	if(game.infinityUpgrades.includes(1)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(1))
 	if(game.infinityUpgrades.includes(2) && i == 1) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(2))
-	if(game.infinityUpgrades.includes(6) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(6))
+	if(game.infinityUpgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(6))
 	if(game.infinityUpgrades.includes(4) && i < 4) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(4))
 	if(game.infinityUpgrades.includes(8) && i > 3 && i < 7) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(4))
-	if(game.infinityUpgrades.includes(12) && i > 6 && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(4))
-	if(game.infinityUpgrades.includes(17) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(17))
-	if(game.infinityUpgrades.includes(18) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(18))
-	if(game.infinityUpgrades.includes(19) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(19))
-	if(game.infinityUpgrades.includes(20) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(20))
-	if(game.infinityUpgrades.includes(21) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(21))
-	if(game.infinityUpgrades.includes(22) && i < 10) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(22))
+	if(game.infinityUpgrades.includes(12) && i > 6) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(4))
+	if(game.infinityUpgrades.includes(17)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(17))
+	if(game.infinityUpgrades.includes(18)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(18))
+	if(game.infinityUpgrades.includes(19)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(19))
+	if(game.infinityUpgrades.includes(20)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(20))
+	if(game.infinityUpgrades.includes(21)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(21))
+	if(game.infinityUpgrades.includes(22)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(22))
 	if(i < 9 && challengeCompleted(8, 1)) dim.multiplier = dim.multiplier.multiply(getChallengeReward(8, 1))
 	if(i == 1 && game.achievements.includes(54)) dim.multiplier = dim.multiplier.multiply(game.dimensions[1].amount.pow(0.001).max(1))
-	if(game.achievements.includes(56) && i < 10) dim.multiplier = dim.multiplier.multiply(game.dimensions[0].amount.pow(0.0001).max(1))
-	if(game.achievements.includes(65) && i < 10) dim.multiplier = dim.multiplier.multiply(game.dimensions[0].amount.pow(0.0002).max(1))
-	if(tree.hasStudy("p11") && i < 10) dim.multiplier = dim.multiplier.multiply(tree.getEff("p11"));
-	if(tree.hasStudy("p31") && i !== (inChallenge(12, 2) ? 12 : 9)) dim.multiplier = dim.multiplier.multiply(tree.getEff("p31"));
-	if(tree.hasStudy("p32") && i < 10) dim.multiplier = dim.multiplier.multiply(tree.getEff("p32"));
-	if(tree.hasStudy("p41") && i < 10) dim.multiplier = dim.multiplier.multiply(tree.getEff("p41"));
-	if(tree.hasStudy("p42") && i < 10) dim.multiplier = dim.multiplier.multiply(tree.getEff("p42"));
-	if(tree.hasStudy("t32") && i < 10) dim.multiplier = dim.multiplier.multiply(tree.getEff("t32"))
+	if(game.achievements.includes(56)) dim.multiplier = dim.multiplier.multiply(game.dimensions[0].amount.pow(0.0001).max(1))
+	if(game.achievements.includes(65)) dim.multiplier = dim.multiplier.multiply(game.dimensions[0].amount.pow(0.0002).max(1))
+	if(tree.hasStudy("p11")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p11"));
+	if(tree.hasStudy("p31") && i !== 9) dim.multiplier = dim.multiplier.multiply(tree.getEff("p31"));
+	if(tree.hasStudy("p32")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p32"));
+	if(tree.hasStudy("p41")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p41"));
+	if(tree.hasStudy("p42")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p42"));
+	if(tree.hasStudy("t32")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t32"))
 
-	if(i == (inChallenge(12, 2) ? 12 : 9) && game.achievements.includes(17)) dim.multiplier = dim.multiplier.multiply(1.09);
-	if(i !== (inChallenge(12, 2) ? 12 : 9) && game.achievements.includes(24)) dim.multiplier = dim.multiplier.multiply(1.08);
-	if(game.achievements.includes(46) && i < 10) dim.multiplier = dim.multiplier.multiply(dim.bought.max(1))
+	if(i == 9 && game.achievements.includes(17)) dim.multiplier = dim.multiplier.multiply(1.09);
+	if(i !== 9 && game.achievements.includes(24)) dim.multiplier = dim.multiplier.multiply(1.08);
+	if(game.achievements.includes(46)) dim.multiplier = dim.multiplier.multiply(dim.bought.max(1))
 	
 	if(inChallenge(1) && i == 1) dim.multiplier = dim.multiplier.divide(infp()).max(1);
-	if(inChallenge(7) && i == (inChallenge(12, 2) ? 12 : 9)) dim.multiplier = dim.multiplier.multiply(getTickPower().pow(game.tickspeed.bought.multiply(7)));
-	if(inChallenge(8, 1) && i <= (inChallenge(12, 2) ? 11 : 8)) dim.multiplier = dim.multiplier.divide(infp(i)).max(1);
+	if(inChallenge(7) && i == 9) dim.multiplier = dim.multiplier.multiply(getTickPower().pow(game.tickspeed.bought.multiply(7)));
+	if(inChallenge(8, 1) && i <= 8) dim.multiplier = dim.multiplier.divide(infp(i)).max(1);
 	
 	if(inChallenge(4, 1)) dim.multiplier = dim.multiplier.pow(0.4 + (game.lastBoughtDimension == i) * 0.4);
 	if(inChallenge(11, 1)) dim.multiplier = dim.multiplier.pow(1 - i / 10);
   
   if(inDilation()) dim.multiplier = dim.multiplier.pow(dilationPenalty())
-	if(game.dilation.upgrades.includes(2) && i < 10) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(2))
+	if(game.dilation.upgrades.includes(2)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(2))
 
 	return dim.amount.multiply(dim.multiplier);
 }

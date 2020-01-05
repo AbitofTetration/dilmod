@@ -1,5 +1,5 @@
 function canShift() {
-	return game.dimensions[game.shifts + 4].bought.gt(1) && game.shifts < (inChallenge(12, 2) ? 8 : 5) && (!atInfinity() || game.break) && !inChallenge(11);
+	return game.dimensions[game.shifts + 4].bought.gt(1) && game.shifts < 5 && (!atInfinity() || game.break) && !inChallenge(11);
 }
 
 function shift() {
@@ -16,13 +16,13 @@ function getStartingShifts() {
 
 function canBoost() {
 	if(inChallenge(11)) return game.dimensions[4].amount.gte(getDimensionBoostReq())
-	return game.dimensions[9].amount.gte(getDimensionBoostReq()) && game.shifts == (inChallenge(12, 2) ? 8 : 5) && (!atInfinity() || game.break) && !inChallenge(8) && !inChallenge(10, 1);
+	return game.dimensions[9].amount.gte(getDimensionBoostReq()) && game.shifts == 5 && (!atInfinity() || game.break) && !inChallenge(8) && !inChallenge(10, 1);
 }
 
 function boost(bulk) {
 	if(!canBoost()) return;
 	
-	var bought = game.dimensions[inChallenge(11) ? 4 : (inChallenge(12, 2) ? 12 : 9)].amount.divide(getDimensionBoostScaling()).floor();
+	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.divide(getDimensionBoostScaling()).floor();
 	
 	if(game.boosts.gte(bought)) return;
 	

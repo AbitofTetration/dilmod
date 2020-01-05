@@ -85,7 +85,6 @@ function getTickspeed(name) {
 // Galaxies
 
 function canGalaxy() {
-  if((inChallenge(12, 2) ? 12 : 9)) return false;
 	if(inChallenge(11)) return game.dimensions[4].amount.gte(getGalaxyReq());
   if(inChallenge(6,2)) return false;
 	return game.dimensions[9].amount.gte(getGalaxyReq()) && (!atInfinity() || game.break) && !inChallenge(8) && !inChallenge(7, 1);
