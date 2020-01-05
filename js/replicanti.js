@@ -50,13 +50,11 @@ function getReplSpeed() {
   if(tree.hasStudy("g21")) r = r.multiply(tree.getEff("g21").max(500))
   if(challengeCompleted(4, 2)) r = r.multiply(Decimal.pow(2, getTimeSince("eternity")/1e6).min(infp(0.25)))
 	if(game.dilation.upgrades.includes(0)) r = r.multiply(getDilationUpgradeEffect(0))
-  if(game.replicanti.amount.gt(infp(getMaxReplGalaxies().add(1)).max(infp())) && game.exDilation.upgrades.includes(8)) r = r.divide(game.replicanti.amount.divide(infp(getMaxReplGalaxies().add(1).divide(2)).max(infp())))
 	
 	return r;
 }
 
 function getReplLimit() {
-  if(game.exDilation.upgrades.includes(8)) return infp(infp(getMaxReplGalaxies().add(1)))
 	return infp(getMaxReplGalaxies().add(1)).max(infp())
 }
 

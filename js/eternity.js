@@ -447,7 +447,7 @@ function getEDUDescriptions() {
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
     "Infinity Points boost infinity dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
     "Dimension boosts are twice as powerful.",
-    "Remove the cap on replicanti, but interval reduces based on your replicanti."
+    "The replicanti max galaxies softcap is weaker."
 	]
 }
 
