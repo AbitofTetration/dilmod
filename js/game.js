@@ -5,7 +5,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
   
   var ec12 = inChallenge(12, 2) && name == "dimension"
 	
-	for(var i = 13; i >= 0; i--) {
+	for(var i = 12; i >= 0; i--) {
 		if(i < 10-c10+(ec12*3)) {
 			var tickspeed = inChallenge(7) ? 1 : getTickspeed(name);
 			var base = window["get" + Name + "Production"](i + 1)
@@ -17,7 +17,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 		}
 			var display =
 			game.currentTab == "dimensions" && 
-			(game[name + "s"][i - 1].amount.gt(0) || (i < (5) - (name=="dimension") * 3)) && (
+			(game[name + "s"][i - 1].amount.gt(0) || (i < 13 - (name != "dimension")*3)) && (
 			name == "dimension" ?
 				game.shifts + 4 >= i : 
 			name == "infinityDimension" ? 
