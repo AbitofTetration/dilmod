@@ -319,6 +319,10 @@ function getChallengeReward(i, j) {
       getEffectiveGalaxies().add(1).log(125),
       0,
       0,
+      0,
+      0,
+      0,
+      0,
       0
     ]
 	][j][i-1]
