@@ -3,7 +3,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 	
 	var c10 = inChallenge(10) && name == "dimension";
   
-  var ec12 = inChallenge(12, 2) && name == "dimenson"
+  var ec12 = inChallenge(12, 2) && name == "dimension"
 	
 	for(var i = 10+(ec12*3); i >= 0; i--) {
 		if(i < 10-c10+(ec12*3)) {
@@ -13,13 +13,11 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 			if(c10) var dimProductionUp = window["get" + Name + "Production"](i + 2).multiply(tickspeed).multiply(getChallengeDivider(name))
 			var realProduction = i ? (c10 ? dimProductionUp : dimProduction) : (c10 ? dimProduction.divide(100).add(dimProductionUp) : dimProduction);
 			game[name + "s"][i].amount = game[name + "s"][i].amount.add(realProduction.multiply(diff/1000));
-			if (i < 9-c10) ge(abbr + "dimgrowth" + i).textContent = game[name + "s"][i].amount.eq(0)?"":"(+" + shorten(realProduction.divide(game[name + "s"][i].amount).multiply(100)) + "%/s)"
+			if (i < 9-c10+(ec12*3)) ge(abbr + "dimgrowth" + i).textContent = game[name + "s"][i].amount.eq(0)?"":"(+" + shorten(realProduction.divide(game[name + "s"][i].amount).multiply(100)) + "%/s)"
 		}
-		
-		if (i) {
 			var display =
 			game.currentTab == "dimensions" && 
-			(game[name + "s"][i - 1].amount.gt(0) || (i < 5 - (name=="dimension") * 3)) && (
+			(game[name + "s"][i - 1].amount.gt(0) || (i < (5 + !!(name=="dimension")*3) - (name=="dimension") * 3)) && (
 			name == "dimension" ?
 				game.shifts + 4 >= i : 
 			name == "infinityDimension" ? 
@@ -42,7 +40,6 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 				ge(abbr + "dimbuy" + i).className = window["canBuy" + Name](i) ? "buy" : "lock"
 			}
 			ge(abbr + "dimDisplay" + i).style.display = display?"":"none"
-		}
 	}
 }
 

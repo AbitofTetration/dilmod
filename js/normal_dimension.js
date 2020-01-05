@@ -28,7 +28,7 @@ function resetDimensions() {
 	var antimatter = game.dimensions ? game.dimensions[0].amount : 10;
 	game.dimensions = [];
 	
-	for(var i = 0; i <= (inChallenge(12, 2) ? 13 : 10); i++) {
+	for(var i = 0; i <= 13; i++) {
 		game.dimensions[i] = new NormalDimension(i);
 	}
 	

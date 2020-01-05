@@ -327,7 +327,7 @@ t += "</tr></table>"
 
 ge("achievements").innerHTML = t;
 
-for(var i = 1; i < 10; i++) ge("dimensions").innerHTML += `
+for(var i = 1; i < 13; i++) ge("dimensions").innerHTML += `
 <tr id = "dimDisplay` + i + `" style = "text-align: right">
 	<td style = "text-align: left; padding-bottom: 8px; width: 250">` + tierNames[i] + ` Dimension</td>
 	<td style = "position: absolute; width: 100"><span id = "dimamount`+i+`"></span></td>
