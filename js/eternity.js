@@ -46,6 +46,7 @@ function eternity(force) {
 	
 	if(!force) {
     if(game.infinityDimensions[0].amount.eq(1)) giveAchievement(81)
+    if(tree.hasStudy("r51")) game.banked.infinities = game.banked.infinities.add(game.infinities.divide(50))
     if(game.dilation.active) game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(gainedTP())
 		giveAchievement(67);
 		

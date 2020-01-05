@@ -135,7 +135,9 @@ function updateSave() {
 	if(!game.dilation) resetDilation();
 	if(!game.exDilation) resetExDilation();
   if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
-  if(!game.banked) game.banked.infinities = new Decimal(0)
+  if(!game.banked) game.banked = {
+    infinities: new Decimal(0)
+  }
 	
 	if(!game.challenges) {
 		game.challenges = []
@@ -526,7 +528,6 @@ ge("automationTable2").innerHTML += t + `
 <tr><td class = "autobuyer" id = "replicantiChaAutobuyer">Replicanti Chance Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${27}" onclick = "upgradeExtension(27)"></button></td>
 <td class = "autobuyer" id = "replicantiIntAutobuyer">Replicanti Interval Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${28}" onclick = "upgradeExtension(28)"></button></td>
 <td class = "autobuyer" id = "replicantiMaxAutobuyer">Max Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${29}" onclick = "upgradeExtension(29)"></button></td></tr>
-<td class = "autobuyer" id = "autoDilAutobuyer">Dilation Automation<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${30}" onclick = "upgradeExtension(30)"></button></td></tr>
 `
 
 function f() {

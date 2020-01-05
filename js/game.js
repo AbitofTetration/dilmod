@@ -610,6 +610,7 @@ function getStatisticsDisplay(type) {
 				lines.push(`You have infinitied ${getFullExpansion(game.infinities)} times.`)
 				lines.push(`Your fastest infinity lasted ${timeDisplay(game.bestInfinityTime)}.`)
 				lines.push(`You have spent ${timeDisplay(getTimeSince("infinity"))} in this infinity.`)
+        if (game.banked.infinities.gt(0)) 				lines.push(`You have banked ${getFullExpansion(game.banked.infinities)} infinities, and will get ${getFullExpansion(game.infinities.divide(50))} on your next eternity.`)
 				lines.push("")
 			}
 			if (haveEternitied()) {

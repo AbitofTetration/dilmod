@@ -309,7 +309,7 @@ function getChallengeReward(i, j) {
 			0,
 			game.dimensions[9].multiplier.pow(0.1),
 			0,
-			game.infinities.pow(1/2),
+			getAllInfinities().pow(1/2),
 		],
     [
       0,

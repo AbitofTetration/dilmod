@@ -141,6 +141,10 @@ function buyRepeatInf(i) {
 	return true;
 }
 
+function getAllInfinities() {
+  return game.infinities.add(game.banked.infinities)
+}
+
 function getInfinityBonus() {
 	r = 1;
 	if(tree.hasStudy("p22")) r *= 10;
@@ -156,7 +160,7 @@ function getInfinityUpgradeEffect(n) {
 		case 2:
 			return game.infinityPoints.divide(2).pow(1.25).add(1);
 		case 4:
-			return game.infinities.multiply(0.2).add(1).pow(getInfinityBonus())
+			return getAllInfinities().multiply(0.2).add(1).pow(getInfinityBonus())
 		case 6:
 			return game.infinityPoints.divide(9).pow(0.25).add(1);
 		case 10: 
@@ -168,7 +172,7 @@ function getInfinityUpgradeEffect(n) {
 		case 19:
 			return game.dimensions[9].amount.pow(1.5).add(1).multiply(game.achievements.includes(47)?Math.PI:1);
 		case 20:
-			return game.infinities.multiply(308).sqrt().add(1).pow(getInfinityBonus());
+			return getAllInfinities().multiply(308).sqrt().add(1).pow(getInfinityBonus());
 		case 21: 
 			return Math.max(1e9 / getChallengeTimes(0), 1);
 		case 22:
