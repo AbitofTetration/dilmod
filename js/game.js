@@ -5,7 +5,7 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
   
   var ec12 = inChallenge(12, 2) && name == "dimension"
 	
-	for(var i = 12; i >= 0; i--) {
+	for(var i = (name == "dimension" ? 10 : 13); i >= 0; i--) {
 		if(i < 10-c10+(ec12*3)) {
 			var tickspeed = inChallenge(7) ? 1 : getTickspeed(name);
 			var base = window["get" + Name + "Production"](i + 1)
