@@ -33,6 +33,8 @@ function getTimeDimensionProduction(i) {
 	if(tree.hasStudy("t22")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t22"))
 	if(tree.hasStudy("t31")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t31"))
 	if(tree.hasStudy("t51")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t51"))
+	if(tree.hasStudy("t52")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t52"))
+  if(tree.hasStudy("r52")) dim.multiplier = dim.multiplier.multiply(1e40)
   if(game.dilation.upgrades.includes(1)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(1))
   if(game.achievements.includes(75)) dim.multiplier = dim.multiplier.multiply(getInfiniteTimeMult())
   if(game.eternityUpgrades.includes(5)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(23))
@@ -96,7 +98,7 @@ function getBaseTickspeedUpgrades() {
 }
 
 function getFreeTickspeedUpgrades() {
-  if(inChallenge(1,2)) return new Decimal(0)
+  if(inChallenge(1,2) || inChallenge(10,2)) return new Decimal(0)
 	var a = getBaseTickspeedUpgrades()
   
   if(a.gt(5e4)) a = a.pow(0.96).max(5e4)

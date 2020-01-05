@@ -21,12 +21,12 @@ function atEnergize() {
 }
 
 function gainedEnergyShards() {
-	return game.eternityPoints.add(gainedEternityPoints()).pow(1/40000).multiply(1).divide(10).floor();
+	return game.eternityPoints.add(gainedEternityPoints()).pow(1/10000).multiply(1).divide(10).floor();
 }
 
 function getEnergize() {
 	if(getChallengeSet() == 4) return getChallengeGoal()
-	return new Decimal("1e40000");
+	return new Decimal("1e10000");
 }
 
 function energize(force) {
