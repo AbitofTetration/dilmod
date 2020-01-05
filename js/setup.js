@@ -1,7 +1,7 @@
 var devMode = true;
 
 var lastTab;
-var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
+var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelvth"]
 var smallCurrency = {
 	infinityPoints: "IP",
 	eternityPoints: "EP"

@@ -16,7 +16,7 @@ function getStartingShifts() {
 
 function canBoost() {
 	if(inChallenge(11)) return game.dimensions[4].amount.gte(getDimensionBoostReq())
-	return game.dimensions[9].amount.gte(getDimensionBoostReq()) && game.shifts == 5 && (!atInfinity() || game.break) && !inChallenge(8) && !inChallenge(10, 1);
+	return game.dimensions[9].amount.gte(getDimensionBoostReq()) && game.shifts == (inChallenge(12, 2) ? 13 : 10) && (!atInfinity() || game.break) && !inChallenge(8) && !inChallenge(10, 1);
 }
 
 function boost(bulk) {

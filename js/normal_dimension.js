@@ -1,6 +1,6 @@
 var lastTime = Date.now();
 
-var dimensionBaseCosts = [0, 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24, 1e30]
+var dimensionBaseCosts = [0, 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24, 1e30, 1e35, 1e44]
 var dimensionBaseCostMults = [0, 1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15, 1e18]
 
 function NormalDimension(i) {
@@ -28,7 +28,7 @@ function resetDimensions() {
 	var antimatter = game.dimensions ? game.dimensions[0].amount : 10;
 	game.dimensions = [];
 	
-	for(var i = 0; i <= 10; i++) {
+	for(var i = 0; i <= (inChallenge(12, 2) ? 13 : 10); i++) {
 		game.dimensions[i] = new NormalDimension(i);
 	}
 	

@@ -2,9 +2,11 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 	var Name = name[0].toUpperCase() + name.slice(1)
 	
 	var c10 = inChallenge(10) && name == "dimension";
+  
+  var ec12 = inChallenge(12, 2) && name == "dimenson"
 	
-	for(var i = 10; i >= 0; i--) {
-		if(i < 10-c10) {
+	for(var i = 10+(ec12*3); i >= 0; i--) {
+		if(i < 10-c10+(ec12*3)) {
 			var tickspeed = inChallenge(7) ? 1 : getTickspeed(name);
 			var base = window["get" + Name + "Production"](i + 1)
 			var dimProduction = base.gt(0) ? base.multiply(tickspeed).divide(getChallengeDivider(name)) : new Decimal(0)
