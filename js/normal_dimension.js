@@ -1,7 +1,7 @@
 var lastTime = Date.now();
 
-var dimensionBaseCosts = [0, 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24, 1e30, 1e35, 1e44]
-var dimensionBaseCostMults = [0, 1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15, 1e18]
+var dimensionBaseCosts = [0, 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24, 1e30, 1e35, 1e44, 1e59]
+var dimensionBaseCostMults = [0, 1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15, 1e18, 1e20, 1e32, 1e40]
 
 function NormalDimension(i) {
 	this.id = game.dimensions.length;
@@ -58,7 +58,7 @@ function getDimensionProduction(i) {
 	dim.multiplier = dim.multiplier.multiply(getDimensionBoostEffect().divide(2**(dim.id-1)).multiply(2)).max(1).multiply(Decimal.pow(game.dimMult, dim.bought.subtract(1)));
 	
 	dim.multiplier = dim.multiplier.multiply(getInfinityPowerEffect())
-	if(i == 9) dim.multiplier = dim.multiplier.multiply(game.sacrificeMult)
+	if(i == (inChallenge(12, 2) ? 12 : 9)) dim.multiplier = dim.multiplier.multiply(game.sacrificeMult)
 	
 	if(game.infinityUpgrades.includes(0)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(0))
 	if(game.infinityUpgrades.includes(1)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(1))
@@ -84,13 +84,13 @@ function getDimensionProduction(i) {
 	if(tree.hasStudy("p42")) dim.multiplier = dim.multiplier.multiply(tree.getEff("p42"));
 	if(tree.hasStudy("t32")) dim.multiplier = dim.multiplier.multiply(tree.getEff("t32"))
 
-	if(i == 9 && game.achievements.includes(17)) dim.multiplier = dim.multiplier.multiply(1.09);
-	if(i !== 9 && game.achievements.includes(24)) dim.multiplier = dim.multiplier.multiply(1.08);
+	if(i == (inChallenge(12, 2) ? 12 : 9) && game.achievements.includes(17)) dim.multiplier = dim.multiplier.multiply(1.09);
+	if(i !== (inChallenge(12, 2) ? 12 : 9) && game.achievements.includes(24)) dim.multiplier = dim.multiplier.multiply(1.08);
 	if(game.achievements.includes(46)) dim.multiplier = dim.multiplier.multiply(dim.bought.max(1))
 	
 	if(inChallenge(1) && i == 1) dim.multiplier = dim.multiplier.divide(infp()).max(1);
-	if(inChallenge(7) && i == 9) dim.multiplier = dim.multiplier.multiply(getTickPower().pow(game.tickspeed.bought.multiply(7)));
-	if(inChallenge(8, 1) && i <= 8) dim.multiplier = dim.multiplier.divide(infp(i)).max(1);
+	if(inChallenge(7) && i == (inChallenge(12, 2) ? 12 : 9)) dim.multiplier = dim.multiplier.multiply(getTickPower().pow(game.tickspeed.bought.multiply(7)));
+	if(inChallenge(8, 1) && i <= (inChallenge(12, 2) ? 11 : 8)) dim.multiplier = dim.multiplier.divide(infp(i)).max(1);
 	
 	if(inChallenge(4, 1)) dim.multiplier = dim.multiplier.pow(0.4 + (game.lastBoughtDimension == i) * 0.4);
 	if(inChallenge(11, 1)) dim.multiplier = dim.multiplier.pow(1 - i / 10);
