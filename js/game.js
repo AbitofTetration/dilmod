@@ -1,7 +1,7 @@
 function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 	var Name = name[0].toUpperCase() + name.slice(1)
 	
-	var c10 = inChallenge(10) && name == "dimension";
+	var c10 = (inChallenge(10) && name == "dimension") || inChallenge(12, 2) && (name == "dimension" || name == "infinityDimension");
 	
 	for(var i = 10; i >= 0; i--) {
 		if(i < 10-c10) {

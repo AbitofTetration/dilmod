@@ -93,7 +93,7 @@ function updateChallengeDescriptions() {
 		`Time and infinity dimensions are useless, but you gain a boost to normal dimensions based on infinities.ECDATA`,
 		`ECDATA`,
 		`ECDATA`,
-		`ECDATA`,
+		`Both normal dimensions and infinity dimensions produce the one two below them.ECDATAReward`,
 	]
 	
 	for(var i = 13; i < 25; i++) {
