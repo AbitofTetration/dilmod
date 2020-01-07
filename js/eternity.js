@@ -482,9 +482,9 @@ function buyExDilationUpgrade(i) {
 	game.exDilation.upgrades.push(i);
 }
 
-var exDilationRepUpgradeCosts = "100, 1000, 10000".split(",");
+var exDilationRepUpgradeCosts = "10, 100, 1000".split(",");
 
-var exDilationRepUpgradeCostMults = "100, 100, 100".split(",");
+var exDilationRepUpgradeCostMults = "10, 100, 100".split(",");
 
 function getRepeatExDilCost(i) {
 	return new Decimal(exDilationRepUpgradeCosts[i]).multiply(new Decimal(exDilationRepUpgradeCostMults[i]).pow(game.exDilation.repeatUpgr[i]))
