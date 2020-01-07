@@ -483,6 +483,7 @@ function update() {
 	if(game.challenges[0][8].completed) giveAchievement(33);
 	if(getChallengeCompletions() > 11) giveAchievement(35);
 	if(getChallengeCompletions(2) > 11) giveAchievement(97);
+  if(game.infinityPoints.gt("1.79e300008") && game.dilation.active == true && game.repeatInf[1].bought.eq(0)) giveAchievement(104);
 	if(game.break) giveAchievement(36);
 	if(game.totalAntimatter.gt(infp(2))) giveAchievement(37);
 	if(game.infinityUpgrades.includes(22)) giveAchievement(38);

@@ -117,7 +117,7 @@ function updateAchievementDescriptions() {
 		"Galactic Great Wall", `Buy 200,000 antimatter galaxies.`,
 		"Infinite free real estate", `Reach ${shorten(new Decimal("5e8"))} banked infinities. (Banked infinities haven't been added yet.)`,
 		"Empowered!", `Energize. (You can't get this yet, as Energize hasn't started development.)`,
-		"", ``,
+		"I never really liked this infinity stuff anyway", `Reach ${shorten("1.79e300008")} IP while in dilation, without IP multipliers. Reward: You gain more infinities based on your tachyon particles.`,
 		"", ``,
 		"", ``,
 		"When will I get rid of you?", `Reach ${shortenMoney("1e7000")} infinity points within EC10. Reward: Upgrades that use infinities are ${shortenMoney("1e10")}x stronger.`,

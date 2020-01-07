@@ -319,7 +319,9 @@ function getChallengeReward(i, j) {
       getEffectiveGalaxies().add(1).log(125),
       0,
       0,
-      0
+      0,
+      0,
+      getAllInfinities().log(10)
     ]
 	][j][i-1]
 }
@@ -402,8 +404,8 @@ function getChallengeBenefits() {
 					`5% stronger galaxies.`,
 					`25% extra tickspeed upgrades.`,
 					`50% stronger dimension boosts.`,
-					`${getAchievementMultiplier()}x on all infinity dimensions.`,
-					`${shorten(getChallengeReward(10, 1))}x on all infinity dimensions.`,
+					`10% cheaper dimension boosts.`,
+					`${shorten(getChallengeReward(10, 2))}x on all time dimensions.`,
 					`Boost to infinity dimensions based on tier.`,
 					`+???% Infinity Shift effectiveness.`,
 				]
