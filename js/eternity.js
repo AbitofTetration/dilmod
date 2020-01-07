@@ -456,7 +456,7 @@ function getExDilationUpgradeEffect(n, g) {
 		case 0:
 			return game.exDilation.amount.add(1).pow(1/5).max(1);
 		case 2:
-			return game.exDilation.amount.add(1).pow(0.75).max(1)
+			return game.exDilation.amount.add(1).pow(1.25).max(1)
 		case 3:
 			return new Decimal(game.achievementRowsCompleted * 0.7 + (game.achievements.length * 0.2)).max(1)
 		case 5:
