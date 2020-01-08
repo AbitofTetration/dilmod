@@ -456,13 +456,13 @@ function getExDilationUpgradeEffect(n, g) {
 		case 0:
 			return game.exDilation.amount.add(1).pow(1/5).max(1);
 		case 2:
-			return game.exDilation.amount.add(1).pow(1.25).max(1)
+			return game.exDilation.amount.add(1).pow(3).max(1)
 		case 3:
 			return new Decimal(game.achievementRowsCompleted * 0.7 + (game.achievements.length * 0.2)).max(1)
 		case 5:
 			return getFreeDilatedGalaxies().add(1).log(4).max(1)
     case 6:
-      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log(2).pow(2).pow(10).max(1)
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log(2).pow(2).pow(120).max(1)
     case 7:
       return 2
 	}
@@ -482,7 +482,7 @@ function buyExDilationUpgrade(i) {
 	game.exDilation.upgrades.push(i);
 }
 
-var exDilationRepUpgradeCosts = "10, 100, 1000".split(",");
+var exDilationRepUpgradeCosts = "100, 1000, 10000".split(",");
 
 var exDilationRepUpgradeCostMults = "10, 100, 100".split(",");
 

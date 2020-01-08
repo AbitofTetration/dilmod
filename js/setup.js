@@ -138,6 +138,7 @@ function updateSave() {
   if(!game.banked) game.banked = {
     infinities: new Decimal(0)
   }
+	if(!game.energize) resetEnergize();
 	
 	if(!game.challenges) {
 		game.challenges = []
