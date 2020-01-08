@@ -25,18 +25,25 @@ function gainedEnergyShards() {
 }
 
 var chargedMilestones = {
-	keepIU: {req:  23000, desc: "You keep infinity upgrades."},
-	keepBU: {req:  15000, desc: "You keep infinity upgrades."},
-	tAuto1: {req:  10000, desc: "Unlock Infinity Dimension autobuyer 1"},
-	tAuto2: {req:  9000, desc: "Unlock Infinity Dimension autobuyer 2"},
-	tAuto3: {req:  8000, desc: "Unlock Infinity Dimension autobuyer 3"},
-	tAuto4: {req:  7000, desc: "Unlock Infinity Dimension autobuyer 4"},
-	tAuto5: {req:  6000, desc: "Unlock Infinity Dimension autobuyer 5"},
-	tAuto6: {req:  5000, desc: "Unlock Infinity Dimension autobuyer 6"},
-	tAuto7: {req:  4000, desc: "Unlock Infinity Dimension autobuyer 7"},
-	tAuto8: {req:  3000, desc: "Unlock Infinity Dimension autobuyer 8"},
-	tAuto9: {req:  2000, desc: "Unlock Infinity Dimension autobuyer 9"},
-	dShift: {req:  1000, desc: "Unlock automatic dilation upgrades"}
+	keepIU: {req:  2500000, desc: "You keep infinity upgrades."},
+  keepNC: {req:  2400000, desc: "You keep normal challenges."},
+  keepIC: {req:  2300000, desc: "You keep infinity challenges."},
+  keepEC: {req:  2200000, desc: "You keep eternity challenges."},
+	keepBU: {req:  1500000, desc: "You keep infinity upgrades."},
+	tAuto1: {req:  1000000, desc: "Unlock Infinity Dimension autobuyer 1"},
+	tAuto2: {req:  900000, desc: "Unlock Infinity Dimension autobuyer 2"},
+	tAuto3: {req:  800000, desc: "Unlock Infinity Dimension autobuyer 3"},
+	tAuto4: {req:  700000, desc: "Unlock Infinity Dimension autobuyer 4"},
+	tAuto5: {req:  600000, desc: "Unlock Infinity Dimension autobuyer 5"},
+	tAuto6: {req:  500000, desc: "Unlock Infinity Dimension autobuyer 6"},
+	tAuto7: {req:  400000, desc: "Unlock Infinity Dimension autobuyer 7"},
+	tAuto8: {req:  300000, desc: "Unlock Infinity Dimension autobuyer 8"},
+	tAuto9: {req:  200000, desc: "Unlock Infinity Dimension autobuyer 9"},
+	dShift: {req:  100000, desc: "Unlock automatic dilation upgrades"}
+}
+
+function chargedMilestone(id) {
+  return game.chargedMilestones.includes(chargedMilestones[id])
 }
 
 function getEnergize() {
@@ -56,7 +63,7 @@ function energize(force) {
   }
   
   for (var i in chargedMilestones) {
-    if (i.req < game.totalBoostsEnergize) game.chargedMilestones.push
+    if (i.req < game.totalBoostsEnergize) game.chargedMilestones.push(i)
   }
   
   for (var i = 0; i <= 3; i++) {
@@ -72,7 +79,7 @@ function energize(force) {
   game.eternities = new Decimal(0);
 	
   if(!eternityMilestone("keepIT")) game.bestInfinityTime = Infinity;
-	for(var i = (eternityMilestone("keepNC")+eternityMilestone("keepIC"))*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
+	for(var i = (eternityMilestone("keepNC")+eternityMilestone("keepIC")+eternityMilestone("keepEC"))*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
 	if(eternityMilestone("iShift")) game.infinityShifts = 9;
 	
 	if(eternityMilestone("keepBI"));
