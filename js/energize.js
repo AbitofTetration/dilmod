@@ -45,11 +45,11 @@ function energize(force) {
   }
   resetEternityUpgrades()
   resetTimeDimensions()
-  game.eternityPoints = new Decimal(0);
-  game.eternities = new Decimal(0);
   resetExDilation()
   resetReplicanti()
   resetDilation()
   respecTimeStudies()
+  game.eternities = new Decimal(0);
   eternity(true)
+  game.eternityPoints = new Decimal(0);
 }

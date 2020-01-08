@@ -119,6 +119,12 @@ function update() {
 		game.bestEPRateAt = gainedEternityPoints()
 	}
 	
+	var esrate = gainedEnergyShards().divide(getTimeSince("energize")/3600000)
+	if(!game.bestESRate || game.bestESRate.lt(eprate)) {
+		game.bestESRate = esrate;
+		game.bestESRateAt = gainedEnergyShards()
+	}
+	
 	// Global UI
 	
 	ge("antimatter").textContent = getFullExpansion(game.dimensions[0].amount)
@@ -154,12 +160,14 @@ function update() {
 "<b>I need to become eternal.</b><br>Gain " + shortenMoney(gainedTP()) + " Tachyon Particles, and " + shortenMoney(gainedEternityPoints()) + " Eternity Points.<br>")
 	displayIf("gainedES", atEnergize());
 	displayIf("ES", haveEternitied());
-  ge("gainedES").innerHTML = !haveEnergized() ? "<b>Being eternal is boring...<br><br>...now I shall harness energy.</b>" : "<b>I shall harness energy.</b><br>Gain " + shortenMoney(gainedEnergyShards()) + " Energy Shards."
+  ge("gainedES").innerHTML = !haveEnergized() ? "<b>Being eternal is boring...<br><br>...now I shall harness energy.</b>" : "<b>I shall harness energy.</b><br>Gain " + shortenMoney(gainedEnergyShards()) + " Energy Shards." + "<br>" + shorten(esrate) + " ES/hour<br>Peak: " + 
+			(game.options.showBestRateAt ? shorten(game.bestESRateAt) + " ES" : shorten(game.bestESRate) + " ES/hour")
 	
 	// Tab Buttons
 
 	displayIf("infinityTabButton", haveInfinitied())
 	displayIf("eternityTabButton", haveEternitied())
+	displayIf("energizeTabButton", haveEnergized())
 	displayIf("challengesTabButton", haveInfinitied())
 	displayIf("automationTabButton", getChallengeCompletions(0) || haveEternitied())
 	displayIf("infinityTabs", game.infinityUpgrades.length > 15 || game.break || haveEternitied())
