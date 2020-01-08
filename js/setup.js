@@ -433,6 +433,26 @@ for(var i in eternityMilestones) {
 ge("eternityMilestones").innerHTML = h
 
 h = ""
+c = 0
+
+for(var i in chargedMilestones) {
+	c++
+	var m = chargedMilestones[i]
+	if(c % 3 == 1) h += "<tr>"
+	h += `
+		<td>
+			<button class = "chargedmilestone" id = "chargedMilestone${i}">
+				${m.desc}<br>
+				Requirement: ${m.req} dimension boost${m.req==1?"":"s"}
+			</button>
+		</td>
+	`
+	if(c % 3 == 3) h += "</tr>"
+}
+
+ge("chargedMilestones").innerHTML = h
+
+h = ""
 
 for(var i = 0; i < 15; i++) {
 	if(i % 5 == 0) h += "<tr>"

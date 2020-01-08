@@ -448,6 +448,15 @@ function update() {
 			}
     }
 	}
+  
+  // Energize
+  
+  if(game.currentTab == "energize") {
+    	for(var i in chargedMilestones) {
+				c++
+				ge("chargedMilestone" + i).className = chargedMilestone(i) ? "eternitymilestone" : "eternitymilestonelocked"
+			}
+  }
 	
 	// Options
 	
