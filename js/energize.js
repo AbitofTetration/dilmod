@@ -30,6 +30,7 @@ var chargedMilestones = {
   keepIC: {req:  2300000, desc: "You keep infinity challenges."},
   keepEC: {req:  2200000, desc: "You keep eternity challenges."},
 	keepBU: {req:  1500000, desc: "You keep break infinity upgrades."},
+	keepTP: {req:  1250000, desc: "You keep some of your TP on energize."},
 	tAuto1: {req:  1000000, desc: "Unlock Infinity Dimension autobuyer 1"},
 	tAuto2: {req:  900000, desc: "Unlock Infinity Dimension autobuyer 2"},
 	tAuto3: {req:  800000, desc: "Unlock Infinity Dimension autobuyer 3"},
@@ -41,7 +42,7 @@ var chargedMilestones = {
 	tAuto9: {req:  200000, desc: "Unlock Infinity Dimension autobuyer 9"},
 	dShift: {req:  100000, desc: "Unlock automatic dilation upgrades"},
 	keepTT: {req:  50000, desc: "You keep Time Studies and time theorems."},
-	keepBU: {req:  25000, desc: "You keep infinity upgrades."},
+	keepEU: {req:  25000, desc: "You keep eternity upgrades."},
 }
 
 function chargedMilestone(id) {
