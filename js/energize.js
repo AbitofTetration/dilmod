@@ -32,6 +32,8 @@ function getEnergize() {
 function energize(force) {
   if(!atEnergize() && !force) return;
   
+  if(!confirm("Are you sure you want to Energize? This will reset all of your progress in Eternity.")) return;
+  
   if(!force) {
     game.energize.times = game.energize.times.add(1)
     game.energize.energyShards = game.energize.energyShards.add(gainedEnergyShards())
@@ -46,7 +48,7 @@ function energize(force) {
   game.eternities = new Decimal(0);
   resetExDilation()
   resetReplicanti()
-  respecTimeStudies()
   resetDilation()
+  respecTimeStudies()
   eternity(true)
 }

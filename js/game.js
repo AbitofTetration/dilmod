@@ -151,7 +151,8 @@ function update() {
 			shorten(eprate) + " EP/min<br>Peak: " + 
 			(game.options.showBestRateAt ? shorten(game.bestEPRateAt) + " EP" : shorten(game.bestEPRate) + " EP/min") : "<b>Other times await...<br>I need to become eternal.</b>")  : 
 "<b>I need to become eternal.</b><br>Gain " + shortenMoney(gainedTP()) + " Tachyon Particles, and " + shortenMoney(gainedEternityPoints()) + " Eternity Points.<br>")
-  ge("gainedES").innerHTML = haveEnergized ? "<b>Being eternal is boring...<br><br>...now I shall harness energy.</b>" : "<b>I shall harness energy.</b><br>Gain " + shortenMoney(gainedEnergyShards()) + " "
+	displayIf("gainedES", atEnergize());
+  ge("gainedES").innerHTML = !haveEnergized() ? "<b>Being eternal is boring...<br><br>...now I shall harness energy.</b>" : "<b>I shall harness energy.</b><br>Gain " + shortenMoney(gainedEnergyShards()) + " Energy Shards."
 	
 	// Tab Buttons
 
