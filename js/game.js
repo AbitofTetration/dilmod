@@ -137,6 +137,7 @@ function update() {
 	
 	displayIf("infinityPrestige", haveInfinitied())
 	displayIf("gainedIP", (game.bestInfinityTime < 60000 || game.break) && (atInfinity() || getChallengeSet() < 3));
+  ge("energyShards").innerHTML = shortenMoney(game.energize.energyShards.floor())
 	ge("gainedIP").style.fontSize = game.break || inChallenge() ? "11px" : "30px"
 	ge("gainedIP").innerHTML = getChallengeSet() == 1 || getChallengeSet() == 2 ? 
 		(canCompleteChallenge() ? "Big Crunch to complete challenge." : "Reach " + shortenMoney(getChallengeGoal()) + " antimatter to complete challenge.") : 
@@ -618,6 +619,7 @@ function getStatisticsDisplay(type) {
 			if(game.totalGalaxies.gt(0)) lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies.`)
 			if(game.totalBoosts.gt(0)) lines.push(`You have dimension boosted a total of ${getFullExpansion(game.totalBoosts)} times.`)
 			if(game.totalGalaxies.gt(0)) lines.push(`You have created a total of ${getFullExpansion(game.totalGalaxies)} antimatter galaxies.`)
+      if(game.totalBoostsEnergize.gt(0)) lines.push(`You have done ${getFullExpansion(game.totalBoostsEnergize)} dimension boosts this energize`)
 		
 			lines.push("")
 			if (haveInfinitied()) {
@@ -631,6 +633,12 @@ function getStatisticsDisplay(type) {
 				lines.push(`You have eternitied ${getFullExpansion(game.eternities)} times.`)
 				lines.push(`Your fastest eternity lasted ${timeDisplay(game.bestEternityTime)}.`)
 				lines.push(`You have spent ${timeDisplay(getTimeSince("eternity"))} in this eternity.`)
+				lines.push("")
+			}
+			if (haveEnergized()) {
+				lines.push(`You have energized ${getFullExpansion(game.energize.times)} times.`)
+				lines.push(`Your fastest energize lasted ${timeDisplay(game.bestEnergizeTime)}.`)
+				lines.push(`You have spent ${timeDisplay(getTimeSince("energize"))} in this energize.`)
 				lines.push("")
 			}
 			lines.push(`You have existed for ${timeDisplay(getTimeSince("start"))}.`)

@@ -43,6 +43,7 @@ function energize(force) {
   for (var i = 0; i <= 3; i++) {
     game.timestudy.bought[i] = new Decimal(0)
   }
+  game.energizeTime = 0;
   resetEternityUpgrades()
   resetTimeDimensions()
   resetExDilation()

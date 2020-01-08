@@ -27,6 +27,7 @@ function boost(bulk) {
 	if(game.boosts.gte(bought)) return;
 	
 	game.totalBoosts = game.totalBoosts.add(bought.subtract(game.boosts));
+  game.totalBoostsEnergize = game.totalBoostsEnergize.add(bought.subtract(game.boosts))
 	game.boosts = bought;
 	game.boostTime = game.resetTime = Date.now();
 	if(!devMode) resetDimensions();

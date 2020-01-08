@@ -117,6 +117,7 @@ function updateSave() {
 	if(!game.galaxies) game.galaxies = new Decimal(0);
 	if(!game.totalBoosts) game.totalBoosts = new Decimal(0);
 	if(!game.totalGalaxies) game.totalGalaxies = new Decimal(0);
+	if(!game.totalBoostsEnergize) game.totalBoostsEnergize = new Decimal(0);
 	if(!game.dimMult) game.dimMult = new Decimal(2);
 	if(!game.dimCostMultIncrease) game.dimCostMultIncrease = 10;
 	if(!game.tickCostMultDecrease) game.tickCostMultIncrease = 10;
@@ -161,6 +162,7 @@ function updateSave() {
 	
 	if(!game.bestInfinityTime) game.bestInfinityTime = Infinity;
 	if(!game.bestEternityTime) game.bestEternityTime = Infinity;
+	if(!game.bestEnergizeTime) game.bestEnergizeTime = Infinity;
 	
 	if(!game.automator) game.automator = {
 		class: 0,

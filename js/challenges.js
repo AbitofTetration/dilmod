@@ -90,8 +90,7 @@ function updateChallengeDescriptions() {
 		`You only have 33% of your normal free tickspeed upgrades from Time Dimensions, and infinity power is 50% weaker. ECDATAReward: You gain 25% more free tickspeed upgrades.`, // might be broken
 		`All eternity challenge rewards are disabled.ECDATAReward: Dimension boosts are 50% stronger.`,
 		`Dimension boosts have a cost scaling.ECDATAReward: Dimension boosts are 10% cheaper.`,
-		`Time and infinity dimensions are useless, but you gain a boost to normal dimensions based on infinities.ECDATA`,
-		`ECDATA`,
+		`Time and infinity dimensions are useless, but you gain a boost to normal dimensions based on infinities.ECDATAReward: Time dimensions gain a boost based on infinities.`,
 		`ECDATA`,
 		`Both normal dimensions and infinity dimensions produce the one two below them.ECDATAReward`,
 	]
@@ -240,7 +239,7 @@ var icRequirements = ["1e2000", "1e2500", "1e5000", "1e7750", "1e9000", "1e12500
 var icGoals = ["1e1000", "1e1500", "1e2500", "1e3300", "1e4000", "1e5500", "1e6900", "1e3000", "1e15000", "1e17000", "1e8250", "1e21000"]
 
 var ecRequirements = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"]
-var ecGoals = ["1e1175", "1e500", "1e380", "1e3300", "1e600", "1e3200", "1e4000", "1e30000", "1e15000", "1e6200", "1e8250", "1e21000"]
+var ecGoals = ["1e1175", "1e500", "1e380", "1e3300", "1e600", "1e3200", "1e4000", "1e30000", "1e15000", "1e6200", "1e8250", "1e140000"]
 
 function getInfinityChallengesUnlocked() {
 	var unl = 0;
