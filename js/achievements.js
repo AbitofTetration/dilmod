@@ -116,7 +116,7 @@ function updateAchievementDescriptions() {
 		"This game is easy<br><br>Bottom text", `Reach ${shortenMoney("8e8888888")} antimatter.`,
 		"Galactic Great Wall", `Buy 200,000 antimatter galaxies.`,
 		"Infinite free real estate", `Reach ${shorten(new Decimal("5e8"))} banked infinities. (Banked infinities haven't been added yet.)`,
-		"Empowered!", `Energize. (You can't get this yet, as Energize hasn't started development.)`,
+		"Empowered!", `Energize. (You can't get this yet, as Energize hasn't been finished.)`,
 		"I never really liked this infinity stuff anyway", `Reach ${shorten("1.79e300008")} IP while in dilation, without IP multipliers. Reward: You gain more infinities based on your tachyon particles.`,
 		"", ``,
 		"", ``,
