@@ -126,6 +126,7 @@ function update() {
 
 	gc("infinityPoints", function(e) {e.textContent = shortenMoney(game.infinityPoints.floor())})
 	gc("eternityPoints", function(e) {e.textContent = shortenMoney(game.eternityPoints.floor())})
+	gc("energyShards", function(e) {e.textContent = shortenMoney(game.energize.energyShards.floor())})
 	gc("tachyonParticles", function(e) {e.textContent = shortenMoney(game.dilation.tachyonParticles)})
 	
 	displayIf("infinityPrestige", haveInfinitied())
@@ -152,6 +153,7 @@ function update() {
 			(game.options.showBestRateAt ? shorten(game.bestEPRateAt) + " EP" : shorten(game.bestEPRate) + " EP/min") : "<b>Other times await...<br>I need to become eternal.</b>")  : 
 "<b>I need to become eternal.</b><br>Gain " + shortenMoney(gainedTP()) + " Tachyon Particles, and " + shortenMoney(gainedEternityPoints()) + " Eternity Points.<br>")
 	displayIf("gainedES", atEnergize());
+	displayIf("ES", haveEternitied());
   ge("gainedES").innerHTML = !haveEnergized() ? "<b>Being eternal is boring...<br><br>...now I shall harness energy.</b>" : "<b>I shall harness energy.</b><br>Gain " + shortenMoney(gainedEnergyShards()) + " Energy Shards."
 	
 	// Tab Buttons
