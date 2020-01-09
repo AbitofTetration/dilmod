@@ -111,7 +111,7 @@ function energize(force) {
   game.eternityPoints = new Decimal(0);
 }
 
-var energizeUpgradeCosts = "1, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380, 1e500, 1e620, 1e700, 1e880".split(",");
+var energizeUpgradeCosts = "1, 1, 1, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380, 1e500, 1e620, 1e700, 1e880".split(",");
 
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
@@ -127,12 +127,8 @@ function buyEnergizeUpgrade(i) {
 
 function getEnergizeUpgradeEffect(n) {
 	switch(n) {
-		case 0:
-			return game.energize.energyShards.max(1);
-		case 1:
-			return game.eternities.pow(game.eternities.log10()).max(1);
 		case 2:
-			return Math.max(1e25 / getChallengeTimes(1) ** 4, 1)
+			return game.eternities.pow(game.eternities.log(10).divide(15)).max(1)
 		case 3:
 			return game.infinityDimensions[9].bought.pow(10).max(1)
 		case 4:
@@ -156,6 +152,8 @@ function getEnergizeUpgradeEffect(n) {
 
 function getEnUDescriptions() {
 	return [
-		"Dimension boosts are 1e5x stronger."
+		"Dimension boosts are 1e5x stronger.",
+    "Infinity shifts are 100x stronger.",
+    "You gain more infinities based on your eternities.<br>Currently: " + shorten(getEnergizeUpgradeEffect(2)) + "x"
 	]
 }

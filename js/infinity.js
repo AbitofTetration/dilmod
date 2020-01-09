@@ -31,6 +31,7 @@ function getInfinityPointMult() {
 
 function getInfinityMult() {
 	r = new Decimal(1);
+  if(game.energize.upgrades.includes(2)) r = r.multiply(getEnergizeUpgradeEffect(n))
 	if(tree.hasStudy("p21")) r = r.multiply(tree.getEff("p21")).add(1)
 	if(game.achievements.includes(77) && getTimeSince("infinity") > 1000) r = r.multiply(50)
   if(game.achievements.includes(104)) r = r.multiply(game.dilation.tachyonParticles.add(1).pow(1/4))

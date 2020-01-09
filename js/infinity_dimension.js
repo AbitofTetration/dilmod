@@ -53,6 +53,7 @@ function getInfinityShiftPower() {
 	var r = new Decimal(10);
 	if(challengeCompleted(12, 1)) r = r.pow(4);
 	if(tree.hasStudy("i22")) r = r.multiply(tree.getEff("i22"));
+  if(game.energize.upgrades.includes(1)) r = r.multiply(100)
 	return r;
 }
 
