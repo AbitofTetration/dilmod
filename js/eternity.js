@@ -1,5 +1,5 @@
 function haveEternitied() {
-	return game.eternities.gt(0);
+	return game.eternities.gt(0) || haveEnergized();
 }
 
 function atEternity() {

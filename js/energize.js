@@ -82,7 +82,7 @@ function energize(force) {
   game.eternities = new Decimal(0);
 	
   if(!eternityMilestone("keepIT")) game.bestInfinityTime = Infinity;
-	for(var i = (eternityMilestone("keepNC")+eternityMilestone("keepIC")+eternityMilestone("keepEC"))*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
+	for(var i = (chargedMilestone("keepNC")+chargedMilestone("keepIC")+chargedMilestone("keepEC"))*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
 	if(eternityMilestone("iShift")) game.infinityShifts = 9;
 	
 	if(eternityMilestone("keepBI"));
