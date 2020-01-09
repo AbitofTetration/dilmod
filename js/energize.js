@@ -97,6 +97,7 @@ function energize(force) {
 	game.infinityTime = game.eternityTime = Date.now();
 	game.bestIPRate = game.bestEPRate = new Decimal(0);
 	game.infinityPoints = game.infinities = new Decimal(0);
+  game.totalBoostsEnergize = new Decimal(0)
 	resetInfinityDimensions();
   game.infinityPoints = getStartingIP()
 	game.shifts = getStartingShifts();
