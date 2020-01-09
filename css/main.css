@@ -477,6 +477,14 @@ currency {
 	font-size: 50px;
 }
 
+.energyUpgrades {
+	background: #000;
+	color: #fff;
+	border: 1px solid #fff;
+	box-shadow: inset 0px 0px 10px 0px #fff;
+}
+
+
 .challenge[completed] {
 	opacity: 0.5;
 }

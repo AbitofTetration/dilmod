@@ -301,8 +301,15 @@
 </div>
 <div class = "tab" id = "energizeTab">
   <center>
+		<div id = "energizeTabs" style = "padding: 10px">
+			<button class = "subtabButton" onclick = "showEnergizeTab('chargedMilestones')">Charged Milestones</button>
+			<button class = "subtabButton" onclick = "showEnergizeTab('energyShards')">Charged Upgrades</button>
+		</div>
 		<div class = "energizeTab" id = "energyShardsTab">
       You have <currency id = "energyShards"></currency> Energy Shards.<br>
+			<table id = "chargedUpgrades" style = "font-size: 10px"></table>
+		</div>
+		<div class = "energizeTab" id = "chargedMilestonesTab">
 			<table id = "chargedMilestones" style = "font-size: 10px"></table>
 		</div>
   </center>

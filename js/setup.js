@@ -311,6 +311,14 @@ function showEternityTab(name) {
 	game.currentEternityTab = name;
 }
 
+function showEnergizeTab(name) {
+	gc("energizeTab", function(e) {
+		e.style.display = "none";
+	})
+	ge(name + "Tab").style.display = "";
+	game.currentEnergizeTab = name;
+}
+
 function showDilationTab(name) {
 	gc("dilationTab", function(e) {
 		e.style.display = "none";
@@ -476,6 +484,22 @@ ge("eternityUpgrades").innerHTML = h + `
 	<td></td>
 </tr>
 `
+
+h = ""
+for(var i = 0; i < 15; i++) {
+	if(i % 5 == 0) h += "<tr>"
+	h += `
+		<td>
+			<button id = "chargedUpgrade` + i + `" onclick = "buyEternityUpgrade(` + i + `)">
+				<span id = "chargedUpgradeDesc` + i + `"></span><br>
+				Cost: <span id = "chargedUpgradeCost` + i + `"></span>
+			</button>
+		</td>
+	`
+	if(i % 5 == 4) h += "</tr>"
+}
+
+ge("chargedUpgrades").innerHTML = h
 
 h = ""
 
