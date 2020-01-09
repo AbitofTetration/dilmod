@@ -493,8 +493,37 @@ currency {
 	box-shadow: inset 0px 0px 10px 0px #fff;
 }
 
-.energyUpgrades.bought {
-	background: #ff0;
+.energyUpgradesBought {
+  background: #e6ed1f;
+    width: 170px;
+    height: 85px;
+    border-radius: 4px;
+    font-size: 10px;
+    vertical-align: top;
+    margin: 10px;
+	transition: all 0.2s, left 0s, top 0s;
+	font-weight: bold;
+	cursor: default;
+	color: #fff;
+	border: 1px solid #fff;
+	box-shadow: inset 0px 0px 10px 0px #fff;
+}
+
+
+.energyUpgradesLocked {
+    width: 170px;
+    height: 85px;
+    border-radius: 4px;
+    font-size: 10px;
+    vertical-align: top;
+    margin: 10px;
+	transition: all 0.2s, left 0s, top 0s;
+	font-weight: bold;
+	cursor: default;
+	background: #545700;
+	color: #fff;
+	border: 1px solid #fff;
+	box-shadow: inset 0px 0px 10px 0px #fff;
 }
 
 

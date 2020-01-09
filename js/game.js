@@ -455,7 +455,7 @@ function update() {
 		if(game.currentEnergizeTab == "energyShards") {
 			var eud = getEnUDescriptions();
 			for(var i = 0; i < 12; i++) {
-				ge("chargedUpgrade" + i).className = game.energize.upgrades.includes(i) ? "energyUpgradesBought" : canBuyEnergizeUpgrade(i) ? "energyUpgrades" : "eternityUpgradeLocked";
+				ge("chargedUpgrade" + i).className = game.energize.upgrades.includes(i) ? "energyUpgradesBought" : canBuyEnergizeUpgrade(i) ? "energyUpgrades" : "energyUpgradesLocked";
 				ge("chargedUpgradeDesc" + i).innerHTML = eud[i];
 				ge("chargedUpgradeCost" + i).innerHTML = getFullExpansion(energizeUpgradeCosts[i]) + " ES";
 			}

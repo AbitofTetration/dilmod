@@ -156,6 +156,6 @@ function getEnergizeUpgradeEffect(n) {
 
 function getEnUDescriptions() {
 	return [
-		"Dimension boosts are 100x stronger."
+		"Dimension boosts are 1e5x stronger."
 	]
 }
