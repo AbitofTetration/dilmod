@@ -486,17 +486,17 @@ ge("eternityUpgrades").innerHTML = h + `
 `
 
 h = ""
-for(var i = 0; i < 15; i++) {
-	if(i % 5 == 0) h += "<tr>"
+for(var i = 0; i < 12; i++) {
+	if(i % 3 == 0) h += "<tr>"
 	h += `
 		<td>
-			<button id = "chargedUpgrade` + i + `" onclick = "buyEternityUpgrade(` + i + `)">
+			<button id = "chargedUpgrade` + i + `" onclick = "buyEnergizeUpgrade(` + i + `)">
 				<span id = "chargedUpgradeDesc` + i + `"></span><br>
 				Cost: <span id = "chargedUpgradeCost` + i + `"></span>
 			</button>
 		</td>
 	`
-	if(i % 5 == 4) h += "</tr>"
+	if(i % 3 == 2) h += "</tr>"
 }
 
 ge("chargedUpgrades").innerHTML = h

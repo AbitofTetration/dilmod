@@ -110,3 +110,52 @@ function energize(force) {
   game.dilation.active = false
   game.eternityPoints = new Decimal(0);
 }
+
+var energizeUpgradeCosts = "1, 400, 5000, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380, 1e500, 1e620, 1e700, 1e880".split(",");
+
+function canBuyEnergizeUpgrade(i) {
+	if(game.energize.upgrades.includes(i)) return false;
+	if(game.energize.energyShards.lt(energizeUpgradeCosts[i])) return false;
+	return true;
+}
+
+function buyEnergizeUpgrade(i) {
+	if(!canBuyEnergizeUpgrade(i)) return;
+	game.energize.energyShards = game.energize.energyShards.subtract(energizeUpgradeCosts[i]);
+	game.energize.upgrades.push(i);
+}
+
+function getEnergizeUpgradeEffect(n) {
+	switch(n) {
+		case 0:
+			return game.energize.energyShards.max(1);
+		case 1:
+			return game.eternities.pow(game.eternities.log10()).max(1);
+		case 2:
+			return Math.max(1e25 / getChallengeTimes(1) ** 4, 1)
+		case 3:
+			return game.infinityDimensions[9].bought.pow(10).max(1)
+		case 4:
+			return game.timeDimensions[0].amount.pow(0.5).max(1)
+    case 8:
+      return game.replicanti.galaxies.add(1).pow(0.125).max(1)
+    case 9:
+      return getSacrificeMult().add(1).log(1.65404).pow(2).max(1)
+    case 10:
+      return game.dimensions[0].amount.add(1).log("1e1200000").max(1).pow(1/3).max(1)
+    case 11:
+      return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e20000").max(1).pow(1/3).max(1)
+    case 12:
+      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e300").max(1).pow(1/3).max(1)
+    case 13:
+      return game.infinityDimensions[0].amount.add(1).log("1e50000").pow(1/3).max(1).max(1)
+    case 14:
+      return game.timeDimensions[0].amount.add(1).log("1e2000").max(1).pow(1/3).max(1)
+	}
+}
+
+function getEnUDescriptions() {
+	return [
+		"Dimension boosts are 100x stronger."
+	]
+}

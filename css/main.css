@@ -478,10 +478,23 @@ currency {
 }
 
 .energyUpgrades {
+    width: 170px;
+    height: 85px;
+    border-radius: 4px;
+    font-size: 10px;
+    vertical-align: top;
+    margin: 10px;
+	transition: all 0.2s, left 0s, top 0s;
+	font-weight: bold;
+	cursor: default;
 	background: #000;
 	color: #fff;
 	border: 1px solid #fff;
 	box-shadow: inset 0px 0px 10px 0px #fff;
+}
+
+.energyUpgrades.bought {
+	background: #ff0;
 }
 
 

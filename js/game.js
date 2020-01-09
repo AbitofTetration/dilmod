@@ -452,6 +452,14 @@ function update() {
   // Energize
   
   if(game.currentTab == "energize") {
+		if(game.currentEnergizeTab == "energyShards") {
+			var eud = getEnUDescriptions();
+			for(var i = 0; i < 12; i++) {
+				ge("chargedUpgrade" + i).className = game.energize.upgrades.includes(i) ? "energyUpgradesBought" : canBuyEnergizeUpgrade(i) ? "energyUpgrades" : "eternityUpgradeLocked";
+				ge("chargedUpgradeDesc" + i).innerHTML = eud[i];
+				ge("chargedUpgradeCost" + i).innerHTML = getFullExpansion(energizeUpgradeCosts[i]) + " ES";
+			}
+		}
     	for(var i in chargedMilestones) {
 				c++
 				ge("chargedMilestone" + i).className = chargedMilestone(i) ? "eternitymilestone" : "eternitymilestonelocked"
@@ -668,6 +676,7 @@ showDimensionTab(game.options.saveTabs ? game.currentDimensionTab : "normal")
 showStatisticsTab(game.options.saveTabs ? game.currentStatisticsTab : "normal")
 showInfinityTab(game.options.saveTabs ? game.currentInfinityTab : "infinityUpgrades")
 showEternityTab(game.options.saveTabs ? game.currentEternityTab : "timeStudies")
+showEnergizeTab(game.options.saveTabs ? game.currentEnergizeTab : "energyShards")
 showAutomationTab(game.options.saveTabs ? game.currentAutomationTab : "core")
 showDilationTab(game.options.saveTabs ? game.currentDilationTab : "dilatedTime")
 scrollChallengesTo(game.options.saveTabs ? game.selectedChallengeType : 0)
