@@ -36,6 +36,13 @@ function getStartingIP() {
 	return new Decimal(r)
 }
 
+function getFreeinfinities() {
+  r = new Decimal(0)
+  if(tree.hasStudy("r51")) r = r.add(game.infinities.divide(50))
+  if(game.achievements.includes(102)) r = r.add(game.infinities.divide(20))
+  return r;
+}
+
 function eternity(force) {
 	if(!atEternity() && !force) return;
 	
@@ -46,8 +53,8 @@ function eternity(force) {
 	
 	if(!force) {
     if(game.infinityDimensions[0].amount.eq(1)) giveAchievement(81)
-    if(tree.hasStudy("r51")) game.banked.infinities = game.banked.infinities.add(game.infinities.divide(50))
     if(game.dilation.active) game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(gainedTP())
+    if(getFreeinfinities().gt(0)) game.banked.infinities = game.banked.infinities.add(getFreeinfinities())
 		giveAchievement(67);
 		
 		game.eternityPoints = game.eternityPoints.add(gainedEternityPoints())

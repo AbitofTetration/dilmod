@@ -128,7 +128,7 @@ function buyEnergizeUpgrade(i) {
 function getEnergizeUpgradeEffect(n) {
 	switch(n) {
 		case 2:
-			return game.eternities.pow(game.eternities.log(10).divide(15)).max(1)
+			return game.eternities.pow(game.eternities.log(10).divide(2)).max(1)
 		case 3:
 			return game.infinityDimensions[9].bought.pow(10).max(1)
 		case 4:
