@@ -152,7 +152,7 @@ function getEnergizeUpgradeEffect(n) {
 
 function getEnUDescriptions() {
 	return [
-		"Dimension boosts are 1e5x stronger.",
+		"You gain extra free replicanti galaxies based on your replicanti.",
     "Infinity shifts are 100x stronger.",
     "You gain more infinities based on your eternities.<br>Currently: " + shorten(getEnergizeUpgradeEffect(2)) + "x"
 	]

@@ -94,7 +94,7 @@ ns({x:    -4, y:     3, id:  "t31", cost:    6, desc: "Time Dimensions gain a bo
 ns({x:    -4, y:     2, id:  "t32", cost:   14, desc: "Time shards boost Normal Dimensions.", eff: function() {return game.timeDimensions[0].amount.add(1).log(1.0025).pow(25).max(1)}, pre: ["t22"]})
 ns({x:    -3, y:     3, id:  "t41", cost:   20, desc: "The free tickspeed given from Time Dimensions is multiplied by 1.1.", eff: function() {return 1.1}, pre: ["t31"]})
 ns({x:    -3, y:     4, id:  "s03", cost:    0, desc: "Eternity Challenge 3", pre: ["t41"]})
-ns({x:    -3, y:     5, id:  "t51", cost:  320, desc: "Time Dimensions gain a boost based on eternity points.", eff: function() {return game.eternityPoints.add(1).log(10).pow(10).max(1)}, pre: ["s03"]})
+ns({x:    -3, y:     5, id:  "t51", cost:  320, desc: "Time Dimensions gain a boost based on eternity points.", eff: function() {return game.eternityPoints.add(1).pow(1/10).max(1)}, pre: ["s03"]})
 ns({x:    -4, y:     5, id:  "t52", cost:  320, desc: "Time Dimensions gain a boost based on time shards.", eff: function() {return game.timeDimensions[0].amount.add(1).log10().pow(0.75).add(1)}, pre: ["t51"]})
 ns({x:    -4, y:     6, id:  "s09", cost:    0, desc: "Eternity Challenge 9", pre: ["t52"]})
 ns({x:     0, y:    -3, id:  "g11", cost:    1, desc: "Galaxies are 25% stronger.", eff: function() {return 1.25}, pre: ["s00"]})
