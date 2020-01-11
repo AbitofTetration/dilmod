@@ -138,7 +138,7 @@ function getEffectiveNormalGalaxies() {
 }
 
 function getEffectiveReplicantiGalaxies() {
-	var r = game.replicanti.galaxies;
+	var r = getAllReplicantiGalaxies();
 	
 	return r.multiply(getReplicantiGalaxyPower());
 }
