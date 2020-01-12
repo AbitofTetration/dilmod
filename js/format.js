@@ -35,9 +35,12 @@ function shorten(num, places = 2, shortPlaces = 2) {
         var pos = Math.floor(progress/Math.pow(26,l))%26
         result = uppercased.slice(pos, pos+1) + result
     }
-            return result
-        }
+    return result
+  }
   
+  if(game.options.notation == "Logarithm") {
+    return "e" + getFullExpansion(num.log10(), 2)
+  }
 	if(game.options.notation == "Completion") {
 		return getFullExpansion(num.iteratedlog(10, 2).divide(Decimal.iteratedlog("1e155000", 10, 2)).multiply(100), places+1) + "%"
 	}
