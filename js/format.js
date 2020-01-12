@@ -26,6 +26,17 @@ function shorten(num, places = 2, shortPlaces = 2) {
   if(game.options.notation == "Infinity") {
     return "ω" + shorten(num.log(infp()))
   }
+  if (game.options.notation == "AF5LN") {
+    value = new Decimal(num)
+    var progress = Math.round(Math.log10(value.add(1).log10()+1)/Math.log10(Number.MAX_VALUE)*11881375)
+    var uppercased = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var result = ""
+    for (l=0;l<5;l++) {
+        var pos = Math.floor(progress/Math.pow(26,l))%26
+        result = uppercased.slice(pos, pos+1) + result
+    }
+            return result
+        }
   
 	if(game.options.notation == "Completion") {
 		return getFullExpansion(num.iteratedlog(10, 2).divide(Decimal.iteratedlog("1e155000", 10, 2)).multiply(100), places+1) + "%"
