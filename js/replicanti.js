@@ -94,7 +94,7 @@ function replGalaxy() {
 }
 
 function handleReplGrowth() {
-  if(game.replicanti.amount.lte(0))game.replicanti.amount=game.replicanti.amount.add(1)
+  if(game.replicanti.amount.lte(0))game.replicanti.amount=new Decimal(1)
   game.replicanti.ticks += diff/1000*hacker;
   if (game.replicanti.ticks > 1/getReplSpeed()) {
       updates = Math.floor(game.replicanti.ticks * getReplSpeed())
