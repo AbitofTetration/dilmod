@@ -16,15 +16,10 @@ function shorten(num, places = 2, shortPlaces = 2) {
 	}
   
   if(game.options.notation == "Tetration")
-    return "2^^" + getFullExpansion(num.slog(2), places+4)
-	
-  if(game.options.notation == "Base 32") {
-    let val = num.log(32)
-    return val
-  }
+    return "2^^" + getFullExpansion(num.slog(2), 3)
   
   if(game.options.notation == "Infinity") {
-    return "ω" + shorten(num.log(infp()))
+    return "ω" + getFullExpansion(num.log(infp()), 2)
   }
   if (game.options.notation == "AF5LN") {
     value = new Decimal(num)
