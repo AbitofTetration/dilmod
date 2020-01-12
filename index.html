@@ -330,7 +330,7 @@
 		<button class = "buy" id = "bestRateOption" onclick="game.options.showBestRateAt = !game.options.showBestRateAt;">Best Rate At X: Off</button>
 		<br>
 		<br>
-		<button class = "buy" id = "notationOption">Notations (in development)</button>
+		<button class = "buy" id = "notationOption" onclick="notations(true)">Notations (in development)</button>
 		<br>
 		<br>
 		Exported Save: <input id = "exported" style = "width: 170" placeholder = "Save will appear here"></input>
@@ -345,6 +345,10 @@
 		Despacit - Creator of this mod, and a currently defunct spinoff of a spinoff.<br>
     O_O, usavictor, Gustav, Cool_Name, pg132, and Nintendo Gamecube Man - Giving advice on the game.<br>Thank all of you very much for helping me balance this.
 	</center>
+</div>
+
+<div class = "notationMenu" id = "notationsSelect">
+	<table id = "notation" style = "font-size: 10px">Notations go here lol</table>
 </div>
 
 <div id = "optionsButton">Options<br>
@@ -375,4 +379,5 @@
 <script src = "js/timestudy.js"></script>
 <script src = "js/replicanti.js"></script>
 <script src = "js/setup.js"></script>
+<script src = "js/options.js"></script>
 <script src = "js/game.js"></script>

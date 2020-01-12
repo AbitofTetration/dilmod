@@ -577,6 +577,20 @@ ge("automationTable2").innerHTML += t + `
 <td class = "autobuyer" id = "replicantiIntAutobuyer">Replicanti Interval Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${28}" onclick = "upgradeExtension(28)"></button></td>
 <td class = "autobuyer" id = "replicantiMaxAutobuyer">Max Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${29}" onclick = "upgradeExtension(29)"></button></td></tr>
 `
+let notations = ["Scientific", "Standard", "Tetration", "Base 32"]
+for(var i = 0; i < notations.length; i++) {
+	h += "<tr>"
+	h += `
+		<td>
+			<button id = "notationType` + i + `" onclick = "switchNotation(` + notations[i] + `)">` + notations[i] + `</button>
+		</td>
+	`
+	h += "</tr>"
+}
+
+ge("notation").innerHTML = h
+
+h = ""
 
 function f() {
 	gc("challenge", function(e, i) {

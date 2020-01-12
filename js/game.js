@@ -686,3 +686,4 @@ update();
 updateAchievements()
 
 setInterval(function() {if(game.options.autosave) save()}, 10000)
+notations(false)
