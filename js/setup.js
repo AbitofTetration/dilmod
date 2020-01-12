@@ -578,12 +578,12 @@ ge("automationTable2").innerHTML += t + `
 <td class = "autobuyer" id = "replicantiMaxAutobuyer">Max Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${29}" onclick = "upgradeExtension(29)"></button></td></tr>
 `
 h = ""
-let all_notations = ["Scientific", "Standard", "Tetration", "Base 32"]
+let all_notations = ['Scientific', 'Standard', 'Tetration', 'Infinity']
 for(var i = 0; i < all_notations.length; i++) {
 	h += "<tr>"
 	h += `
 		<td>
-			<button id = "notationType` + i + `" onclick = "switchNotation(` + all_notations[i] + `)" class="buy">` + all_notations[i] + `</button>
+			<button id = "notationType` + i + `" onclick = "switchNotation('` + all_notations[i] + `')" class="buy">` + all_notations[i] + `</button>
 		</td>
 	`
 	h += "</tr>"

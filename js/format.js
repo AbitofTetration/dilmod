@@ -14,7 +14,19 @@ function shorten(num, places = 2, shortPlaces = 2) {
 		var end = getFullExpansion(num.layer+1);
 		return Math.log10(num.mag).toString().substring(0, Math.max(7 - end.length, 4)) + "|" + end;
 	}
+  
+  if(game.options.notation == "Tetration")
+    return "2^^" + getFullExpansion(num.slog(2), places+4)
 	
+  if(game.options.notation == "Base 32") {
+    let val = num.log(32)
+    return val
+  }
+  
+  if(game.options.notation == "Infinity") {
+    return "ω" + shorten(num.log(infp()))
+  }
+  
 	if(game.options.notation == "Completion") {
 		return getFullExpansion(num.iteratedlog(10, 2).divide(Decimal.iteratedlog("1e155000", 10, 2)).multiply(100), places+1) + "%"
 	}

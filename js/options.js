@@ -2,4 +2,6 @@ function notations(yes) {
   displayIf("notationsSelect", yes) 
 }
 
-function switchNotation(no)
+function switchNotation(notation) {
+  game.options.notation = notation
+}
