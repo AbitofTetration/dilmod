@@ -523,7 +523,7 @@ currency {
 	transition: all 0.2s, left 0s, top 0s;
 	font-weight: bold;
 	cursor: default;
-	color: #fff;
+	color: #000;
 	border: 1px solid #fff;
 	box-shadow: inset 0px 0px 10px 0px #fff;
 }

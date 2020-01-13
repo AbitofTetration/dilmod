@@ -127,6 +127,10 @@ function buyEnergizeUpgrade(i) {
 
 function getEnergizeUpgradeEffect(n) {
 	switch(n) {
+    case 0:
+      return game.energize.times.add(1).pow(game.energize.times.add(1))
+		case 1:
+			return Math.max(1e25 / getChallengeTimes(2) ** 6, 1)
 		case 2:
 			return game.eternities.pow(game.eternities.log(10).divide(2)).max(1)
 		case 3:
@@ -152,8 +156,8 @@ function getEnergizeUpgradeEffect(n) {
 
 function getEnUDescriptions() {
 	return [
-		"You gain extra free replicanti galaxies based on your replicanti.",
-    "Infinity shifts are 100x stronger.",
+		"Time Dimensions are stronger based on your energizes.<br>Currently: " + shorten(getEnergizeUpgradeEffect(0)) + "x",
+    "Time Dimensions are stronger based on EC times.<br>Currently: " + shorten(getEnergizeUpgradeEffect(1)) + "x",
     "You gain more infinities based on your eternities.<br>Currently: " + shorten(getEnergizeUpgradeEffect(2)) + "x"
 	]
 }

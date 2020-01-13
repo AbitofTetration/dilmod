@@ -77,8 +77,6 @@ function getMaxReplGalaxiesSoftcap() {
 function getAllReplicantiGalaxies() {
   let r = game.replicanti.galaxies
   
-  if (game.energize.upgrades.includes(0)) r = r.add(game.replicanti.amount.add(1).log(infp()).floor())
-  
   return r
 }
 
