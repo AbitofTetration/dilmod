@@ -637,7 +637,6 @@ function getStatisticsDisplay(type) {
 			if(game.totalGalaxies.gt(0)) lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies.`)
 			if(game.totalBoosts.gt(0)) lines.push(`You have dimension boosted a total of ${getFullExpansion(game.totalBoosts)} times.`)
 			if(game.totalGalaxies.gt(0)) lines.push(`You have created a total of ${getFullExpansion(game.totalGalaxies)} antimatter galaxies.`)
-      if(game.totalBoostsEnergize.gt(0)) lines.push(`You have done ${getFullExpansion(game.totalBoostsEnergize)} dimension boosts this energize`)
 		
 			lines.push("")
 			if (haveInfinitied()) {

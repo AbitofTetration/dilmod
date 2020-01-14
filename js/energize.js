@@ -25,28 +25,28 @@ function gainedEnergyShards() {
 }
 
 var chargedMilestones = {
-	keepIU: {req:  2500000, desc: "You keep infinity upgrades."},
-  keepNC: {req:  2400000, desc: "You keep normal challenges."},
-  keepIC: {req:  2300000, desc: "You keep infinity challenges."},
-  keepEC: {req:  2200000, desc: "You keep eternity challenges."},
-	keepBU: {req:  1500000, desc: "You keep break infinity upgrades."},
-	keepTP: {req:  1250000, desc: "You keep some of your TP on energize."},
-	tAuto1: {req:  1000000, desc: "Unlock Infinity Dimension autobuyer 1"},
-	tAuto2: {req:  900000, desc: "Unlock Infinity Dimension autobuyer 2"},
-	tAuto3: {req:  800000, desc: "Unlock Infinity Dimension autobuyer 3"},
-	tAuto4: {req:  700000, desc: "Unlock Infinity Dimension autobuyer 4"},
-	tAuto5: {req:  600000, desc: "Unlock Infinity Dimension autobuyer 5"},
-	tAuto6: {req:  500000, desc: "Unlock Infinity Dimension autobuyer 6"},
-	tAuto7: {req:  400000, desc: "Unlock Infinity Dimension autobuyer 7"},
-	tAuto8: {req:  300000, desc: "Unlock Infinity Dimension autobuyer 8"},
-	tAuto9: {req:  200000, desc: "Unlock Infinity Dimension autobuyer 9"},
-	dShift: {req:  100000, desc: "Unlock automatic dilation upgrades"},
-	keepTT: {req:  50000, desc: "You keep Time Studies and time theorems."},
-	keepEU: {req:  25000, desc: "You keep eternity upgrades."},
+	keepIU: {req:  1, desc: "You keep infinity upgrades."},
+	keepTT: {req:  2, desc: "You keep time studies and time theorems."},
+  keepNC: {req:  3, desc: "You keep normal challenges."},
+  keepIC: {req:  4, desc: "You keep infinity challenges."},
+  keepEC: {req:  5, desc: "You keep eternity challenges."},
+	keepBU: {req:  6, desc: "You keep break infinity upgrades."},
+	keepTP: {req:  7, desc: "You keep some of your TP on energize."},
+	tAuto1: {req:  8, desc: "Unlock Infinity Dimension autobuyer 1"},
+	tAuto2: {req:  9, desc: "Unlock Infinity Dimension autobuyer 2"},
+	tAuto3: {req:  10, desc: "Unlock Infinity Dimension autobuyer 3"},
+	tAuto4: {req:  11, desc: "Unlock Infinity Dimension autobuyer 4"},
+	tAuto5: {req:  12, desc: "Unlock Infinity Dimension autobuyer 5"},
+	tAuto6: {req:  13, desc: "Unlock Infinity Dimension autobuyer 6"},
+	tAuto7: {req:  14, desc: "Unlock Infinity Dimension autobuyer 7"},
+	tAuto8: {req:  15, desc: "Unlock Infinity Dimension autobuyer 8"},
+	tAuto9: {req:  16, desc: "Unlock Infinity Dimension autobuyer 9"},
+	dShift: {req:  17, desc: "Unlock automatic dilation upgrades"},
+	keepEU: {req:  18, desc: "You keep eternity upgrades."},
 }
 
 function chargedMilestone(id) {
-  return game.chargedMilestones.includes(chargedMilestones[id])
+  return game.energize.times.gt(chargedMilestones[id].req)
 }
 
 function getEnergize() {
@@ -65,10 +65,7 @@ function energize(force) {
 		var time = getTimeSince("energize");
   }
   
-  for (var i in chargedMilestones) {
-    if (i.req < game.totalBoostsEnergize) game.chargedMilestones.push(i)
-  }
-  
+  if(!chargedMilestone("keepTT")) 
   for (var i = 0; i <= 3; i++) {
     game.timestudy.bought[i] = new Decimal(0)
   }
@@ -78,15 +75,15 @@ function energize(force) {
   resetExDilation()
   resetReplicanti()
   resetDilation()
-  respecTimeStudies()
+  if(!chargedMilestone("keepTT"))respecTimeStudies()
   game.eternities = new Decimal(0);
 	
-  if(!eternityMilestone("keepIT")) game.bestInfinityTime = Infinity;
+  if(!chargedMilestone("keepIT")) game.bestInfinityTime = Infinity;
 	for(var i = (chargedMilestone("keepNC")+chargedMilestone("keepIC")+chargedMilestone("keepEC"))*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
-	if(eternityMilestone("iShift")) game.infinityShifts = 9;
+	if(chargedMilestone("iShift")) game.infinityShifts = 9;
 	
-	if(eternityMilestone("keepBI"));
-	else if(eternityMilestone("keepIU")) game.infinityUpgrades = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+	if(chargedMilestone("keepBU"));
+	else if(chargedMilestone("keepIU")) game.infinityUpgrades = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 	else resetInfinityUpgrades();
 	game.repeatInf = [
 		{cost: new Decimal(10), costMult: new Decimal(10), bought: new Decimal(0)}, 
@@ -111,11 +108,12 @@ function energize(force) {
   game.eternityPoints = new Decimal(0);
 }
 
-var energizeUpgradeCosts = "1, 1, 1, 6e4, 8e5, 9e11, 1e15, 1e21, 1e43, 1e60, 1e140, 1e170, 1e200, 1e260, 1e280, 1e380, 1e500, 1e620, 1e700, 1e880".split(",");
+var energizeUpgradeCosts = "1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 5, 100".split(",");
 
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
 	if(game.energize.energyShards.lt(energizeUpgradeCosts[i])) return false;
+  if(!game.energize.upgrades.includes(i-3)||i<3) return false;
 	return true;
 }
 
