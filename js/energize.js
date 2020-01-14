@@ -130,9 +130,9 @@ function getEnergizeUpgradeEffect(n) {
     case 0:
       return game.energize.times.add(1).pow(game.energize.times.pow(2).add(1))
 		case 1:
-			return Math.max(1e25 / getChallengeTimes(2) ** 6, 1)
+			return Math.max(1e25 / getChallengeTimes(2) ** 4, 1) //Decimal.divide(1e25, Decimal.pow(getChallengeTimes(2), 6))
 		case 2:
-			return game.timeDimensions[0].amount.add(1).log10().pow(0.75).add(1)
+			return game.timeDimensions[0].amount.add(1).log10().add(1)
 		case 3:
 			return game.infinityDimensions[9].bought.pow(10).max(1)
 		case 4:
