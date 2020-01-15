@@ -76,6 +76,7 @@ function energize(force) {
   resetReplicanti()
   resetDilation()
   if(!chargedMilestone("keepTT"))respecTimeStudies()
+  game.eternityPoints = new Decimal(0);
   game.eternities = new Decimal(0);
 	
   if(!chargedMilestone("keepIT")) game.bestInfinityTime = Infinity;
