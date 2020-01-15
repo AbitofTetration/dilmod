@@ -36,6 +36,7 @@ function getReplEffect() {
   if(challengeCompleted(2,2)) r = r.pow(1.05)
   if(tree.hasStudy("i32")) r = r.pow(1.32)
   if(tree.hasStudy("r41")) r = r.multiply(tree.getEff("r41"))
+  if(game.energize.upgrades.includes(3)) r = r.multiply(getEnergizeUpgradeEffect(3))
   
 	return r
 }

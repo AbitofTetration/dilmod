@@ -132,7 +132,7 @@ function getEnergizeUpgradeEffect(n) {
 		case 2:
 			return game.timeDimensions[0].amount.add(1).log10().add(1)
 		case 3:
-			return getTickspeed("dimension").add(1).log(250).add(1).log(2).max(1)
+			return getTickspeed("dimension").add(1).log(250).pow(1/15).max(1)
 		case 4:
 			return game.timeDimensions[0].amount.pow(0.5).max(1)
     case 8:
