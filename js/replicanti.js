@@ -10,10 +10,13 @@ function resetReplicanti() {
 const replUpgIncs = ["10", "100", "1e5"];
 
 function getReplUpgradeCost(i) {
+  if(game.energize.upgrades.includes(3) && game.replicanti.upgrades[i].lt(10)) return new Decimal(0);
+  if(game.energize.upgrades.includes(3)) return new Decimal(replUpgIncs[i]).pow(game.replicanti.upgrades[i].minus(9))
 	return new Decimal(replUpgIncs[i]).pow(game.replicanti.upgrades[i].add(1));
 }
 
 function canBuyReplUpgrade(i) {
+  if(game.energize.upgrades.includes(3) && game.replicanti.upgrades[i].lt(10)) return true;
 	return game.eternityPoints.gte(getReplUpgradeCost(i));
 }
 
@@ -21,8 +24,9 @@ function buyReplUpgrade(i) {
 	if(!canBuyReplUpgrade(i)) return;
 	var inc = new Decimal(replUpgIncs[i]);
 	var bought = Decimal.affordGeometricSeries(game.eternityPoints, inc, inc, game.replicanti.upgrades[i])
-	game.replicanti.upgrades[i] = game.replicanti.upgrades[i].add(bought);
-	if(game.eternityPoints.lt(infp())) game.eternityPoints = game.eternityPoints.subtract(getReplUpgradeCost(i).divide(inc))
+	if(game.replicanti.upgrades[i].lt(10) && game.energize.upgrades.includes(3)) game.replicanti.upgrades[i] = new Decimal(10)
+  else game.replicanti.upgrades[i] = game.replicanti.upgrades[i].add(bought);
+	if(game.replicanti.upgrades[i].lt(10) && game.energize.upgrades.includes(3)) if(game.eternityPoints.lt(infp())) game.eternityPoints = game.eternityPoints.subtract(getReplUpgradeCost(i).divide(inc))
 }
 
 function getReplEffect() {

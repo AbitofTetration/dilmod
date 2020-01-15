@@ -132,7 +132,7 @@ function getEnergizeUpgradeEffect(n) {
 		case 2:
 			return game.timeDimensions[0].amount.add(1).log10().add(1)
 		case 3:
-			return game.infinityDimensions[0].amount.add(1).log(250).add(1).log(2).max(1)
+			return getTickspeed("dimension").add(1).log(250).add(1).log(2).max(1)
 		case 4:
 			return game.timeDimensions[0].amount.pow(0.5).max(1)
     case 8:
@@ -157,6 +157,6 @@ function getEnUDescriptions() {
 		"Time Dimensions are stronger based on your energizes.<br>Currently: " + shorten(getEnergizeUpgradeEffect(0)) + "x",
     "Time Dimensions are stronger based on EC times.<br>Currently: " + shorten(getEnergizeUpgradeEffect(1)) + "x",
     "Time Dimensions are stronger based on your time shards.<br>Currently: " + shorten(getEnergizeUpgradeEffect(2)) + "x",
-    "The first 10 upgrades on replicanti are free and replicanti are stronger based on infinity power.<br>Currently: " + shorten(getEnergizeUpgradeEffect(3)) + "x",
+    "The first 10 upgrades on replicanti are free and replicanti are stronger based on tickspeed.<br>Currently: " + shorten(getEnergizeUpgradeEffect(3)) + "x",
 	]
 }
