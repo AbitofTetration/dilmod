@@ -93,7 +93,7 @@ function canGalaxy() {
 function galaxy() {
 	if(!canGalaxy()) return;
 	
-	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.subtract(getGalaxyScaling()).divide(getGalaxyScaling()).add(1).ceil();
+	var bought = game.dimensions[inChallenge(11) ? 4 : 9].amount.subtract(getGalaxyScaling()).divide(getGalaxyScaling()).add(1).floor();
 	
 	game.totalGalaxies = game.totalGalaxies.add(bought.subtract(game.galaxies));
 	game.galaxies = bought;
