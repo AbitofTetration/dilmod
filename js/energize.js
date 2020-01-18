@@ -107,7 +107,6 @@ function energize(force) {
 	game.replicanti.galaxies = new Decimal(0);
 	resetDimensions();
   game.dilation.active = false
-  game.eternityPoints = new Decimal(0);
 }
 
 var energizeUpgradeCosts = "1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 5, 100".split(",");
