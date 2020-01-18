@@ -230,6 +230,9 @@ function suffer(n, a) {
 		if(inChallenge(5, 1) && dim.cost.lte(nc)) {
 			dim.cost = game.dimensions[n].cost.max(dim.cost);
 		}
+		if(inChallenge(11, 2)) {
+			dim.cost = game.dimensions[n].cost.max(dim.cost);
+		}
 		else if(dim.cost.eq(nc)) dim.cost = dim.cost.multiply(dim.costMult);
 	}
 	if(n && game.tickspeed.cost.eq(nc)) game.tickspeed.cost = game.tickspeed.cost.multiply(game.tickspeed.costMult);
@@ -405,7 +408,7 @@ function getChallengeBenefits() {
 					`50% stronger dimension boosts.`,
 					`10% cheaper dimension boosts.`,
 					`${shorten(getChallengeReward(10, 2))}x on all time dimensions.`,
-					`Boost to infinity dimensions based on tier.`,
+					`+10% to galaxy effectiveness.`,
 					`+???% Infinity Shift effectiveness.`,
 				]
 				for(var i = 1; i <= 12; i++) if(challengeCompleted(i, 2)) lines.push(t[i-1])
