@@ -33,6 +33,10 @@ function shorten(num, places = 2, shortPlaces = 2) {
     return result
   }
   
+  if (game.options.notation == "Hardy") {
+    return "H" + Hardy()
+  }
+  
   if(game.options.notation == "Logarithm") {
     return "e" + getFullExpansion(num.log10(), 2)
   }
@@ -69,6 +73,10 @@ function InfinityPercent(num, shortPlaces) {
 		if(num.lt(1e12)) return num.toFixed(shortPlaces);
 		if(num.lt("ee12")) return getFullExpansion(num.log(Number.MAX_VALUE), 22) + '∞';
 		return InfinityPercent(num.log(Number.MAX_VALUE), shortPlaces) + '∞';;
+}
+
+function Hardy() {
+  return "<sub>ψ(Ω<sup>Ω<sup>2</sup>+Ω2</sup>x)</sub>"
 }
 var smallAbbs = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc', 'UDc', 'DDc', 'TDc', 'QaDc', 'QtDc', 'SxDc', 'SpDc', 'ODc', 'NDc', 'Vg', 'UVg', 'DVg', 'TVg', 'QaVg', 'QtVg', 'SxVg', 'SpVg', 'OVg', 'NVg', 'Tg', 'UTg', 'DTg', 'TTg', 'QaTg', 'QtTg', 'SxTg', 'SpTg', 'OTg', 'NTg', 'Qd', 'UQd', 'DQd', 'TQd', 'QaQd', 'QtQd', 'SxQd', 'SpQd', 'OQd', 'NQd', 'Qi', 'UQi', 'DQi', 'TQi', 'QaQi', 'QtQi', 'SxQi', 'SpQi', 'OQi', 'NQi', 'Se', 'USe', 'DSe', 'TSe', 'QaSe', 'QtSe', 'SxSe', 'SpSe', 'OSe', 'NSe', 'St', 'USt', 'DSt', 'TSt', 'QaSt', 'QtSt', 'SxSt', 'SpSt', 'OSt', 'NSt', 'Og', 'UOg', 'DOg', 'TOg', 'QaOg', 'QtOg', 'SxOg', 'SpOg', 'OOg', 'NOg', 'Nn', 'UNn', 'DNn', 'TNn', 'QaNn', 'QtNn', 'SxNn', 'SpNn', 'ONn', 'NNn', 'Ce', 'UCe'];
 
