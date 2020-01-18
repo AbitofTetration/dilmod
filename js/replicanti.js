@@ -20,7 +20,9 @@ function canBuyReplUpgrade(i) {
 function buyReplUpgrade(i) {
 	if(!canBuyReplUpgrade(i)) return;
 	var inc = new Decimal(replUpgIncs[i]);
-  var bought = Decimal.affordGeometricSeries(game.eternityPoints, inc, inc, game.replicanti.upgrades[i])
+  var thing = game.replicanti.upgrades[i]
+  var bought = Decimal.affordGeometricSeries(game.eternityPoints, inc, inc, thing)
+  game.replicanti.upgrades[i] = game.replicanti.upgrades[i].add(bought);
     if(game.eternityPoints.lt(infp())) game.eternityPoints = game.eternityPoints.subtract(getReplUpgradeCost(i).divide(inc))
 }
 

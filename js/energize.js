@@ -135,7 +135,7 @@ function getEnergizeUpgradeEffect(n) {
 		case 3:
 			return getTickspeed("dimension").add(1).log(250).pow(1/15).max(1)
 		case 4:
-			return game.timeDimensions[0].amount.pow(0.5).max(1)
+			return game.replicanti.amount.add(1).log(250).pow(1/5).max(1)
     case 8:
       return game.replicanti.galaxies.add(1).pow(0.125).max(1)
     case 9:
@@ -159,6 +159,6 @@ function getEnUDescriptions() {
     "Time Dimensions are stronger based on EC times.<br>Currently: " + shorten(getEnergizeUpgradeEffect(1)) + "x",
     "Time Dimensions are stronger based on your time shards.<br>Currently: " + shorten(getEnergizeUpgradeEffect(2)) + "x",
     "Replicanti are stronger based on tickspeed.<br>Currently: " + shorten(getEnergizeUpgradeEffect(3)) + "x",
-    "You gain extra max galaxies based on "
+    "You gain extra replicated galaxies based on replicanti.<br>Currently: " + "+" + shorten(getEnergizeUpgradeEffect(4))
 	]
 }
