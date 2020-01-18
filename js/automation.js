@@ -15,7 +15,7 @@ function Extension(s = 1, c, u = "infinityPoints", l = 0) {
 }
 
 function canUpgradeAutomator() {
-	var max = haveInfinitied() + haveEternitied();
+	var max = haveInfinitied() + haveEternitied() + haveEnergized();
 	return au.class < max;
 }
 
