@@ -570,12 +570,12 @@ for(var i = 0; i < 9; i++) t += `
 `
 
 ge("automationTable2").innerHTML += t + `
-<td class = "autobuyer" id = "infinityShiftAutobuyer">Infinity Shift Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${24}" onclick = "upgradeExtension(24)"></button></td>
-<td class = "autobuyer" id = "eternityAutobuyer">Eternity Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${25}" onclick = "upgradeExtension(25)"></button></td>
-<td class = "autobuyer" id = "replicantiGalAutobuyer">Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${26}" onclick = "upgradeExtension(26)"></button></td></tr>
-<tr><td class = "autobuyer" id = "replicantiChaAutobuyer">Replicanti Chance Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${27}" onclick = "upgradeExtension(27)"></button></td>
-<td class = "autobuyer" id = "replicantiIntAutobuyer">Replicanti Interval Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${28}" onclick = "upgradeExtension(28)"></button></td>
-<td class = "autobuyer" id = "replicantiMaxAutobuyer">Max Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${29}" onclick = "upgradeExtension(29)"></button></td></tr>
+<td class = "autobuyer" id = "infinityShiftAutobuyer">Infinity Shift Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${24}" onclick = "upgradeExtension(24)"></button><input type="checkbox" id="24autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "eternityAutobuyer">Eternity Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${25}" onclick = "upgradeExtension(25)"></button><input type="checkbox" id="25autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "replicantiGalAutobuyer">Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${26}" onclick = "upgradeExtension(26)"></button><input type="checkbox" id="26autoSelect" tooltip="Toggle autobuyer mode"></td></tr>
+<tr><td class = "autobuyer" id = "replicantiChaAutobuyer">Replicanti Chance Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${27}" onclick = "upgradeExtension(27)"></button><input type="checkbox" id="27autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "replicantiIntAutobuyer">Replicanti Interval Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${28}" onclick = "upgradeExtension(28)"></button><input type="checkbox" id="28autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "replicantiMaxAutobuyer">Max Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${29}" onclick = "upgradeExtension(29)"></button><input type="checkbox" id="29autoSelect" tooltip="Toggle autobuyer mode"></td></tr>
 `
 h = ""
 let all_notations = ['Scientific', 'Standard', 'Tetration', 'Infinity', 'AF5LN', 'Logarithm']

@@ -91,7 +91,7 @@ function updateChallengeDescriptions() {
 		`All eternity challenge rewards are disabled.ECDATAReward: Dimension boosts are 50% stronger.`,
 		`Dimension boosts have a cost scaling.ECDATAReward: Dimension boosts are 10% cheaper.`,
 		`Time and infinity dimensions are useless, but you gain a boost to normal dimensions based on infinities.ECDATAReward: Time dimensions gain a boost based on infinities.`,
-		`ECDATA`,
+		`When you buy something, everything else's cost goes up.ECDATAReward: Antimatter galaxies are 10% more powerful.`,
 		`Both normal dimensions and infinity dimensions produce the one two below them.ECDATAReward`,
 	]
 	
