@@ -80,9 +80,7 @@ function energize(force) {
   game.eternityPoints = new Decimal(0);
   game.eternities = new Decimal(0);
 	
-  if(!chargedMilestone("keepIT")) game.bestInfinityTime = Infinity;
 	for(var i = (chargedMilestone("keepNC")+chargedMilestone("keepIC")+chargedMilestone("keepEC"))*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
-	if(chargedMilestone("iShift")) game.infinityShifts = 9;
 	
 	if(chargedMilestone("keepBU"));
 	else if(chargedMilestone("keepIU")) game.infinityUpgrades = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]

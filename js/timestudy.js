@@ -70,7 +70,7 @@ ns({x:    -3, y:    -2, id:  "p23", cost:    4, desc: "Dimension Boosts are 4x a
 ns({x:    -3, y:    -3, id:  "p31", cost:    8, desc: "Sacrifice affects dimensions 1-8 with reduced effect", eff: function() {return getSacrificeMult().pow(0.2).max(1)}, pre: ["p23"]})
 ns({x:    -4, y:    -3, id:  "p32", cost:    8, desc: "Replicanti give a boost to normal dimensions.", eff: function() {return getReplEffect().pow(16)}, pre: ["p23"]})
 ns({x:    -4, y:    -2, id:  "s01", cost:    0, desc: "Eternity Challenge 1", pre: ["p32"]})
-ns({x:    -5, y:    -2, id:  "p41", cost:  200, desc: "Normal dimensions gain a boost based on eternities.", eff: function() {return game.eternities.multiply(400).pow(4)}, pre: ["s01"]})
+ns({x:    -5, y:    -2, id:  "p41", cost:  200, desc: "Normal dimensions gain a boost based on eternities.", eff: function() {return game.eternities.multiply(400).pow(4).max(1)}, pre: ["s01"]})
 ns({x:    -5, y:    -1, id:  "p42", cost:  280, desc: "Normal dimensions gain a boost based on fastest infinity.", eff: function() {return Decimal.max(1e300 / game.bestInfinityTime, 1).pow(2)}, pre: ["s01"]})
 ns({x:    -6, y:    -2, id:  "s06", cost:    0, desc: "Eternity Challenge 6", pre: ["p41", "p42"]})
 ns({x:     2, y:    -1, id:  "i11", cost:    1, desc: "Infinity Dimensions are more powerful based on Infinity Power", eff: function() {return game.infinityDimensions[0].amount.log10().pow(2).max(1)}, pre: ["s00"]})
