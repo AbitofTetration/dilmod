@@ -242,7 +242,7 @@ function updateSave() {
 	var c = []
 	for(var i = 0; i < 15; i++) au.extensions[i] = Extension(0.5**i, 2**i, "infinityPoints", au.extensions[i]?au.extensions[i].level:0)
 	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
-//	for(var i = 0; i < 15; i++) au.extensions[i+30] = Extension(0.5**i/12960000, 2**i, "energize.energyShards", au.extensions[i]?au.extensions[i].level:0)
+	for(var i = 0; i < 15; i++) au.extensions[i+30] = Extension(0.5**i/12960000, 2**i, "energize.energyShards", au.extensions[i]?au.extensions[i].level:0)
   
   if (!au.enabled) au.enabled = []
   
@@ -589,7 +589,7 @@ for(var i = 0; i < 9; i++) t += `
 `
 
 ge("automationTable3").innerHTML += t + `
-<td class = "autobuyer" id = "infinityShiftAutobuyer">Infinity Shift Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${24}" onclick = "upgradeExtension(24)"></button><input type="checkbox" id="24autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "dilUpgAutobuyer">Dilation Upgrade Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${24}" onclick = "upgradeExtension(24)"></button><input type="checkbox" id="24autoSelect" tooltip="Toggle autobuyer mode"></td>
 `
 h = ""
 let all_notations = ['Scientific', 'Standard', 'Tetration', 'Infinity', 'AF5LN', 'Logarithm', 'DCN']
