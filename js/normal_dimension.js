@@ -74,6 +74,7 @@ function getDimensionProduction(i) {
 	if(game.infinityUpgrades.includes(21)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(21))
 	if(game.infinityUpgrades.includes(22)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(22))
   if(game.infinityUpgrades.includes(26)) dim.multiplier = dim.multiplier.multiply(getInfinityUpgradeEffect(26))
+  if(game.energize.upgrades.includes(7)) dim.multiplier = dim.multiplier.multiply(getEnergizeUpgradeEffect(7))
 	if(i < 9 && challengeCompleted(8, 1)) dim.multiplier = dim.multiplier.multiply(getChallengeReward(8, 1))
 	if(i == 1 && game.achievements.includes(54)) dim.multiplier = dim.multiplier.multiply(game.dimensions[1].amount.pow(0.001).max(1))
 	if(game.achievements.includes(56)) dim.multiplier = dim.multiplier.multiply(game.dimensions[0].amount.pow(0.0001).max(1))
