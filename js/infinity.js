@@ -182,6 +182,8 @@ function getInfinityUpgradeEffect(n) {
 			return getInfinityUpgradeEffect(0) * getInfinityUpgradeEffect(1)
 		case 25: 
 			return game.galaxies.add(1).pow(3).max(1);
+		case 26:
+			return game.infinityPoints.divide(2).pow(0.35).add(1);
 	}
 }
 
@@ -213,9 +215,9 @@ function getIUDescriptions() {
 		"The first 2 infinity upgrades affect infinity dimensions<br>Currently: " + shorten(getInfinityUpgradeEffect(23)) + "x",
 		"Infinity Dimensions get a multiplier based on their tier, giving the best boost to the lowest",
 		"Infinity Dimensions get a multiplier based on galaxies<br>Currently: " + shorten(getInfinityUpgradeEffect(25)) + "x",
-		"Do nothing",
-		"Waste 10 million IP",
-		"Make this button green",
+		"Power up all dimensions based on infinity points<br>Currently: " + shorten(getInfinityUpgradeEffect(26)) + "x",
+		"Dimension boosts are 50% stronger.",
+		"Antimatter galaxies are 5% more effective.",
 		"",
 		"",
 		"",

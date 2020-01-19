@@ -230,9 +230,6 @@ function suffer(n, a) {
 		if(inChallenge(5, 1) && dim.cost.lte(nc)) {
 			dim.cost = game.dimensions[n].cost.max(dim.cost);
 		}
-		if(inChallenge(11, 2)) {
-			dim.cost = game.dimensions[n].cost.max(dim.cost);
-		}
 		else if(dim.cost.eq(nc)) dim.cost = dim.cost.multiply(dim.costMult);
 	}
 	if(n && game.tickspeed.cost.eq(nc)) game.tickspeed.cost = game.tickspeed.cost.multiply(game.tickspeed.costMult);

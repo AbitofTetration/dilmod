@@ -48,6 +48,7 @@ function getDimensionBoostReq() {
 function getDimensionBoostPower() {
 	var r = new Decimal(2);
 	if(game.infinityUpgrades.includes(9)) r = r.multiply(1.25)
+	if(game.infinityUpgrades.includes(27)) r = r.multiply(1.5)
 	// if(game.infinityUpgrades.includes(24)) r = r.multiply(1.6)
 	if(game.achievements.includes(41)) r = r.multiply(1.01)
 	if(challengeCompleted(7, 1)) r = r.multiply(2.5)

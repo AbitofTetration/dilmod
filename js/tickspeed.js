@@ -156,6 +156,7 @@ function getEffectiveGalaxies() {
 function getGalaxyPower() {
 	var r = new Decimal(1);
 	if(game.infinityUpgrades.includes(15) && getChallengeSet() !== 1 && getChallengeSet() !== 2) r = r.multiply(2);
+	if(game.infinityUpgrades.includes(27)) r = r.multiply(1.05);
 	if(challengeCompleted(5, 1)) r = r.multiply(1.1);
 	if(challengeCompleted(11, 2)) r = r.multiply(1.1);
   if(tree.hasStudy("g11")) r = r.multiply(tree.getEff("g11"))
