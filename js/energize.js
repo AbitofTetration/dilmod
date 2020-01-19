@@ -31,15 +31,15 @@ var chargedMilestones = {
 	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
 	keepTP: {req:  8, desc: "You keep some of your TP on energize."},
 	keepEU: {req:  9, desc: "You keep eternity upgrades."},
-	tAuto1: {req:  15, desc: "Unlock Infinity Dimension autobuyer 1"},
-	tAuto2: {req:  16, desc: "Unlock Infinity Dimension autobuyer 2"},
-	tAuto3: {req:  17, desc: "Unlock Infinity Dimension autobuyer 3"},
-	tAuto4: {req:  18, desc: "Unlock Infinity Dimension autobuyer 4"},
-	tAuto5: {req:  19, desc: "Unlock Infinity Dimension autobuyer 5"},
-	tAuto6: {req:  20, desc: "Unlock Infinity Dimension autobuyer 6"},
-	tAuto7: {req:  21, desc: "Unlock Infinity Dimension autobuyer 7"},
-	tAuto8: {req:  22, desc: "Unlock Infinity Dimension autobuyer 8"},
-	tAuto9: {req:  23, desc: "Unlock Infinity Dimension autobuyer 9"},
+	tAuto1: {req:  15, desc: "Unlock Time Dimension autobuyer 1"},
+	tAuto2: {req:  16, desc: "Unlock Time Dimension autobuyer 2"},
+	tAuto3: {req:  17, desc: "Unlock Time Dimension autobuyer 3"},
+	tAuto4: {req:  18, desc: "Unlock Time Dimension autobuyer 4"},
+	tAuto5: {req:  19, desc: "Unlock Time Dimension autobuyer 5"},
+	tAuto6: {req:  20, desc: "Unlock Time Dimension autobuyer 6"},
+	tAuto7: {req:  21, desc: "Unlock Time Dimension autobuyer 7"},
+	tAuto8: {req:  22, desc: "Unlock Time Dimension autobuyer 8"},
+	tAuto9: {req:  23, desc: "Unlock Time Dimension autobuyer 9"},
 	dShift: {req:  24, desc: "Unlock automatic dilation upgrades"},
 }
 
@@ -112,7 +112,7 @@ function getEnergizeUpgradeEffect(n) {
     case 5:
       return getFreeTickspeedUpgrades().divide(20000).divide(100).add(1)
     case 6:
-      return getSumOfDimensions().pow(3).divide(200).max(1)
+      return getSumOfDimensions().tetrate(1.5).divide(200).max(1)
 	}
 }
 
