@@ -99,6 +99,7 @@ function getDimensionProduction(i) {
   
   if(inDilation()) dim.multiplier = dim.multiplier.pow(dilationPenalty())
 	if(game.dilation.upgrades.includes(2)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(2))
+  if(game.energize.upgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getEnergizeUpgradeEffect(6))
 
 	return dim.amount.multiply(dim.multiplier);
 }

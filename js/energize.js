@@ -112,7 +112,7 @@ function getEnergizeUpgradeEffect(n) {
     case 5:
       return getFreeTickspeedUpgrades().divide(20000).divide(100).add(1)
     case 6:
-      return getSumOfDimensions().tetrate(1.5).divide(200).max(1)
+      return getSumOfDimensions().tetrate(1.58).divide(200).max(1)
 	}
 }
 
