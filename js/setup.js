@@ -633,7 +633,11 @@ addEventListener("keydown", function(e) {
 	if(c == 67) bigCrunch();
 	if(c == 69) eternity();
 	if(c == 27) exitChallenge();
-	
+  
+  if(c == 68) boost(true);
+  if(c == 71) galaxy();
+  if(c == 90) energize();
+  
 	if(c > 48 && c < 58) {
 		if(!e.shiftKey) maxDimension(c - 48)
 		else buyDimension(c - 48)

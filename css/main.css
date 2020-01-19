@@ -171,7 +171,7 @@ currency {
 	font-size: 20px;
 	vertical-align: top;
   text-shadow: 0 0 4px #76adab, 0 0 6px #76adab;
-  box-shadow: 0px 0px 12px 0px #420072;
+  box-shadow: 0px 0px 12px 0px #2eab91;
 }
 
 .cosmicTabButton:hover {
@@ -179,6 +179,7 @@ currency {
 	border: 2px solid #81d4d1;
 	background: radial-gradient(#72a3a2, #438f7f);
   text-shadow: 1 1 5px #81d4d1,  1 1 8px #81d4d1;
+  box-shadow: 0px 0px 12px 0px #1fd1ac;
 }
 
 .eternitymilestone, .eternitymilestonelocked {
