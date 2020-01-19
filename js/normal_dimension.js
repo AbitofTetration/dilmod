@@ -221,3 +221,9 @@ function sacrifice() {
 	for(var i = 1; i < 9; i++) game.dimensions[i].amount = game.dimensions[i].bought;
 	return true
 }
+
+function getSumOfDimensions() {
+  let sum = new Decimal(0)
+  for (var i = 1; i < 10; i++) sum = sum.add(game.dimensions[i].bought)
+  return sum;
+}
