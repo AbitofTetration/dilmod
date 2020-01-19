@@ -31,6 +31,7 @@ var chargedMilestones = {
 	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
 	keepTP: {req:  8, desc: "You keep some of your TP on energize."},
 	keepEU: {req:  10, desc: "You keep eternity upgrades."},
+	keepEx: {req:  10, desc: "You keep ex-dilation upgrades."},
 	tAuto1: {req:  15, desc: "Unlock Time Dimension autobuyer 1"},
 	tAuto2: {req:  16, desc: "Unlock Time Dimension autobuyer 2"},
 	tAuto3: {req:  17, desc: "Unlock Time Dimension autobuyer 3"},
@@ -57,6 +58,8 @@ function energize(force) {
   
   if(!confirm("Are you sure you want to Energize? This will reset all of your progress in Eternity in exchange for Energy Shards.")) return;
   
+  game.energizeTime = Date.now();
+  
   if(!force) {
     game.energize.times = game.energize.times.add(1)
     game.energize.energyShards = game.energize.energyShards.add(gainedEnergyShards())
@@ -69,10 +72,14 @@ function energize(force) {
     game.timestudy.bought[i] = new Decimal(0)
   }
   for(var i = (chargedMilestone("keepEC")+2)*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
-  game.energizeTime = 0;
   if(!chargedMilestone("keepEU"))resetEternityUpgrades()
   resetTimeDimensions()
-  resetExDilation()
+  let exDilateUpgrades = game.exDilation.upgrades
+  game.exDilation = {
+    amount: new Decimal(0),
+    upgrades: (!chargedMilestone("keepEx") ? [] : exDilateUpgrades),
+    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
+  }
   resetReplicanti()
   resetDilation()
   if(!chargedMilestone("keepTT"))respecTimeStudies()

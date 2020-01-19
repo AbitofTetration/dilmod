@@ -450,7 +450,7 @@ function getEDUDescriptions() {
 		"The penalty for dilation is reduced.<br>^0.25 > ^0.3",
 		"Dilated time gain is boosted based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(2)) + "x",
 		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shorten(getExDilationUpgradeEffect(3)),
-		"You gain ^0.75 Infinity Points on crunch each second.",
+		"You gain 1% of Infinity Points on crunch each second.",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
     "Infinity Points boost infinity dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
     "Dimension boosts are twice as powerful.",
