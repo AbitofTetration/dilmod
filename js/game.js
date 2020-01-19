@@ -88,9 +88,9 @@ function update() {
   }
   
   // TT generation
-  if(game.dilation.upgrades.includes(3)) {
-    game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(3).multiply(diff/1000))
-    game.dilation.generatedTT = game.dilation.generatedTT.add(getDilationUpgradeEffect(3).multiply(diff/1000))
+  if(game.dilation.upgrades.includes(11)) {
+    game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(11).multiply(diff/1000))
+    game.dilation.generatedTT = game.dilation.generatedTT.add(getDilationUpgradeEffect(11).multiply(diff/1000))
   }
 
   // More IP generation

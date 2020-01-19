@@ -43,7 +43,7 @@ function resetDimensions() {
 		game.dimensions.forEach(function(d) {d.costMult = d.costMult.multiply(100)});
 	}
   if(game.dilation) {
-		if(game.dilation.upgrades.includes(11)) {
+		if(game.dilation.upgrades.includes(10)) {
       game.dimensions.forEach(function(d) {d.costMult = d.costMult.pow(1/1.3)});
     }
 	}

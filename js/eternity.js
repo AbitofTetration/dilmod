@@ -325,7 +325,6 @@ function getDUDescriptions() {
 		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
-		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
 		"You gain 1% of Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
@@ -333,7 +332,8 @@ function getDUDescriptions() {
     "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
     "Make the max replicated galaxies softcap weaker.",
     "Reduce the free tickspeed interval.",
-    "The cost scaling of normal dimensions are heavily reduced."
+    "The first two infinity upgades are stronger based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(10)) + "x",
+		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(11)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : "")
 	]
 }
 function getDilationUpgradeEffect(n) {
@@ -344,8 +344,10 @@ function getDilationUpgradeEffect(n) {
 			return game.dilation.tachyonParticles.pow(6).max(1);
 		case 2:
 			return game.dilation.dilatedTime.pow(4).max(1)
-		case 3:
+		case 11:
 			return game.dilation.tachyonParticles.divide(2000).divide(getTTScaling()).max(1)
+    case 10:
+      return game.dilation.dilatedTime.max(1)
 		case 5:
 			return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1)
       if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1).add(getExDilationUpgradeEffect(5))

@@ -364,7 +364,7 @@ function closeFileMenu(name, doOnClose = true) {
 	if(doOnClose) _onFileMenuClosed(name)
 }
 function updateCheckBoxes() {
-    for (var i = 0; i < 30; i++) {
+    for (var i = 0; i < 39; i++) {
         if (game.automator.enabled[i] !== false) {
             if (game.automator.enabled[i] == true) document.getElementById(i + "autoSelect").checked = "true";
             else document.getElementById(i + "autoSelect").checked = ""
