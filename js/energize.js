@@ -89,7 +89,7 @@ function energize(force) {
 	eternity(true)
 }
 
-var energizeUpgradeCosts = "1, 1, 1, 1, 1, 1, 1, 3, 6, 15, 30, 100".split(",");
+var energizeUpgradeCosts = "0.9, 0.9, 0.9, 1, 1, 1, 1, 3, 6, 15, 30, 100".split(",");
 
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
@@ -107,7 +107,7 @@ function buyEnergizeUpgrade(i) {
 function getEnergizeUpgradeEffect(n) {
 	switch(n) {
     case 0:
-      return game.energize.times.add(1).pow(game.energize.times.pow(2).add(1))
+      return game.energize.times.add(1).pow(game.energize.times.pow(0.5).add(1))
 		case 1:
 			return Math.max(1e25 / getChallengeTimes(2) ** 5, 1) //Decimal.divide(1e25, Decimal.pow(getChallengeTimes(2), 6))
 		case 2:
