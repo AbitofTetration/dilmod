@@ -94,6 +94,15 @@ var autobuyerFunctions = [
   function() {buyReplUpgrade(0)},
   function() {buyReplUpgrade(1)},
   function() {buyReplUpgrade(2)},
+	function(b) {return db(1, b, "Time")},
+	function(b) {return db(2, b, "Time")},
+	function(b) {return db(3, b, "Time")},
+	function(b) {return db(4, b, "Time")},
+	function(b) {return db(5, b, "Time")},
+	function(b) {return db(6, b, "Time")},
+	function(b) {return db(7, b, "Time")},
+	function(b) {return db(8, b, "Time")},
+	function(b) {return db(9, b, "Time")},
 ]
 
 function getExtByName(name) {
@@ -112,6 +121,7 @@ function extUnlocked(c) {
   if(c == 27) return eternityMilestone("repCha");
   if(c == 28) return eternityMilestone("repInt");
   if(c == 29) return eternityMilestone("repMax");
+	if(c > 31 && c < 39) return chargedMilestone("tAuto" + (c-30));
 }
 
 function ccmd(a, b, c) {
