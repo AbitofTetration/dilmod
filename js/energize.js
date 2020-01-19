@@ -79,7 +79,7 @@ function energize(force) {
   game.eternityPoints = new Decimal(0);
   game.eternities = new Decimal(0);
   if(chargedMilestone("lotOfE")) game.eternities = new Decimal(300);
-	eternity()
+	eternity(true)
 }
 
 var energizeUpgradeCosts = "1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 5, 100".split(",");

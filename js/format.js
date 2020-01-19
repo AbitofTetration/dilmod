@@ -207,7 +207,7 @@ function cHeroes(num, places, shortPlaces) {
   else {
     function compact(exponent) {
       if (exponent < 3) return '';
-      return cPrefixes[exponent/3] + '' + compact(exponent/3)
+      return cPrefixes[Math.floor(exponent/3)%(cPrefixes.length)] + '' + compact(exponent/3)
     }
     return mantissa.toFixed(places)+compact(exponent)
   }
