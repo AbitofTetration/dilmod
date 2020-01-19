@@ -174,7 +174,7 @@ currency {
   box-shadow: 0px 0px 12px 0px #2eab91;
 }
 
-.metaprestigeTabButton:hover {
+.cosmicTabButton:hover {
 	color: #81d4d1;
 	border: 2px solid #81d4d1;
 	background: radial-gradient(#72a3a2, #438f7f);
@@ -183,23 +183,40 @@ currency {
 }
 
 .metaprestigeTabButton {
-	color: #990000;
-	background: radial-gradient(#660000, #000066);
+	color: #e97feb;
+	background: radial-gradient(#9b709c, #7f16ba);
 	font-family: Typewriter;
-	border: 2px solid #990000;
+	border: 2px solid #e97feb;
 	transition-duration: 0.2s;
 	cursor: pointer;
 	border-radius: 4px;
 	font-size: 20px;
 	vertical-align: top;
-  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  text-shadow: 0 0 3px #9b709c, 0 0 5px #7f16ba;
 }
 
-.transcendTabButton:hover {
-	color: #FF0000;
-	border: 2px solid #FF0000;
-	background: radial-gradient(#BB0000, #426e5c);
-  text-shadow: 0 0 3px #FF2222, 0 0 5px #2222FF;
+.unfunityTabButton {
+	color: #f00;
+	background: #1f1f1f;
+	font-family: Typewriter;
+	border: 2px solid #f00;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 20px;
+	vertical-align: top;
+}
+
+.unfunityTabButton:hover {
+	color: black;
+	background: #f00;
+}
+
+.metaprestigeTabButton:hover {
+	color: #fda3ff;
+	border: 2px solid #fda3ff;
+	background: radial-gradient(#be75bf, #a61bf5);
+  text-shadow: 0 0 3px #be75bf, 0 0 5px #a61bf5;
 }
 
 .eternitymilestone, .eternitymilestonelocked {
