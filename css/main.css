@@ -156,7 +156,7 @@ currency {
 .transcendTabButton:hover {
 	color: #FF0000;
 	border: 2px solid #FF0000;
-	background: radial-gradient(#BB0000, #426e5c);
+	background: radial-gradient(#BB0000, #0000BB);
   text-shadow: 0 0 3px #FF2222, 0 0 5px #2222FF;
 }
 
@@ -196,10 +196,10 @@ currency {
 }
 
 .unfunityTabButton {
-	color: #f00;
-	background: #1f1f1f;
+	color: #b00;
+	background: radial-gradient(transparent, #000000), #AA0000;
 	font-family: Typewriter;
-	border: 2px solid #f00;
+	border: 2px solid #b00;
 	transition-duration: 0.2s;
 	cursor: pointer;
 	border-radius: 4px;
@@ -209,7 +209,8 @@ currency {
 
 .unfunityTabButton:hover {
 	color: black;
-	background: #f00;
+	background: radial-gradient(transparent, #000000), #BB0000;
+  text-shadow: 0 0 3px #AA0000, 0 0 5px #AA0000;
 }
 
 .metaprestigeTabButton:hover {
