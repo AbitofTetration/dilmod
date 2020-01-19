@@ -173,6 +173,7 @@ function getNormalGalaxyPower() {
 function getDilatedGalaxyPower() {
 	var r = new Decimal(1);
 	
+  if(game.exDilation.upgrades.includes(4)) r = r.multiply(getExDilationUpgradeEffect(4))
   if(game.dilation.upgrades.includes(6)) r = r.multiply(2)
   
 	return r;

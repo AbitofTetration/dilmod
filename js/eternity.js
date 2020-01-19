@@ -326,7 +326,7 @@ function getDUDescriptions() {
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : ""),
-		"You gain some of your Infinity Points on infinity automatically.",
+		"You gain 1% of Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
     "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
@@ -450,7 +450,7 @@ function getEDUDescriptions() {
 		"The penalty for dilation is reduced.<br>^0.25 > ^0.3",
 		"Dilated time gain is boosted based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(2)) + "x",
 		"You gain extra free galaxies based on your achievements.<br>Currently: +" + shorten(getExDilationUpgradeEffect(3)),
-		"You gain 1% of Infinity Points on crunch each second.",
+		"Free galaxies are stronger based on ex-dilation.<br>Currently: " + shorten(getExDilationUpgradeEffect(4)) + "x",
 		"The sixth dilation upgrade gets a boost based on free galaxies.<br>Currently: +" + shorten(getExDilationUpgradeEffect(5)) + " extra galaxies",
     "Infinity Points boost infinity dimensions to a reduced effect.<br>Currently: " + shorten(getExDilationUpgradeEffect(6)) + "x",
     "Dimension boosts are twice as powerful.",
@@ -466,6 +466,8 @@ function getExDilationUpgradeEffect(n, g) {
 			return game.exDilation.amount.add(1).pow(3).max(1)
 		case 3:
 			return new Decimal(game.achievementRowsCompleted * 0.7 + (game.achievements.length * 0.2)).max(1)
+		case 4:
+			return game.exDilation.amount.add(1).pow(0.0125).max(1)
 		case 5:
 			return getFreeDilatedGalaxies().add(1).log(4).max(1)
     case 6:
