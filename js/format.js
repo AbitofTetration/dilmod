@@ -189,6 +189,10 @@ function doHighStandard(e) {
 	return result;
 }
 
+function cHeroes(num, places, shortPlaces) {
+  let cPrefixes = ["K", "M", "T", "q", "Q", "s", "S", "O", "N"]
+}
+
 function timeDisplay(time) {
   time = time / 1000
   
