@@ -89,7 +89,7 @@ function energize(force) {
 	eternity(true)
 }
 
-var energizeUpgradeCosts = "0.9, 0.9, 0.9, 1, 1, 1, 1, 3, 6, 15, 30, 100".split(",");
+var energizeUpgradeCosts = "0.9, 0.9, 0.9, 1, 1, 5, 5, 5, 13, 34, 100, 1e6".split(",");
 
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
