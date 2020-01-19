@@ -552,7 +552,7 @@ function update() {
 	ge("upgradeCore").innerText = `Unlock Class ${au.class+1} - ${layerNames[au.class+1]}`;
 	ge("upgradeCore").className = canUpgradeAutomator() ? "buy" : "lock"
 
-	for(var i = 0; i < 3; i++) displayIf("class" + i + "Automation", au.class >= i)
+	for(var i = 0; i < 4; i++) displayIf("class" + i + "Automation", au.class >= i)
 	
 	au.extensions.forEach(function(e) {
 		e.charge += e.speed * diff / 1000 / hacker;
