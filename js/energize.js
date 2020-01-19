@@ -25,13 +25,10 @@ function gainedEnergyShards() {
 }
 
 var chargedMilestones = {
-	keepIU: {req:  1, desc: "You keep infinity upgrades."},
-	keepTT: {req:  2, desc: "You keep time studies and time theorems."},
-  keepNC: {req:  3, desc: "You keep normal challenges."},
-  keepIC: {req:  4, desc: "You keep infinity challenges."},
+	lotOfE: {req:  1, desc: "You start Energizes with 300 eternities."},
+	keepTT: {req:  3, desc: "You keep time studies and time theorems."},
   keepEC: {req:  5, desc: "You keep eternity challenges."},
-	keepBU: {req:  6, desc: "You keep break infinity upgrades."},
-	lotOfE: {req:  7, desc: "You start Energizes with 300 eternities."},
+	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
 	keepTP: {req:  8, desc: "You keep some of your TP on energize."},
 	tAuto1: {req:  9, desc: "Unlock Infinity Dimension autobuyer 1"},
 	tAuto2: {req:  10, desc: "Unlock Infinity Dimension autobuyer 2"},
@@ -64,12 +61,14 @@ function energize(force) {
     game.energize.times = game.energize.times.add(1)
     game.energize.energyShards = game.energize.energyShards.add(gainedEnergyShards())
 		var time = getTimeSince("energize");
+    if(time < game.bestEnergizeTime) game.bestEnergizeTime = time
   }
   
   if(!chargedMilestone("keepTT")) 
   for (var i = 0; i <= 3; i++) {
     game.timestudy.bought[i] = new Decimal(0)
   }
+  for(var i = (chargedMilestone("keepEC")+2)*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
   game.energizeTime = 0;
   resetEternityUpgrades()
   resetTimeDimensions()
@@ -79,32 +78,8 @@ function energize(force) {
   if(!chargedMilestone("keepTT"))respecTimeStudies()
   game.eternityPoints = new Decimal(0);
   game.eternities = new Decimal(0);
-	
-	for(var i = (chargedMilestone("keepNC")+chargedMilestone("keepIC")+chargedMilestone("keepEC"))*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
-	
-	if(chargedMilestone("keepBU"));
-	else if(chargedMilestone("keepIU")) game.infinityUpgrades = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-	else resetInfinityUpgrades();
-	game.repeatInf = [
-		{cost: new Decimal(10), costMult: new Decimal(10), bought: new Decimal(0)}, 
-		{cost: new Decimal(1e10), costMult: new Decimal(10), bought: new Decimal(0)}, 
-		{cost: new Decimal(1e10), costMult: new Decimal(1e10), bought: new Decimal(0)}
-	]
-	
-	game.infinityTime = game.eternityTime = Date.now();
-	game.bestIPRate = game.bestEPRate = new Decimal(0);
-	game.infinityPoints = game.infinities = new Decimal(0);
-  game.totalBoostsEnergize = new Decimal(0)
-	resetInfinityDimensions();
-  game.infinityPoints = getStartingIP()
-	game.shifts = getStartingShifts();
-	game.boosts = new Decimal(0);
-	game.galaxies = new Decimal(0);
-  game.replicanti.amount = new Decimal(1);
-  game.replicanti.ticks = 0;
-	game.replicanti.galaxies = new Decimal(0);
-	resetDimensions();
-  game.dilation.active = false
+  if(chargedMilestone("lotOfE")) game.eternities = new Decimal(300);
+	eternity()
 }
 
 var energizeUpgradeCosts = "1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 5, 100".split(",");
