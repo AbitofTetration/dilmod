@@ -30,7 +30,7 @@ var chargedMilestones = {
   keepEC: {req:  5, desc: "You keep eternity challenges."},
 	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
 	keepTP: {req:  8, desc: "You keep some of your TP on energize."},
-	keepEU: {req:  9, desc: "You keep eternity upgrades."},
+	keepEU: {req:  10, desc: "You keep eternity upgrades."},
 	tAuto1: {req:  15, desc: "Unlock Time Dimension autobuyer 1"},
 	tAuto2: {req:  16, desc: "Unlock Time Dimension autobuyer 2"},
 	tAuto3: {req:  17, desc: "Unlock Time Dimension autobuyer 3"},
@@ -70,7 +70,7 @@ function energize(force) {
   }
   for(var i = (chargedMilestone("keepEC")+2)*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
   game.energizeTime = 0;
-  resetEternityUpgrades()
+  if(!chargedMilestone("keepEU"))resetEternityUpgrades()
   resetTimeDimensions()
   resetExDilation()
   resetReplicanti()
@@ -124,6 +124,11 @@ function getEnUDescriptions() {
     "Replicanti are stronger based on tickspeed.<br>Currently: " + shorten(getEnergizeUpgradeEffect(3)) + "x",
     "You gain extra replicated galaxies based on replicanti chance.<br>Currently: " + "+" + shorten(getEnergizeUpgradeEffect(4)),
     "Replicated galaxies are stronger based on free tickspeed upgrades.<br>Currently: " + shorten(getEnergizeUpgradeEffect(5)) + "x",
-    "Normal dimensions gain a multiplier based on the sum of bought.<br>Currently: " + shorten(getEnergizeUpgradeEffect(6)) + "x"
+    "Normal dimensions gain a multiplier based on the sum of bought.<br>Currently: " + shorten(getEnergizeUpgradeEffect(6)) + "x",
+    "placeholder",
+    "placeholder",
+    "placeholder",
+    "placeholder",
+    "Force Aarex to start NG+3.1"
 	]
 }
