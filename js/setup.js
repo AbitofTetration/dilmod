@@ -5,9 +5,7 @@ var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "S
 var smallCurrency = {
 	infinityPoints: "IP",
 	eternityPoints: "EP",
-  energize: {
-    energyShards: "ES"
-  }
+  autoFluid: "AF"
 }
 
 function infp(n=1) {
@@ -126,6 +124,7 @@ function updateSave() {
 	if(!game.tickCostMultDecrease) game.tickCostMultIncrease = 10;
 	if(!game.infinities) game.infinities = new Decimal(0);
 	if(!game.infinityPoints) game.infinityPoints = new Decimal(0);
+  if(!game.autoFluid) game.autoFluid = new Decimal(0);
 	if(!game.infinityUpgrades) resetInfinityUpgrades();
 	if(!game.infinityDimensions) resetInfinityDimensions();
 	if(!game.infinityShifts) game.infinityShifts = new Decimal(0);
@@ -242,7 +241,7 @@ function updateSave() {
 	var c = []
 	for(var i = 0; i < 15; i++) au.extensions[i] = Extension(0.5**i, 2**i, "infinityPoints", au.extensions[i]?au.extensions[i].level:0)
 	for(var i = 0; i < 15; i++) au.extensions[i+15] = Extension(0.5**i/3600, 2**i, "eternityPoints", au.extensions[i]?au.extensions[i].level:0)
-	for(var i = 0; i < 15; i++) au.extensions[i+30] = Extension(0.5**i/12960000, 2**i, "energize.energyShards", au.extensions[i]?au.extensions[i].level:0)
+	for(var i = 0; i < 15; i++) au.extensions[i+30] = Extension(0.5**i/12960000, 2**i, "autoFluid", au.extensions[i]?au.extensions[i].level:0)
   
   if (!au.enabled) au.enabled = []
   
