@@ -119,9 +119,9 @@ function getEnergizeUpgradeEffect(n) {
     case 5:
       return getFreeTickspeedUpgrades().divide(20000).divide(100).add(1)
     case 6:
-      return getSumOfDimensions().tetrate(1.58).divide(200).max(1)
+      return getSumOfDimensions().tetrate(1.5).divide(200).max(1)
     case 7:
-      return game.energize.energyShards.pow(1000).pow(3).divide(3).max(1)
+      return game.energize.energyShards.pow(1000).divide(3).max(1)
 	}
 }
 
