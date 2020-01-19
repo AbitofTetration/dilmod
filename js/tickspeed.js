@@ -182,6 +182,7 @@ function getReplicantiGalaxyPower() {
 	if(tree.hasStudy("r32")) r = r.multiply(1.5);
 	if(tree.hasStudy("g51")) r = r.multiply(1.2);
   if(inChallenge(6,1)) r = r.multiply(1.75)
+  if(game.energize.upgrades.includes(5)) r = r.multiply(getEnergizeUpgradeEffect(5))
 	
 	return r;
 }
