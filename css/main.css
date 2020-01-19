@@ -174,12 +174,32 @@ currency {
   box-shadow: 0px 0px 12px 0px #2eab91;
 }
 
-.cosmicTabButton:hover {
+.metaprestigeTabButton:hover {
 	color: #81d4d1;
 	border: 2px solid #81d4d1;
 	background: radial-gradient(#72a3a2, #438f7f);
   text-shadow: 1 1 5px #81d4d1,  1 1 8px #81d4d1;
   box-shadow: 0px 0px 12px 0px #1fd1ac;
+}
+
+.metaprestigeTabButton {
+	color: #990000;
+	background: radial-gradient(#660000, #000066);
+	font-family: Typewriter;
+	border: 2px solid #990000;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 20px;
+	vertical-align: top;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.transcendTabButton:hover {
+	color: #FF0000;
+	border: 2px solid #FF0000;
+	background: radial-gradient(#BB0000, #426e5c);
+  text-shadow: 0 0 3px #FF2222, 0 0 5px #2222FF;
 }
 
 .eternitymilestone, .eternitymilestonelocked {
