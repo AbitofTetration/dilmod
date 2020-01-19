@@ -102,7 +102,7 @@ ns({x:     0, y:    -4, id:  "g12", cost:    2, desc: "Replicanti grow faster ba
 ns({x:     1, y:    -3, id:  "g21", cost:    6, desc: "Second Time Dimension gains a boost based on galaxies.", eff: function() {return getEffectiveGalaxies().add(1).pow(0.0125)}, pre: ["g12"]})
 ns({x:    -1, y:    -3, id:  "g22", cost:    6, desc: "Third Time Dimension gains a boost based on eternity points.", eff: function() {return game.eternityPoints.add(1).pow(0.125)}, pre: ["g12"]})
 ns({x:     1, y:    -4, id:  "g31", cost:   10, desc: "Replicanti grow faster based on free tickspeed upgrades.", eff: function() {return getFreeTickspeedUpgrades().add(1).pow(0.065)}, pre: ["g21"]})
-ns({x:    -1, y:    -4, id:  "g32", cost:   10, desc: "You gain a multiplier to IP based on replicated galaxies.", eff: function() {return game.replicanti.galaxies.add(1).pow(0.125)}, pre: ["g22"]})
+ns({x:    -1, y:    -4, id:  "g32", cost:   10, desc: "You gain a multiplier to IP based on replicated galaxies.", eff: function() {return game.replicanti.galaxies.add(1).pow(0.5)}, pre: ["g22"]})
 ns({x:     0, y:    -5, id:  "g41", cost:   35, desc: "Remote antimatter galaxy scaling starts later based on replicated galaxies.", eff: function() {return game.replicanti.galaxies.add(200).divide(200).pow(0.75).max(1)}, pre: ["g32", "g31"]})
 ns({x:     0, y:    -6, id:  "s04", cost:    0, desc: "Eternity Challenge 4", pre: ["g41"]})
 ns({x:     0, y:    -7, id:  "g42", cost:  300, desc: "You gain a boost to eternitied stat based on antimatter galaxies.", eff: function() {return getEffectiveGalaxies().add(1000).divide(1000)}, pre: ["s04"]})

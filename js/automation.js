@@ -121,7 +121,7 @@ function extUnlocked(c) {
   if(c == 27) return eternityMilestone("repCha");
   if(c == 28) return eternityMilestone("repInt");
   if(c == 29) return eternityMilestone("repMax");
-	if(c > 31 && c < 39) return chargedMilestone("tAuto" + (c-30));
+	if(c > 30 && c < 39) return chargedMilestone("tAuto" + (c-30));
 }
 
 function ccmd(a, b, c) {

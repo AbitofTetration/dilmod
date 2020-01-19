@@ -120,6 +120,8 @@ function getEnergizeUpgradeEffect(n) {
       return getFreeTickspeedUpgrades().divide(20000).divide(100).add(1)
     case 6:
       return getSumOfDimensions().tetrate(1.58).divide(200).max(1)
+    case 7:
+      return game.energize.energyShards.pow(1000).pow(3).divide(3).max(1)
 	}
 }
 
@@ -132,7 +134,7 @@ function getEnUDescriptions() {
     "You gain extra replicated galaxies based on replicanti chance.<br>Currently: " + "+" + shorten(getEnergizeUpgradeEffect(4)),
     "Replicated galaxies are stronger based on free tickspeed upgrades.<br>Currently: " + shorten(getEnergizeUpgradeEffect(5)) + "x",
     "Normal dimensions gain a multiplier based on the sum of bought.<br>Currently: " + shorten(getEnergizeUpgradeEffect(6)) + "x",
-    "placeholder",
+    "Normal dimensions gain a multiplier based on energy shards.<br>Currently: " + shorten(getEnergizeUpgradeEffect(7)) + "x",
     "placeholder",
     "placeholder",
     "placeholder",
