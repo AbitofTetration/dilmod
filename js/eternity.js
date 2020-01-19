@@ -210,7 +210,7 @@ var eternityMilestones = {
 	keepIU: {req:   3, desc: "You keep your infinity upgrades"},
 	keepIT: {req:   5, desc: "You keep your best infinity time"},
 	keepBI: {req:   8, desc: "You keep your break infinity upgrades"},
-	keepIC: {req:  10, desc: "You start with all ICs completed"},
+	keepIC: {req:  10, desc: "You keep IC completions."},
 	iAuto1: {req:  11, desc: "Unlock Infinity Dimension autobuyer 1"},
 	iAuto2: {req:  12, desc: "Unlock Infinity Dimension autobuyer 2"},
 	iAuto3: {req:  13, desc: "Unlock Infinity Dimension autobuyer 3"},
