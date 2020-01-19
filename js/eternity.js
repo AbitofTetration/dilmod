@@ -310,7 +310,7 @@ function buyRepeatDil(i) {
 	return true;
 }
 
-var dilationUpgradeCosts = "100, 3200, 1e5, 1e7, 1e9, 1e10, 1e11, 1e13, 1e15, 1e16, 1e18, 1e20".split(",");
+var dilationUpgradeCosts = "100, 3200, 1e6, 1e9, 1e12, 1e15, 1e18, 1e20, 1e24, 1e27, 1e29, 1e30".split(",");
 
 
 function getTTScaling() {
