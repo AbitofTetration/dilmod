@@ -54,6 +54,9 @@ function shorten(num, places = 2, shortPlaces = 2) {
 	else if(game.options.notation == "Standard" || game.options.notation == "Mixed Scientific") {
 		return toStandard(num, places, shortPlaces)
 	}
+	else if(game.options.notation == "Clicker Heroes") {
+		return cHeroes(num, places, shortPlaces)
+	}
 }
 
 function despacit(num) {
@@ -190,7 +193,24 @@ function doHighStandard(e) {
 }
 
 function cHeroes(num, places, shortPlaces) {
-  let cPrefixes = ["K", "M", "T", "q", "Q", "s", "S", "O", "N"]
+  let cPrefixes = ["K", "M", "T", "q", "Q", "s", "S", "O", "N", "d", "U", "D", "!", "@", "#", "$", "%", "^", "&", "*"]
+		var mantissa=num.m
+		var exponent=num.e
+		mantissa=mantissa*Math.pow(10,exponent%3)
+		exponent=exponent-exponent%3
+		if (mantissa>=999.995) {
+			mantissa/=1000
+			exponent+=3
+		}
+  if(num.lt(1000)) return mantissa.toFixed(shortPlaces)
+  else if(num.lt(Decimal.pow(10, cPrefixes.length+1))) return mantissa.toFixed(places)+cPrefixes[exponent/3]
+  else {
+    function compact(exponent) {
+      if (exponent < 3) return '';
+      return cPrefixes[exponent/3] + '' + compact(exponent/3)
+    }
+    return mantissa.toFixed(places)+compact(exponent)
+  }
 }
 
 function timeDisplay(time) {

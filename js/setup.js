@@ -578,7 +578,7 @@ ge("automationTable2").innerHTML += t + `
 <td class = "autobuyer" id = "replicantiMaxAutobuyer">Max Replicanti Galaxy Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${29}" onclick = "upgradeExtension(29)"></button><input type="checkbox" id="29autoSelect" tooltip="Toggle autobuyer mode"></td></tr>
 `
 h = ""
-let all_notations = ['Scientific', 'Standard', 'Tetration', 'Infinity', 'AF5LN', 'Logarithm', 'DCN']
+let all_notations = ['Scientific', 'Standard', 'Tetration', 'Infinity', 'AF5LN', 'Logarithm', 'DCN', 'Clicker Heroes']
 for(var i = 0; i < all_notations.length; i++) {
 	h += "<tr>"
 	h += `
