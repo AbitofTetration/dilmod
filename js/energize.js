@@ -94,7 +94,7 @@ var energizeUpgradeCosts = "0.9, 0.9, 0.9, 1, 1, 1, 1, 3, 6, 15, 30, 100".split(
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
 	if(game.energize.energyShards.lt(energizeUpgradeCosts[i])) return false;
-  if(!game.energize.upgrades.includes(i-3)||i<3) return false;
+  if(!game.energize.upgrades.includes(i-3) && !i<2) return false;
 	return true;
 }
 
