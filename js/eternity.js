@@ -55,6 +55,7 @@ function eternity(force) {
     if(game.infinityDimensions[0].amount.eq(1)) giveAchievement(81)
     if(game.dilation.active) game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(gainedTP())
     if(getFreeinfinities().gt(0)) game.banked.infinities = game.banked.infinities.add(getFreeinfinities())
+    if(game.energize.upgrades.includes(8) && !game.dilation.active) game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(getEnergizeUpgradeEffect(8))
 		giveAchievement(67);
 		
 		game.eternityPoints = game.eternityPoints.add(gainedEternityPoints())
