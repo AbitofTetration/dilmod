@@ -73,6 +73,9 @@ function energize(force) {
   }
   for(var i = (chargedMilestone("keepEC")+2)*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
   if(!chargedMilestone("keepEU"))resetEternityUpgrades()
+	game.repeatEter = [
+		new Decimal(0),
+	]
   resetTimeDimensions()
   let exDilateUpgrades = game.exDilation.upgrades
   game.exDilation = {
