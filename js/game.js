@@ -96,6 +96,10 @@ function update() {
   // More IP generation
 	if(game.dilation.upgrades.includes(4)) 
 		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).divide(100).multiply(getInfinityUpgradeEffect(10)).multiply(diff));
+  
+  // TP generation
+  if(game.energize.upgrades.includes(8))
+    game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(getEnergizeUpgradeEffect(8).multiply(diff/1000))
 	
   
   // Replicanti
