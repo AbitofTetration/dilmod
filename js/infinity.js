@@ -24,7 +24,7 @@ function getInfinityPointMult() {
 	if(game.achievements.includes(37)) r = r.multiply(2)
 	if(tree.hasStudy("i23")) r = r.multiply(tree.getEff("i23"));
 	if(tree.hasStudy("g32")) r = r.multiply(tree.getEff("g32"));
-  if(game.dilation.upgrades.includes(7)) r = r.multiply(getDilationUpgradeEffect(7))
+  if(game.dilation.upgrades.includes(8)) r = r.multiply(getDilationUpgradeEffect(8))
 	
 	return r;
 }
@@ -155,8 +155,10 @@ function getInfinityBonus() {
 function getInfinityUpgradeEffect(n) {
 	switch(n) {
 		case 0:
+      if(game.dilation.upgrades.includes(4)) return Decimal.times(Math.pow(getTimeSince("start") / 60000, 0.1)+1, getDilationUpgradeEffect(4))
 			return Math.pow(getTimeSince("start") / 60000, 0.1)+1;
 		case 1:
+      if(game.dilation.upgrades.includes(4)) return Decimal.times(Math.pow(getTimeSince("start") / 60000, 0.25)+1, getDilationUpgradeEffect(4))
 			return Math.pow(getTimeSince("infinity") / 60000, 0.25)+1
 		case 2:
 			return game.infinityPoints.divide(2).pow(1.25).add(1);
@@ -179,7 +181,7 @@ function getInfinityUpgradeEffect(n) {
 		case 22:
 			return Decimal.tetrate(Math.log10(game.achievements.length+1)+1, 3);
 		case 23: 
-			return getInfinityUpgradeEffect(0) * getInfinityUpgradeEffect(1)
+			return Decimal.times(getInfinityUpgradeEffect(0), getInfinityUpgradeEffect(1))
 		case 25: 
 			return game.galaxies.add(1).pow(3).max(1);
 		case 26:

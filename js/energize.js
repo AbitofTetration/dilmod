@@ -139,6 +139,8 @@ function getEnergizeUpgradeEffect(n) {
       return getSumOfDimensions().tetrate(1.5).divide(200).max(1)
     case 7:
       return game.energize.energyShards.pow(1000).divide(3).max(1)
+    case 8:
+      return gainedTP().max(1).pow(0.97).max(1)
 	}
 }
 
@@ -152,7 +154,7 @@ function getEnUDescriptions() {
     "Replicated galaxies are stronger based on free tickspeed upgrades.<br>Currently: " + shorten(getEnergizeUpgradeEffect(5)) + "x",
     "Normal dimensions gain a multiplier based on the sum of bought.<br>Currently: " + shorten(getEnergizeUpgradeEffect(6)) + "x",
     "Normal dimensions gain a multiplier based on energy shards.<br>Currently: " + shorten(getEnergizeUpgradeEffect(7)) + "x",
-    "placeholder",
+    "You gain tachyon particles outside of dilation at a reduced rate.<br>Currently: " + shorten(getEnergizeUpgradeEffect(8)) + "x",
     "placeholder",
     "placeholder",
     "Force Aarex to start NG+3.1"
