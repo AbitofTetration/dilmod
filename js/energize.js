@@ -106,12 +106,12 @@ function energize(force) {
 	eternity(true)
 }
 
-var energizeUpgradeCosts = "0.9, 0.9, 0.9, 1, 1, 5, 5, 5, 13, 34, 100, 1e6".split(",");
+var energizeUpgradeCosts = "0.9, 0.9, 0.9, 5, 5, 5, 590, 590, 590, 1e7, 1e8, 1e9".split(",");
 
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
 	if(game.energize.energyShards.lt(energizeUpgradeCosts[i])) return false;
-  if(!game.energize.upgrades.includes(i-3) && !i<2) return false;
+  if(i > 3 && !game.energize.upgrades.includes(i-3)) return false;
 	return true;
 }
 
