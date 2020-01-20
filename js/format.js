@@ -86,7 +86,7 @@ var smallAbbs = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc
 
 function toStandard(value, places, shortPlaces) {
 	if (value.gt(1/0)) return "&#x221e;"
-	else if (typeof(value.mag)!="number" || value.mag>=3e11+3) {
+	else if (typeof(value.mag)!="number" || (value.mag>=3e11+3 && value.layer > 2)) {
 		return doHighStandard(value.mag)
 	} else {
 		var mantissa=value.m
