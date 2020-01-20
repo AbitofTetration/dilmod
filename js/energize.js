@@ -29,7 +29,7 @@ var chargedMilestones = {
 	keepTT: {req:  3, desc: "You keep time studies and time theorems."},
   keepEC: {req:  5, desc: "You keep eternity challenges."},
 	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
-	keepTP: {req:  8, desc: "You keep some of your TP on energize."},
+	keepTP: {req:  8, desc: "You keep some of your TP and dilation upgrades on energize."},
 	keepEU: {req:  10, desc: "You keep eternity upgrades."},
 	keepEx: {req:  10, desc: "You keep ex-dilation upgrades."},
 	tAuto1: {req:  15, desc: "Unlock Time Dimension autobuyer 1"},
@@ -41,7 +41,8 @@ var chargedMilestones = {
 	tAuto7: {req:  21, desc: "Unlock Time Dimension autobuyer 7"},
 	tAuto8: {req:  22, desc: "Unlock Time Dimension autobuyer 8"},
 	tAuto9: {req:  23, desc: "Unlock Time Dimension autobuyer 9"},
-	dShift: {req:  24, desc: "Unlock automatic dilation upgrades"},
+	dAutob: {req:  24, desc: "Unlock automatic dilation upgrades"},
+	epMult: {req:  30, desc: "Unlock automatic EP mult"},
 }
 
 function chargedMilestone(id) {
@@ -83,8 +84,21 @@ function energize(force) {
     upgrades: (!chargedMilestone("keepEx") ? [] : exDilateUpgrades),
     repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
   }
+  let tachyonP = game.dilation.tachyonParticles
+  let tachyonUpgrades = game.dilation.upgrades
   resetReplicanti()
-  resetDilation()
+  game.dilation = {
+    unlocked: false,
+    active: false,
+    tachyonParticles: (!chargedMilestone("keepTP") ? new Decimal(0) : tachyonP),
+    dilatedTime: new Decimal(0),
+    galaxyThreshold: new Decimal(1000),
+    thresholdUpSpeed: new Decimal(5),
+    freeGalaxies: new Decimal(0),
+    generatedTT: new Decimal(0),
+    upgrades: (!chargedMilestone("keepTP") ? [] : tachyonUpgrades),
+    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
+  }
   if(!chargedMilestone("keepTT"))respecTimeStudies()
   game.eternityPoints = new Decimal(0);
   game.eternities = new Decimal(0);

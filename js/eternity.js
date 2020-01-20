@@ -327,10 +327,10 @@ function getDUDescriptions() {
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
     "The first two infinity upgades are stronger based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(4)) + "x",
 		"You gain 1% of Infinity Points on infinity automatically.",
-		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
+		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(6)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
-    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
-    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
+    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
+    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(9)) + "x",
     "Make the max replicated galaxies softcap weaker.",
     "Reduce the free tickspeed interval.",
 		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(11)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : "")

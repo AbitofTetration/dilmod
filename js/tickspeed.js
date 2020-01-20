@@ -174,7 +174,7 @@ function getDilatedGalaxyPower() {
 	var r = new Decimal(1);
 	
   if(game.exDilation.upgrades.includes(4)) r = r.multiply(getExDilationUpgradeEffect(4))
-  if(game.dilation.upgrades.includes(6)) r = r.multiply(2)
+  if(game.dilation.upgrades.includes(7)) r = r.multiply(2)
   
 	return r;
 }
@@ -199,7 +199,7 @@ function getRemoteGalaxyStart() {
 	let r = new Decimal(200);
   
   if(tree.hasStudy("g41")) r = r.multiply(tree.getEff("g41"))
-  if(game.dilation.upgrades.includes(5)) r = r.add(getDilationUpgradeEffect(5))
+  if(game.dilation.upgrades.includes(6)) r = r.add(getDilationUpgradeEffect(6))
   
   return r;
 }
