@@ -111,7 +111,7 @@ var energizeUpgradeCosts = "0.9, 0.9, 0.9, 1, 1, 1, 2, 2, 2, 5, 25, 100".split("
 function canBuyEnergizeUpgrade(i) {
 	if(game.energize.upgrades.includes(i)) return false;
 	if(game.energize.energyShards.lt(energizeUpgradeCosts[i])) return false;
-  if(i > 3 && !game.energize.upgrades.includes(i-3)) return false;
+  if(i > 2 && !game.energize.upgrades.includes(i-3)) return false;
 	return true;
 }
 
@@ -140,7 +140,7 @@ function getEnergizeUpgradeEffect(n) {
     case 7:
       return game.energize.energyShards.pow(1000).divide(3).max(1)
     case 8:
-      return gainedTP().max(1).pow(0.97).max(1)
+      return gainedTP().max(1).log(3).max(1)
 	}
 }
 

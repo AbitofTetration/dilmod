@@ -99,7 +99,7 @@ function update() {
   
   // TP generation
   if(game.energize.upgrades.includes(8))
-    game.dilation.tachyonParticles = game.dilation.tachyonParticles.add(getEnergizeUpgradeEffect(8).multiply(diff/1000))
+    game.dilation.tachyonParticles = game.dilation.tachyonParticles.min(getEnergizeUpgradeEffect(8))
 	
   
   // Replicanti
