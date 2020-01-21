@@ -627,6 +627,7 @@ f()
 window.onresize = f;
 
 addEventListener("keydown", function(e) {
+  if(!(game.currentTab=="automation")){
 	var c = e.keyCode;
 	
 	if(c == 77) maxAll();
@@ -648,6 +649,7 @@ addEventListener("keydown", function(e) {
 		save();
 		e.preventDefault();
 	}
+  }
 })
 
 var mouse = {x: 0, y: 0, dx: 0, dy: 0}

@@ -146,9 +146,9 @@ Study.prototype.canBuy = function(nocost) {
 		if(game.timestudy.studies.includes(p)) or = true; else and = false;
 	});
   
-  if(this.req != "true") {
-    if(this.req == false) return false;
-  }
+  
+    if(this.req) return false;
+  
 	
 	if(this.and) {
 		if(and) return true;
