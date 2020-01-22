@@ -383,7 +383,7 @@ function getDilationTimeGain() {
   let r = game.dilation.tachyonParticles
   
   r = r.multiply(getDilationToimeMult())
-  if(game.dilation.upgrades.includes(8)) r = r.multiply(getDilationUpgradeEffect(9))
+  if(game.dilation.upgrades.includes(9)) r = r.multiply(getDilationUpgradeEffect(9))
   
   return r
 }
