@@ -140,7 +140,7 @@ function getEnergizeUpgradeEffect(n) {
     case 7:
       return game.energize.energyShards.pow(1000).divide(3).max(1)
     case 8:
-      return gainedTP().max(1).log(3).max(1)
+      return gainedTP().max(1).pow(0.88).max(1)
 	}
 }
 
