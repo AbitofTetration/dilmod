@@ -260,7 +260,7 @@ function gainedTP() {
   let thing = game.dilation.repeatUpgr[2].add(1)
   if(game.exDilation.upgrades.includes(0)) thing = thing.add(getExDilationUpgradeEffect(0))
   let tpFormula = Decimal.add(1.5, thing.log(3.5).divide(3))
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, tpFormula)).subtract(game.dilation.tachyonParticles.add(1).log(10).div(4000)).multiply(extraTPMult())
+  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, tpFormula)).subtract(game.dilation.tachyonParticles.div(40)).multiply(extraTPMult())
 }
 
 function extraTPMult() {
@@ -268,7 +268,7 @@ function extraTPMult() {
   
   for (var i = 12; i < 14; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
   if(game.exDilation.upgrades.includes(2)) r = r.multiply(getExDilationUpgradeEffect(2))
-  
+  r=r.multiply(Decimal.pow(4,game.dilation.repeatUpgr[3]))
   return r;
 }
 
