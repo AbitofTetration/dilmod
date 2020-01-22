@@ -543,7 +543,7 @@ function update() {
 	if(getFreeTickspeedUpgrades().gte(1e4)) giveAchievement(96);
 	if(getEffectiveNormalGalaxies().gte(250) && getEffectiveReplicantiGalaxies().eq(0)) giveAchievement(95);
   if(getTotalTT().gte(10)) giveAchievement(79);
-  if(game.dilation.upgrades.length > 6) giveAchievement(92);
+  if(game.dilation.upgrades.length > 5) giveAchievement(92);
 	if(game.infinityPoints.gte("9.99e99999")) giveAchievement(89);
 	
 	// Automation
