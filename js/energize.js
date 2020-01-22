@@ -21,7 +21,7 @@ function atEnergize() {
 }
 
 function gainedEnergyShards() {
-	return game.eternityPoints.add(gainedEternityPoints()).pow(1/3000).multiply(1).divide(10).floor();
+	return game.eternityPoints.add(gainedEternityPoints()).pow(1/9000).multiply(1).divide(10).floor();
 }
 
 var chargedMilestones = {
@@ -51,7 +51,7 @@ function chargedMilestone(id) {
 
 function getEnergize() {
 	if(getChallengeSet() == 4) return getChallengeGoal()
-	return new Decimal("1e3000");
+	return new Decimal("1e9000");
 }
 
 function energize(force) {
@@ -124,7 +124,7 @@ function buyEnergizeUpgrade(i) {
 function getEnergizeUpgradeEffect(n) {
 	switch(n) {
     case 0:
-      return game.energize.times.add(1).pow(game.energize.times.pow(0.5).add(1))
+      return game.energize.times.add(1).pow(game.energize.times.pow(0.7).add(1))
 		case 1:
 			return Math.max(1e25 / getChallengeTimes(2) ** 5, 1) //Decimal.divide(1e25, Decimal.pow(getChallengeTimes(2), 6))
 		case 2:
