@@ -260,7 +260,7 @@ function gainedTP() {
   let thing = game.dilation.repeatUpgr[2].add(1)
   if(game.exDilation.upgrades.includes(0)) thing = thing.add(getExDilationUpgradeEffect(0))
   let tpFormula = Decimal.add(1.5, thing.log(3.5).divide(3))
-  return game.dimensions[0].amount.log(10).div(4000).pow(Decimal.add(1.5, tpFormula)).subtract(game.dilation.tachyonParticles.div(40)).multiply(extraTPMult())
+  return game.dimensions[0].amount.log(10).div(4000).pow(tpFormula.add(1.5)).multiply(extraTPMult()).subtract(game.dilation.tachyonParticles.add(1).div(10)).max(0)
 }
 
 function extraTPMult() {
