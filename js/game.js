@@ -567,7 +567,7 @@ function update() {
 		for(var i = 0; i < 9; i++) names.push("infdimensionAutobuyer" + (e.id - 15));
 		names = names.concat(["infinityShiftAutobuyer", "eternityAutobuyer", "replicantiGalAutobuyer", "replicantiChaAutobuyer", "replicantiIntAutobuyer", "replicantiMaxAutobuyer"])
 		for(var i = 0; i < 9; i++) names.push("timdimensionAutobuyer" + (e.id - 30));
-    names = names.concat(["dilUpgAutobuyer"])
+    names = names.concat(["dilUpgAutobuyer", "epmultAutobuyer"])
 		
 		var div = ge(names[e.id])
 		div.style.visibility = extUnlocked(e.id) ? "visible" : "hidden";
@@ -597,7 +597,7 @@ function update() {
 			runAu(au.script[au.line])
 		}
 	}
-  for(var i = 0; i < 40; i++) {
+  for(var i = 0; i < 41; i++) {
    if(ge(i + "autoSelect").checked) {
      if (extUnlocked(i)) fireExtension(i, true)
      game.automator.enabled[i] = true
