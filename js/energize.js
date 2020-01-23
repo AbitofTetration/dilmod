@@ -21,7 +21,7 @@ function atEnergize() {
 }
 
 function gainedEnergyShards() {
-	return game.eternityPoints.add(gainedEternityPoints()).pow(1/9000).multiply(1).divide(10).floor();
+	return game.eternityPoints.add(gainedEternityPoints()).pow(1/6000).multiply(1).divide(10).floor();
 }
 
 var chargedMilestones = {
@@ -51,7 +51,7 @@ function chargedMilestone(id) {
 
 function getEnergize() {
 	if(getChallengeSet() == 4) return getChallengeGoal()
-	return new Decimal("1e9000");
+	return new Decimal("1e6000");
 }
 
 function energize(force) {
