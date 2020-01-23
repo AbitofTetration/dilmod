@@ -160,6 +160,47 @@ currency {
   text-shadow: 0 0 3px #FF2222, 0 0 5px #2222FF;
 }
 
+.infinitizeTabButton {
+	color: #ffffff;
+	text-shadow: 0px 0px 3px #ffffff;
+	background: radial-gradient(circle, #ffffff, #000000 75%, #e59900 100%);
+	border: 2px solid #000000;
+	font-family: Typewriter;
+	font-weight: bold;
+	border-radius: 4px;
+	transition-duration: 0.2s
+}
+.infinitizeTabButton:hover {
+	color: #000000;
+	text-shadow: 0px 0px 6px #e59900, 0px 0px 6px #e59900, 0px 0px 6px #e59900, 0px 0px 6px #e59900, 0px 0px 6px #e59900, 0px 0px 6px #e59900;
+	cursor: pointer
+}
+
+.metaTabButton {
+	color: #ffffff;
+	text-shadow: 0px 0px 3px #000000;
+	background: radial-gradient(transparent, #ffffff),  linear-gradient(#cccc00, #00cccc 33%, #cc00cc 66%, #cccc00 100%);
+	border: 2px solid #ffffff;
+	font-family: Typewriter;
+	font-weight: bold;
+	border-radius: 4px;
+	animation: meta 3s linear infinite;
+	background-size: 100% 300%;
+	transition-duration: 0.2s
+}
+.metaTabButton:hover {
+	text-shadow: 0px 0px 6px #000000;
+	cursor: pointer;
+}
+@keyframes meta { 
+	0%{
+	    background-position: 0% 0%, 0% 0%;
+	}
+	100%{
+	    background-position: 0% 0%, 300% 300%;
+	}
+}
+
 .cosmicTabButton {
 	color: #76adab;
 	background: radial-gradient(#507574, #3e5959);
@@ -182,6 +223,22 @@ currency {
   box-shadow: 0px 0px 12px 0px #1fd1ac;
 }
 
+.eternitizeTabButton {
+	color: #ffffff;
+	text-shadow: 0px 0px 3px #ffffff;
+	background: radial-gradient(circle, #ffffff, #000000 75%, #b341e0 100%);
+	border: 2px solid #000000;
+	font-family: Typewriter;
+	font-weight: bold;
+	border-radius: 4px;
+	transition-duration: 0.2s
+}
+.eternitizeTabButton:hover {
+	color: #000000;
+	text-shadow: 0px 0px 6px #b341e0, 0px 0px 6px #b341e0, 0px 0px 6px #b341e0, 0px 0px 6px #b341e0, 0px 0px 6px #b341e0, 0px 0px 6px #b341e0;
+	cursor: pointer
+}
+
 .metaprestigeTabButton {
 	color: #e97feb;
 	background: radial-gradient(#9b709c, #7f16ba);
@@ -192,7 +249,7 @@ currency {
 	border-radius: 4px;
 	font-size: 20px;
 	vertical-align: top;
-  text-shadow: 0 0 3px #9b709c, 0 0 5px #7f16ba;
+  text-shadow: 0 0 6px #9b709c, 0 0 5px #7f16ba, 0 0 6px #9b709c, 0 0 5px #7f16ba, 0 0 6px #9b709c, 0 0 5px #7f16ba;
 }
 
 .unfunityTabButton {
@@ -210,7 +267,7 @@ currency {
 .unfunityTabButton:hover {
 	color: black;
 	background: radial-gradient(transparent, #000000), #BB0000;
-  text-shadow: 0 0 3px #AA0000, 0 0 5px #AA0000;
+  text-shadow: 0 0 3px #AA0000, 0 0 5px #AA0000, 0 0 3px #AA0000, 0 0 5px #AA0000, 0 0 7px #AA0000, 0 0 7px #AA0000, 0 0 7px #AA0000;
 }
 
 .metaprestigeTabButton:hover {
