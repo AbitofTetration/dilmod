@@ -106,7 +106,8 @@ var autobuyerFunctions = [
   function() {buyRepeatDil(0)
              buyRepeatDil(1)
              buyRepeatDil(2)
-             buyRepeatDil(3)}
+             buyRepeatDil(3)},
+  function() {buyRepeatEter()}
  ]
 
 function getExtByName(name) {
@@ -127,6 +128,7 @@ function extUnlocked(c) {
   if(c == 29) return eternityMilestone("repMax");
 	if(c > 29 && c < 39) return chargedMilestone("tAuto" + (c-29));
   if(c == 39) return chargedMilestone("dAutob");
+  if(c == 40) return chargedMilestone("epMult");
 }
 
 function ccmd(a, b, c) {

@@ -589,6 +589,7 @@ for(var i = 0; i < 9; i++) t += `
 
 ge("automationTable3").innerHTML += t + `
 <td class = "autobuyer" id = "dilUpgAutobuyer">Dilation Upgrade Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${39}" onclick = "upgradeExtension(39)"></button><input type="checkbox" id="39autoSelect" tooltip="Toggle autobuyer mode"></td>
+<td class = "autobuyer" id = "epmultAutobuyer">EP Multiplier Autobuyer<br><div class = "autobuyerInfo"></div><div class = "autobuyerInner"></div><button class = "autobuyerButton" id = "buyauto${40}" onclick = "upgradeExtension(40)"></button><input type="checkbox" id="40autoSelect" tooltip="Toggle autobuyer mode"></td>
 `
 h = ""
 let all_notations = ['Scientific', 'Standard', 'Tetration', 'Infinity', 'AF5LN', 'Logarithm', 'DCN']

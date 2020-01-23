@@ -29,7 +29,7 @@ var chargedMilestones = {
 	keepTT: {req:  3, desc: "You keep time studies and time theorems."},
   keepEC: {req:  5, desc: "You keep eternity challenges."},
 	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
-	keepTP: {req:  8, desc: "You keep some of your TP and dilation upgrades on energize."},
+	keepTP: {req:  8, desc: "You keep some of your TP, ex-dilation, and dilation upgrades on energize."},
 	keepEU: {req:  10, desc: "You keep eternity upgrades."},
 	keepEx: {req:  10, desc: "You keep ex-dilation upgrades."},
 	tAuto1: {req:  15, desc: "Unlock Time Dimension autobuyer 1"},
@@ -79,8 +79,9 @@ function energize(force) {
 	]
   resetTimeDimensions()
   let exDilateUpgrades = game.exDilation.upgrades
+  let exDilateShit = game.exDilation.amount
   game.exDilation = {
-    amount: new Decimal(0),
+    amount: (!chargedMilestone("keepTP") ? new Decimal(0) : exDilateShit),
     upgrades: (!chargedMilestone("keepEx") ? [] : exDilateUpgrades),
     repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
   }
