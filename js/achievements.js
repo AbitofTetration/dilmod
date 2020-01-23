@@ -139,6 +139,7 @@ function updateAchievements() {
 		a.className = game.achievements.includes(i) ? "achievementunlocked" : "achievementlocked"
 		a.innerHTML = "<br>" + achievementDescriptions[i * 2] + "<br>" + (devMode ? i : "") 
 		a.setAttribute("tooltip", achievementDescriptions[i * 2 + 1])
+	//	a.setAttribute("background", achievementDescriptions[i * 2 + 1])
 		a.style.zIndex = 1e6-i;
 	}
 }
