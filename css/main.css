@@ -13,6 +13,7 @@ body, button {
 }
 
 body {
+  background: linear-gradient(#FFFFFF, #000000 100%);
 	color: #4f5957;
 }
 
