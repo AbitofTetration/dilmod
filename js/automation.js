@@ -293,7 +293,7 @@ function runAu(line, log) {
 		if(ccmd(cmd, "infinity") || ccmd(cmd, "crunch")) runAu("fire 13", log)
 		if(ccmd(cmd, "sacrifice")) runAu("fire 12", log)
 		if(ccmd(cmd, "eternity")) runAu("fire 25", log)
-    if(ccmd(cmd, "exdilate")) exDilate()
+    if(ccmd(cmd, "exdilate")) exDilate(true)
 	}
 	catch(e) {
 		console.error(e)

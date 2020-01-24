@@ -423,9 +423,9 @@ function getExDilationMult() {
   return m
 }
 
-function exDilate() {
+function exDilate(confirmation = false) {
   if(game.dilation.dilatedTime.log(10).gt(5)) {
-    if(confirm("Are you sure you want to ex-dilate? This will Eternity, as well as reset your tachyon particles, dilated time, and repeatable dilation upgrades. However, in exchange, you get " + shorten(game.dilation.dilatedTime.log(10).divide(5).multiply(Decimal.pow(2, game.exDilation.repeatUpgr[0]))) + " ex-dilation based on your tachyon particles. Are you ready?")) {
+    if(confirmation || confirm("Are you sure you want to ex-dilate? This will Eternity, as well as reset your tachyon particles, dilated time, and repeatable dilation upgrades. However, in exchange, you get " + shorten(game.dilation.dilatedTime.log(10).divide(5).multiply(Decimal.pow(2, game.exDilation.repeatUpgr[0]))) + " ex-dilation based on your tachyon particles. Are you ready?")) {
         game.exDilation.amount = game.exDilation.amount.add(game.dilation.dilatedTime.log(10).divide(5).multiply(getExDilationMult()))
         game.dilation.dilatedTime = new Decimal(0)
         game.dilation.galaxyThreshold = new Decimal(1000)

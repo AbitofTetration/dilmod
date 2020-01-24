@@ -105,7 +105,7 @@ function bigCrunch(force) {
 	return true;
 }
 
-var infinityUpgradeCosts = "1,1,3,20,1,2,5,40,1,3,10,100,1,4,15,200,0,1e3,5e3,1e4,2e5,3e6,1e7,1e10,1e18,1e25,1e30,1e38,1e45,0,0,0".split(",");
+var infinityUpgradeCosts = "1,1,3,10,1,2,5,30,1,3,10,50,1,4,15,100,0,1e3,5e3,1e4,2e5,3e6,1e7,1e10,1e18,1e25,1e30,1e38,1e45,0,0,0".split(",");
 
 function canBuyInfinityUpgrade(i) {
 	if(game.infinityUpgrades.includes(i)) return false;
