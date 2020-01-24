@@ -345,9 +345,7 @@ function getDilationUpgradeEffect(n) {
 			return game.dilation.tachyonParticles.pow(6).max(1);
 		case 2:
 			return game.dilation.dilatedTime.pow(4).max(1)
-		case 11:
-			return game.dilation.tachyonParticles.divide(2e20).divide(getTTScaling()).max(1)
-    case 4:
+    case 3:
       return game.dilation.dilatedTime.add(1).log(1.2).max(1)
 		case 6:
 			return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1)
@@ -356,6 +354,8 @@ function getDilationUpgradeEffect(n) {
       return game.dilation.dilatedTime.divide(150).add(1).pow(1/2).pow(10)
 		case 9:
 			return game.dilation.tachyonParticles.add(1).log(8).max(1);
+    case 11:
+			return game.dilation.tachyonParticles.divide(2e20).divide(getTTScaling()).max(1)
 	}
 }
 
