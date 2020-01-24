@@ -520,6 +520,13 @@ currency {
 	box-shadow: inset 0px 0px 10px 0px #ff0;
 }
 
+.timestudy.cavern {
+	background: #000;
+	color: #ffa;
+	border: 1px solid #ff0;
+	box-shadow: inset 0px 0px 10px 0px #ff0;
+}
+
 .timestudybought {
 	color: #000;
 	box-shadow: inset 0px 0px 10px #000;
@@ -552,6 +559,10 @@ currency {
 
 .timestudybought.dilation {
 	background: #ff0;
+}
+
+.timestudybought.cavern {
+	background: #ffa;
 }
 
 .timestudy:hover {

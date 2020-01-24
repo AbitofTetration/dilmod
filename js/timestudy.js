@@ -45,7 +45,7 @@ function Study(p={}) {
 	this.pre = p.pre || [];
 	this.cost = new Decimal(p.cost);
 	this.desc = p.desc;
-	this.req = p.req || "true"
+	this.req = p.req || true
 	this.and = p.and; // if it requires all previous studies as opposed to any
 	this.eff = p.eff; // number, if any
 	this.effb = p.effb || "";
@@ -118,6 +118,7 @@ ns({x:     3, y:     4, id:  "s05", cost:    0, desc: "Eternity Challenge 5", pr
 ns({x:     3, y:     5, id:  "r51", cost:  320, desc: "You permanently keep 2% of your infinities on eternity", pre: ["s05"]})
 ns({x:     4, y:     5, id:  "r52", cost:  320, desc: "Time dimensions are 1e40x as strong.", pre: ["r51"]})
 ns({x:     4, y:     6, id:  "s10", cost:    0, desc: "Eternity Challenge 10", pre: ["r52"]})
+ns({x:     0, y:     4, id:  "c11", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 5}})
 ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:     4, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
