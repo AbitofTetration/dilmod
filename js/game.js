@@ -361,7 +361,7 @@ function update() {
 					ctx.strokeStyle = "#000"
 					ctx.lineWidth = 20;
 					ctx.stroke();
-					ctx.strokeStyle = {"s":"#666","p":"#063","i":"#630","t":"#606","r":"#036","d":"#660","g":"#800","c":"995"}[study.id[0]] + (tree.hasStudy(study.id) ? "" : "6")
+					ctx.strokeStyle = {"s":"#666","p":"#063","i":"#630","t":"#606","r":"#036","d":"#660","g":"#800","c":"#995"}[study.id[0]] + (tree.hasStudy(study.id) ? "" : "6")
 					ctx.lineWidth = 20;
 					ctx.stroke();
 				})

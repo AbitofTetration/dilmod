@@ -28,6 +28,7 @@ function buyReplUpgrade(i) {
 
 function getReplEffect() {
   var r = game.replicanti.amount.floor().add(1).log2().pow(4).max(1);
+  if(tree.hasStudy("c12")) r = game.replicanti.amount.floor().pow(1/12)
   
   if(inChallenge(4,2)) r = new Decimal(1)
   if(challengeCompleted(2,2)) r = r.pow(1.05)
