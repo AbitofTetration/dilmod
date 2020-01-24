@@ -118,14 +118,15 @@ ns({x:     3, y:     4, id:  "s05", cost:    0, desc: "Eternity Challenge 5", pr
 ns({x:     3, y:     5, id:  "r51", cost:  320, desc: "You permanently keep 2% of your infinities on eternity", pre: ["s05"]})
 ns({x:     4, y:     5, id:  "r52", cost:  320, desc: "Time dimensions are 1e40x as strong.", pre: ["r51"]})
 ns({x:     4, y:     6, id:  "s10", cost:    0, desc: "Eternity Challenge 10", pre: ["r52"]})
-ns({x:     0, y:     4, id:  "c11", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
-ns({x:     0, y:     3, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["s00"], req: function() {return getChallengeCompletions(2) >= 5}})
-ns({x:    -1, y:     4, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
-ns({x:     0, y:     4, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
-ns({x:     1, y:     4, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:     5, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
-ns({x:    -0.5, y:     6, id:  "s11", cost: 1e12, desc: "Eternity Challenge 11", pre: ["d31"]})
-ns({x:     0.5, y:     6, id:  "s12", cost: 1e12, desc: "Eternity Challenge 12", pre: ["d31"]})
+ns({x:     0, y:     4, id:  "c11", cost:   10, desc: "Dimensional boosts are 0.01% more effective for each tick upgrade gained from Time Dimensions", eff: function() {return getFreeTickspeedUpgrades().add(10000).divide(10000)}, pre: ["s00"],})
+ns({x:     2, y:     5, id:  "c12", cost:   10, desc: "Dimensional boosts are 0.01% more effective for each tick upgrade gained from Time Dimensions", eff: function() {return getFreeTickspeedUpgrades().add(10000).divide(10000)}, pre: ["c11"],})
+ns({x:     0, y:     9, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["c11"], req: function() {return getChallengeCompletions(2) >= 5}})
+ns({x:    -1, y:    10, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
+ns({x:     0, y:    10, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
+ns({x:     1, y:    10, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})
+ns({x:     0, y:    11, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
+ns({x:    -0.5, y:    12, id:  "s11", cost: 1e12, desc: "Eternity Challenge 11", pre: ["d31"]})
+ns({x:     0.5, y:    12, id:  "s12", cost: 1e12, desc: "Eternity Challenge 12", pre: ["d31"]})
 
 Study.prototype.getPostStudies = function() {
 	var l = []
