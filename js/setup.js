@@ -258,6 +258,8 @@ else newGame();
 
 function save() {
 	saveData.games[saveData.currentGame] = game;
+  
+  console.log("Saved!")
 	
 	localStorage.dilmod = btoa(JSON.stringify(saveData));
 }

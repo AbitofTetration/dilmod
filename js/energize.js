@@ -57,6 +57,9 @@ function getEnergize() {
 function energize(force) {
   if(!atEnergize() && !force) return;
   
+  confirm("Energizing is currently disabled because it breaks the game.")
+  return;
+  
   if(!confirm("Are you sure you want to Energize? This will reset all of your progress in Eternity in exchange for Energy Shards.")) return;
   
   game.energizeTime = Date.now();
@@ -81,11 +84,17 @@ function energize(force) {
   let exDilateUpgrades = game.exDilation.upgrades
   let exDilateShit = game.exDilation.amount
   let exDilateRepeats = game.exDilation.repeatUpgr
+  console.log(exDilateRepeats)
+console.log(exDilateShit)
+console.log(exDilateUpgrades)
   game.exDilation = {
     amount: (!chargedMilestone("keepTP") ? new Decimal(0) : exDilateShit),
     upgrades: (!chargedMilestone("keepEx") ? [] : exDilateUpgrades),
     repeatUpgr: (!chargedMilestone("keepEx") ? [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)] : exDilateRepeats)
   }
+  console.log(game.exDilation.repeatUpgr)
+  console.log(game.exDilation.amount)
+  console.log(game.exDilation.upgrades)
   let tachyonP = game.dilation.tachyonParticles
   let tachyonUpgrades = game.dilation.upgrades
   resetReplicanti()
