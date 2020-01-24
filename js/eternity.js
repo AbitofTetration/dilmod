@@ -326,7 +326,7 @@ function getDUDescriptions() {
 		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
 		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
 		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
-    "The first two infinity upgades are stronger based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(4)) + "x",
+    "The first two infinity upgades are stronger based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "x",
 		"You gain 1% of Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(6)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
