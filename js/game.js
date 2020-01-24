@@ -624,6 +624,8 @@ function update() {
 	runAu("set eter " + game.eternities);
 	runAu("set etertime " + getTimeSince("eternity"));
 	runAu("set dilated " + game.dilation.active);
+	runAu("set tp " + game.dilation.tachyonParticles);
+	runAu("set dt " + game.dilation.dilatedTime);
 }
 
 function getStatisticsDisplay(type) {

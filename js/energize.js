@@ -80,10 +80,11 @@ function energize(force) {
   resetTimeDimensions()
   let exDilateUpgrades = game.exDilation.upgrades
   let exDilateShit = game.exDilation.amount
+  let exDilateRepeats = game.exDilation.repeatUpgr
   game.exDilation = {
     amount: (!chargedMilestone("keepTP") ? new Decimal(0) : exDilateShit),
     upgrades: (!chargedMilestone("keepEx") ? [] : exDilateUpgrades),
-    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)]
+    repeatUpgr: (!chargedMilestone("keepEx") ? [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)] : exDilateRepeats)
   }
   let tachyonP = game.dilation.tachyonParticles
   let tachyonUpgrades = game.dilation.upgrades
