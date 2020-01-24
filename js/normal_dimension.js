@@ -90,6 +90,7 @@ function getDimensionProduction(i) {
 	if(i !== 9 && game.achievements.includes(24)) dim.multiplier = dim.multiplier.multiply(1.08);
 	if(game.achievements.includes(46)) dim.multiplier = dim.multiplier.multiply(dim.bought.max(1))
   if(inChallenge(10, 2)) dim.multiplier = dim.multiplier.multiply(getAllInfinities().pow(1000))
+  if(tree.hasStudy("c21") && i == 9) dim.multiplier = dim.multiplier.multiply(tree.getEff("c21"));
 	
 	if(inChallenge(1) && i == 1) dim.multiplier = dim.multiplier.divide(infp()).max(1);
 	if(inChallenge(7) && i == 9) dim.multiplier = dim.multiplier.multiply(getTickPower().pow(game.tickspeed.bought.multiply(7)));
