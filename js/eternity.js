@@ -330,7 +330,7 @@ function getDUDescriptions() {
 		"You gain 1% of Infinity Points on infinity automatically.",
 		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(6)) + " extra galaxies",
     "Dilated galaxies are twice as powerful.",
-    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
+    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
     "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(9)) + "x",
     "Make the max replicated galaxies softcap weaker.",
     "Reduce the free tickspeed interval.",
@@ -350,8 +350,8 @@ function getDilationUpgradeEffect(n) {
 		case 6:
 			return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1)
       if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1).add(getExDilationUpgradeEffect(5))
-    case 8:
-      return game.dilation.dilatedTime.divide(150).add(1).pow(1/2).pow(10)
+    case 7:
+      return game.dilation.dilatedTime.divide(150).add(1).pow(5)
 		case 9:
 			return game.dilation.tachyonParticles.add(1).log(8).max(1);
     case 11:
