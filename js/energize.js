@@ -57,8 +57,8 @@ function getEnergize() {
 function energize(force) {
   if(!atEnergize() && !force) return;
   
-  confirm("Energizing is currently disabled because it breaks the game.")
-  return;
+/*  confirm("Energizing is currently disabled because it breaks the game.")
+  return; */
   
   if(!confirm("Are you sure you want to Energize? This will reset all of your progress in Eternity in exchange for Energy Shards.")) return;
   
@@ -90,7 +90,7 @@ console.log(exDilateUpgrades)
   game.exDilation = {
     amount: (!chargedMilestone("keepTP") ? new Decimal(0) : exDilateShit),
     upgrades: (!chargedMilestone("keepEx") ? [] : exDilateUpgrades),
-    repeatUpgr: (!chargedMilestone("keepEx") ? [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)] : exDilateRepeats)
+    repeatUpgr: [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)] //(!chargedMilestone("keepEx") ? [new Decimal(0),new Decimal(0),new Decimal(0),new Decimal(0)] : exDilateRepeats)
   }
   console.log(game.exDilation.repeatUpgr)
   console.log(game.exDilation.amount)
