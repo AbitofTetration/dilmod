@@ -33,6 +33,7 @@ body {
 }
 
 .achievementUnlocked {
+  color: rgba(0,255,0,0.5);
 	border-color: #090;
 	background-color: #0909;
 }
