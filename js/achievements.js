@@ -125,8 +125,12 @@ function updateAchievementDescriptions() {
   
   achievementImages = [
     "The first one's always free", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F47ca946b-e0d4-422d-a703-a54e525f58ad.image.png?v=1579974571096",
-    "100 antimatter is a lot", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff71e7fdb-28fa-4a2f-955f-a38ffc3906f8.image.png?v=1579974666134"
-  ]
+    "100 antimatter is a lot", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff71e7fdb-28fa-4a2f-955f-a38ffc3906f8.image.png?v=1579974666134",
+    "Half Life 3 unconfirmed", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff6613a04-50c3-45dd-b64f-a07061a1b60a.image.png?v=1579974981322",
+    "Hard to imagine", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F54a5d596-58d6-4691-82b6-416d6eef41f3.image.png?v=1579975038412"
+  ],
+    
+  placeholderImage = ["https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fec7b91e6-97d4-4cc1-a46f-f1ae6618f4f7.image.png?v=1579974900384"]
 }
 
 
@@ -146,10 +150,10 @@ function updateAchievements() {
 		a.className = game.achievements.includes(i) ? "achievementunlocked" : "achievementlocked"
 		a.innerHTML = "<br>" + achievementDescriptions[i * 2] + "<br>" + (devMode ? i : "") 
 		a.setAttribute("tooltip", achievementDescriptions[i * 2 + 1])
-	  if (achievementDescriptions[i * 2])	{
+	  if (achievementImages.includes(achievementDescriptions[i * 2]))	{
       a.setAttribute("background", achievementImages[i * 2 + 1])
     } else {
-      a.setAttribute("background", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F47ca946b-e0d4-422d-a703-a54e525f58ad.image.png?v=1579974571096")
+      a.setAttribute("background", placeholderImage[0])
     }
 		a.style.zIndex = 1e6-i;
 	}
