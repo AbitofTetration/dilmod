@@ -118,7 +118,7 @@ ns({x:     3, y:     4, id:  "s05", cost:    0, desc: "Eternity Challenge 5", pr
 ns({x:     3, y:     5, id:  "r51", cost:  320, desc: "You permanently keep 2% of your infinities on eternity", pre: ["s05"]})
 ns({x:     4, y:     5, id:  "r52", cost:  320, desc: "Time dimensions are 1e40x as strong.", pre: ["r51"]})
 ns({x:     4, y:     6, id:  "s10", cost:    0, desc: "Eternity Challenge 10", pre: ["r52"]})
-ns({x:     0, y:     5, id:  "c11", cost:   10, desc: "Dimension boosts are 0.01% more effective for each tick upgrade gained from Time Dimensions", eff: function() {return getFreeTickspeedUpgrades().divide(1000000).add(1)}, pre: ["s00"],})
+ns({x:     0, y:     5, id:  "c11", cost:   10, desc: "Dimension boosts are 0.01% more effective for each tick upgrade gained from Time Dimensions", eff: function() {return getFreeTickspeedUpgrades().divide(1000000).add(1).min(2)}, pre: ["s00"],})
 ns({x:     2, y:     6, id:  "c12", cost:   15, desc: "The formula for replicanti multiplier is better.", pre: ["c11"],})
 ns({x:    -2, y:     6, id:  "c21", cost:   15, desc: "Sacrifice provides a greater boost to the ninth dimension.", eff: function() {return getSacrificeMult().add(1).pow(0.25)}, pre: ["c11"],})
 ns({x:  -2.5, y:     7, id:  "c31", cost:   15, desc: "You gain additional replicated galaxies based on your maximum.", eff: function() {return getMaxReplGalaxies().add(1).pow(0.125).subtract(1)}, effb: "+", pre: ["c21"],})
