@@ -124,6 +124,8 @@ function updateAchievementDescriptions() {
 	]
 }
 
+
+
 function giveAchievement(id) {
 	if(game.achievements.includes(id)) return;
 	game.achievements.push(id);
