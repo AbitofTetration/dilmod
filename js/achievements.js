@@ -152,11 +152,11 @@ function updateAchievements() {
 		a.className = game.achievements.includes(i) ? "achievementunlocked" : "achievementlocked"
 		a.innerHTML = "<br>" + achievementDescriptions[i * 2] + "<br>" + (devMode ? i : "") 
 		a.setAttribute("tooltip", achievementDescriptions[i * 2 + 1])
-    a.style.zIndex = 1e6-i;
+  //  a.style.zIndex = 1e6-i;
 	  if (achievementImages[i])	{
-      a.setAttribute("background-image", achievementImages[i])
+      a.setAttribute("style", "background-image: url(" + achievementImages[i] + "); zIndex: " + (1e6-i) + ";")
     } else {
-      a.setAttribute("backgroundImage", placeholderImage[0])
+      a.setAttribute("style", "background-image: url(" + placeholderImage[0] + "); zIndex: " + (1e6-i) + ";")
     }
 	}
 }

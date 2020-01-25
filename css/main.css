@@ -34,7 +34,8 @@ body {
 
 .achievementUnlocked {
 	border-color: #090;
-	background-color: rgba(0,255,0,0.5)
+  color: #00ff00;
+	background-color: #0909;
 }
 
 currency {
