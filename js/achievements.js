@@ -129,7 +129,10 @@ function updateAchievementDescriptions() {
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff6613a04-50c3-45dd-b64f-a07061a1b60a.image.png?v=1579974981322",
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F54a5d596-58d6-4691-82b6-416d6eef41f3.image.png?v=1579975038412",
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F0316d24d-4861-4f23-a6da-37c903a68113.image.png?v=1579976854826",
-    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F7966dcb0-71ad-49f7-bafe-b945539c53f6.image.png?v=1579976917879"
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F7966dcb0-71ad-49f7-bafe-b945539c53f6.image.png?v=1579976917879",
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F6ee34ee5-85ae-4276-b3eb-b54b53addab3.image.png?v=1579978320203",
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fcc09d0d8-f8bb-4eb7-b7fe-a71da895b7b8.image.png?v=1579978377630",
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fb29c3dbe-f8f5-4fc6-be07-01c2d251b0b2.image.png?v=1579978737303"
   ],
     
   placeholderImage = ["https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fec7b91e6-97d4-4cc1-a46f-f1ae6618f4f7.image.png?v=1579974900384"]
@@ -152,11 +155,11 @@ function updateAchievements() {
 		a.className = game.achievements.includes(i) ? "achievementunlocked" : "achievementlocked"
 		a.innerHTML = "<br>" + achievementDescriptions[i * 2] + "<br>" + (devMode ? i : "") 
 		a.setAttribute("tooltip", achievementDescriptions[i * 2 + 1])
-  //  a.style.zIndex = 1e6-i;
+    a.style.zIndex = 1e6-i;
 	  if (achievementImages[i])	{
-      a.setAttribute("style", "background-image: url(" + achievementImages[i] + "); zIndex: " + (1e6-i) + ";")
+      a.setAttribute("background", achievementImages[i])
     } else {
-      a.setAttribute("style", "background-image: url(" + placeholderImage[0] + "); zIndex: " + (1e6-i) + ";")
+      a.setAttribute("background", placeholderImage[0])
     }
 	}
 }
