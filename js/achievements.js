@@ -132,7 +132,8 @@ function updateAchievementDescriptions() {
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F7966dcb0-71ad-49f7-bafe-b945539c53f6.image.png?v=1579976917879",
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F6ee34ee5-85ae-4276-b3eb-b54b53addab3.image.png?v=1579978320203",
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fcc09d0d8-f8bb-4eb7-b7fe-a71da895b7b8.image.png?v=1579978377630",
-    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fb29c3dbe-f8f5-4fc6-be07-01c2d251b0b2.image.png?v=1579978737303"
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fb29c3dbe-f8f5-4fc6-be07-01c2d251b0b2.image.png?v=1579978737303",
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff9315565-332b-4d7e-a9a8-ec710ba73fc8.image.png?v=1579979045495"
   ],
     
   placeholderImage = ["https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fec7b91e6-97d4-4cc1-a46f-f1ae6618f4f7.image.png?v=1579974900384"]
