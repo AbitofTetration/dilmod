@@ -121,7 +121,12 @@ function updateAchievementDescriptions() {
 		"Still waiting for Battle Replicants", `Get a multiplier from replicanti equal to ${shorten(1e30)}x.`,
 		"", ``,
 		"When will I get rid of you?", `Reach ${shortenMoney("1e7000")} infinity points within EC10. Reward: Upgrades that use infinities are ${shortenMoney("1e10")}x stronger.`,
-	]
+	],
+  
+  achievementImages = [
+    "The first one's always free", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F47ca946b-e0d4-422d-a703-a54e525f58ad.image.png?v=1579974571096",
+    "100 antimatter is a lot", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff71e7fdb-28fa-4a2f-955f-a38ffc3906f8.image.png?v=1579974666134"
+  ]
 }
 
 
@@ -141,7 +146,11 @@ function updateAchievements() {
 		a.className = game.achievements.includes(i) ? "achievementunlocked" : "achievementlocked"
 		a.innerHTML = "<br>" + achievementDescriptions[i * 2] + "<br>" + (devMode ? i : "") 
 		a.setAttribute("tooltip", achievementDescriptions[i * 2 + 1])
-	//	a.setAttribute("background", achievementDescriptions[i * 2 + 1])
+	  if (achievementDescriptions[i * 2])	{
+      a.setAttribute("background", achievementImages[i * 2 + 1])
+    } else {
+      a.setAttribute("background", "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F47ca946b-e0d4-422d-a703-a54e525f58ad.image.png?v=1579974571096")
+    }
 		a.style.zIndex = 1e6-i;
 	}
 }
