@@ -153,6 +153,8 @@ function updateAchievementDescriptions() {
     undefined,
   ],
     
+    achievementImages[86] = "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fccf6e4ca-caf8-4031-b892-913916213b78.image.png?v=1580076574065"
+    
   placeholderImage = ["https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fec7b91e6-97d4-4cc1-a46f-f1ae6618f4f7.image.png?v=1579974900384"]
 }
 

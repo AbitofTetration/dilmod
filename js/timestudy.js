@@ -129,7 +129,7 @@ ns({x:     0, y:     9, id:  "s13", cost:   45, desc: "You gain 1% of IP on crun
 ns({x:     0, y:    10, id:  "n11", cost:   20, desc: "You gain 1e308x more IP.", pre: ["s13"], req: function() {return !tree.hasStudy("a11") && !!tree.hasStudy("o11")}})
 ns({x:     0, y:    11, id:  "n12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["n11"]})
 ns({x:     0, y:    12, id:  "n13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["n12"]})
-ns({x:     1, y:    10, id:  "a11", cost:   20, desc: "You gain a decaying IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !!tree.hasStudy("o11")}, eff: function() {return Decimal.pow(10, 1e4/getTimeSince("infinity")).max(50)}, pre: ["s13"]})
+ns({x:     1, y:    10, id:  "a11", cost:   20, desc: "You gain a decaying IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !!tree.hasStudy("o11")}, eff: function() {return Decimal.pow(10, 30/getTimeSince("infinity")).max(50)}, pre: ["s13"]})
 ns({x:     1, y:    11, id:  "a12", cost:   40, desc: "You can have 50% more replicated galaxies, but you cannot automate getting replicated galaxies.", pre: ["a11"]})
 ns({x:     1, y:    12, id:  "a13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["a12"]})
 ns({x:     -1, y:    10, id:  "o11", cost:   20, desc: "You gain a increasing IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !tree.hasStudy("a11")}, eff: function() {return Decimal.pow(10, getTimeSince("infinity")/1e2)}, pre: ["s13"]})
