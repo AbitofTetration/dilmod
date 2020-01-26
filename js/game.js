@@ -340,7 +340,7 @@ function update() {
 			
 			for(var i = 0; i < tree.studies.length; i++) {
 				var study = tree.studies[i];
-				study.button.className = (game.timestudy.studies.includes(study.id) ? "timestudybought " : study.canBuy() ? "timestudy " : "timestudylocked ") + {"s":"special","p":"power","i":"infinity","t":"time","g":"galactic","r":"replication","d":"dilation","c":"cavern"}[study.id[0]]
+				study.button.className = (game.timestudy.studies.includes(study.id) ? "timestudybought " : study.canBuy() ? "timestudy " : "timestudylocked ") + {"s":"special","p":"power","i":"infinity","t":"time","g":"galactic","r":"replication","d":"dilation","c":"cavern","n":"passive"}[study.id[0]]
 				study.button.innerHTML = (devMode ? study.id + "<br>" : "") + study.desc + (study.eff ? "<br>Currently: " + study.effb + window[study.effd](study.eff()) + study.effa : "") + "<br>Cost: " + getFullExpansion(study.cost) + " Time Theorem" + (study.cost==1?"":"s")
 				
 				var x = study.x*200 - tree.camera.x, y = study.y*100 - tree.camera.y;
@@ -361,7 +361,7 @@ function update() {
 					ctx.strokeStyle = "#000"
 					ctx.lineWidth = 20;
 					ctx.stroke();
-					ctx.strokeStyle = {"s":"#666","p":"#063","i":"#630","t":"#606","r":"#036","d":"#660","g":"#800","c":"#995"}[study.id[0]] + (tree.hasStudy(study.id) ? "" : "6")
+					ctx.strokeStyle = {"s":"#666","p":"#063","i":"#630","t":"#606","r":"#036","d":"#660","g":"#800","c":"#995","n":"#600"}[study.id[0]] + (tree.hasStudy(study.id) ? "" : "6")
 					ctx.lineWidth = 20;
 					ctx.stroke();
 				})

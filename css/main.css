@@ -507,6 +507,13 @@ currency {
 	box-shadow: inset 0px 0px 10px 0px #f00;
 }
 
+.timestudy.passive {
+	background: #000;
+	color: #bbf;
+	border: 1px solid #bbf;
+	box-shadow: inset 0px 0px 10px 0px #bbf;
+}
+
 .timestudy.replication {
 	background: #000;
 	color: #06f;
@@ -552,6 +559,10 @@ currency {
 
 .timestudybought.galactic {
 	background: #f00;
+}
+
+.timestudybought.passive {
+	background: #bbf;
 }
 
 .timestudybought.replication {
