@@ -12,6 +12,8 @@ function gainedEternityPoints() {
 
 function getEternityPointMult() {
 	r = Decimal.pow(5, game.repeatEter[0])
+  
+  if(tree.hasStudy("n13")) r = r.multiply(1e30)
 	
 	return r;
 }
