@@ -144,7 +144,7 @@ function updateAchievementDescriptions() {
     undefined,
     undefined,
 
-    undefined,
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fabb4e2d8-98c0-40a4-8fea-0da8581387a5.image.png?v=1580067259509",
     undefined,
     undefined,
     undefined,
