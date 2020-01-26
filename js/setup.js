@@ -456,7 +456,7 @@ for(var i in chargedMilestones) {
 		<td>
 			<button class = "chargedmilestone" id = "chargedMilestone${i}">
 				${m.desc}<br>
-				Requirement: ${m.req} dimension boost${m.req==1?"":"s"}
+				Requirement: ${m.req} energize${m.req==1?"":"s"}
 			</button>
 		</td>
 	`

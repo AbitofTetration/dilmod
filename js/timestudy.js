@@ -125,13 +125,14 @@ ns({x:  -2.5, y:     7, id:  "c31", cost:   15, desc: "You gain additional repli
 ns({x:  -1.5, y:     7, id:  "c32", cost:   15, desc: "Dimension boosts affect Time Dimensions with heavily reduced effect.", eff: function() {return getDimensionBoostEffect().add(1).log(5e7).add(1).pow(0.125)}, pre: ["c21"],})
 ns({x:   2.5, y:     7, id:  "c33", cost:   15, desc: "You gain additional replicated galaxies based on your maximum.", eff: function() {return getMaxReplGalaxies().add(1).pow(0.125).subtract(1)}, effb: "+", pre: ["c12"],})
 ns({x:   1.5, y:     7, id:  "c34", cost:   15, desc: "Dimension boosts affect Time Dimensions with heavily reduced effect.", eff: function() {return getDimensionBoostEffect().add(1).log(5e7).add(1).pow(0.125)}, pre: ["c12"],})
-ns({x:     0, y:     9, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["c11"], req: function() {return getChallengeCompletions(2) >= 5}})
-ns({x:    -1, y:    10, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
-ns({x:     0, y:    10, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
-ns({x:     1, y:    10, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:    11, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
-ns({x:    -0.5, y:    12, id:  "s11", cost: 1e12, desc: "Eternity Challenge 11", pre: ["d31"]})
-ns({x:     0.5, y:    12, id:  "s12", cost: 1e12, desc: "Eternity Challenge 12", pre: ["d31"]})
+ns({x:     0, y:     9, id:  "s13", cost:   45, desc: "You gain 1% of IP on crunch every second.", pre: ["c31", "c32", "c33", "c34"]})
+ns({x:     0, y:    12, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["s13"], req: function() {return getChallengeCompletions(2) >= 5}})
+ns({x:    -1, y:    13, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
+ns({x:     0, y:    13, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
+ns({x:     1, y:    13, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})
+ns({x:     0, y:    14, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
+ns({x:    -0.5, y:    15, id:  "s11", cost: 1e12, desc: "Eternity Challenge 11", pre: ["d31"]})
+ns({x:     0.5, y:    15, id:  "s12", cost: 1e12, desc: "Eternity Challenge 12", pre: ["d31"]})
 
 Study.prototype.getPostStudies = function() {
 	var l = []
