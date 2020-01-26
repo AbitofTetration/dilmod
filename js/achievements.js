@@ -135,12 +135,12 @@ function updateAchievementDescriptions() {
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fb29c3dbe-f8f5-4fc6-be07-01c2d251b0b2.image.png?v=1579978737303",
     
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff9315565-332b-4d7e-a9a8-ec710ba73fc8.image.png?v=1579979045495",
-    undefined,
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fff0a0eb7-2317-48e2-9d68-990b063b1089.image.png?v=1580066793987",
     undefined,
     undefined,
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F351408c8-7cb6-4033-9a19-274e79ff232c.image.png?v=1580006883418",
     undefined,
-    undefined,
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fba625dc4-c5f2-4b98-a745-8bde91e9e222.image.png?v=1580066381514",
     undefined,
     undefined,
 
