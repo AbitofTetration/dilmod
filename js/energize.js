@@ -166,8 +166,8 @@ function getEnUDescriptions() {
     "Normal dimensions gain a multiplier based on the sum of bought.<br>Currently: " + shorten(getEnergizeUpgradeEffect(6)) + "x",
     "Normal dimensions gain a multiplier based on energy shards.<br>Currently: " + shorten(getEnergizeUpgradeEffect(7)) + "x",
     "You gain tachyon particles outside of dilation at a reduced rate.<br>Currently: " + shorten(getEnergizeUpgradeEffect(8)) + "x",
+    "This upgrade is useless so don't buy it.",
     "placeholder",
-    "placeholder",
-    "Force Aarex to start NG+3.1"
+    "Slap Aarex"
 	]
 }
