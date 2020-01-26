@@ -141,7 +141,16 @@ function updateAchievementDescriptions() {
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F351408c8-7cb6-4033-9a19-274e79ff232c.image.png?v=1580006883418",
     undefined,
     undefined,
-    undefined
+    undefined,
+    undefined,
+
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
   ],
     
   placeholderImage = ["https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fec7b91e6-97d4-4cc1-a46f-f1ae6618f4f7.image.png?v=1579974900384"]
