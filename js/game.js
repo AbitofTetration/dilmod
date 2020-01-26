@@ -94,7 +94,7 @@ function update() {
   }
 
   // More IP generation
-	if(game.dilation.upgrades.includes(4)) 
+	if(tree.hasStudy("s13")) 
 		game.infinityPoints = game.infinityPoints.add(gainedInfinityPoints().add(1).divide(100).multiply(getInfinityUpgradeEffect(10)).multiply(diff));
 	
   
