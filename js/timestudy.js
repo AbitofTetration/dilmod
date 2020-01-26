@@ -126,12 +126,15 @@ ns({x:  -1.5, y:     7, id:  "c32", cost:   15, desc: "Dimension boosts affect T
 ns({x:   2.5, y:     7, id:  "c33", cost:   15, desc: "You gain additional replicated galaxies based on your maximum.", eff: function() {return getMaxReplGalaxies().add(1).pow(0.125).subtract(1)}, effb: "+", pre: ["c12"],})
 ns({x:   1.5, y:     7, id:  "c34", cost:   15, desc: "Dimension boosts affect Time Dimensions with heavily reduced effect.", eff: function() {return getDimensionBoostEffect().add(1).log(5e7).add(1).pow(0.125)}, pre: ["c12"],})
 ns({x:     0, y:     9, id:  "s13", cost:   45, desc: "You gain 1% of IP on crunch every second.", pre: ["c31", "c32", "c33", "c34"]})
-ns({x:     0, y:    10, id:  "n11", cost:   20, desc: "You gain 1e308x more IP.", pre: ["s13"], req: function() {}})
+ns({x:     0, y:    10, id:  "n11", cost:   20, desc: "You gain 1e308x more IP.", pre: ["s13"], req: function() {return !tree.hasStudy("a11") && !!tree.hasStudy("o11")}})
 ns({x:     0, y:    11, id:  "n12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["n11"]})
 ns({x:     0, y:    12, id:  "n13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["n12"]})
-ns({x:     1, y:    10, id:  "a11", cost:   20, desc: "You gain a decaying IP multiplier based on time in this infinity.", eff: function() {return Decimal.pow(10, getTimeSince("infinity")/1e4)}, pre: ["s13"]})
-ns({x:     1, y:    11, id:  "a12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["a11"]})
+ns({x:     1, y:    10, id:  "a11", cost:   20, desc: "You gain a decaying IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !!tree.hasStudy("o11")}, eff: function() {return Decimal.pow(10, 1e4/getTimeSince("infinity")).max(50)}, pre: ["s13"]})
+ns({x:     1, y:    11, id:  "a12", cost:   40, desc: "You can have 50% more replicated galaxies, but you cannot automate getting replicated galaxies.", pre: ["a11"]})
 ns({x:     1, y:    12, id:  "a13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["a12"]})
+ns({x:     -1, y:    10, id:  "o11", cost:   20, desc: "You gain a increasing IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !tree.hasStudy("a11")}, eff: function() {return Decimal.pow(10, getTimeSince("infinity")/1e2)}, pre: ["s13"]})
+ns({x:     -1, y:    11, id:  "o12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["o11"]})
+ns({x:     -1, y:    12, id:  "o13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["o12"]})
 ns({x:     0, y:    13, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["n13"], req: function() {return getChallengeCompletions(2) >= 5}})
 ns({x:    -1, y:    14, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:    14, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
@@ -160,9 +163,7 @@ Study.prototype.canBuy = function(nocost) {
 		if(game.timestudy.studies.includes(p)) or = true; else and = false;
 	});
   
-    if(this.req != "true") {
-    if(this.req == false) return false;
-  }
+  if(tree.getStudy(this.id).req != true) if(tree.getStudy(this.id).req() == false) return false;
 	
 	if(this.and) {
 		if(and) return true;
