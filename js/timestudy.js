@@ -132,7 +132,7 @@ ns({x:     0, y:    12, id:  "n13", cost:   60, desc: "You gain 1e30x more EP.",
 ns({x:     1, y:    10, id:  "a11", cost:   20, desc: "You gain a decaying IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !tree.hasStudy("o11")}, eff: function() {return Decimal.pow(10, Decimal.divide("600", getTimeSince("infinity")/10)).max(50)}, pre: ["s13"]})
 ns({x:     1, y:    11, id:  "a12", cost:   40, desc: "You can have 50% more replicated galaxies, but you cannot automate getting replicated galaxies.", pre: ["a11"]})
 ns({x:     1, y:    12, id:  "a13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["a12"]})
-ns({x:     -1, y:    10, id:  "o11", cost:   20, desc: "You gain a increasing IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !tree.hasStudy("a11")}, eff: function() {return Decimal.pow(10, getTimeSince("infinity")/1e2)}, pre: ["s13"]})
+ns({x:     -1, y:    10, id:  "o11", cost:   20, desc: "You gain a increasing IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !tree.hasStudy("a11")}, eff: function() {return Decimal.pow(10, getTimeSince("infinity")/1e4)}, pre: ["s13"]})
 ns({x:     -1, y:    11, id:  "o12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["o11"]})
 ns({x:     -1, y:    12, id:  "o13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["o12"]})
 ns({x:     0, y:    13, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["n13"], req: function() {return getChallengeCompletions(2) >= 5}})
