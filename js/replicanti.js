@@ -63,12 +63,12 @@ function getReplLimit() {
 
 function getMaxReplGalaxies() {
   let r = game.replicanti.upgrades[2]
-  if(game.energize.upgrades.includes(4)) r = r.add(getEnergizeUpgradeEffect(4))
-	if(r.lte(75)) {
-     return r; // cap this at some point
-  } else {
-     return r.log(getMaxReplGalaxiesSoftcap()).add(65.3908740944)
+	if(r.gte(75)) {
+     r=r.log(getMaxReplGalaxiesSoftcap()).add(65.3908740944)
   }
+  if(game.energize.upgrades.includes(4)) r = r.add(getEnergizeUpgradeEffect(4))
+  if(tree.hasStudy("c31"))r=r.add(r.add(1).pow(0.125).subtract(1))
+  return r;
 }
 
 function getMaxReplGalaxiesSoftcap() {
