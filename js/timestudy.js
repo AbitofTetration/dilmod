@@ -57,6 +57,7 @@ function ns(p) {
 	var study = new Study(p);
 	tree.studies.push(study);
 	study.button = document.getElementById("timeStudies").appendChild(document.createElement("button"));
+  //study.button.setAttribute("tooltip", "test")
 	study.button.onclick = function() {
 		study.buy()
 	}
