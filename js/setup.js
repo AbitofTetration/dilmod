@@ -141,6 +141,7 @@ function updateSave() {
 	if(!game.exDilation) resetExDilation();
   if(!game.chargedMilestones) game.chargedMilestones = []
   if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
+  if(!game.presets) game.presets = []
   if(!game.banked) game.banked = {
     infinities: new Decimal(0)
   }
