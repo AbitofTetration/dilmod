@@ -342,7 +342,8 @@ function update() {
 				var study = tree.studies[i];
 				study.button.className = (game.timestudy.studies.includes(study.id) ? "timestudybought " : study.canBuy() ? "timestudy " : "timestudylocked ") + {"s":"special","p":"power","i":"infinity","t":"time","g":"galactic","r":"replication","d":"dilation","c":"cavern","n":"passive"}[study.id[0]]
 				study.button.innerHTML = (devMode ? study.id + "<br>" : "") + study.desc + (study.eff ? "<br>Currently: " + study.effb + window[study.effd](study.eff()) + study.effa : "") + "<br>Cost: " + getFullExpansion(study.cost) + " Time Theorem" + (study.cost==1?"":"s")
-				
+        study.button.setAttribute("tooltip", "test")
+        
 				var x = study.x*200 - tree.camera.x, y = study.y*100 - tree.camera.y;
 				study.button.style.left = x;
 				study.button.style.top = y;
