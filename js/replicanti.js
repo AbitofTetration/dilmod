@@ -58,7 +58,7 @@ function getReplSpeed() {
 }
 
 function getReplLimit() {
-	return infp(getMaxReplGalaxies().add(1)).max(infp())
+	return infp(getMaxReplGalaxies()).max(infp())
 }
 
 function getMaxReplGalaxies() {

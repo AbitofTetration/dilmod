@@ -1,6 +1,7 @@
 var devMode = false;
 
 var lastTab;
+var shiftKey = false
 var tierNames = ["0", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
 var smallCurrency = {
 	infinityPoints: "IP",
@@ -107,7 +108,8 @@ function updateSave() {
 		notation: "Scientific",
 		mixedCutoff: 1e33,
 		fps: 30,
-    autosave: true
+    autosave: true,
+    shiftKey: false
 	}
 	
 	if(!game.achievements) game.achievements = [];
