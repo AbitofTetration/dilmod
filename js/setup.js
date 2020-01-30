@@ -612,6 +612,20 @@ ge("notation").innerHTML = h
 
 h = ""
 
+for(var i = 0; i < 3; i++) {
+	h += "<tr>"
+	h += `
+		<td>
+			<button id = "preset` + i + `" onclick = "switchPresets('` + i + `')" class="buy">` + "Switch to preset + `</button>
+		</td>
+	`
+	h += "</tr>"
+}
+
+ge("preset").innerHTML = h
+
+h = ""
+
 function f() {
 	gc("challenge", function(e, i) {
 		var angle = Math.PI / 6 * i;
