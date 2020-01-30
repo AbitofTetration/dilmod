@@ -29,8 +29,12 @@
 <center>
 	<div style = "padding: 20px">
 		You have <currency id = "antimatter" onclick = "game.dimensions[0].amount = game.dimensions[0].amount.add(1)"></currency> antimatter.<br>
-		You are getting <span id = "antimatterGrowth"></span> antimatter per second.<br><br>
+		You are getting <span id = "antimatterGrowth"></span> antimatter per second.<br>
 	</div>
+  <br>
+  <div id="tickspeedShit">
+    One tick goes by every <div id="tickTime"></div> interval.<br>
+  </div>
 	<div id = "tabButtons">
 		<button class = "tabButton" onclick = "showTab('dimensions')">Dimensions</button>
 		<span id = "optionsButtons" style = "display: none">
@@ -83,6 +87,10 @@
 				<td style = "padding-bottom: 10px"><span id = "boostName"></span> (<span id = "boosts"></span>): requires <span id = "boostReq"></span> dimensions <span id = "boostEffect"></span></td>
 				<td style = "position: absolute; right: 20"><button id = "boost" onclick = "boost()" style = "width: 250px">Reset dimensions for a <span id = "boostPower"></span>x boost</button></td>
 			</tr>
+<!--  <tr id = "boostDisplay">
+				<td style = "padding-bottom: 10px"><span id = "boostName"></span> (<span id = "boosts"></span>): requires <span id = "boostReq"></span> dimensions <span id = "boostEffect"></span></td>
+				<td style = "position: absolute; right: 20"><button id = "boost" onclick = "boost()" style = "width: 250px">Reset dimensions for a <span id = "boostPower"></span>x boost</button></td>
+			</tr> -->
 			<tr id = "galaxyDisplay">
 				<td><span id = "galaxyName"></span> (<span id = "galaxies"> </span><span id = "extraGalaxies"></span>): requires <span id = "galaxyReq"></span> dimensions</td>
 				<td style = "position: absolute; right: 20"><button id = "galaxy" onclick = "galaxy()" style = "width: 250px; height: 40px">Lose dimensions and dimension boosts,<br>but get a tickspeed boost</button></td>
