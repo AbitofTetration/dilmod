@@ -150,7 +150,7 @@ function update() {
 	displayIf("dilation", tree.hasStudy("d11"));
 	displayIf("gainedEP", atEternity());
   displayIf("tickspeedShit", game.options.shiftKey)
-  ge("tickTime").innerHTML = timeDisplayShort(getTickspeed("dimension").reci())
+  ge("tickTime").innerHTML = timeDisplayShort(getTickspeed("dimension").pow(-1), true, 3) //.pow(-1)
 	ge("gainedEP").innerHTML = getChallengeSet() == 3 ? 
 		 (canCompleteChallenge() ? "Other challenges await...<br>I need to become Eternal." : "Reach " + shortenMoney(getChallengeGoal()) + " IP to complete challenge.") : 
 		(!inDilation() ? (haveEternitied() ? 

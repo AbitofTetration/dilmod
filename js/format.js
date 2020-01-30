@@ -244,7 +244,7 @@ function timeDisplayShort(time, rep, places) {
 		return shorten(Decimal.div(time, 31536e4)) + 'y'
 	}
 	if (rep && time < 1) {
-		if (time < 1e-24) return "1 / "+shorten(1/time, places, 0)+"s"
+		if (time < 1e-24) return "1 / "+shorten(Decimal.pow(time, -1), places, 0)+"s"
 		if (time < 0.01) {
 			var log = Math.ceil(-Math.log10(time))
 			return (time * Math.pow(1e3, Math.ceil(log/3))).toFixed(Math.max(places+(log-1)%3-2, 0)) + " "+small[Math.ceil(log/3)]+"s"
