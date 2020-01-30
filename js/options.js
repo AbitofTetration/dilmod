@@ -20,7 +20,9 @@ function updatePresets(num) {
 
 function switchPresets(num) {
   if (!game.presets[num]) return;
-  respecTimeStudies()
+	game.timestudy.theorems = getTotalTT();
+	game.timestudy.studies = [];
+	eternity();
   for (i in game.presets[num]) {
     tree.getStudy(game.presets[num][i]).buy()
   }

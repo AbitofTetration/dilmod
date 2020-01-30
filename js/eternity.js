@@ -109,7 +109,7 @@ function eternity(force) {
 	return true;
 }
 
-function respecTimeStudies(test) {
+function respecTimeStudies(test = true) {
   if(!atEternity()) return;
 	game.timestudy.theorems = getTotalTT();
 	game.timestudy.studies = [];
