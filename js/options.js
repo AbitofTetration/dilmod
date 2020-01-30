@@ -15,13 +15,14 @@ function presets(yes) {
 }
 
 function updatePresets(num) {
-   game.presets[num] = game.timestudy.study
+   game.presets[num] = game.timestudy.studies
 }
 
 function switchPresets(num) {
   if (!game.presets[num]) return;
   respecTimeStudies()
   for (i in game.presets[num]) {
-    game.presets[num].buy()
+    tree.getStudy(game.presets[num][i]).buy()
   }
+  presets(false)
 }

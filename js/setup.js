@@ -616,7 +616,9 @@ for(var i = 0; i < 3; i++) {
 	h += "<tr>"
 	h += `
 		<td>
-			<button id = "preset` + i + `" onclick = "switchPresets('` + i + `')" class="buy">` + "Switch to preset + `</button>
+      <center>Preset #` + i + `<br></center>
+			<button id = "preset` + i + `" onclick = "switchPresets('` + i + `')" class="buy" style="width: 80px">` + "Switch to preset" + `</button>
+			<button id = "upreset` + i + `" onclick = "updatePresets('` + i + `')" class="buy" style="width: 80px">` + "Update preset" + `</button>
 		</td>
 	`
 	h += "</tr>"
