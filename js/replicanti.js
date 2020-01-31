@@ -51,6 +51,7 @@ function getReplSpeed() {
 	if(tree.hasStudy("r22")) r = r.multiply(3)
   if(tree.hasStudy("g12")) r = r.multiply(tree.getEff("g12"))
   if(tree.hasStudy("g31")) r = r.multiply(tree.getEff("g31").min(500))
+  if(tree.hasStudy("c33")) r = r.multiply(5)
   if(challengeCompleted(4, 2)) r = r.multiply(Decimal.pow(2, getTimeSince("eternity")/1e6).min(infp(0.25)))
 	if(game.dilation.upgrades.includes(0)) r = r.multiply(getDilationUpgradeEffect(0))
 	

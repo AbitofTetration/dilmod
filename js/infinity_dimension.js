@@ -13,7 +13,9 @@ function InfinityDimension(i) {
 
 function getInfinityShiftCost() {
 	if(game.infinityShifts.lt(4)) return infp(game.infinityShifts.add(2).multiply(2))
-	return infp(game.infinityShifts.multiply(2).pow(2));
+  let r = infp(game.infinityShifts.multiply(2).pow(2))
+      
+	return r;
 }
 
 function canInfinityShift() {
