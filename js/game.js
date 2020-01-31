@@ -204,7 +204,7 @@ function update() {
 			
 			ge("boosts").textContent = getFullExpansion(getEffectiveDimensionBoosts());
 			dr = getDimensionBoostReq()
-			ge("boostReq").textContent = (inChallenge(11) ? getFullExpansion(dr, 2) + " fourth " : getFullExpansion(dr.ceil()) + " ninth ");
+			ge("boostReq").textContent = (inChallenge(11) ? getFullExpansion(dr, 2) + " fourth " : (tree.hasStudy("c35") ? getFullExpansion(dr, 2) + " ninth " : getFullExpansion(dr.ceil()) + " ninth "));
 			ge("boost").className = canBoost() ? "buy" : "lock" 
 			
 			ge("galaxies").textContent = getFullExpansion(getEffectiveNormalGalaxies());

@@ -127,6 +127,7 @@ ns({x:  -2.5, y:     7, id:  "c31", cost:   15, desc: "You gain additional repli
 ns({x:  -1.5, y:     7, id:  "c32", cost:   15, desc: "Dimension boosts affect Time Dimensions with heavily reduced effect.", eff: function() {return getDimensionBoostEffect().add(1).log(5e7).add(1).pow(0.125)}, pre: ["c21"],})
 ns({x:   0.5, y:     7, id:  "c33", cost:   15, desc: "Replicanti grow 5x faster.", pre: ["c12"],})
 ns({x:  -0.5, y:     7, id:  "c34", cost:   15, desc: "Dimension boosts affect Time Dimensions with heavily reduced effect.", eff: function() {return getDimensionBoostEffect().add(1).log(5e7).add(1).pow(0.125)}, pre: ["c12"],})
+ns({x:   2.5, y:     7, id:  "c35", cost:   15, desc: "Replicanti decrease the cost for dimension boosts.", eff: function() {return game.replicanti.amount.max(1).log(200).max(1).log(200).max(1)}, effb: "/", pre: ["c13"],})
 ns({x:     0, y:     9, id:  "s13", cost:   45, desc: "You gain 1% of IP on crunch every second.", pre: ["c31", "c32", "c33", "c34"]})
 ns({x:     0, y:    10, id:  "n11", cost:   20, desc: "You gain 1e308x more IP.", pre: ["s13"], req: function() {return !tree.hasStudy("a11") && !tree.hasStudy("o11")}})
 ns({x:     0, y:    11, id:  "n12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["n11"]})

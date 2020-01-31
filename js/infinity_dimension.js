@@ -14,6 +14,8 @@ function InfinityDimension(i) {
 function getInfinityShiftCost() {
 	if(game.infinityShifts.lt(4)) return infp(game.infinityShifts.add(2).multiply(2))
   let r = infp(game.infinityShifts.multiply(2).pow(2))
+  
+  if(tree.hasStudy("c13")) r = r.divide(1.25)
       
 	return r;
 }
