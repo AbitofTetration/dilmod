@@ -279,7 +279,7 @@ function update() {
       ge("blackHoleEffect").textContent = shorten(getBlackHoleEffect(), 2, 2)
       let stuff = ["TT", "DB"]
       for(i = 0; i < 2;) {
-        ge("repeatBH" + i).className = getBlackHoleMultipliersBuy(stuff[i]) ? "exDilation" : "exDilationLocked";
+      //  ge("repeatBH" + i).className = getBlackHoleMultipliersBuy(stuff[i]) ? "exDilation" : "exDilationLocked";
       }
 		}
 	}
