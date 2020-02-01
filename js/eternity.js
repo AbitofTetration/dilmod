@@ -377,7 +377,7 @@ function getDilationToimeMult() {
   let r = Decimal.pow(2, game.dilation.repeatUpgr[0])
   
   for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
-
+if(game.exDilation.upgrades.includes(2))r=r.multiply(getExDilationUpgradeEffect(2))
   return r
 }
 
