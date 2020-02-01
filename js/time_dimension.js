@@ -1,5 +1,5 @@
-var timeDimensionBaseCosts = [0, 1, 10, 100, 1000, 1e90, 1e140, 1e200, 1e280, 1e280]
-var timeDimensionCostMults = [0, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
+var timeDimensionBaseCosts = [0, 1, 10, 100, 1000, "1e2000", "1e5200", "1e6000", "1e9800", "1e15000"]
+var timeDimensionCostMults = [0, 3, 9, 27, 81, 59049, 3486784401, 1.2157665e19, 1.4780882e38, 2.1847447e78]
 var timeDimensionBuyMults = [0, 4, 4, 4, 4, 4, 4, 4, 4, 4]
 
 function TimeDimension(i) {
