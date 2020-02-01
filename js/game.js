@@ -71,6 +71,7 @@ function update() {
 	updateDimensionSet("dimension")
 	updateDimensionSet("infinityDimension", "inf", " IP")
 	updateDimensionSet("timeDimension", "time", " EP", true)
+	updateDimensionSet("blackHoleDimension", "blackhole", " ET")
 	game.totalAntimatter = game.totalAntimatter.add(getDimensionProduction(1).multiply(getTickspeed("dimension")).multiply(diff/1000));
 	
   // IP and infinity generation
@@ -264,6 +265,15 @@ function update() {
 			ge("freeTickspeedEffect").textContent = shorten(getTickPower().pow(getFreeTickspeedUpgrades()))
 			ge("timeShardThreshold").textContent = shorten(getFreeTickspeedThreshold())
 			ge("timeShardGrowth").textContent = shorten(getTimeDimensionProduction(1).multiply(getTickspeed("timeDimension")))
+		}
+		
+		// Infinity Dimensions
+		
+		if(game.currentDimensionTab == "blackhole") {
+			ge("unlockBHs").className = canUnlockBlackHole() ? "buy" : "lock"
+      displayIf("unlockBHs", !game.blackHole.unlocked);
+      displayIf("blackholeShit", game.blackHole.unlocked);
+      ge("blackHoleEnergy").textContent = shortenMoney(game.blackHoleDimensions[0].amount)
 		}
 	}
 	

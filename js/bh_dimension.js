@@ -11,7 +11,19 @@ function TimeDimension(i) {
 	this.costMult = new Decimal(bhDimensionCostMults[i]);
 }
 
+function canUnlockBlackHole() {
+  return game.exDilation.amount.gt(100)
+}
+function unlockBlackHole() {
+  if(!canUnlockBlackHole()) return;
+  game.exDilation.amount = game.exDilation.amount.subtract(100)
+  game.blackHole.unlocked = true;
+}
+
 function resetBHDimensions() {
+  game.blackHole = {
+    unlocked: false
+  };
 	game.blackHoleDimensions = [];
 
 	for(var i = 0; i <= 10; i++) {
@@ -21,7 +33,7 @@ function resetBHDimensions() {
 	game.blackHoleDimensions[0].amount = new Decimal(0);
 }
 
-function getBHDimensionProduction(i) {
+function getBlackHoleDimensionProduction(i) {
 	var dim = game.blackHoleDimensions[i];
 	
 	dim.multiplier = Decimal.pow(bhDimensionBuyMults[dim.id], dim.bought)
@@ -29,15 +41,15 @@ function getBHDimensionProduction(i) {
 	return dim.amount.multiply(dim.multiplier);
 }
 
-function canBuyBHDimension(i) {
+function canBuyBlackHoleDimension(i) {
 	return game.blackHoleDimensions[i].cost.lte(game.exDilation.amount);
 }
 
-function buyBHDimension(i) {
+function buyBlackHoleDimension(i) {
 	var dim = game.blackHoleDimensions[i];
 	
 	dim.cost = dim.costMult.pow(dim.bought).multiply(bhDimensionBaseCosts[i]);
-	if(!canBuyBHDimension(i)) return;
+	if(!canBuyBlackHoleDimension(i)) return;
 	game.exDilation.amount = game.exDilation.amount.subtract(dim.cost);
 	
 	dim.amount = dim.amount.add(1);
@@ -48,9 +60,9 @@ function buyBHDimension(i) {
 	return true;
 }
 
-function maxBHDimension(i) {
+function maxBlackHoleDimension(i) {
 	var dim = game.blackHoleDimensions[i];
-	if(!canBuyBHDimension(i)) return;
+	if(!canBuyBlackHoleDimension(i)) return;
 	
 	dim.bought = game.exDilation.amount.divide(bhDimensionBaseCosts[i]).log10().divide(Decimal.log10(bhDimensionCostMults[i])).add(1).floor();
 	dim.amount = dim.amount.max(dim.bought)
@@ -58,7 +70,7 @@ function maxBHDimension(i) {
 	if(game.exDilation.amount.lt("eee1")) game.exDilation.amount = game.exDilation.amount.subtract(dim.cost.divide(bhDimensionCostMults[i]));
 }
 
-function maxAllBHDimensions() {
-	for(var i = 1; i < 4; i++) maxBHDimension(i);
+function maxAllBlackHoleDimensions() {
+	for(var i = 1; i < 4; i++) maxBlackHoleDimension(i);
 }
 
