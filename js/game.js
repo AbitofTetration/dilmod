@@ -208,7 +208,7 @@ function update() {
 			ge("boost").className = canBoost() ? "buy" : "lock" 
 			
 			ge("galaxies").textContent = getFullExpansion(getEffectiveNormalGalaxies());
-			ge("extraGalaxies").textContent = " + " + getFullExpansion(getEffectiveReplicantiGalaxies()) + (getFreeDilatedGalaxies().gt(0) ? " + " + shortenMoney(getFreeDilatedGalaxies()) : "");
+			ge("extraGalaxies").textContent = " + " + getFullExpansion(game.replicanti.galaxies) + (getFreeDilatedGalaxies().gt(0) ? " + " + shortenMoney(getFreeDilatedGalaxies()) : "");
 			ge("galaxyReq").textContent = getFullExpansion(getGalaxyReq()) + (inChallenge(11) ? " fourth " : " ninth ");
 			ge("galaxy").className = canGalaxy() ? "buy" : "lock" 
 			
@@ -641,6 +641,10 @@ function getStatisticsDisplay(type) {
 			if(game.totalGalaxies.gt(0)) lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies.`)
 			if(game.totalBoosts.gt(0)) lines.push(`You have dimension boosted a total of ${getFullExpansion(game.totalBoosts)} times.`)
 			if(game.totalGalaxies.gt(0)) lines.push(`You have created a total of ${getFullExpansion(game.totalGalaxies)} antimatter galaxies.`)
+      
+      if(game.galaxies.gt(0)) {
+        lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies, doing ${getEffectiveGalaxies().divide(getEffectiveNormalGalaxies())}`)
+      }
 		
 			lines.push("")
 			if (haveInfinitied()) {
