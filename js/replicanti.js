@@ -77,6 +77,7 @@ function getMaxReplGalaxiesSoftcap() {
   let s = 1.5
   
   if(game.dilation.upgrades.includes(9)) s *= 0.9
+  if(game.exDilation.upgrades.includes(8)) s *= 0.9
   
   return s
 }
