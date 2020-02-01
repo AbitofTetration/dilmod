@@ -73,7 +73,7 @@ function update() {
 	updateDimensionSet("dimension")
 	updateDimensionSet("infinityDimension", "inf", " IP")
 	updateDimensionSet("timeDimension", "time", " EP", true)
-	updateDimensionSet("blackHoleDimension", "blackhole", " ET")
+	updateDimensionSet("blackHoleDimension", "blackhole", " ED")
 	game.totalAntimatter = game.totalAntimatter.add(getDimensionProduction(1).multiply(getTickspeed("dimension")).multiply(diff/1000));
 	
   // IP and infinity generation
@@ -277,6 +277,10 @@ function update() {
       displayIf("blackholeShit", game.blackHole.unlocked);
       ge("blackHoleEnergy").textContent = shortenMoney(game.blackHoleDimensions[0].amount)
       ge("blackHoleEffect").textContent = shorten(getBlackHoleEffect(), 2, 2)
+      let stuff = ["TT", "DB"]
+      for(i = 0; i < 2;) {
+        ge("repeatBH" + i).className = getBlackHoleMultipliersBuy(stuff[i]) ? "exDilation" : "exDilationLocked";
+      }
 		}
 	}
 	

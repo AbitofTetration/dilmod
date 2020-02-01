@@ -140,6 +140,7 @@ function updateSave() {
 	if(!game.dilation) resetDilation();
 	if(!game.exDilation) resetExDilation();
   if(!game.blackHoleDimensions) resetBHDimensions()
+  if(!game.blackHole.multipliers) game.blackHole.multipliers = [new Decimal(0), new Decimal(0)]
   if(!game.chargedMilestones) game.chargedMilestones = []
   if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
   if(!game.presets) game.presets = []
@@ -563,6 +564,13 @@ ge("exDilationUpgrades").innerHTML = h + `
 	<td><button id = "repeatEDil0" onclick = "buyRepeatExDil(0)"></button></td>
 	<td><button id = "repeatEDil1" onclick = "buyRepeatExDil(1)"></button></td>
 	<td><button id = "repeatEDil2" onclick = "buyRepeatExDil(2)"></button></td>
+</tr>
+`
+
+ge("blackHoleUpgrades").innerHTML = `
+<tr>
+	<td><button id = "repeatBH0" onclick = "buyRepeatExDil(0)"></button></td>
+	<td><button id = "repeatBH1" onclick = "buyRepeatExDil(1)"></button></td>
 </tr>
 `
 
