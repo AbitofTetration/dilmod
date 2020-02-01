@@ -70,6 +70,7 @@ function getMaxReplGalaxies() {
   if(game.energize.upgrades.includes(4)) r = r.add(getEnergizeUpgradeEffect(4))
   if(tree.hasStudy("c31"))r=r.add(r.add(1).pow(0.125).subtract(1))
   if(tree.hasStudy("a12"))r=r.multiply(1.5)
+  r = r.add(getBlackHoleEffect())
   return r;
 }
 

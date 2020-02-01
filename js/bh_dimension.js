@@ -74,3 +74,6 @@ function maxAllBlackHoleDimensions() {
 	for(var i = 1; i < 4; i++) maxBlackHoleDimension(i);
 }
 
+function getBlackHoleEffect() {
+  return game.blackHoleDimensions[0].amount.add(1).log(10).floor()
+}

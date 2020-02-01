@@ -389,7 +389,7 @@ for(var i = 1; i < 10; i++) ge("blackholeDimensions").innerHTML += `
 	<td style = "position: absolute; width: 100"><span id = "blackholedimamount`+i+`"></span></td>
 	<td style = "position: absolute; width: 200; left: 400; text-align: left"><span id = "blackholedimgrowth`+i+`"></span></td>
 	<td style = "position: absolute; width: 200; left: 600">x<span id = "blackholedimmult`+i+`"></span></td>
-	<td style = "position: absolute; right: 20"><button class = "buy" id = "blackholedimbuy`+i+`" onclick = "buyBHDimension(`+i+`)"></button></td>
+	<td style = "position: absolute; right: 20"><button class = "buy" id = "blackholedimbuy`+i+`" onclick = "buyBlackHoleDimension(`+i+`)"></button></td>
 </tr>`
 
 h = ""

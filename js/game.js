@@ -24,6 +24,8 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 				game.infinityShifts.gte(i) : 
 			name == "timeDimension" ? 
 				i < maxTimeD() : 
+			name == "blackHoleDimension" ? 
+				i < 5 : 
 				true
 			)
 			
@@ -274,6 +276,7 @@ function update() {
       displayIf("unlockBHs", !game.blackHole.unlocked);
       displayIf("blackholeShit", game.blackHole.unlocked);
       ge("blackHoleEnergy").textContent = shortenMoney(game.blackHoleDimensions[0].amount)
+      ge("blackHoleEffect").textContent = shorten(getBlackHoleEffect(), 2, 2)
 		}
 	}
 	
