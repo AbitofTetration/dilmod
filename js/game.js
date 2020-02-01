@@ -641,9 +641,16 @@ function getStatisticsDisplay(type) {
 			if(game.totalGalaxies.gt(0)) lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies.`)
 			if(game.totalBoosts.gt(0)) lines.push(`You have dimension boosted a total of ${getFullExpansion(game.totalBoosts)} times.`)
 			if(game.totalGalaxies.gt(0)) lines.push(`You have created a total of ${getFullExpansion(game.totalGalaxies)} antimatter galaxies.`)
+      lines.push("")
       
       if(game.galaxies.gt(0)) {
-        lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies, doing ${getEffectiveGalaxies().divide(getEffectiveNormalGalaxies())}`)
+        lines.push(`You have ${getFullExpansion(game.galaxies)} antimatter galaxies, doing ${shorten(getEffectiveNormalGalaxies().divide(getEffectiveGalaxies()).multiply(getGalaxyPower()).multiply(100), 2)}% of the work.`)
+      }
+      if(game.replicanti.galaxies.gt(0)) {
+        lines.push(`You have ${getFullExpansion(game.replicanti.galaxies)} replicated galaxies, doing ${shorten(getEffectiveReplicantiGalaxies().divide(getEffectiveGalaxies()).multiply(getGalaxyPower()).multiply(100), 2)}% of the work.`)
+      }
+      if(getFreeDilatedGalaxies().gt(0)) {
+        lines.push(`You have ${getFullExpansion(getFreeDilatedGalaxies())} dilated galaxies, doing ${shorten(getEffectiveDilashunGalaxies().divide(getEffectiveGalaxies()).multiply(getGalaxyPower()).multiply(100), 2)}% of the work.`)
       }
 		
 			lines.push("")
