@@ -142,7 +142,7 @@ ns({x:     0, y:    13, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>
 ns({x:    -1, y:    14, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:    14, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     1, y:    14, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})
-ns({x:     0, y:    15, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 12}})
+ns({x:     0, y:    15, id:  "d31", cost:  1e9, desc: "Unlock ex-dilation.<br>Requirement: Complete ten eternity challenges.", pre: ["d22"], req: function() {return getChallengeCompletions(2) >= 10}})
 ns({x:    -0.5, y:    16, id:  "s11", cost: 1e12, desc: "Eternity Challenge 11", pre: ["d31"]})
 ns({x:     0.5, y:    16, id:  "s12", cost: 1e12, desc: "Eternity Challenge 12", pre: ["d31"]})
 

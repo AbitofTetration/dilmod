@@ -36,7 +36,7 @@ function boost(bulk) {
 
 function getDimensionBoostScaling() {
 	var r = new Decimal(2);
-  if(tree.hasStudy("c35")) r = r.divide(tree.getEff("c35"))
+  if(tree.hasStudy("c35")) r = r.divide(1.15)
 	if(game.infinityUpgrades.includes(13)) r = r.multiply(0.75);
 	if(inChallenge(11)) r = r.divide(3);
 	return r;
