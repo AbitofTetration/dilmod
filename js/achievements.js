@@ -136,8 +136,8 @@ function updateAchievementDescriptions() {
     
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff9315565-332b-4d7e-a9a8-ec710ba73fc8.image.png?v=1579979045495",
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fff0a0eb7-2317-48e2-9d68-990b063b1089.image.png?v=1580066793987",
-    undefined,
-    undefined,
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Ff1346995-580b-4950-8745-9c706f6585ce.image.png?v=1580593295076",
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Feb7a54ec-335f-4813-bc01-18935348b662.image.png?v=1580593340352",
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F351408c8-7cb6-4033-9a19-274e79ff232c.image.png?v=1580006883418",
     undefined,
     "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2Fba625dc4-c5f2-4b98-a745-8bde91e9e222.image.png?v=1580066381514",
@@ -172,7 +172,7 @@ function updateAchievementDescriptions() {
     undefined,
     undefined,
     undefined,
-    undefined,
+    "https://cdn.glitch.com/83b2486f-7428-43b5-8145-638f923ef852%2F012d8779-cae2-4458-b32e-75cc9f4a00b5.image.png?v=1580593308693",
 
     undefined,
     undefined,
