@@ -64,6 +64,7 @@
 			<button id = "normalDimensionButton" class = "subtabButton" onclick = "showDimensionTab('normal')">Dimensions</button>
 			<button id = "infinityDimensionButton" class = "subtabButton" onclick = "showDimensionTab('infinity')">Infinity Dimensions</button>
 			<button id = "timeDimensionButton" class = "subtabButton" onclick = "showDimensionTab('time')">Time Dimensions</button>
+			<button id = "blackHoleDimensionButton" class = "subtabButton" onclick = "showDimensionTab('blackhole')">BH Dimensions</button>
 		</div>
 	</center>
 	<div class = "dimensionTab" id = "normalDimensionTab">
@@ -126,6 +127,17 @@
 		</center>
 		<br>
 		<table id = "timeDimensions" style = "font-size: 13px; text-align: left"></table>
+	</div>
+	<div class = "dimensionTab" id = "blackholeDimensionTab">
+		<center id = "timeShardArea" style = "font-size: 12px">
+      <span id = "infiniteTime">Your "Infinite Time" multiplier is <span id = "infiniteTimeMulti"></span>x.<br></span>
+			You've gained <currency id = "freeTickspeed"></currency> tickspeed upgrades. They multiply tickspeed by <currency id = "freeTickspeedEffect"></currency>.<br>
+			You have <currency id = "timeShards"></currency> time shards. Next tickspeed upgrade at <currency id = "timeShardThreshold"></currency>.<br>
+			You are getting <span id = "timeShardGrowth"></span> time shards per second.<br>
+			<button class = "buy" style = "width: 100px; font-size: 13px; margin-top: 10px" onclick = "maxAllTimeDimensions()">Max All</button>
+		</center>
+		<br>
+		<table id = "blackholeDimensions" style = "font-size: 13px; text-align: left"></table>
 	</div>
 </div>
 
@@ -395,6 +407,7 @@
 <script src = "js/normal_dimension.js"></script>
 <script src = "js/infinity_dimension.js"></script>
 <script src = "js/time_dimension.js"></script>
+<script src = "js/bh_dimension.js"></script>
 <script src = "js/tickspeed.js"></script>
 <script src = "js/dimboost.js"></script>
 <script src = "js/infinity.js"></script>
