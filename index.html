@@ -129,14 +129,11 @@
 		<table id = "timeDimensions" style = "font-size: 13px; text-align: left"></table>
 	</div>
 	<div class = "dimensionTab" id = "blackholeDimensionTab">
-		<center id = "timeShardArea" style = "font-size: 12px">
-      <span id = "infiniteTime">Your "Infinite Time" multiplier is <span id = "infiniteTimeMulti"></span>x.<br></span>
-			You've gained <currency id = "freeTickspeed"></currency> tickspeed upgrades. They multiply tickspeed by <currency id = "freeTickspeedEffect"></currency>.<br>
-			You have <currency id = "timeShards"></currency> time shards. Next tickspeed upgrade at <currency id = "timeShardThreshold"></currency>.<br>
-			You are getting <span id = "timeShardGrowth"></span> time shards per second.<br>
-			<button class = "buy" style = "width: 100px; font-size: 13px; margin-top: 10px" onclick = "maxAllTimeDimensions()">Max All</button>
-		</center>
-		<br>
+    <center>
+      <button id = "unlockBHs" class = "buy" onclick = "infinityShift()" style = "font-size: 14px; width: 250px; height: 50px;">
+        Unlock black hole dimensions.
+      </button>
+    </center>
 		<table id = "blackholeDimensions" style = "font-size: 13px; text-align: left"></table>
 	</div>
 </div>

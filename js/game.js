@@ -173,6 +173,7 @@ function update() {
 	displayIf("infinityTabs", game.infinityUpgrades.length > 15 || game.break || haveEternitied())
 	displayIf("dimensionTabs", game.break || haveEternitied())
 	displayIf("timeDimensionButton", haveEternitied());
+  displayIf("blackHoleDimensionButton", tree.hasStudy("d31"));
 	displayIf("postInfinityUpgrades", game.break)
 	d = game.options.smallOptions
 	displayIf("optionsButton", d)
