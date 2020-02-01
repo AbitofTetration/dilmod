@@ -134,6 +134,7 @@ function updateSave() {
 	if(!game.eternityPoints) game.eternityPoints = new Decimal(0);
 	if(!game.eternities) game.eternities = new Decimal(0);
 	if(!game.timeDimensions) resetTimeDimensions();
+  console.log(game.timeDimensions)
 	if(!game.timestudy) game.timestudy = {theorems: new Decimal(0), bought: [new Decimal(0), new Decimal(0), new Decimal(0)], studies: []};
 	if(!game.eternityUpgrades) resetEternityUpgrades();
 	if(!game.replicanti) resetReplicanti();
