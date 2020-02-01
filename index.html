@@ -64,7 +64,6 @@
 			<button id = "normalDimensionButton" class = "subtabButton" onclick = "showDimensionTab('normal')">Dimensions</button>
 			<button id = "infinityDimensionButton" class = "subtabButton" onclick = "showDimensionTab('infinity')">Infinity Dimensions</button>
 			<button id = "timeDimensionButton" class = "subtabButton" onclick = "showDimensionTab('time')">Time Dimensions</button>
-			<button id = "blackHoleDimensionButton" class = "subtabButton" onclick = "showDimensionTab('blackhole')">BH Dimensions</button>
 		</div>
 	</center>
 	<div class = "dimensionTab" id = "normalDimensionTab">
@@ -127,22 +126,6 @@
 		</center>
 		<br>
 		<table id = "timeDimensions" style = "font-size: 13px; text-align: left"></table>
-	</div>
-	<div class = "dimensionTab" id = "blackholeDimensionTab">
-    <center>
-      <button id = "unlockBHs" class = "buy" onclick = "unlockBlackHole()" style = "font-size: 14px; width: 250px; height: 90px;">
-        Unlock black hole dimensions.<br>
-        Cost: 100 Ex-Dilation
-      </button>
-    </center>
-		<span id="blackholeShit">
-    <center>
-      You have <currency id="blackHoleEnergy"></currency> black hole energy, boosting max RGs by +<currency id="blackHoleEffect"></currency>
-      <table id = "blackHoleUpgrades" style = "font-size: 10px"></table>
-    </center>
-  
-    <table id = "blackholeDimensions" style = "font-size: 13px; text-align: left"></table>
-    </span>
 	</div>
 </div>
 
@@ -412,7 +395,6 @@
 <script src = "js/normal_dimension.js"></script>
 <script src = "js/infinity_dimension.js"></script>
 <script src = "js/time_dimension.js"></script>
-<script src = "js/bh_dimension.js"></script>
 <script src = "js/tickspeed.js"></script>
 <script src = "js/dimboost.js"></script>
 <script src = "js/infinity.js"></script>

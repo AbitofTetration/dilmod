@@ -139,8 +139,6 @@ function updateSave() {
 	if(!game.replicanti) resetReplicanti();
 	if(!game.dilation) resetDilation();
 	if(!game.exDilation) resetExDilation();
-  if(!game.blackHoleDimensions) resetBHDimensions()
-  if(!game.blackHole.multipliers) game.blackHole.multipliers = [new Decimal(0), new Decimal(0)]
   if(!game.chargedMilestones) game.chargedMilestones = []
   if(!game.dilation.generatedTT) game.dilation.generatedTT = new Decimal(0)
   if(!game.presets) game.presets = []
@@ -384,15 +382,6 @@ for(var i = 1; i < 10; i++) ge("timeDimensions").innerHTML += `
 	<td style = "position: absolute; right: 20"><button class = "buy" id = "timedimbuy`+i+`" onclick = "buyTimeDimension(`+i+`)"></button></td>
 </tr>`
 
-for(var i = 1; i < 10; i++) ge("blackholeDimensions").innerHTML += `
-<tr id = "blackholedimDisplay` + i + `" style = "text-align: right">
-	<td style = "text-align: left; padding-bottom: 8px; width: 250">` + tierNames[i] + ` Black Hole Dimension</td>
-	<td style = "position: absolute; width: 100"><span id = "blackholedimamount`+i+`"></span></td>
-	<td style = "position: absolute; width: 200; left: 400; text-align: left"><span id = "blackholedimgrowth`+i+`"></span></td>
-	<td style = "position: absolute; width: 200; left: 600">x<span id = "blackholedimmult`+i+`"></span></td>
-	<td style = "position: absolute; right: 20"><button class = "buy" id = "blackholedimbuy`+i+`" onclick = "buyBlackHoleDimension(`+i+`)"></button></td>
-</tr>`
-
 h = ""
 
 var pattern = " xx  xx x  xx  xx  xx  x xx  xx "
@@ -564,13 +553,6 @@ ge("exDilationUpgrades").innerHTML = h + `
 	<td><button id = "repeatEDil0" onclick = "buyRepeatExDil(0)"></button></td>
 	<td><button id = "repeatEDil1" onclick = "buyRepeatExDil(1)"></button></td>
 	<td><button id = "repeatEDil2" onclick = "buyRepeatExDil(2)"></button></td>
-</tr>
-`
-
-ge("blackHoleUpgrades").innerHTML = `
-<tr>
-	<td><button id = "repeatBH0" onclick = "buyRepeatExDil(0)"></button></td>
-	<td><button id = "repeatBH1" onclick = "buyRepeatExDil(1)"></button></td>
 </tr>
 `
 
