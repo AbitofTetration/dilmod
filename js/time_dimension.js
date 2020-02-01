@@ -105,6 +105,7 @@ function getFreeTickspeedUpgrades() {
 	var a = getBaseTickspeedUpgrades()
   
   if(a.gt(5e4)) a = a.pow(0.96).max(5e4)
+  if(a.gt(1e6)) a = a.pow(0.03).max(1e6)
   if(tree.hasStudy("t41")) a = a.multiply(tree.getEff("t41"))
   if(inChallenge(7,2)) a = a.multiply(1/3)
   if(challengeCompleted(7,2)) a = a.multiply(5/4)
