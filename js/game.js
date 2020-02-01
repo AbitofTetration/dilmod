@@ -277,10 +277,6 @@ function update() {
       displayIf("blackholeShit", game.blackHole.unlocked);
       ge("blackHoleEnergy").textContent = shortenMoney(game.blackHoleDimensions[0].amount)
       ge("blackHoleEffect").textContent = shorten(getBlackHoleEffect(), 2, 2)
-      let stuff = ["TT", "DB"]
-      for(i = 0; i < 2;) {
-      //  ge("repeatBH" + i).className = getBlackHoleMultipliersBuy(stuff[i]) ? "exDilation" : "exDilationLocked";
-      }
 		}
 	}
 	

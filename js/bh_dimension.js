@@ -78,17 +78,3 @@ function maxAllBlackHoleDimensions() {
 function getBlackHoleEffect() {
   return game.blackHoleDimensions[0].amount.add(1).log(10).floor()
 }
-
-/* function getBlackHoleMultipliersCost(type) {
-  if(type == "TT") {
-    return game.blackHole.multipliers[0].add(1).multiply(15).pow(30)
-  }
-  if(type == "DB") {
-    return game.blackHole.multipliers[0].multiply(50000)
-  }
-}
-
-function getBlackHoleMultipliersBuy(type) {
-  let stuff = {"TT": game.timestudy.theorems, "DB": game.boosts}
-  return stuff[type].gt(getBlackHoleMultipliersCost(type))
-} */
