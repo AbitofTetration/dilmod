@@ -25,7 +25,7 @@ function gainedEnergyShards() {
 }
 
 var chargedMilestones = {
-	lotOfE: {req:  1, desc: "You start Energizes with 300 eternities."},
+	lotOfE: {req:  2, desc: "You start Energizes with 300 eternities."},
 	keepTT: {req:  3, desc: "You keep time studies and time theorems."},
   keepEC: {req:  5, desc: "You keep eternity challenges."},
 	keepBU: {req:  7, desc: "You keep break infinity upgrades."},
@@ -75,7 +75,7 @@ function energize(force) {
   for (var i = 0; i <= 3; i++) {
     game.timestudy.bought[i] = new Decimal(0)
   }
-  for(var i = (chargedMilestone("keepEC")+2)*12; i < 24; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
+  for(var i = (chargedMilestone("keepEC")+2)*12; i < 36; i++) game.challenges[Math.floor(i/12)][i%12].completed = false;
   if(!chargedMilestone("keepEU"))resetEternityUpgrades()
 	game.repeatEter = [
 		new Decimal(0),
