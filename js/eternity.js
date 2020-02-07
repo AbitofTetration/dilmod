@@ -302,7 +302,7 @@ function canBuyRepeatDil(i) {
 
 function buyRepeatDil(i) {
 	if(!canBuyRepeatDil(i)) return;
-		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.log10().divide(2).floor();
+		game.dilation.repeatUpgr[i] = game.dilation.dilatedTime.divide(dilationRepUpgradeCosts[i]).multiply(100).log10().divide(2).floor();
 		if(game.dilation.dilatedTime.lt(infp())) game.dilation.dilatedTime = game.dilation.dilatedTime.subtract(Decimal.pow(dilationRepUpgradeCostMults[i], game.dilation.dilatedTime.log10().divide(2).floor()))
     if(i == 1) {
         game.dilation.dilatedTime = new Decimal(0),
