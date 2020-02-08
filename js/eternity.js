@@ -268,7 +268,7 @@ function gainedTP() {
 function extraTPMult() {
   let r = new Decimal("1")
   
-  for (var i = 12; i < 14; i++) if(game.eternityUpgrades.includes(i+1)) r = r.multiply(getEternityUpgradeEffect(i))
+  for (var i = 13; i < 15; i++) if(game.eternityUpgrades.includes(i)) r = r.multiply(getEternityUpgradeEffect(i))
   if(game.exDilation.upgrades.includes(2)) r = r.multiply(getExDilationUpgradeEffect(2))
   r=r.multiply(Decimal.pow(4,game.dilation.repeatUpgr[3]))
   return r;
@@ -376,17 +376,15 @@ function buyDilationUpgrade(i) {
 function getDilationToimeMult() {
   let r = Decimal.pow(2, game.dilation.repeatUpgr[0])
   
-  for (var i = 10; i < 12; i++) if(game.eternityUpgrades.includes(i)) r = r.multiply(getEternityUpgradeEffect(i))
-if(game.exDilation.upgrades.includes(2))r=r.multiply(getExDilationUpgradeEffect(2))
+  for (var i = 10; i <= 12; i++) if(game.eternityUpgrades.includes(i)) r = r.multiply(getEternityUpgradeEffect(i))
+  if(game.exDilation.upgrades.includes(2))r=r.multiply(getExDilationUpgradeEffect(2))
+  if(game.dilation.upgrades.includes(8)) r = r.multiply(getDilationUpgradeEffect(8))
   return r
 }
 
 function getDilationTimeGain() {
   let r = game.dilation.tachyonParticles
-  
   r = r.multiply(getDilationToimeMult())
-  if(game.dilation.upgrades.includes(8)) r = r.multiply(getDilationUpgradeEffect(8))
-  
   return r
 }
 
