@@ -151,7 +151,7 @@ function getEternityUpgradeEffect(n) {
     case 11:
       return game.infinityPoints.add(gainedInfinityPoints()).add(1).log("1e20000").max(1).pow(1/3).max(1)
     case 12:
-      return game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e300").max(1).pow(1/3).max(1)
+      return (game.eternityPoints.eq("NaN") ? 1 : game.eternityPoints.add(gainedEternityPoints()).add(1).log("1e300").max(1).pow(1/3).max(1))
     case 13:
       return game.infinityDimensions[0].amount.add(1).log("1e50000").pow(1/3).max(1).max(1)
     case 14:
