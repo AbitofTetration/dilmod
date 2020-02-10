@@ -24,7 +24,9 @@ function updateDimensionSet(name="dimension", abbr="", curr="", l) {
 				game.infinityShifts.gte(i) : 
 			name == "timeDimension" ? 
 				i < maxTimeD() : 
-				true
+      /*name == "blackHoleDimension" ?
+        i < maxBHD() */
+        true
 			)
 			
 			ge(abbr + "dimDisplay" + i).style.visibility = "visible"
@@ -71,6 +73,7 @@ function update() {
 	updateDimensionSet("dimension")
 	updateDimensionSet("infinityDimension", "inf", " IP")
 	updateDimensionSet("timeDimension", "time", " EP", true)
+  //updateDimensionSet("blackHoleDimension", "blackHole,", " ex-dilation")
 	game.totalAntimatter = game.totalAntimatter.add(getDimensionProduction(1).multiply(getTickspeed("dimension")).multiply(diff/1000));
 	
   // IP and infinity generation
@@ -264,8 +267,14 @@ function update() {
 			ge("timeShardThreshold").textContent = shorten(getFreeTickspeedThreshold())
 			ge("timeShardGrowth").textContent = shorten(getTimeDimensionProduction(1).multiply(getTickspeed("timeDimension")))
 		}
-	}
 	
+  		if(game.currentDimensionTab == "blackHole") {
+			ge("freeRGs").textContent = shortenMoney(game.timeDimensions[0].amount)
+			ge("blackHolePower").textContent = getFullExpansion(getFreeTickspeedUpgrades())
+			ge("blackHolePowerThreshold").textContent = shorten(getTickPower().pow(getFreeTickspeedUpgrades()))
+			ge("blackHolePowerGrowth").textContent = shorten(getFreeTickspeedThreshold())
+		}
+	}
 	// Challenges
 	
 	if(game.currentTab == "challenges") {

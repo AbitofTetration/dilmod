@@ -54,7 +54,7 @@ function buyBlackHoleDimension(i) {
 }
 
 function maxBlackHoleDimension(i) {
-	var dim = game.infinityDimensions[i];
+	var dim = game.blackHoleDimensions[i];
 	if(!canBuyBHDimension(i)) return;
 	
 	dim.bought = game.exDilation.divide(blackHoleDimensionBaseCosts[i]).log10().divide(Decimal.log10(blackHoleDimensionCostMults[i])).add(1).floor();
