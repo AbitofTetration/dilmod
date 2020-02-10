@@ -1,8 +1,8 @@
 var blackHoleDimensionBaseCosts = [0, 1e3, 1e9, 1e12, 1e15, 1e90, 1e140, 1e200, 1e280, "1e400"]
-var blackHoleDimensionCostMults = [0, 10, 1e6, 1e8, 1e10, 1e15, 1e20, 1e25, 1e30, 1e35]
+var blackHoleDimensionCostMults = [0, 1e3, 1e6, 1e8, 1e10, 1e15, 1e20, 1e25, 1e30, 1e35]
 var blackHoleDimensionBuyMults = [0, 50, 30, 10, 5, 5, 5, 5, 5, 5]
 
-function BlackHoleDimension(i) {
+function blackHoleDimension(i) {
 	this.id = game.blackHoleDimensions.length;
 	this.amount = new Decimal(0);
 	this.bought = new Decimal(0);
