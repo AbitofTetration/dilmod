@@ -73,7 +73,7 @@ function update() {
 	updateDimensionSet("dimension")
 	updateDimensionSet("infinityDimension", "inf", " IP")
 	updateDimensionSet("timeDimension", "time", " EP", true)
-  updateDimensionSet("blackHoleDimension", "blackHole", " ex-dilation")
+  //updateDimensionSet("blackHoleDimension", "blackHole", " ex-dilation")
 	game.totalAntimatter = game.totalAntimatter.add(getDimensionProduction(1).multiply(getTickspeed("dimension")).multiply(diff/1000));
 	
   // IP and infinity generation
