@@ -66,3 +66,15 @@ function maxBlackHoleDimension(i) {
 function getBHPowerEffect() {
 	return game.blackHoleDimensions[0].amount.pow(0.03).max(1)
 }
+
+function getFreeRGUpgrades() {
+  return 1
+}
+
+function getFreeRGThreshold() {
+  return 1
+}
+
+function maxBHD() {
+  return 4
+}
