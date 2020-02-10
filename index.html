@@ -64,6 +64,7 @@
 			<button id = "normalDimensionButton" class = "subtabButton" onclick = "showDimensionTab('normal')">Dimensions</button>
 			<button id = "infinityDimensionButton" class = "subtabButton" onclick = "showDimensionTab('infinity')">Infinity Dimensions</button>
 			<button id = "timeDimensionButton" class = "subtabButton" onclick = "showDimensionTab('time')">Time Dimensions</button>
+			<button id = "blackHoleDimensionButton" class = "subtabButton" onclick = "showDimensionTab('blackHole')">Black Hole Dimensions</button>
 		</div>
 	</center>
 	<div class = "dimensionTab" id = "normalDimensionTab">
@@ -126,6 +127,17 @@
 		</center>
 		<br>
 		<table id = "timeDimensions" style = "font-size: 13px; text-align: left"></table>
+	</div>
+
+	<div class = "dimensionTab" id = "blackHoleDimensionTab">
+		<center id = "bhpArea" style = "font-size: 12px">
+			You've gained <currency id = "freeRGs"></currency> extra free replicated galaxy upgrades.<br>
+			You have <currency id = "blackHolePower"></currency> black hole power. Next RG upgrade at <currency id = "blackHolePowerThreshold"></currency>.<br>
+			You are getting <span id = "blackHolePowerGrowth"></span> black hole power per second.<br>
+			<button class = "buy" style = "width: 100px; font-size: 13px; margin-top: 10px" onclick = "maxAllBHDimensions()">Max All</button>
+		</center>
+		<br>
+		<table id = "blackHoleDimensions" style = "font-size: 13px; text-align: left"></table>
 	</div>
 </div>
 

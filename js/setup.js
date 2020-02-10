@@ -382,8 +382,18 @@ for(var i = 1; i < 10; i++) ge("timeDimensions").innerHTML += `
 	<td style = "position: absolute; right: 20"><button class = "buy" id = "timedimbuy`+i+`" onclick = "buyTimeDimension(`+i+`)"></button></td>
 </tr>`
 
+for(var i = 1; i < 10; i++) ge("blackHoleDimensions").innerHTML += `
+<tr id = "blackHoledimDisplay` + i + `" style = "text-align: right">
+	<td style = "text-align: left; padding-bottom: 8px; width: 250">` + tierNames[i] + ` Time Dimension</td>
+	<td style = "position: absolute; width: 100"><span id = "blackHoledimamount`+i+`"></span></td>
+	<td style = "position: absolute; width: 200; left: 400; text-align: left"><span id = "blackHoledimgrowth`+i+`"></span></td>
+	<td style = "position: absolute; width: 200; left: 600">x<span id = "blackHoledimmult`+i+`"></span></td>
+	<td style = "position: absolute; right: 20"><button class = "buy" id = "blackHoledimbuy`+i+`" onclick = "buyTimeDimension(`+i+`)"></button></td>
+</tr>`
+
 h = ""
 
+// blackHoleDimensions
 var pattern = " xx  xx x  xx  xx  xx  x xx  xx "
 
 for(var i = 0, j = 0; j < 32; i++, j++) {
