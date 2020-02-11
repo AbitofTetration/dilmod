@@ -440,7 +440,7 @@ function exDilate(confirmation = false) {
 }
 
 function dilationPenalty() {
-  let r = 0.25
+  let r = 0.75
   
   if(game.exDilation.upgrades.includes(1)) r += 0.05
   

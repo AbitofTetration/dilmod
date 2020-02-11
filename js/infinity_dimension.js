@@ -83,7 +83,7 @@ function getInfinityDimensionProduction(i) {
 	if(tree.hasStudy("i31") && i == 9) dim.multiplier = dim.multiplier.multiply(tree.getEff("i31"))
 	if(tree.hasStudy("i41")) dim.multiplier = dim.multiplier.multiply(tree.getEff("i41"))
   
-  if(inDilation()) dim.multiplier = dim.multiplier.pow(dilationPenalty())
+  if(inDilation()) dim.multiplier = Decimal.pow(10, Decimal.pow(dim.multiplier.log10(), 0.75))
   if(game.exDilation.upgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getExDilationUpgradeEffect(6))
 	
 	return dim.amount.multiply(dim.multiplier);
