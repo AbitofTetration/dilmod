@@ -157,10 +157,10 @@ function getInfinityBonus() {
 function getInfinityUpgradeEffect(n) {
 	switch(n) {
 		case 0:
-      if(game.dilation.upgrades.includes(3)) return Decimal.times(Math.pow(getTimeSince("start") / 60000, 0.1)+1, getDilationUpgradeEffect(3))
+   //   if(game.dilation.upgrades.includes(3)) return Decimal.times(Math.pow(getTimeSince("start") / 60000, 0.1)+1, getDilationUpgradeEffect(3))
 			return Math.pow(getTimeSince("start") / 60000, 0.1)+1;
 		case 1:
-      if(game.dilation.upgrades.includes(3)) return Decimal.times(Math.pow(getTimeSince("start") / 60000, 0.25)+1, getDilationUpgradeEffect(3))
+ //     if(game.dilation.upgrades.includes(3)) return Decimal.times(Math.pow(getTimeSince("start") / 60000, 0.25)+1, getDilationUpgradeEffect(3))
 			return Math.pow(getTimeSince("infinity") / 60000, 0.25)+1
 		case 2:
 			return game.infinityPoints.divide(2).pow(1.25).add(1);

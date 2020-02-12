@@ -100,7 +100,6 @@ function getDimensionProduction(i) {
 	if(inChallenge(11, 1)) dim.multiplier = dim.multiplier.pow(1 - i / 10);
   
   if(inDilation()) dim.multiplier = Decimal.pow(10, Decimal.pow(dim.multiplier.log10(), 0.75))
-	if(game.dilation.upgrades.includes(2)) dim.multiplier = dim.multiplier.multiply(getDilationUpgradeEffect(2))
   if(game.energize.upgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getEnergizeUpgradeEffect(6))
 
 	return dim.amount.multiply(dim.multiplier);
