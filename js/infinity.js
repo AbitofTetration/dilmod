@@ -26,7 +26,6 @@ function getInfinityPointMult() {
 	if(tree.hasStudy("g32")) r = r.multiply(tree.getEff("g32"));
 	if(tree.hasStudy("n11")) r = r.multiply("1e308");
   if(tree.hasStudy("o11")) r = r.multiply(tree.getEff("o11"));
-  if(game.dilation.upgrades.includes(7)) r = r.multiply(getDilationUpgradeEffect(7))
 	
 	return r;
 }

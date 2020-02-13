@@ -200,7 +200,6 @@ function getRemoteGalaxyStart() {
 	let r = new Decimal(200);
   
   if(tree.hasStudy("g41")) r = r.multiply(tree.getEff("g41"))
-  if(game.dilation.upgrades.includes(5)) r = r.add(getDilationUpgradeEffect(5))
   
   return r;
 }

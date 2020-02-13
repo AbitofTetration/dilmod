@@ -139,7 +139,7 @@ ns({x:     1, y:    12, id:  "a13", cost:   60, desc: "You gain 1e30x more EP.",
 ns({x:     -1, y:    10, id:  "o11", cost:   20, desc: "You gain a increasing IP multiplier based on time in this infinity.", req: function() {return !tree.hasStudy("n11") && !tree.hasStudy("a11")}, eff: function() {return Decimal.pow(10, getTimeSince("infinity")/1e4)}, pre: ["s13"]})
 ns({x:     -1, y:    11, id:  "o12", cost:   40, desc: "Replicated galaxies are 40% stronger.", pre: ["o11"]})
 ns({x:     -1, y:    12, id:  "o13", cost:   60, desc: "You gain 1e30x more EP.", pre: ["o12"]})
-ns({x:     0, y:    13, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["n13"], req: function() {return getChallengeCompletions(2) >= 5}})
+ns({x:     0, y:    13, id:  "d11", cost:  200, desc: "Unlock Time Dilation.<br>Requirement: Complete five eternity challenges.", pre: ["n13", "o13", "a13"], req: function() {return getChallengeCompletions(2) >= 5}})
 ns({x:    -1, y:    14, id:  "d12", cost: 5000, desc: "Unlock time dimensions 5 and 6", pre: ["d11"],})
 ns({x:     0, y:    14, id:  "d21", cost:  1e5, desc: "Unlock time dimensions 7 and 8", pre: ["d12"],})
 ns({x:     1, y:    14, id:  "d22", cost:  1e7, desc: "Unlock time dimension 9", pre: ["d21"],})

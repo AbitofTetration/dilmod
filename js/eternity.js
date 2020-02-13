@@ -325,39 +325,13 @@ function getTTScaling() {
 
 function getDUDescriptions() {
 	return [
-		"Replicanti grow faster based on DT.<br>Currently: " + shorten(getDilationUpgradeEffect(0)) + "x",
-		"Tachyon Particles boost Time Dimensions.<br>Currently: " + shorten(getDilationUpgradeEffect(1)) + "x",
-		"Normal dimensions gain a boost based on DT, unaffected by dilation.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(2)) + "x",
-    "The first two infinity upgades are stronger based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(3)) + "x",
-		"You gain 1% of Infinity Points on infinity automatically.",
-		"Remote antimatter galaxy effect starts later based on dilated time.<br>Currently: " + shorten(getDilationUpgradeEffect(5)) + " extra galaxies",
-    "Dilated galaxies are twice as powerful.",
-    "Gain a multiplier to IP based on dilated time.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(7)) + "x",
-    "You gain extra dilated time based on tachyon particles.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(8)) + "x",
-    "Make the max replicated galaxies softcap weaker.",
-    "Reduce the free tickspeed interval.",
-		"You automatically generate TT.<br>Currently: " + shortenMoney(getDilationUpgradeEffect(11)) + "/s" + (getTTScaling().gt(1) ? "<br>Your time theorem scaling is " + shorten(getTTScaling().multiply(100)) + "%." : "")
+    "Dilated galaxies are two times as powerful."
 	]
 }
 function getDilationUpgradeEffect(n) {
 	switch(n) {
 		case 0:
 			return game.dilation.dilatedTime.pow(1/13).max(1);
-		case 1:
-			return game.dilation.tachyonParticles.pow(6).max(1);
-		case 2:
-			return game.dilation.dilatedTime.pow(4).max(1)
-    case 3:
-      return game.dilation.dilatedTime.add(1).log(1.2).max(1)
-		case 5:
-			return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1)
-      if(game.exDilation.upgrades.includes(5)) return game.dilation.dilatedTime.divide(400).add(1).log(8).max(1).add(getExDilationUpgradeEffect(5))
-    case 7:
-      return game.dilation.dilatedTime.divide(150).add(1).pow(5)
-		case 8:
-			return game.dilation.tachyonParticles.add(1).log(8).max(1);
-    case 11:
-			return game.dilation.tachyonParticles.divide(2e20).divide(getTTScaling()).max(1)
 	}
 }
 
@@ -378,7 +352,6 @@ function getDilationToimeMult() {
   
   for (var i = 10; i <= 12; i++) if(game.eternityUpgrades.includes(i)) r = r.multiply(getEternityUpgradeEffect(i))
   if(game.exDilation.upgrades.includes(2))r=r.multiply(getExDilationUpgradeEffect(2))
-  if(game.dilation.upgrades.includes(8)) r = r.multiply(getDilationUpgradeEffect(8))
   return r
 }
 

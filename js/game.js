@@ -89,12 +89,6 @@ function update() {
     game.dilation.freeGalaxies = game.dilation.freeGalaxies.add(1)
     game.dilation.galaxyThreshold = game.dilation.galaxyThreshold.multiply(game.dilation.thresholdUpSpeed)
   }
-  
-  // TT generation
-  if(game.dilation.upgrades.includes(11)) {
-    game.timestudy.theorems = game.timestudy.theorems.add(getDilationUpgradeEffect(11).multiply(diff/1000))
-    game.dilation.generatedTT = game.dilation.generatedTT.add(getDilationUpgradeEffect(11).multiply(diff/1000))
-  }
 
   // More IP generation
 	if(tree.hasStudy("s13")) 
