@@ -90,7 +90,7 @@ ns({x:    -2, y:     2, id:  "t11", cost:    1, desc: "Tickspeed affects first T
   return r
 }, pre: ["s00"]})
 ns({x:    -3, y:     2, id:  "t21", cost:    4, desc: "Time Dimensions get a multiplier based on free tickspeed upgrades", eff: function() {return getFreeTickspeedUpgrades().pow(0.5).max(1)}, pre: ["t11"]})
-ns({x:    -3, y:     1, id:  "t22", cost:    4, desc: "Time Dimensions are affected by replicanti to a severely reduced effect.", eff: function() {return getReplEffect().pow(0.5)}, pre: ["t11"]})
+ns({x:    -3, y:     1, id:  "t22", cost:    4, desc: "Time Dimensions are affected by replicanti to a severely reduced effect.", eff: function() {return game.replicanti.amount.floor().add(1).log2().pow(4).max(1).pow(0.5)}, pre: ["t11"]})
 ns({x:    -4, y:     3, id:  "t31", cost:    6, desc: "Time Dimensions gain a boost equal to time theorems plus one.", eff: function() {return game.timestudy.theorems.add(1)}, pre: ["t21"]})
 ns({x:    -4, y:     2, id:  "t32", cost:   14, desc: "Time shards boost Normal Dimensions.", eff: function() {return game.timeDimensions[0].amount.add(1).log(1.0025).pow(25).max(1)}, pre: ["t22"]})
 ns({x:    -3, y:     3, id:  "t41", cost:   20, desc: "The free tickspeed given from Time Dimensions is multiplied by 1.1.", eff: function() {return 1.1}, pre: ["t31"]})
