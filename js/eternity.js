@@ -286,7 +286,7 @@ var dilationRepUpgradeCostMults = "100, 100, 100, 100".split(",");
 function getRepeatDilDesc() {
   return [
     "You gain twice as much dilated time.<br>Currently: " + shorten(Decimal.pow(2, game.dilation.repeatUpgr[0])) + "x",
-    "Free galaxy threshold is reduced, but reset dilated time and free galaxies.<br>Currently: " + shorten(game.dilation.thresholdUpSpeed),
+    "Free galaxy threshold is reduced, but reset dilated time and free galaxies.<br>Currently: " + shorten(getFreeGalaxiesMult()) + "x",
     "Tachyon particle formula is better.<br>Currently: ^" + shorten(Decimal.add(1.5, game.dilation.repeatUpgr[2].add(1).log(3.5).divide(3))),
     "Quadruple tachyon particle gain.<br>Currently: " + shorten(Decimal.pow(4, game.dilation.repeatUpgr[3])) + "x"
   ]
@@ -362,9 +362,9 @@ function getDilationTimeGain() {
 }
 
 function getFreeGalaxiesMult() {
-  let r = new Decimal(5)
+  let r = new Decimal(2)
   
-  r = r.divide(Decimal.add(1, game.dilation.repeatUpgr[1].add(1).log(10)))
+  r = r.add(Decimal.add(3.65,Decimal.pow(0.8, game.dilation.repeatUpgr[1])))
   
 	return r;
 }
