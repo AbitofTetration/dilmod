@@ -181,7 +181,7 @@ Study.prototype.canBuy = function(nocost) {
 
 Study.prototype.buy = function() {
 	if(!this.canBuy()) return;
-	if(!this.id == "d11" || !this.id == "d12" || !this.id == "d21" || !this.id == "d22" || !this.id == "d31") game.timestudy.theorems = game.timestudy.theorems.subtract(this.cost)
+	if(!this.id == "d11" && !this.id == "d12" && !this.id == "d21" && !this.id == "d22" && !this.id == "d31") game.timestudy.theorems = game.timestudy.theorems.subtract(this.cost)
 	game.timestudy.studies.push(this.id);
   if(this.id == "d11") game.dilation.unlocked = true;
 	return true;
