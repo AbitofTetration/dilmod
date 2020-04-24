@@ -99,7 +99,7 @@ function getDimensionProduction(i) {
 	if(inChallenge(4, 1)) dim.multiplier = dim.multiplier.pow(0.4 + (game.lastBoughtDimension == i) * 0.4);
 	if(inChallenge(11, 1)) dim.multiplier = dim.multiplier.pow(1 - i / 10);
   
-  if(inDilation()) dim.multiplier = Decimal.pow(10, Decimal.pow(dim.multiplier.log10(), 0.75))
+  if(inDilation()) dim.multiplier = dim.multiplier.pow(dilationPenalty())
   if(game.energize.upgrades.includes(6)) dim.multiplier = dim.multiplier.multiply(getEnergizeUpgradeEffect(6))
 
 	return dim.amount.multiply(dim.multiplier);
